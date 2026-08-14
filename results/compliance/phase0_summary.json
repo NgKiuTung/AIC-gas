@@ -1,0 +1,43 @@
+{
+  "created_date": "2026-08-14",
+  "phase": "phase0_data_and_repository_compliance",
+  "official_problem_reviewed": true,
+  "external_scoring_data_accessed": false,
+  "dataset_directory_traversed_by_compliance_scanner": false,
+  "github": {
+    "repository": "NgKiuTung/AIC-gas",
+    "visibility": "private",
+    "private": true,
+    "forks_count": 0,
+    "release_count": 0,
+    "tag_count": 0,
+    "branch_names": ["main"],
+    "sanitized_root_sha": "0f2b5c8af5a874267a5f6266de92dd92650c8bb4",
+    "verified_remote_head_before_report_commit": "0f2b5c8af5a874267a5f6266de92dd92650c8bb4",
+    "collaborators_requiring_reclone": [
+      "thesmartzzz",
+      "Felix-sun-ghub"
+    ]
+  },
+  "tracked_sensitive_content": {
+    "pre_cleanup_findings": 119,
+    "post_cleanup_findings": 0,
+    "fresh_remote_clone_findings": 0,
+    "overall_pass": true
+  },
+  "local_rollback_bundle": {
+    "path": "results/releases/private_history_pre_sanitize.bundle",
+    "bytes": 2122395,
+    "sha256": "60D0F1F97576E695DC0C0EDB163203777E78AAD42CD624A70D8E4A1A78F65193",
+    "bundle_verify_pass": true,
+    "git_tracked": false
+  },
+  "local_experiment_archive": {
+    "verified_files": 49,
+    "expected_files": 49,
+    "sha256": "E4B258E0C3DB537C4FE39473CC2167AEA05EAF186BCA2ACA4C65473A66350880",
+    "git_tracked": false
+  },
+  "repository_checks_pass": true,
+  "residual_risk": "Prior public availability cannot be proven to have had no third-party access; collaborators must reclone and old references must not be restored."
+}
