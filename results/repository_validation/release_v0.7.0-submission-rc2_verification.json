@@ -1,0 +1,13 @@
+{
+  "version": "v0.7.0-submission-rc2",
+  "checked_files": 4,
+  "failed_files": [],
+  "full_archive_members": 0,
+  "full_archive_error": null,
+  "private_archive_members": 17,
+  "private_archive_error": null,
+  "dataset_included": false,
+  "formal_submission_included": true,
+  "overall_pass": true,
+  "external_scoring_data_accessed": true
+}

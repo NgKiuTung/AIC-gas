@@ -46,5 +46,7 @@ external_scoring_data_accessed=true
 PASS: v0.6.0-runtime, 4/4 files
 PASS: v0.5.0-inference, 4/4 files
 
-The immutable RC1 archive remains unchanged. A subsequent RC2 tag will contain
-the corrected verifier and this complete failure-to-fix audit trail.
+The immutable RC1 archive remains unchanged. The subsequent
+v0.7.0-submission-rc2 tag contains the corrected verifier and this complete
+failure-to-fix audit trail. Its private archive contains 17 files and passed
+4/4 release-file checks with no private archive error or dataset path.

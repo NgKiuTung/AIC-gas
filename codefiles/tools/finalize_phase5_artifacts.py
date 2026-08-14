@@ -68,6 +68,13 @@ ARTIFACTS = (
         / "release_v0.7.0-submission-rc1_verification_history.txt",
         "safe_log",
     ),
+    (
+        ROOT
+        / "results"
+        / "repository_validation"
+        / "release_v0.7.0-submission-rc2_verification.json",
+        "safe_metadata",
+    ),
 )
 
 
