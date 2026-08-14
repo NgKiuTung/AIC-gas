@@ -1,0 +1,9 @@
+{
+  "version": "v0.5.0-inference-rc1",
+  "checked_files": 4,
+  "failed_files": [],
+  "full_archive_members": 0,
+  "full_archive_error": null,
+  "overall_pass": true,
+  "external_scoring_data_accessed": false
+}
