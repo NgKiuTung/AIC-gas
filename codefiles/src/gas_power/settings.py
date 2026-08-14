@@ -28,6 +28,10 @@ class ProjectPaths:
     def training_data(self) -> Path:
         return self.root / "dataset" / "初赛-数据集"
 
+    @property
+    def scoring_data(self) -> Path:
+        """Lexical location only; callers must still pass the submission access gate."""
+        return self.root / "dataset" / "初赛-评分所用测试集"
+
 
 PATHS = ProjectPaths()
-

@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-08-14T05:34:28.408697+00:00",
+  "official_scoring_data_accessed": false,
+  "script": "codefiles\\pipelines\\run_phase3_inference_validation.py",
+  "artifacts": [
+    {
+      "path": "results\\phase3_inference_validation\\phase3_inference_validation_summary.json",
+      "sha256": "0b08c71557fbd7a2cc2d1cfbcd7ea4cc1f989c2fc9ff09a4e6588c6ad4cc9ae5",
+      "bytes": 1247
+    },
+    {
+      "path": "results\\phase3_inference_validation\\training_feature_replay_differences.csv",
+      "sha256": "2d43e6f5274057e51551c6a761d749bd04bbe71b1204b1e1a673c8c7d57f8f82",
+      "bytes": 31346
+    },
+    {
+      "path": "results\\phase3_inference_validation\\synthetic_submission_preview.csv",
+      "sha256": "3425ea7d031bd876a9c988d9b40bd1ff5baa05905cb4dd2dbe43b7e7033cb485",
+      "bytes": 2766
+    },
+    {
+      "path": "results\\phase3_inference_validation\\synthetic_imputation_summary.csv",
+      "sha256": "e73d865ac0de93e90870f1c88204a62d91840bb9a019135efba8c66829054bec",
+      "bytes": 1180
+    },
+    {
+      "path": "results\\phase3_inference_validation\\phase3_inference_validation.log",
+      "sha256": "58646ceea7d45043cb8403408948df6b04198e02de78c0543f0cf676c3b639ac",
+      "bytes": 2007
+    },
+    {
+      "path": "results\\figures_safe\\phase3\\synthetic_end_to_end_forecasts.png",
+      "sha256": "ee195f6d7c04c9e3270dd5ea3cf2dbbb37e3e438e47f5734f8c19180b6e0963e",
+      "bytes": 267845
+    },
+    {
+      "path": "results\\figures_safe\\phase3\\synthetic_end_to_end_forecasts.pdf",
+      "sha256": "e29364aea6a2a823ce9a61a959f4b1a6bc98971d8d16319c177f5986f0d96e00",
+      "bytes": 19167
+    }
+  ]
+}

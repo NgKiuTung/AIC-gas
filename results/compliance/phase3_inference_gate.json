@@ -1,0 +1,30 @@
+{
+  "phase": "phase3_causal_inference_pipeline",
+  "created_utc": "2026-08-14T05:32:20.708666+00:00",
+  "official_scoring_data_accessed": false,
+  "checks": {
+    "training_and_submission_access_policies_separated": true,
+    "training_policy_rejects_scoring_path": true,
+    "submission_policy_requires_explicit_read_only_grant": true,
+    "raw_tables_merged_to_complete_15_minute_grid": true,
+    "causal_fill_uses_current_or_past_only": true,
+    "training_replay_rows": 10832,
+    "training_replay_feature_count": 801,
+    "training_replay_max_abs_difference": 0.0,
+    "future_mutation_feature_max_abs_difference": 0.0,
+    "forecast_horizons_minutes": [15, 30, 45, 60, 75, 90, 105, 120],
+    "official_submission_column_count": 17,
+    "finite_synthetic_predictions": true,
+    "generator_hierarchy_satisfied": true,
+    "result_csv_created": false,
+    "all_passed": true
+  },
+  "evidence": [
+    "results/phase3_inference_validation/phase3_inference_validation_summary.json",
+    "results/phase3_inference_validation/training_feature_replay_differences.csv",
+    "results/phase3_inference_validation/synthetic_submission_preview.csv",
+    "results/phase3_inference_validation/phase3_artifact_manifest.json",
+    "results/figures_safe/phase3/synthetic_end_to_end_forecasts.png"
+  ],
+  "next_gate": "Python 3.10 clean-environment validation, then explicit user authorization before scoring input access"
+}

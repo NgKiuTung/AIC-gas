@@ -7,14 +7,21 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
+from pathlib import Path
 
 from gas_power.settings import PATHS
 
 
-def run_legacy_scripts(names: list[str], stage: str, dry_run: bool = False) -> list[dict[str, object]]:
-    log_dir = PATHS.results / "logs"
+def run_legacy_scripts(
+    names: list[str],
+    stage: str,
+    dry_run: bool = False,
+    artifact_root: Path | None = None,
+) -> list[dict[str, object]]:
+    results_root = artifact_root if artifact_root is not None else PATHS.results
+    log_dir = results_root / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
-    manifest_dir = PATHS.results / "pipeline_manifests"
+    manifest_dir = results_root / "pipeline_manifests"
     manifest_dir.mkdir(parents=True, exist_ok=True)
     records: list[dict[str, object]] = []
     for name in names:
@@ -51,4 +58,3 @@ def run_legacy_scripts(names: list[str], stage: str, dry_run: bool = False) -> l
     }
     (manifest_dir / f"{stage}.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     return records
-
