@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-08-14T06:48:56.994243+00:00",
+  "audit_scope": "independent post-generation structural and visual audit",
+  "official_scoring_data_reused_for_training_or_tuning": false,
+  "label_metrics_computed": false,
+  "package_audit": {
+    "zip_path": "D:\\26AIC\\results\\submissions\\final\\AIC-gas_gas_predict_prelim.zip",
+    "zip_sha256": "f0884ebbd8a6a2fbd163c321f8713df4cbbbfb7befc2b565c7d2deda74c9b112",
+    "zip_members": [
+      "result.csv"
+    ],
+    "csv_bytes": 28348,
+    "rows": 192,
+    "columns": 17,
+    "prediction_columns": 16,
+    "utf8": true,
+    "minimum_three_decimals": true,
+    "all_checks_pass": true
+  },
+  "diagnostic_figure": "results\\submissions\\final\\diagnostics\\final_forecast_diagnostics.png",
+  "diagnostic_figure_storage": "local_only_gitignored",
+  "prediction_values_persisted_in_audit_json": false,
+  "all_passed": true
+}

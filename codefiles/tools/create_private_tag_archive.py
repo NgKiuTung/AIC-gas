@@ -27,6 +27,19 @@ PHASE2_PRIVATE_PATHS = (
     ROOT / "results" / "features" / "train_supervised_features_cleaning_enhanced.pkl",
     ROOT / "results" / "features" / "feature_catalog_cleaning_enhanced.csv",
 )
+PHASE5_PRIVATE_PATHS = (
+    ROOT / "results" / "submissions" / "final",
+    ROOT / "results" / "final_inference_audit" / "final_scoring_inference.log",
+    ROOT / "results" / "final_inference_audit" / "final_submission_independent_audit.log",
+    ROOT
+    / "results"
+    / "phase5_final_adapter_validation"
+    / "synthetic_final_adapter_rehearsal.log",
+    ROOT
+    / "results"
+    / "phase5_final_adapter_validation"
+    / "synthetic_192row_rehearsal_gas_predict_prelim.zip",
+)
 
 
 def sha256(path: Path) -> str:
@@ -98,6 +111,11 @@ def main() -> None:
     )
     if includes_production:
         private_paths.extend(PHASE2_PRIVATE_PATHS)
+    includes_final_submission = tag_contains(
+        args.version, "results/final_inference_audit/final_scoring_inference_manifest.json"
+    )
+    if includes_final_submission:
+        private_paths.extend(PHASE5_PRIVATE_PATHS)
     private_files = expand_files(tuple(private_paths))
     private_archive = artifacts / "private_artifacts.zip"
     inventory: list[dict[str, object]] = []
@@ -116,12 +134,13 @@ def main() -> None:
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "immutable": True,
         "storage": "local_only_gitignored",
-        "external_scoring_data_accessed": False,
+        "external_scoring_data_accessed": includes_final_submission,
         "dataset_included": False,
         "repository_snapshot": "artifacts/repository_snapshot.zip",
         "private_artifacts": "artifacts/private_artifacts.zip",
         "private_artifact_files": len(inventory),
         "production_models_included": includes_production,
+        "formal_submission_included": includes_final_submission,
     }
     (destination / "release_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"

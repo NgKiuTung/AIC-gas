@@ -11,6 +11,8 @@
 
 完整实验包保存在 `results/releases/<version>/artifacts/full_experiment_archive.zip`。整个 `results/releases/` 必须被 Git 忽略，也不得作为 GitHub Release 公开发布；跨机器备份只能使用访问受控且符合赛事规则的私有存储。评分集和原始数据目录禁止进入归档。
 
+最终评分阶段需要把两个事实分开记录：`external_scoring_data_accessed=true` 表示曾在明确授权下执行只读推理，`dataset_included=false` 表示评分输入本体没有进入归档。最终提交 ZIP 和由预测派生的诊断图可以进入本地私有归档，但不得进入 Git 或公开 Release；归档清单必须逐项核对私有 ZIP 成员，并继续拒绝任何 `dataset/` 路径。
+
 允许将经过审计的聚合图保存到 `results/figures_safe/` 并提交协作仓库，但图中不得包含逐行时间戳、真实值、预测值或可反推出赛事原始序列的数据。逐行诊断图和源数据仍只能保存在被忽略的本地目录。
 
 版本快照采用只增不改策略：同名版本存在时，创建脚本必须失败。需要补充资料时应提升版本号，不得修改旧快照。

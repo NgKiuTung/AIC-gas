@@ -1,6 +1,6 @@
 contract_id: preliminary_forecast_submission_v1
 official_source: docs/competition/official/煤气发电量预测与发电优化-2.pdf
-scoring_input_access_enabled: false
+scoring_input_access_enabled: true
 required_access_purpose: final_submission_inference
 required_access_mode: read_only
 training_or_tuning_allowed_during_scoring_inference: false
@@ -40,3 +40,20 @@ synthetic_contract_validation:
   formal_submission: false
   official_scoring_data_accessed: false
   summary: results/phase4_runtime_validation/synthetic_package_validation_summary.json
+final_scoring_validation:
+  status: passed
+  authorization: explicit_user_authorization_read_only
+  rows: 192
+  columns: 17
+  prediction_columns: 16
+  zip_members:
+  - result.csv
+  utf8: true
+  minimum_decimal_places: 3
+  input_read_only_hash_match: true
+  training_or_tuning_performed: false
+  label_metrics_computed: false
+  under_30_minutes: true
+  package_created: true
+  package_storage: local_only_gitignored
+  summary: results/final_inference_audit/final_scoring_inference_manifest.json

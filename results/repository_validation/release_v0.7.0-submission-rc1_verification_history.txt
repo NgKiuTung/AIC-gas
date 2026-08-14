@@ -1,0 +1,52 @@
+Phase 5 release-candidate verification history
+================================================
+
+Candidate: v0.7.0-submission-rc1
+Git commit: 634a9aef1d3cd55f774b9a219df79ce01eba9ab1
+
+1. Archive creation
+-------------------
+PASS
+Created private tag archive v0.7.0-submission-rc1:
+private_files=17, production_models=True, formal_submission_included=True,
+external_scoring_data_accessed=True, dataset_included=False.
+
+2. First verification with the historical verifier
+---------------------------------------------------
+FAIL
+RuntimeError: Release data-scope declaration is missing or invalid
+
+Root cause: the verifier required external_scoring_data_accessed to be false.
+That historical invariant was valid before Phase 5, but it incorrectly rejected
+the truthful Phase 5 declaration that scoring inputs were accessed read-only.
+The archive itself was not changed or overwritten.
+
+3. Corrective verification rule
+-------------------------------
+The verifier was changed to require all of the following independently:
+- external_scoring_data_accessed is a boolean;
+- dataset_included is explicitly false;
+- a formal submission implies scoring access was declared;
+- private ZIP members exactly match their inventory;
+- no private or full archive member starts with dataset/;
+- a declared formal submission is present in the private archive.
+
+4. Verification after correction
+--------------------------------
+PASS
+Release verification: 4/4 files passed
+private_archive_members=17
+private_archive_error=null
+dataset_included=false
+formal_submission_included=true
+external_scoring_data_accessed=true
+
+5. Backward-compatibility regression
+------------------------------------
+PASS: v0.6.0-runtime, 4/4 files
+PASS: v0.5.0-inference, 4/4 files
+
+The immutable RC1 archive remains unchanged. The subsequent
+v0.7.0-submission-rc2 tag contains the corrected verifier and this complete
+failure-to-fix audit trail. Its private archive contains 17 files and passed
+4/4 release-file checks with no private archive error or dataset path.

@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-08-14T08:00:17.117682+00:00",
+  "phase": "phase5_final_scoring_read_only_inference",
+  "official_scoring_data_accessed": true,
+  "training_or_tuning_performed": false,
+  "label_metrics_computed": false,
+  "private_artifacts_are_gitignored": true,
+  "artifacts": [
+    {
+      "path": "results/phase5_final_adapter_validation/synthetic_final_adapter_rehearsal_summary.json",
+      "classification": "safe",
+      "bytes": 1282,
+      "sha256": "c756f51555009c01f8e0f20314e991013b406f7e0da1b1bdc641b2346bb2dc9b"
+    },
+    {
+      "path": "results/phase5_final_adapter_validation/synthetic_final_adapter_rehearsal.log",
+      "classification": "safe_log",
+      "bytes": 1184,
+      "sha256": "caff0961d72d59184dc4bca07f4c70d318e026a5efbfa444068b65e8daebaf0c"
+    },
+    {
+      "path": "results/phase5_final_adapter_validation/synthetic_192row_rehearsal_gas_predict_prelim.zip",
+      "classification": "local_synthetic_zip",
+      "bytes": 10331,
+      "sha256": "41db8e3f72959445f8d207dce61d0ce5c67cefe08eeebdd848c220436514d532"
+    },
+    {
+      "path": "results/figures_safe/phase5/synthetic_192row_final_adapter.png",
+      "classification": "safe",
+      "bytes": 193524,
+      "sha256": "31c74bba60c229a8a8d4ac320a587b10d51d10f108d9efb97bd7ec26a7e250b2"
+    },
+    {
+      "path": "results/figures_safe/phase5/synthetic_192row_final_adapter.pdf",
+      "classification": "safe",
+      "bytes": 22238,
+      "sha256": "82a81c1f9e7a12cfb6f8935c3f7dd67d11b99974a5f2cda4f7c1e0ecece922c2"
+    },
+    {
+      "path": "results/compliance/final_scoring_authorization.json",
+      "classification": "safe",
+      "bytes": 811,
+      "sha256": "3e3fc843dc9ae1fa4b846a3e3c99a18845c312acc781c4da4d2cbf31a85ce1e9"
+    },
+    {
+      "path": "results/final_inference_audit/final_scoring_inference_manifest.json",
+      "classification": "safe_metadata",
+      "bytes": 1874,
+      "sha256": "3e092cc9e7f54fac6406ca65c1910f2e6256dc02b22caaf0c53c329cf34f9f1a"
+    },
+    {
+      "path": "results/final_inference_audit/final_scoring_inference.log",
+      "classification": "safe_log",
+      "bytes": 1749,
+      "sha256": "87f5550de6f62fcd7e3838c5b23ef862d92163bb1a8483764da3b34a7f515ebe"
+    },
+    {
+      "path": "results/final_inference_audit/final_submission_independent_audit.json",
+      "classification": "safe_metadata",
+      "bytes": 905,
+      "sha256": "a67711f8c771feba878516ede822d05c5e66ce3229b933c7c6a4e7119cc7f484"
+    },
+    {
+      "path": "results/final_inference_audit/final_submission_independent_audit.log",
+      "classification": "safe_log",
+      "bytes": 877,
+      "sha256": "d1c65fbb62b2df10450842f76a8068882ebb99b5382ad57f685491013ad991ea"
+    },
+    {
+      "path": "results/submissions/final/AIC-gas_gas_predict_prelim.zip",
+      "classification": "private_submission",
+      "bytes": 10809,
+      "sha256": "f0884ebbd8a6a2fbd163c321f8713df4cbbbfb7befc2b565c7d2deda74c9b112"
+    },
+    {
+      "path": "results/submissions/final/diagnostics/final_forecast_diagnostics.png",
+      "classification": "private_prediction_figure",
+      "bytes": 263723,
+      "sha256": "9bbe935499afed88755bb70768615c137957be93630cf0cd9e7b829453770996"
+    },
+    {
+      "path": "docs/experimental_docs/forecasting/09_最终评分只读推理与提交验包实验报告.md",
+      "classification": "safe",
+      "bytes": 7791,
+      "sha256": "f0b960fd49ee3f5c2489f704cb112b416e1f5d20307d6304ab024fb8ae310e9e"
+    },
+    {
+      "path": "results/repository_validation/release_v0.7.0-submission-rc1_verification.json",
+      "classification": "safe_metadata",
+      "bytes": 354,
+      "sha256": "fc4df17bb499d9cc88cee58374d8e89001e8575fbd322a88d4391a8dc09598bf"
+    },
+    {
+      "path": "results/repository_validation/release_v0.7.0-submission-rc1_verification_history.txt",
+      "classification": "safe_log",
+      "bytes": 2022,
+      "sha256": "c77833f4284ee64d08b65413e2f5f7e7f3dc34188611dce2715179397f2a27a1"
+    },
+    {
+      "path": "results/repository_validation/release_v0.7.0-submission-rc2_verification.json",
+      "classification": "safe_metadata",
+      "bytes": 354,
+      "sha256": "3d0e9f2d4fa3685cdf6b61780669043554a5dd931ae056cc008f57c02cbb1b7f"
+    }
+  ]
+}

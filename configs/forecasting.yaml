@@ -4,7 +4,7 @@ primary_metric: mape
 post_selection_oof_mape_percent: 5.4671
 retrospective_nested_outer_mape_percent: 4.7149
 retrospective_nested_outer_score: 0.9528506
-production_bundle_status: validated_pending_submission_pipeline
+production_bundle_status: final_scoring_inference_completed
 training_device: cuda
 inference_device: auto
 random_seed: 42

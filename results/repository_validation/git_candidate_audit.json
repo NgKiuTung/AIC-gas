@@ -1,65 +1,85 @@
 {
-  "created_utc": "2026-08-14T05:05:53.367240+00:00",
+  "created_utc": "2026-08-14T06:52:59.955767+00:00",
   "dataset_pathspec_used": false,
   "external_scoring_data_accessed": false,
-  "candidate_files": 14,
-  "candidate_bytes": 36354,
+  "candidate_files": 19,
+  "candidate_bytes": 266586,
   "largest_candidates": [
     {
-      "path": "codefiles/pipelines/run_production_refit.py",
-      "bytes": 9289
+      "path": "results/figures_safe/phase5/synthetic_192row_final_adapter.png",
+      "bytes": 193524
     },
     {
-      "path": "codefiles/pipelines/validate_production_bundle.py",
-      "bytes": 8297
+      "path": "results/figures_safe/phase5/synthetic_192row_final_adapter.pdf",
+      "bytes": 22238
     },
     {
-      "path": "docs/experimental_docs/forecasting/06_生产模型重训与重载一致性实验报告.md",
-      "bytes": 4059
+      "path": "codefiles/tools/rehearse_final_scoring_adapter.py",
+      "bytes": 7406
     },
     {
-      "path": "codefiles/tools/audit_hierarchy_projection.py",
-      "bytes": 3084
+      "path": "docs/experimental_docs/forecasting/09_最终评分只读推理与提交验包实验报告.md",
+      "bytes": 6821
     },
     {
-      "path": "codefiles/src/gas_power/forecasting/production.py",
-      "bytes": 3033
+      "path": "codefiles/pipelines/run_final_scoring_inference.py",
+      "bytes": 5766
     },
     {
-      "path": "codefiles/tests/unit/test_production_forecasting.py",
-      "bytes": 2419
+      "path": "codefiles/src/gas_power/data/raw_inputs.py",
+      "bytes": 5273
     },
     {
-      "path": "results/production_validation/production_model_manifest.json",
-      "bytes": 2211
+      "path": "codefiles/tools/audit_final_submission.py",
+      "bytes": 4843
     },
     {
-      "path": "results/production_validation/production_bundle_checks.csv",
-      "bytes": 1250
+      "path": "results/phase5_final_adapter_validation/phase5_artifact_manifest.json",
+      "bytes": 3539
     },
     {
-      "path": "results/compliance/phase2_model_gate.json",
-      "bytes": 659
+      "path": "codefiles/src/gas_power/forecasting/final_inference.py",
+      "bytes": 3076
     },
     {
-      "path": "results/production_validation/hierarchy_projection_audit.json",
-      "bytes": 606
+      "path": "codefiles/tools/finalize_phase5_artifacts.py",
+      "bytes": 3076
     },
     {
-      "path": "results/production_validation/production_bundle_validation_summary.json",
-      "bytes": 467
+      "path": "codefiles/tests/unit/test_raw_inputs.py",
+      "bytes": 2089
     },
     {
-      "path": "results/production_validation/component_reload_parity.csv",
-      "bytes": 366
+      "path": "results/final_inference_audit/final_scoring_inference_manifest.json",
+      "bytes": 1874
     },
     {
-      "path": "results/production_validation/phase2_refit_summary.json",
-      "bytes": 364
+      "path": "results/final_inference_audit/final_scoring_inference.log",
+      "bytes": 1749
     },
     {
-      "path": "results/compliance/git_audit/phase2_final.json",
-      "bytes": 250
+      "path": "results/phase5_final_adapter_validation/synthetic_final_adapter_rehearsal_summary.json",
+      "bytes": 1282
+    },
+    {
+      "path": "results/phase5_final_adapter_validation/synthetic_final_adapter_rehearsal.log",
+      "bytes": 1184
+    },
+    {
+      "path": "results/final_inference_audit/final_submission_independent_audit.json",
+      "bytes": 905
+    },
+    {
+      "path": "results/final_inference_audit/final_submission_independent_audit.log",
+      "bytes": 877
+    },
+    {
+      "path": "results/compliance/final_scoring_authorization.json",
+      "bytes": 811
+    },
+    {
+      "path": "results/compliance/git_audit/phase5-prestage.json",
+      "bytes": 253
     }
   ],
   "files_over_10_mib": []
