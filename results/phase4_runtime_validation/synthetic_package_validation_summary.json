@@ -1,0 +1,18 @@
+{
+  "zip_path": "D:\\26AIC\\results\\phase4_runtime_validation\\synthetic_contract_test_gas_predict_prelim.zip",
+  "zip_sha256": "d071f6c66f4420c140cf00bbee6091ab444e325378d4ec7938ee65367fdee100",
+  "zip_members": [
+    "result.csv"
+  ],
+  "csv_bytes": 2749,
+  "rows": 16,
+  "columns": 17,
+  "prediction_columns": 16,
+  "utf8": true,
+  "minimum_three_decimals": true,
+  "all_checks_pass": true,
+  "created_utc": "2026-08-14T05:53:49.757608+00:00",
+  "input_scope": "synthetic predictions only",
+  "official_scoring_data_accessed": false,
+  "formal_submission": false
+}

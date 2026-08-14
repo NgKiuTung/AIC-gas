@@ -23,6 +23,9 @@ PHASE1_PRIVATE_PATHS = (
 PHASE2_PRIVATE_PATHS = (
     ROOT / "results" / "models" / "production_forecaster",
     ROOT / "results" / "training" / "logs" / "production_refit.log",
+    ROOT / "results" / "preprocessing" / "processed" / "preprocessed_train_causal.csv",
+    ROOT / "results" / "features" / "train_supervised_features_cleaning_enhanced.pkl",
+    ROOT / "results" / "features" / "feature_catalog_cleaning_enhanced.csv",
 )
 
 

@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-08-14T05:59:56.282101+00:00",
+  "version": "v0.5.0-inference",
+  "git_commit": "5386882516fb5a45af886a22841e79f8440fe7e6",
+  "python_image": "python:3.10-slim",
+  "python_image_id": "sha256:a45c323edaa44976ef63b9a85e0d3bd7bbf31676029dccfbc119f88a65311852",
+  "container_total_seconds": 60.4956557000005,
+  "container_returncode": 0,
+  "repository_snapshot_sha256": "bf64f2b4fa30f6c8783b2c1c3248759022e0c34f1da409d08c2329fe96de9e9c",
+  "private_artifacts_sha256": "dff607f765a9aafdb39db3c1aaaf6e8299c98e5363e8211891bf9aee0908c378",
+  "sandbox_repository_members": 415,
+  "sandbox_private_members": 8,
+  "runtime_supplements": [
+    {
+      "path": "results/preprocessing/processed/preprocessed_train_causal.csv",
+      "bytes": 5526258,
+      "sha256": "8d9459f6658a4501cb5837b0412c061a23b40ddcc632af6e00e33355f6fc3eb2",
+      "scope": "training-derived; no raw or scoring rows"
+    },
+    {
+      "path": "results/features/train_supervised_features_cleaning_enhanced.pkl",
+      "bytes": 78201894,
+      "sha256": "313e485a2b6cb763af83cff9344a7d13f581ee17840c26a11a18100667a84f7f",
+      "scope": "training-derived; no raw or scoring rows"
+    }
+  ],
+  "forbidden_data_members": [],
+  "scoring_directory_mounted": false,
+  "official_scoring_data_accessed": false,
+  "inner_phase3_summary": {
+    "created_utc": "2026-08-14T05:59:55.210609+00:00",
+    "official_scoring_data_accessed": false,
+    "official_alignment": {
+      "reference_time_information_only": true,
+      "forecast_horizons_15_to_120_minutes": true,
+      "targets": [
+        "generator_1",
+        "generator_all"
+      ],
+      "submission_result_created": false
+    },
+    "training_replay": {
+      "rows_expected": 10832,
+      "rows_aligned": 10832,
+      "feature_count": 801,
+      "max_abs_difference": 0.0,
+      "tolerance": 1e-09,
+      "all_features_match": true,
+      "seconds": 6.937161704000005
+    },
+    "synthetic_end_to_end": {
+      "raw_rows": 800,
+      "feature_count": 801,
+      "prediction_origins": 16,
+      "forecast_horizons_minutes": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120
+      ],
+      "finite_features": true,
+      "finite_predictions": true,
+      "hierarchy_satisfied": true,
+      "future_mutation_feature_max_abs_difference": 0.0,
+      "future_independence_pass": true,
+      "seconds": 3.78837471199995
+    },
+    "figures": [
+      "results/figures_safe/phase3/synthetic_end_to_end_forecasts.png",
+      "results/figures_safe/phase3/synthetic_end_to_end_forecasts.pdf"
+    ],
+    "all_passed": true
+  },
+  "python310_full_validation_pass": true,
+  "figures": [
+    "results\\figures_safe\\phase4\\python310_runtime_validation.png",
+    "results\\figures_safe\\phase4\\python310_runtime_validation.pdf"
+  ]
+}
