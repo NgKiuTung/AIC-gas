@@ -1,0 +1,51 @@
+protocol_id: nested_temporal_pseudotest_v1
+frozen_date: 2026-08-14
+status: preregistered_before_execution
+official_alignment:
+  training_period: [2025-01-01, 2025-04-30]
+  scoring_period: [2025-05-01, 2025-05-02]
+  horizon_minutes: [15, 30, 45, 60, 75, 90, 105, 120]
+  primary_metric: mape
+  score: 1-mape
+  future_information_allowed: false
+  scoring_data_allowed: false
+outer_gap_minutes: 120
+outer_windows:
+  - {name: outer_01, start: "2025-04-01 00:00:00", end: "2025-04-02 21:45:00"}
+  - {name: outer_02, start: "2025-04-08 00:00:00", end: "2025-04-09 21:45:00"}
+  - {name: outer_03, start: "2025-04-15 00:00:00", end: "2025-04-16 21:45:00"}
+  - {name: outer_04, start: "2025-04-22 00:00:00", end: "2025-04-23 21:45:00"}
+  - {name: outer_05, start: "2025-04-29 00:00:00", end: "2025-04-30 21:45:00"}
+candidate_family:
+  component_weights:
+    - {name: d5, d5: 1.0, d4: 0.0, d6: 0.0}
+    - {name: d4, d5: 0.0, d4: 1.0, d6: 0.0}
+    - {name: d6, d5: 0.0, d4: 0.0, d6: 1.0}
+    - {name: d5_d6, d5: 0.5, d4: 0.0, d6: 0.5}
+    - {name: equal, d5: 0.3333333333333333, d4: 0.3333333333333333, d6: 0.3333333333333333}
+  thresholds: [0.0, 0.03, 0.08, 0.12]
+  gate_floors: [0.25, 0.5, 0.75]
+  beta_endpoints:
+    - [0.25, 0.25]
+    - [0.5, 0.5]
+    - [0.75, 0.75]
+    - [1.0, 1.0]
+    - [0.5, 0.25]
+    - [0.75, 0.5]
+    - [1.0, 0.75]
+    - [0.55, 0.45]
+    - [1.0, 0.8]
+  include_persistence: true
+selection:
+  inner_scope: all available causal OOF rows before outer_start-minus-gap
+  ranking_metric: mean_absolute_percentage_error
+  tie_break: lexical_candidate_id
+  final_model_spec: rerun_the_same_selection_rule_on_all_training_only_oof_rows
+reporting:
+  outer_metrics_are_used_for_evaluation_only: true
+  select_final_candidate_from_outer_scores: false
+  distinguish_post_selection_oof_from_nested_outer_estimate: true
+limitations:
+  - Historical component architectures were informed by earlier experiments on these dates.
+  - The outer windows are retrospective pseudo-tests, not a never-observed holdout.
+  - This protocol becomes binding for model changes made after this freeze point.
