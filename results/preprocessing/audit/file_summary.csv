@@ -1,0 +1,5 @@
+﻿split,file,relative_path,size_bytes,sha256,encoding,rows,columns,datetime_column,datetime_invalid,datetime_min,datetime_max,duplicate_timestamps,duplicate_rows,off_15min_grid
+train,Pre_gas.csv,dataset\初赛-数据集\Pre_gas.csv,1647659,6af59cdf90a7986a99a28171c75d9e1653a8d9270247908dbade81f429b50dc3,utf-8-sig,11519,16,datetime,0,2025-01-01T00:00:00,2025-05-01T00:00:00,0,0,0
+train,Pre_gas_holder.csv,dataset\初赛-数据集\Pre_gas_holder.csv,365230,42929b4815f06f703e3a2504ac1d6c07a47677817687e378c7cd45935e40b3f1,utf-8-sig,11519,3,datetime,0,2025-01-01T00:00:00,2025-05-01T00:00:00,0,0,0
+train,Pre_gas_user.csv,dataset\初赛-数据集\Pre_gas_user.csv,787785,677a6b9e40349d144dc7c78985110131a291e859cf74d46d1e71bbf6de13ac92,utf-8-sig,11518,8,datetime,0,2025-01-01T00:00:00,2025-05-01T00:00:00,0,0,0
+train,Pre_load.csv,dataset\初赛-数据集\Pre_load.csv,765459,64c68d5e325a6aad40530f533110161205ed207adfb9ab27a28f4b762e6a5458,utf-8-sig,11519,6,datetime,0,2025-01-01T00:00:00,2025-05-01T00:00:00,0,0,0

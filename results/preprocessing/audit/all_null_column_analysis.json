@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-08-03T10:29:56.113636+00:00",
+  "source": "official training CSV files only",
+  "official_test_accessed": false,
+  "conclusions": [
+    {
+      "column": "blast_furnace_3",
+      "semantic_meaning": "3号高炉煤气发生量",
+      "training_observations": 0,
+      "analogous_observed_columns": [
+        "blast_furnace_1",
+        "blast_furnace_2",
+        "blast_furnace_4",
+        "blast_furnace_5"
+      ],
+      "direct_supervised_model_possible": false,
+      "identifiable_from_official_training_data": false,
+      "reason": "No target observations and no independently observed family total or exact conservation residual. Analogue models can test redundancy but cannot determine this missing unit's scale or regime.",
+      "recommended_action": "Do not fabricate the raw column. Exclude it from model inputs, retain an availability record, and use aggregates/counts over observed sibling sensors instead.",
+      "proxy_experiment_count": 4
+    },
+    {
+      "column": "air_heater_3",
+      "semantic_meaning": "3号热风炉高炉煤气消耗量",
+      "training_observations": 0,
+      "analogous_observed_columns": [
+        "air_heater_1",
+        "air_heater_2",
+        "air_heater_4",
+        "air_heater_5"
+      ],
+      "direct_supervised_model_possible": false,
+      "identifiable_from_official_training_data": false,
+      "reason": "No target observations and no independently observed family total or exact conservation residual. Analogue models can test redundancy but cannot determine this missing unit's scale or regime.",
+      "recommended_action": "Do not fabricate the raw column. Exclude it from model inputs, retain an availability record, and use aggregates/counts over observed sibling sensors instead.",
+      "proxy_experiment_count": 4
+    },
+    {
+      "column": "converter_user3",
+      "semantic_meaning": "转炉煤气用户3消耗量",
+      "training_observations": 0,
+      "analogous_observed_columns": [
+        "converter_user1",
+        "converter_user2"
+      ],
+      "direct_supervised_model_possible": false,
+      "identifiable_from_official_training_data": false,
+      "reason": "No target observations and no independently observed family total or exact conservation residual. Analogue models can test redundancy but cannot determine this missing unit's scale or regime.",
+      "recommended_action": "Do not fabricate the raw column. Exclude it from model inputs, retain an availability record, and use aggregates/counts over observed sibling sensors instead.",
+      "proxy_experiment_count": 2
+    },
+    {
+      "column": "blast_furnace_gas_holder_1",
+      "semantic_meaning": "1号高炉煤气柜瞬时柜容",
+      "training_observations": 0,
+      "analogous_observed_columns": [
+        "blast_furnace_gas_holder_2"
+      ],
+      "direct_supervised_model_possible": false,
+      "identifiable_from_official_training_data": false,
+      "reason": "No target observations and no independently observed family total or exact conservation residual. Analogue models can test redundancy but cannot determine this missing unit's scale or regime.",
+      "recommended_action": "Do not fabricate the raw column. Exclude it from model inputs, retain an availability record, and use aggregates/counts over observed sibling sensors instead.",
+      "proxy_experiment_count": 0
+    }
+  ],
+  "overall_decision": "All four training-all-null columns remain excluded. Model-based filling is not statistically identifiable from the supplied training data and would create unverifiable synthetic signals."
+}

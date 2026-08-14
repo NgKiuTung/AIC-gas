@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-08-03T12:35:10.603303+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Python313\\python.exe",
+  "modules": {
+    "numpy": {
+      "installed": true,
+      "version": "2.3.5"
+    },
+    "pandas": {
+      "installed": true,
+      "version": "2.2.2"
+    },
+    "scipy": {
+      "installed": true,
+      "version": "1.16.1"
+    },
+    "sklearn": {
+      "installed": true,
+      "version": "1.7.1"
+    },
+    "xgboost": {
+      "installed": true,
+      "version": "3.0.5"
+    },
+    "lightgbm": {
+      "installed": true,
+      "version": "4.6.0"
+    },
+    "catboost": {
+      "installed": false,
+      "error": "ModuleNotFoundError: No module named 'catboost'"
+    },
+    "torch": {
+      "installed": true,
+      "version": "2.11.0+cu128",
+      "cuda_available": true,
+      "cuda_version": "12.8",
+      "gpu_count": 1,
+      "gpu_names": [
+        "NVIDIA GeForce RTX 4060 Laptop GPU"
+      ]
+    }
+  },
+  "nvidia_smi": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 566.14, 8188, 6658, 8.9",
+    "stderr": ""
+  }
+}

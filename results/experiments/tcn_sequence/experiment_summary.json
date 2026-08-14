@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-08-03T13:43:54.630498+00:00",
+  "source_scope": "causal preprocessed training sequences only",
+  "external_scoring_data_accessed": false,
+  "model": "causal TCN",
+  "sequence_length": 96,
+  "sequence_features": 99,
+  "epochs": 32,
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "beta_h15": 0.0,
+      "beta_h120": 0.05,
+      "mean_mape": 0.06432398734554388
+    },
+    {
+      "target": "generator_all",
+      "beta_h15": 0.1,
+      "beta_h120": 0.05,
+      "mean_mape": 0.05087039981816219
+    }
+  ],
+  "persistence_mape": 0.05805044029249797,
+  "model_mape": 0.057597193581853036,
+  "score": 0.942402806418147
+}

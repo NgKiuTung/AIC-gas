@@ -1,0 +1,19 @@
+name: code-quality
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements/base.txt -r requirements/dev.txt
+      - run: pip install -e .
+      - run: ruff check codefiles/src codefiles/pipelines codefiles/tests codefiles/tools
+      - run: python codefiles/tools/audit_sensitive_git_content.py --check --no-write
+      - run: pytest

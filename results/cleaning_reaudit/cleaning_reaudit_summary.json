@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-03T13:24:05.583952+00:00",
+  "source_scope": "raw and processed training data plus training-only OOF predictions",
+  "external_scoring_data_accessed": false,
+  "raw_rows_union": 11519,
+  "columns_audited": 29,
+  "observed_values_changed_by_current_cleaning": 0,
+  "missing_values_filled": 97,
+  "target_hierarchy_violations": 0,
+  "target_zero_counts": {
+    "generator_1": 0,
+    "generator_all": 0
+  },
+  "quality_association_table": "oof_error_by_data_quality.csv"
+}

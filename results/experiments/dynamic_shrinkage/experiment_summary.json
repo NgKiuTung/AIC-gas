@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-08-03T13:53:42.628597+00:00",
+  "source_scope": "training-only OOF corrections from selected cleaning feature model",
+  "external_scoring_data_accessed": false,
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "threshold": 0.08,
+      "gate_floor": 0.75,
+      "beta_h15": 0.5,
+      "beta_h120": 0.4,
+      "mean_mape": 0.06268510910247412
+    },
+    {
+      "target": "generator_all",
+      "threshold": 0.08,
+      "gate_floor": 0.25,
+      "beta_h15": 1.0,
+      "beta_h120": 0.75,
+      "mean_mape": 0.04678573853854992
+    }
+  ],
+  "persistence_mape": 0.05805044027869182,
+  "model_mape": 0.05473542382051202,
+  "score": 0.945264576179488
+}

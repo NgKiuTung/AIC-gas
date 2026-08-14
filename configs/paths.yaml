@@ -1,0 +1,8 @@
+project_root: .
+training_data_dir: dataset/初赛-数据集
+forbidden_scoring_data_dir: dataset/初赛-评分所用测试集
+results_dir: results
+models_dir: results/models
+cache_dir: results/cache
+experiment_registry: results/registry/experiment_registry.csv
+

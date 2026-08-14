@@ -1,0 +1,9 @@
+﻿model,target,day_night,samples,mape
+base_features,generator_1,day_07_19,17223,0.06547636323541664
+base_features,generator_1,night_19_07,17201,0.06286379973223451
+base_features,generator_all,day_07_19,17223,0.0481343106313584
+base_features,generator_all,night_19_07,17201,0.047224097737994755
+time_augmented,generator_1,day_07_19,17223,0.06546798277849719
+time_augmented,generator_1,night_19_07,17201,0.06285050940226941
+time_augmented,generator_all,day_07_19,17223,0.04836280968280318
+time_augmented,generator_all,night_19_07,17201,0.047280587751809044

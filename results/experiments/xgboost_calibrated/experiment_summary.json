@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-08-03T12:47:34.002809+00:00",
+  "source": "results\\features\\train_supervised_features.pkl",
+  "source_scope": "causal_preprocessed_training_data_only",
+  "external_scoring_data_accessed": false,
+  "calibration_protocol": "for each evaluation fold, choose target/horizon beta using the other folds only",
+  "beta_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "parameters": {
+    "n_estimators": 350,
+    "max_depth": 5,
+    "learning_rate": 0.025,
+    "min_child_weight": 30,
+    "subsample": 0.85,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 2.0,
+    "reg_lambda": 30.0
+  },
+  "best": {
+    "model": "xgb_fixed_beta_0.25",
+    "mean_mape": 0.05686431402417172,
+    "std_mape": 0.022084987977649812,
+    "worst_mape": 0.0987644214794674,
+    "mean_score": 0.9431356859758283
+  },
+  "persistence_mape": 0.05805044017541546,
+  "relative_mape_reduction_vs_persistence": 0.020432681434620206
+}

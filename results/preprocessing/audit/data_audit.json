@@ -1,0 +1,685 @@
+{
+  "run_started_utc": "2026-08-03T10:32:51.182001+00:00",
+  "run_finished_utc": "2026-08-03T10:32:51.576104+00:00",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "pandas": "2.2.2",
+  "numpy": "2.3.5",
+  "source_roots": {
+    "train": "dataset\\初赛-数据集"
+  },
+  "files": [
+    {
+      "split": "train",
+      "file": "Pre_gas.csv",
+      "relative_path": "dataset\\初赛-数据集\\Pre_gas.csv",
+      "size_bytes": 1647659,
+      "sha256": "6af59cdf90a7986a99a28171c75d9e1653a8d9270247908dbade81f429b50dc3",
+      "encoding": "utf-8-sig",
+      "rows": 11519,
+      "columns": 16,
+      "column_names": [
+        "datetime",
+        "blast_furnace_1",
+        "blast_furnace_2",
+        "blast_furnace_3",
+        "blast_furnace_4",
+        "blast_furnace_5",
+        "coke_oven_1",
+        "converter_1",
+        "air_heater_1",
+        "air_heater_2",
+        "air_heater_3",
+        "air_heater_4",
+        "air_heater_5",
+        "into_gas_mixed_coke",
+        "into_gas_mixed_blast_furnace",
+        "into_gas_mixed_converter"
+      ],
+      "datetime_column": "datetime",
+      "datetime_invalid": 0,
+      "datetime_min": "2025-01-01T00:00:00",
+      "datetime_max": "2025-05-01T00:00:00",
+      "duplicate_timestamps": 0,
+      "duplicate_rows": 0,
+      "off_15min_grid": 0,
+      "interval_minutes_counts": {
+        "15.0": 11517,
+        "45.0": 1
+      },
+      "numeric_columns": [
+        "blast_furnace_1",
+        "blast_furnace_2",
+        "blast_furnace_4",
+        "blast_furnace_5",
+        "coke_oven_1",
+        "converter_1",
+        "air_heater_1",
+        "air_heater_2",
+        "air_heater_4",
+        "air_heater_5",
+        "into_gas_mixed_coke",
+        "into_gas_mixed_blast_furnace",
+        "into_gas_mixed_converter"
+      ]
+    },
+    {
+      "split": "train",
+      "file": "Pre_gas_holder.csv",
+      "relative_path": "dataset\\初赛-数据集\\Pre_gas_holder.csv",
+      "size_bytes": 365230,
+      "sha256": "42929b4815f06f703e3a2504ac1d6c07a47677817687e378c7cd45935e40b3f1",
+      "encoding": "utf-8-sig",
+      "rows": 11519,
+      "columns": 3,
+      "column_names": [
+        "datetime",
+        "blast_furnace_gas_holder_1",
+        "blast_furnace_gas_holder_2"
+      ],
+      "datetime_column": "datetime",
+      "datetime_invalid": 0,
+      "datetime_min": "2025-01-01T00:00:00",
+      "datetime_max": "2025-05-01T00:00:00",
+      "duplicate_timestamps": 0,
+      "duplicate_rows": 0,
+      "off_15min_grid": 0,
+      "interval_minutes_counts": {
+        "15.0": 11517,
+        "45.0": 1
+      },
+      "numeric_columns": [
+        "blast_furnace_gas_holder_2"
+      ]
+    },
+    {
+      "split": "train",
+      "file": "Pre_gas_user.csv",
+      "relative_path": "dataset\\初赛-数据集\\Pre_gas_user.csv",
+      "size_bytes": 787785,
+      "sha256": "677a6b9e40349d144dc7c78985110131a291e859cf74d46d1e71bbf6de13ac92",
+      "encoding": "utf-8-sig",
+      "rows": 11518,
+      "columns": 8,
+      "column_names": [
+        "datetime",
+        "blast_furnace_user1",
+        "blast_furnace_user2",
+        "blast_furnace_user3",
+        "blast_furnace_user4",
+        "converter_user1",
+        "converter_user2",
+        "converter_user3"
+      ],
+      "datetime_column": "datetime",
+      "datetime_invalid": 0,
+      "datetime_min": "2025-01-01T00:00:00",
+      "datetime_max": "2025-05-01T00:00:00",
+      "duplicate_timestamps": 0,
+      "duplicate_rows": 0,
+      "off_15min_grid": 0,
+      "interval_minutes_counts": {
+        "15.0": 11515,
+        "30.0": 1,
+        "45.0": 1
+      },
+      "numeric_columns": [
+        "blast_furnace_user1",
+        "blast_furnace_user2",
+        "blast_furnace_user3",
+        "blast_furnace_user4",
+        "converter_user1",
+        "converter_user2"
+      ]
+    },
+    {
+      "split": "train",
+      "file": "Pre_load.csv",
+      "relative_path": "dataset\\初赛-数据集\\Pre_load.csv",
+      "size_bytes": 765459,
+      "sha256": "64c68d5e325a6aad40530f533110161205ed207adfb9ab27a28f4b762e6a5458",
+      "encoding": "utf-8-sig",
+      "rows": 11519,
+      "columns": 6,
+      "column_names": [
+        "datetime",
+        "generator_all",
+        "generator_1",
+        "generator_use_blast_furnace_gas",
+        "generator_use_coke_gas",
+        "generator_use_converter_gas"
+      ],
+      "datetime_column": "datetime",
+      "datetime_invalid": 0,
+      "datetime_min": "2025-01-01T00:00:00",
+      "datetime_max": "2025-05-01T00:00:00",
+      "duplicate_timestamps": 0,
+      "duplicate_rows": 0,
+      "off_15min_grid": 0,
+      "interval_minutes_counts": {
+        "15.0": 11517,
+        "45.0": 1
+      },
+      "numeric_columns": [
+        "generator_all",
+        "generator_1",
+        "generator_use_blast_furnace_gas",
+        "generator_use_coke_gas",
+        "generator_use_converter_gas"
+      ]
+    }
+  ],
+  "workbooks": [
+    {
+      "file": "data_dictionary.xlsx",
+      "relative_path": "dataset\\初赛-数据集\\data_dictionary.xlsx",
+      "size_bytes": 12942,
+      "sha256": "feba3582133aeda5a55a6645a18586250d397a340ad5d7d4b90dbd71f5bd9d5e",
+      "sheets": [
+        {
+          "sheet": "初赛复赛",
+          "rows": 7,
+          "columns": 7,
+          "nonempty_rows": 7,
+          "nonempty_columns": 6,
+          "sample_first_20_rows": [
+            [
+              "初赛",
+              null,
+              null,
+              "复赛",
+              null,
+              null
+            ],
+            [
+              "初赛数据文件前缀： Pre",
+              null,
+              null,
+              "复赛数据文件前缀： Semi",
+              null,
+              null
+            ],
+            [
+              "gas.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气的发生量和消耗量等字段。",
+              "gas.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气的发生量和消耗量等字段。"
+            ],
+            [
+              "gas_holder.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气气柜容量等字段。",
+              "gas_holder.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气气柜容量等字段。"
+            ],
+            [
+              "gas_user.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气用户的消耗量等字段。",
+              "gas_user.csv",
+              "分钟级",
+              "包含高炉、焦炉、转炉煤气用户的消耗量等字段。"
+            ],
+            [
+              "load.csv",
+              "分钟级",
+              "包含发电负荷等字段。",
+              "load.csv",
+              "分钟级",
+              "包含发电负荷等字段。"
+            ],
+            [
+              "江苏省电价峰谷时段划分图片",
+              "图片",
+              "江苏省1月至12月电价时段划分示意图",
+              "江苏省电价峰谷时段划分图片",
+              "图片",
+              "江苏省1月至12月电价时段划分示意图"
+            ]
+          ]
+        },
+        {
+          "sheet": "数据说明",
+          "rows": 23,
+          "columns": 3,
+          "nonempty_rows": 19,
+          "nonempty_columns": 3,
+          "sample_first_20_rows": [
+            [
+              "文件名称",
+              "列名",
+              "说明"
+            ],
+            [
+              "gas.csv",
+              "blast_furnace_1",
+              "1号高炉煤气发生量。"
+            ],
+            [
+              null,
+              "air_heater_1",
+              "1号热风炉的高炉煤气消耗量。热风炉作为高炉冶炼的重要附属设备，为高炉冶炼提供热量，但与此同时也消耗了高炉煤气。热风炉编号与高炉编号一一对应，例如1号热风炉只会消耗1号高炉生产的煤气。"
+            ],
+            [
+              null,
+              "coke_oven_1",
+              "1号焦炉煤气发生量。"
+            ],
+            [
+              null,
+              "converter_1",
+              "1号转炉煤气发生量。"
+            ],
+            [
+              null,
+              "into_gas_mixed_blast_furnace",
+              "进混气站的高炉煤气量。"
+            ],
+            [
+              null,
+              "into_gas_mixed_coke",
+              "进混气站的焦炉煤气量。"
+            ],
+            [
+              null,
+              "into_gas_mixed_converter",
+              "进混气站的转炉煤气量。"
+            ],
+            [
+              "gas_holder.csv",
+              "blast_furnace_gas_holder_1",
+              "1号高炉气柜。气柜的作用是存储高炉煤气和稳定管网压力，可存储多个高炉的煤气。"
+            ],
+            [
+              "gas_user.csv",
+              "blast_furnace_user1",
+              "高炉煤气用户1。消耗高炉煤气，需要优先供应高炉煤气，以保证正常生产。"
+            ],
+            [
+              null,
+              "converter_user1",
+              "转炉煤气用户1。消耗转炉煤气，掺烧转气的目的是保证生产排放达标。"
+            ],
+            [
+              null,
+              "mixed_gas_user1",
+              "混气用户1。除了直接使用煤气的用户外，还有些用户需要使用混合煤气（高炉、焦炉、转炉混合），需要优先供应混合煤气，以保证正常生产。"
+            ],
+            [
+              "load.csv",
+              "generator_1",
+              "发电机组1负荷。发电机组有装机容量，正常运行下发电负荷在60%-100%。本数据为4套50MW机组的总和。"
+            ],
+            [
+              null,
+              "generator_all",
+              "发电机组总负荷，包含发电机组1负荷。"
+            ],
+            [
+              null,
+              "generator_use_blast_furnace_gas",
+              "发电消耗的高炉煤气量"
+            ],
+            [
+              null,
+              "generator_use_coke_gas",
+              "发电消耗的焦炉煤气量"
+            ],
+            [
+              null,
+              "generator_use_converter_gas",
+              "发电消耗的转炉煤气量"
+            ],
+            [
+              "煤气系统构成：高炉煤气、转炉煤气、焦炉煤气的产生源、输送网络、存储及放散设施。\n煤气尽可能不要放散（浪费）。\n煤气优先供给热风炉、加热炉等使用，确保主体生产正常，富余的煤气用于发电。\n煤气柜有容量限制（上下限）。本场景高炉煤气柜容量分别为20万和30万立方米。高炉煤气柜，进出口只有一个管道，所以流量有流入或流出。\n煤气柜柜容，指的是煤气柜中存储的瞬时煤气总量。煤气流入，柜容增加，煤气流出，柜容减少。\n发电机组有装机容量，正常运行下发电负荷在60%-100%。\n煤气发电负荷是所有煤气发电机组瞬时发电有功功率之和。\n进线侧电力供需平衡，防止反送电。关注最大需量，及时调度生产节奏。\n峰谷时段的运行策略：高峰时段错峰生产发电多发、低谷时段多生产。\n\n",
+              null,
+              null
+            ],
+            [
+              "初赛提交结果要求：1. 所有字段和变量名为英文； 2. 提交.json格式结果，字段必须包含columns和data。",
+              null,
+              null
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "price.xlsx",
+      "relative_path": "dataset\\初赛-数据集\\price.xlsx",
+      "size_bytes": 11769,
+      "sha256": "fc12dddbbbcb1f7947b5e88d080a6c912a41d29cae11381712f43da2b3a4f73b",
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "rows": 49,
+          "columns": 13,
+          "nonempty_rows": 49,
+          "nonempty_columns": 13,
+          "sample_first_20_rows": [
+            [
+              "时间",
+              "1月",
+              "2月",
+              "3月",
+              "4月",
+              "5月",
+              "6月",
+              "7月",
+              "8月",
+              "9月",
+              "10月",
+              "11月",
+              "12月"
+            ],
+            [
+              "0:00-0:30",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "0:30-1:00",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "1:00-1:30",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "1:30-2:00",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "2:00-2:30",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "2:30-3:00",
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.53,
+              0.53,
+              0.22
+            ],
+            [
+              "3:00-3:30",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "3:30-4:00",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "4:00-4:30",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "4:30-5:00",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "5:00-5:30",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "5:30-6:00",
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22
+            ],
+            [
+              "6:00-6:30",
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.53
+            ],
+            [
+              "6:30-7:00",
+              0.53,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.53,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.22,
+              0.53
+            ],
+            [
+              "7:00-7:30",
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53
+            ],
+            [
+              "7:30-8:00",
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53
+            ],
+            [
+              "8:00-8:30",
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53
+            ],
+            [
+              "8:30-9:00",
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53
+            ],
+            [
+              "9:00-9:30",
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53,
+              0.53
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "cross_table_alignment": {
+    "train": {
+      "union_timestamp_count": 11519,
+      "intersection_timestamp_count": 11518,
+      "union_min": "2025-01-01T00:00:00",
+      "union_max": "2025-05-01T00:00:00",
+      "missing_from_union_by_file": {
+        "Pre_gas.csv": 0,
+        "Pre_gas_holder.csv": 0,
+        "Pre_gas_user.csv": 1,
+        "Pre_load.csv": 0
+      }
+    }
+  },
+  "split_isolation": {
+    "policy": "Training-only audit. The official preliminary scoring test directory is not read.",
+    "official_test_accessed": false
+  }
+}

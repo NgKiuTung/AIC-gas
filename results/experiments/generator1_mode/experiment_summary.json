@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-08-03T13:58:42.654841+00:00",
+  "source_scope": "cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "features": 801,
+  "parameters": {
+    "n_estimators": 350,
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "min_child_weight": 15,
+    "subsample": 0.85,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 1.0,
+    "reg_lambda": 20.0
+  },
+  "selected": {
+    "mode_weight": 0.0,
+    "regression_weight": 1.0,
+    "beta_h15": 0.45,
+    "beta_h120": 0.35,
+    "mean_mape": 0.0626962760365395
+  },
+  "mean_mode_accuracy": 0.6128573088542877
+}

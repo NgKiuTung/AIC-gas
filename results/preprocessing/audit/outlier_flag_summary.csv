@@ -1,0 +1,26 @@
+﻿column,train_flag_count,train_flag_rate,rule
+blast_furnace_1,124,0.010762954604635014,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_2,115,0.009981772415588924,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_4,898,0.07794462286259873,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_5,269,0.02334866765037757,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+coke_oven_1,23,0.001996354483117785,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+converter_1,0,0.0,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+air_heater_1,48,0.004166305008245812,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+air_heater_2,26,0.002256748546133148,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+air_heater_4,0,0.0,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+air_heater_5,160,0.013887683360819374,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+into_gas_mixed_coke,0,0.0,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+into_gas_mixed_blast_furnace,13,0.001128374273066574,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+into_gas_mixed_converter,16,0.0013887683360819373,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_gas_holder_2,120,0.01041576252061453,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_user1,0,0.0,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_user2,415,0.03602117871712525,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_user3,660,0.057286693863379916,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+blast_furnace_user4,7,0.0006075861470358476,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+converter_user1,0,0.0,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+converter_user2,1,8.679802100512108e-05,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+generator_use_blast_furnace_gas,5,0.00043399010502560544,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+generator_use_coke_gas,1318,0.11439979168474959,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+generator_use_converter_gas,120,0.01041576252061453,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+generator_1,260,0.02256748546133148,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged
+generator_all,198,0.017186008159013975,past-only rolling 96-point median/MAD; robust_z>8; MAD=0 not flagged

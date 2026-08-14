@@ -1,0 +1,56 @@
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and tooling caches
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDE and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Competition data are local-only and must never be published
+dataset/*
+!dataset/.gitkeep
+docs/competition/official/*.pdf
+_audit_bundle/
+
+# Temporary and large reproducible artifacts
+tmp/
+results/cache/
+results/models/
+results/submissions/
+results/releases/
+results/visualizations/
+results/optimization/
+results/**/logs/
+results/features/
+results/preprocessing/processed/
+results/preprocessing/source_reading/
+results/**/*predictions*.csv
+results/**/*schedules*.csv
+results/**/*oof*.csv
+results/**/*row_level*.csv
+results/**/*search*.csv
+results/optimization/dispatch_backtest/rolling_window_metrics.csv
+results/cleaning_reaudit/largest_target_steps.csv
+results/**/raw/
+results/**/raw_*.csv
+
+# Local release payloads are retained per version but not pushed by default.
+# Their manifests, metrics, checksums, and figures remain trackable.
+*.zip
+
+# Extracted official source text is local review material, not repository content.
+results/compliance/pdf_review/

@@ -1,0 +1,231 @@
+{
+  "created_utc": "2026-08-03T13:45:36.167710+00:00",
+  "source_scope": "cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "features": 869,
+  "runtime_seconds": 63.51002850000077,
+  "top_groups": [
+    {
+      "group": "rolling",
+      "feature_count": 160,
+      "importance_sum": 0.22680071197100915,
+      "importance_mean": 0.0014175044498188072,
+      "importance_max": 0.006947504356503487
+    },
+    {
+      "group": "lag",
+      "feature_count": 209,
+      "importance_sum": 0.22614235965011176,
+      "importance_mean": 0.0010820208595699128,
+      "importance_max": 0.01068312581628561
+    },
+    {
+      "group": "smooth",
+      "feature_count": 90,
+      "importance_sum": 0.1631036132312147,
+      "importance_mean": 0.0018122623692357189,
+      "importance_max": 0.026991872116923332
+    },
+    {
+      "group": "base",
+      "feature_count": 134,
+      "importance_sum": 0.12295601807315926,
+      "importance_mean": 0.0009175822244265617,
+      "importance_max": 0.017413629218935966
+    },
+    {
+      "group": "transition",
+      "feature_count": 117,
+      "importance_sum": 0.12021722406643676,
+      "importance_mean": 0.0010274976415934765,
+      "importance_max": 0.006195887923240662
+    },
+    {
+      "group": "difference",
+      "feature_count": 57,
+      "importance_sum": 0.07109347300138324,
+      "importance_mean": 0.0012472539123049692,
+      "importance_max": 0.018431460484862328
+    },
+    {
+      "group": "clean_view",
+      "feature_count": 25,
+      "importance_sum": 0.02228503010701388,
+      "importance_mean": 0.0008914012042805553,
+      "importance_max": 0.003929715603590012
+    },
+    {
+      "group": "state",
+      "feature_count": 52,
+      "importance_sum": 0.02140327917952233,
+      "importance_mean": 0.0004116015226831217,
+      "importance_max": 0.0029567675665020943
+    },
+    {
+      "group": "mechanism_ratio",
+      "feature_count": 9,
+      "importance_sum": 0.017469436847022735,
+      "importance_mean": 0.0019410485385580817,
+      "importance_max": 0.0058599510230124
+    },
+    {
+      "group": "change_state",
+      "feature_count": 12,
+      "importance_sum": 0.006538442302643777,
+      "importance_mean": 0.0005448701918869814,
+      "importance_max": 0.0012871830258518457
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "feat_smooth_holder_span4_gap",
+      "group": "smooth",
+      "importance": 0.026991872116923332
+    },
+    {
+      "feature": "feat_smooth_p120_span96_gap",
+      "group": "smooth",
+      "importance": 0.018842866644263268
+    },
+    {
+      "feature": "feat_diff1_blast_furnace_gas_holder_2",
+      "group": "difference",
+      "importance": 0.018431460484862328
+    },
+    {
+      "feature": "feat_holder_delta_1",
+      "group": "base",
+      "importance": 0.017413629218935966
+    },
+    {
+      "feature": "feat_lag2_p120_current",
+      "group": "lag",
+      "importance": 0.01068312581628561
+    },
+    {
+      "feature": "feat_diff4_blast_furnace_gas_holder_2",
+      "group": "difference",
+      "importance": 0.008305625058710575
+    },
+    {
+      "feature": "feat_lag1_generator_all_filled",
+      "group": "lag",
+      "importance": 0.008106106892228127
+    },
+    {
+      "feature": "feat_lag1_p120_current",
+      "group": "lag",
+      "importance": 0.007524957414716482
+    },
+    {
+      "feature": "feat_smooth_pall_span96_gap",
+      "group": "smooth",
+      "importance": 0.007318961434066296
+    },
+    {
+      "feature": "feat_roll4_mean_generator_all_filled",
+      "group": "rolling",
+      "importance": 0.006947504356503487
+    },
+    {
+      "feature": "feat_holder_delta_4",
+      "group": "base",
+      "importance": 0.006599937099963427
+    },
+    {
+      "feature": "feat_transition_p120_w32_step_mean",
+      "group": "transition",
+      "importance": 0.006195887923240662
+    },
+    {
+      "feature": "feat_transition_holder_w4_step_mean",
+      "group": "transition",
+      "importance": 0.00594370486214757
+    },
+    {
+      "feature": "feat_ratio_bfg_generator_use_to_supply",
+      "group": "mechanism_ratio",
+      "importance": 0.0058599510230124
+    },
+    {
+      "feature": "feat_lag2_generator_all_filled",
+      "group": "lag",
+      "importance": 0.0055517032742500305
+    },
+    {
+      "feature": "feat_smooth_holder_span8_gap",
+      "group": "smooth",
+      "importance": 0.005376224871724844
+    },
+    {
+      "feature": "feat_smooth_p120_span32_gap",
+      "group": "smooth",
+      "importance": 0.005212082527577877
+    },
+    {
+      "feature": "feat_roll4_max_p120_current",
+      "group": "rolling",
+      "importance": 0.005128294695168734
+    },
+    {
+      "feature": "feat_roll8_mean_p120_current",
+      "group": "rolling",
+      "importance": 0.004690881352871656
+    },
+    {
+      "feature": "feat_lag2_generator_gas_total_unweighted",
+      "group": "lag",
+      "importance": 0.004630641546100378
+    },
+    {
+      "feature": "feat_p120_current",
+      "group": "base",
+      "importance": 0.0046292576007544994
+    },
+    {
+      "feature": "feat_lag3_generator_all_filled",
+      "group": "lag",
+      "importance": 0.004620512016117573
+    },
+    {
+      "feature": "feat_lag1_generator_gas_total_unweighted",
+      "group": "lag",
+      "importance": 0.004570117220282555
+    },
+    {
+      "feature": "feat_transition_pall_w32_step_mean",
+      "group": "transition",
+      "importance": 0.004279648885130882
+    },
+    {
+      "feature": "feat_cleanview_blast_furnace_gas_holder_2",
+      "group": "clean_view",
+      "importance": 0.003929715603590012
+    },
+    {
+      "feature": "feat_outlier_blast_furnace_user3",
+      "group": "base",
+      "importance": 0.003891612868756056
+    },
+    {
+      "feature": "feat_smooth_gen_bfg_span4_ewm",
+      "group": "smooth",
+      "importance": 0.003647478763014078
+    },
+    {
+      "feature": "feat_roll4_mean_p120_current",
+      "group": "rolling",
+      "importance": 0.003575719892978668
+    },
+    {
+      "feature": "feat_generator_all_filled",
+      "group": "base",
+      "importance": 0.0034618957433849573
+    },
+    {
+      "feature": "feat_smooth_pall_span8_ewm",
+      "group": "smooth",
+      "importance": 0.0034364054445177317
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "created_utc": "2026-08-06T12:38:00.314687+00:00",
+  "operations": [
+    {
+      "action": "move",
+      "source": "codefiles\\01_data_audit.py",
+      "destination": "codefiles\\legacy\\01_data_audit.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\01_data_audit.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\02_preprocess.py",
+      "destination": "codefiles\\legacy\\02_preprocess.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\02_preprocess.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\03_validate_preprocessing.py",
+      "destination": "codefiles\\legacy\\03_validate_preprocessing.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\03_validate_preprocessing.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\04_interpolation_benchmark.py",
+      "destination": "codefiles\\legacy\\04_interpolation_benchmark.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\04_interpolation_benchmark.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\05_all_null_column_analysis.py",
+      "destination": "codefiles\\legacy\\05_all_null_column_analysis.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\05_all_null_column_analysis.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\06_environment_check.py",
+      "destination": "codefiles\\legacy\\06_environment_check.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\06_environment_check.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\07_build_supervised_features.py",
+      "destination": "codefiles\\legacy\\07_build_supervised_features.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\07_build_supervised_features.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\08_baseline_experiments.py",
+      "destination": "codefiles\\legacy\\08_baseline_experiments.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\08_baseline_experiments.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\09_xgboost_gpu_experiments.py",
+      "destination": "codefiles\\legacy\\09_xgboost_gpu_experiments.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\09_xgboost_gpu_experiments.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\10_xgboost_crossfold_calibration.py",
+      "destination": "codefiles\\legacy\\10_xgboost_crossfold_calibration.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\10_xgboost_crossfold_calibration.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\11_xgboost_direct_targets.py",
+      "destination": "codefiles\\legacy\\11_xgboost_direct_targets.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\11_xgboost_direct_targets.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\12_recency_window_screen.py",
+      "destination": "codefiles\\legacy\\12_recency_window_screen.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\12_recency_window_screen.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\13_oof_ensemble_and_shrinkage.py",
+      "destination": "codefiles\\legacy\\13_oof_ensemble_and_shrinkage.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\13_oof_ensemble_and_shrinkage.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\14_forecast_robustness_analysis.py",
+      "destination": "codefiles\\legacy\\14_forecast_robustness_analysis.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\14_forecast_robustness_analysis.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\15_build_time_augmented_features.py",
+      "destination": "codefiles\\legacy\\15_build_time_augmented_features.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\15_build_time_augmented_features.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\16_time_feature_ablation.py",
+      "destination": "codefiles\\legacy\\16_time_feature_ablation.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\16_time_feature_ablation.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\17_temporal_effect_analysis.py",
+      "destination": "codefiles\\legacy\\17_temporal_effect_analysis.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\17_temporal_effect_analysis.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\18_relative_residual_ablation.py",
+      "destination": "codefiles\\legacy\\18_relative_residual_ablation.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\18_relative_residual_ablation.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\19_hybrid_target_selection.py",
+      "destination": "codefiles\\legacy\\19_hybrid_target_selection.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\19_hybrid_target_selection.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\20_train_final_forecaster.py",
+      "destination": "codefiles\\legacy\\20_train_final_forecaster.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\20_train_final_forecaster.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\21_forecasting_inference.py",
+      "destination": "codefiles\\legacy\\21_forecasting_inference.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\21_forecasting_inference.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\22_final_hybrid_error_analysis.py",
+      "destination": "codefiles\\legacy\\22_final_hybrid_error_analysis.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\22_final_hybrid_error_analysis.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\23_validate_modeling_stage.py",
+      "destination": "codefiles\\legacy\\23_validate_modeling_stage.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\23_validate_modeling_stage.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\24_cleaning_reaudit.py",
+      "destination": "codefiles\\legacy\\24_cleaning_reaudit.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\24_cleaning_reaudit.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\25_build_cleaning_enhanced_features.py",
+      "destination": "codefiles\\legacy\\25_build_cleaning_enhanced_features.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\25_build_cleaning_enhanced_features.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\26_cleaning_enhanced_hybrid_cv.py",
+      "destination": "codefiles\\legacy\\26_cleaning_enhanced_hybrid_cv.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\26_cleaning_enhanced_hybrid_cv.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\27_cleaning_model_oof_ensemble.py",
+      "destination": "codefiles\\legacy\\27_cleaning_model_oof_ensemble.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\27_cleaning_model_oof_ensemble.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\28_mape_aligned_objectives.py",
+      "destination": "codefiles\\legacy\\28_mape_aligned_objectives.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\28_mape_aligned_objectives.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\29_tcn_sequence_model.py",
+      "destination": "codefiles\\legacy\\29_tcn_sequence_model.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\29_tcn_sequence_model.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\30_cleaning_feature_importance.py",
+      "destination": "codefiles\\legacy\\30_cleaning_feature_importance.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\30_cleaning_feature_importance.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\31_cleaning_feature_group_ablation.py",
+      "destination": "codefiles\\legacy\\31_cleaning_feature_group_ablation.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\31_cleaning_feature_group_ablation.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\32_dynamic_shrinkage_gate.py",
+      "destination": "codefiles\\legacy\\32_dynamic_shrinkage_gate.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\32_dynamic_shrinkage_gate.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\33_generator1_mode_classifier.py",
+      "destination": "codefiles\\legacy\\33_generator1_mode_classifier.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\33_generator1_mode_classifier.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\34_targeted_xgboost_capacity.py",
+      "destination": "codefiles\\legacy\\34_targeted_xgboost_capacity.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\34_targeted_xgboost_capacity.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\35_multidepth_dynamic_ensemble.py",
+      "destination": "codefiles\\legacy\\35_multidepth_dynamic_ensemble.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\35_multidepth_dynamic_ensemble.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\36_build_known_future_price_features.py",
+      "destination": "codefiles\\legacy\\36_build_known_future_price_features.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\36_build_known_future_price_features.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\37_known_future_price_cv.py",
+      "destination": "codefiles\\legacy\\37_known_future_price_cv.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\37_known_future_price_cv.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\38_optimization_constraint_audit.py",
+      "destination": "codefiles\\legacy\\38_optimization_constraint_audit.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\38_optimization_constraint_audit.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\39_resource_mechanism_diagnostics.py",
+      "destination": "codefiles\\legacy\\39_resource_mechanism_diagnostics.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\39_resource_mechanism_diagnostics.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\40_prediction_visualizations.py",
+      "destination": "codefiles\\legacy\\40_prediction_visualizations.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\40_prediction_visualizations.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\41_conservative_dispatch_backtest.py",
+      "destination": "codefiles\\legacy\\41_conservative_dispatch_backtest.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\41_conservative_dispatch_backtest.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\42_dispatch_robustness_and_selection.py",
+      "destination": "codefiles\\legacy\\42_dispatch_robustness_and_selection.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\42_dispatch_robustness_and_selection.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\43_optimization_visualizations.py",
+      "destination": "codefiles\\legacy\\43_optimization_visualizations.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\43_optimization_visualizations.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\44_validate_optimization_stage.py",
+      "destination": "codefiles\\legacy\\44_validate_optimization_stage.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\44_validate_optimization_stage.py"
+    },
+    {
+      "action": "move",
+      "source": "codefiles\\45_run_optimization_pipeline.py",
+      "destination": "codefiles\\legacy\\45_run_optimization_pipeline.py"
+    },
+    {
+      "action": "rewrite_project_root",
+      "path": "codefiles\\legacy\\45_run_optimization_pipeline.py"
+    },
+    {
+      "action": "move",
+      "source": "docs\\煤气发电量预测与发电优化-2.pdf",
+      "destination": "docs\\competition\\official\\煤气发电量预测与发电优化-2.pdf"
+    },
+    {
+      "action": "move",
+      "source": "docs\\modeling_idea.md",
+      "destination": "docs\\design\\modeling_idea.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\01_题目阅读与数据预处理实验报告.md",
+      "destination": "docs\\experimental_docs\\preprocessing\\01_题目阅读与数据预处理实验报告.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\02_训练集插值与全空列分析实验报告.md",
+      "destination": "docs\\experimental_docs\\preprocessing\\02_训练集插值与全空列分析实验报告.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\03_多步发电预测与时间因素实验报告.md",
+      "destination": "docs\\experimental_docs\\forecasting\\03_多步发电预测与时间因素实验报告.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\04_数据清洗再审计与预测优化实验报告.md",
+      "destination": "docs\\experimental_docs\\forecasting\\04_数据清洗再审计与预测优化实验报告.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\05_发电优化约束可辨识性审计报告.md",
+      "destination": "docs\\experimental_docs\\optimization\\05_发电优化约束可辨识性审计报告.md"
+    },
+    {
+      "action": "move",
+      "source": "docs\\experimental_docs\\06_保守软约束发电优化与历史回放实验报告.md",
+      "destination": "docs\\experimental_docs\\optimization\\06_保守软约束发电优化与历史回放实验报告.md"
+    },
+    {
+      "action": "rewrite_relative_result_links",
+      "path": "docs\\experimental_docs\\forecasting\\04_数据清洗再审计与预测优化实验报告.md"
+    },
+    {
+      "action": "rewrite_relative_result_links",
+      "path": "docs\\experimental_docs\\optimization\\06_保守软约束发电优化与历史回放实验报告.md"
+    }
+  ]
+}

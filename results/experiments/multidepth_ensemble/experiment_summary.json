@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-08-03T14:11:32.274959+00:00",
+  "source_scope": "training-only OOF predictions",
+  "external_scoring_data_accessed": false,
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "weight_d5": 0.0,
+      "weight_d4": 0.0,
+      "weight_d6": 1.0,
+      "threshold": 0.08,
+      "gate_floor": 0.75,
+      "beta_h15": 0.55,
+      "beta_h120": 0.45,
+      "mean_mape": 0.06258742273097799
+    },
+    {
+      "target": "generator_all",
+      "weight_d5": 0.5,
+      "weight_d4": 0.0,
+      "weight_d6": 0.5,
+      "threshold": 0.08,
+      "gate_floor": 0.25,
+      "beta_h15": 1.0,
+      "beta_h120": 0.8,
+      "mean_mape": 0.0467548423572296
+    }
+  ],
+  "persistence_mape": 0.05805044027869182,
+  "model_mape": 0.054671132544103794,
+  "score": 0.9453288674558962,
+  "relative_reduction_vs_persistence": 0.05821330068065731
+}

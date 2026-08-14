@@ -1,0 +1,11 @@
+﻿held_out_analogue,predictors,train_rows,validation_rows,r2,mae,nmae_iqr,empty_column_under_review
+blast_furnace_1,blast_furnace_2;blast_furnace_4;blast_furnace_5,9215,2304,-0.36471742726789436,24338.702973745534,0.7147279681951278,blast_furnace_3
+blast_furnace_2,blast_furnace_1;blast_furnace_4;blast_furnace_5,9215,2304,-0.9012932666587501,57934.87071749091,1.221534621100788,blast_furnace_3
+blast_furnace_4,blast_furnace_1;blast_furnace_2;blast_furnace_5,9215,2304,-0.3329369323027651,32802.110969179244,1.286222113486867,blast_furnace_3
+blast_furnace_5,blast_furnace_1;blast_furnace_2;blast_furnace_4,9215,2304,-0.12277846321028751,12629.507613385738,1.4681931526272116,blast_furnace_3
+air_heater_1,air_heater_2;air_heater_4;air_heater_5,9215,2304,0.07751185823323781,15912.405404424188,0.4985542828166416,air_heater_3
+air_heater_2,air_heater_1;air_heater_4;air_heater_5,9215,2304,0.007194152708543289,34012.80087136166,0.8796957003043031,air_heater_3
+air_heater_4,air_heater_1;air_heater_2;air_heater_5,9215,2304,0.033023925333316884,23826.273948055492,0.4417720247838096,air_heater_3
+air_heater_5,air_heater_1;air_heater_2;air_heater_4,9215,2304,-16.505766985016002,93976.24002856045,3.127851642056692,air_heater_3
+converter_user1,converter_user2,9215,2304,-0.057410480884148685,51.18047132464392,51180471324.64391,converter_user3
+converter_user2,converter_user1,9215,2304,-0.001943684618643804,4452.083461380559,0.5830610886848966,converter_user3

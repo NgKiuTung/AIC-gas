@@ -1,0 +1,4 @@
+﻿fold,train_rows,valid_rows,sequence_length,sequence_features,epochs,runtime_seconds,device
+fold_1,4984,1440,96,99,32,12.038181899999472,NVIDIA GeForce RTX 4060 Laptop GPU
+fold_2,7960,1440,96,99,32,17.95013220000328,NVIDIA GeForce RTX 4060 Laptop GPU
+fold_3,9400,1423,96,99,32,23.625960000001214,NVIDIA GeForce RTX 4060 Laptop GPU

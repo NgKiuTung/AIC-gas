@@ -1,0 +1,486 @@
+{
+  "created_utc": "2026-08-14T03:44:20.991466+00:00",
+  "label": "pre_cleanup",
+  "dataset_directory_traversed": false,
+  "external_scoring_data_accessed": false,
+  "tracked_sensitive_findings": 119,
+  "overall_pass": false,
+  "findings": [
+    {
+      "path": "results/optimization/constraint_audit/audit_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/constraint_identifiability.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/gas_power_calibration.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/holder_balance_calibration.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/observed_ramp_statistics.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/official_constraints.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/constraint_audit/online_count_identifiability.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_backtest/failures_and_exclusions.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_backtest/optimization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_backtest/scenario_summary.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_validation/price_varying_uplift_bootstrap.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_validation/representative_balanced_schedule.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_validation/selected_scenario_and_acceptance.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_validation/selected_scenario_by_fold.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/dispatch_validation/window_resource_and_constraint_checks.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/final_validation/validation_checks.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/final_validation/validation_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/mechanism_diagnostics/diagnostic_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/mechanism_diagnostics/gas_intensity_by_load_bin.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/mechanism_diagnostics/holder_balance_alignment_scan.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/mechanism_diagnostics/nonlinear_gas_power_importance.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/optimization/pipeline_run_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/current/version.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/checksums.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/configs/forecasting.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/configs/logging.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/configs/optimization.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/configs/paths.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/configs/preprocessing.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_dispatch_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_dispatch_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_dispatch_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_fold_stability.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_fold_stability.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_fold_stability.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_uplift_distribution.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_uplift_distribution.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/optimization_uplift_distribution.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/optimization/visualization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_oof_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_oof_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_oof_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_representative_day.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_representative_day.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_representative_day.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_weekday_hour_heatmap.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_weekday_hour_heatmap.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/prediction_weekday_hour_heatmap.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/figures/prediction/visualization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/manifests/optimization_pipeline.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/manifests/optimization_validation.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/metrics/dispatch_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/metrics/forecast_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.0-preliminary/release_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/checksums.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/configs/forecasting.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/configs/logging.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/configs/optimization.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/configs/paths.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/configs/preprocessing.yaml",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/visualization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/visualization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/manifests/full_archive_inventory.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/manifests/optimization_pipeline.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/manifests/optimization_validation.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/metrics/dispatch_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/metrics/forecast_summary.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/release_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/reports/experimental_docs/experiment_index.md",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_dispatch_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_dispatch_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_dispatch_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_fold_stability.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_fold_stability.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_fold_stability.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_uplift_distribution.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_uplift_distribution.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/optimization_uplift_distribution.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/source_data/balanced_price_varying_windows.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/source_data/dispatch_representative_window.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/source_data/dispatch_scenario_tradeoff.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/source_data/dispatch_selected_by_fold.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/source_data/uplift_by_tariff_transition.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/optimization/visualization_manifest.json",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_oof_overview.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_oof_overview.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_oof_overview.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_representative_day.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_representative_day.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_representative_day.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_weekday_hour_heatmap.pdf",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_weekday_hour_heatmap.png",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/prediction_weekday_hour_heatmap.svg",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/overview_feature_group_importance.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/overview_horizon_metrics.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/overview_hour_metrics.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/overview_target_summary.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/representative_day_generator_1.csv",
+      "reasons": "blocked_path;row_level_truth_or_prediction_columns"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/representative_day_generator_all.csv",
+      "reasons": "blocked_path;row_level_truth_or_prediction_columns"
+    },
+    {
+      "path": "results/visualizations/prediction/source_data/weekday_hour_error.csv",
+      "reasons": "blocked_path"
+    },
+    {
+      "path": "results/visualizations/prediction/visualization_manifest.json",
+      "reasons": "blocked_path"
+    }
+  ]
+}

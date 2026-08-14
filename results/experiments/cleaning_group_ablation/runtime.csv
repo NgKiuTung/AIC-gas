@@ -1,0 +1,7 @@
+﻿fold,variant,features,runtime_seconds,device_requested
+fold_1,core_smooth_transition_ratio,776,49.6015112999994,cuda
+fold_1,core_smooth_transition_ratio_clean,801,50.922107599999435,cuda
+fold_2,core_smooth_transition_ratio,776,55.84147270000176,cuda
+fold_2,core_smooth_transition_ratio_clean,801,57.21622670000215,cuda
+fold_3,core_smooth_transition_ratio,776,57.86889660000088,cuda
+fold_3,core_smooth_transition_ratio_clean,801,59.45764129999952,cuda

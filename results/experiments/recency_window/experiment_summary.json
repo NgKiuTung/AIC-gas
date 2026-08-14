@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-08-03T12:56:09.634699+00:00",
+  "source_scope": "causal_preprocessed_training_data_only",
+  "external_scoring_data_accessed": false,
+  "screen_model": "direct-target GPU XGBoost depth=3",
+  "parameters": {
+    "n_estimators": 450,
+    "max_depth": 3,
+    "learning_rate": 0.025,
+    "min_child_weight": 20,
+    "subsample": 0.85,
+    "colsample_bytree": 0.75,
+    "reg_alpha": 1.0,
+    "reg_lambda": 20.0
+  },
+  "best": {
+    "window": "all_history",
+    "mean_mape": 0.0561941423026534,
+    "worst_mape": 0.0993064045906066,
+    "mean_score": 0.9438058576973466
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-08-03T13:14:57.652684+00:00",
+  "source_scope": "selected training-only out-of-fold hybrid predictions",
+  "external_scoring_data_accessed": false,
+  "rows": 68848,
+  "operating_regime_rule": "target-specific quantiles of observed one-hour relative change at forecast origin",
+  "all_regimes_improve": true,
+  "all_sessions_improve": true,
+  "target_metrics": [
+    {
+      "target": "generator_1",
+      "persistence_mape": 0.06463727959045279,
+      "hybrid_mape": 0.06344401004075463,
+      "absolute_mape_reduction": 0.0011932695496981464
+    },
+    {
+      "target": "generator_all",
+      "persistence_mape": 0.05152834646351054,
+      "hybrid_mape": 0.04767949503820392,
+      "absolute_mape_reduction": 0.003848851425306612
+    }
+  ]
+}

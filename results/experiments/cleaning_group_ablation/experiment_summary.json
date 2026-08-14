@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-08-03T13:52:21.525062+00:00",
+  "source_scope": "cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "feature_counts": {
+    "core_smooth_transition_ratio": 776,
+    "core_smooth_transition_ratio_clean": 801
+  },
+  "best": {
+    "variant": "core_smooth_transition_ratio_clean",
+    "mean_mape": 0.05497535934209002,
+    "worst_mape": 0.09700738923242537,
+    "persistence_mape": 0.05805044029249797,
+    "score": 0.94502464065791
+  },
+  "selected_parameters": [
+    {
+      "variant": "core_smooth_transition_ratio",
+      "target": "generator_1",
+      "beta_h15": 0.45,
+      "beta_h120": 0.4,
+      "mean_mape": 0.06266130004369076
+    },
+    {
+      "variant": "core_smooth_transition_ratio",
+      "target": "generator_all",
+      "beta_h15": 0.7,
+      "beta_h120": 0.6,
+      "mean_mape": 0.04729810667057804
+    },
+    {
+      "variant": "core_smooth_transition_ratio_clean",
+      "target": "generator_1",
+      "beta_h15": 0.45,
+      "beta_h120": 0.35,
+      "mean_mape": 0.06269627603595042
+    },
+    {
+      "variant": "core_smooth_transition_ratio_clean",
+      "target": "generator_all",
+      "beta_h15": 0.7,
+      "beta_h120": 0.6,
+      "mean_mape": 0.04725444264822961
+    }
+  ]
+}

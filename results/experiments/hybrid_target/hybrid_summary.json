@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-08-03T13:11:13.446518+00:00",
+  "source_scope": "training-only out-of-fold predictions",
+  "external_scoring_data_accessed": false,
+  "overall_persistence_mape": 0.058050440173177086,
+  "overall_hybrid_mape": 0.055528364901337446,
+  "overall_hybrid_score": 0.9444716350986626,
+  "relative_mape_reduction": 0.04344627300526475,
+  "fold_target_horizon_wins": 42,
+  "fold_target_horizon_comparisons": 48,
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "weight_relative": 1.0,
+      "weight_absolute": 0.0,
+      "beta_h15": 0.35,
+      "beta_h120": 0.3,
+      "mean_mape": 0.06340766120586028
+    },
+    {
+      "target": "generator_all",
+      "weight_relative": 0.0,
+      "weight_absolute": 1.0,
+      "beta_h15": 0.65,
+      "beta_h120": 0.6,
+      "mean_mape": 0.04764906859681461
+    }
+  ],
+  "daily_block_bootstrap": {
+    "days": 45,
+    "repeats": 5000,
+    "ci95_low": 0.0015084502436059273,
+    "ci95_high": 0.0034910658961361286,
+    "probability_improvement_positive": 1.0,
+    "fraction_days_hybrid_wins": 0.7777777777777778
+  }
+}

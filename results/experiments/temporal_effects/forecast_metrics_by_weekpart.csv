@@ -1,0 +1,9 @@
+﻿model,target,weekday_weekend,samples,mape
+base_features,generator_1,weekday,24440,0.06850726838041914
+base_features,generator_1,weekend,9984,0.05355588781853994
+base_features,generator_all,weekday,24440,0.049824383818783395
+base_features,generator_all,weekend,9984,0.04242898604407725
+time_augmented,generator_1,weekday,24440,0.06847466396258059
+time_augmented,generator_1,weekend,9984,0.05359834659224999
+time_augmented,generator_all,weekday,24440,0.049936027165135996
+time_augmented,generator_all,weekend,9984,0.04264719122294297

@@ -1,0 +1,4 @@
+# Install a CUDA-compatible PyTorch wheel for the local CUDA version when needed.
+torch>=2.2
+xgboost>=2.0,<4
+

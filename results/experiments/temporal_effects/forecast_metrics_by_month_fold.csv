@@ -1,0 +1,13 @@
+﻿model,fold,target,forecast_month,samples,mape
+base_features,fold_1,generator_1,2025-03,11520,0.06668162322577022
+base_features,fold_1,generator_all,2025-03,11520,0.05658734918054146
+base_features,fold_2,generator_1,2025-04,11520,0.07031346279771887
+base_features,fold_2,generator_all,2025-04,11520,0.04641225726593775
+base_features,fold_3,generator_1,2025-04,11384,0.05541428603365709
+base_features,fold_3,generator_all,2025-04,11384,0.03994759934396461
+time_augmented,fold_1,generator_1,2025-03,11520,0.0666066657929464
+time_augmented,fold_1,generator_all,2025-03,11520,0.057243414483849904
+time_augmented,fold_2,generator_1,2025-04,11520,0.07031970658522213
+time_augmented,fold_2,generator_all,2025-04,11520,0.046322388376808674
+time_augmented,fold_3,generator_1,2025-04,11384,0.05545106024472875
+time_augmented,fold_3,generator_all,2025-04,11384,0.03980569326519674

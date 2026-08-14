@@ -1,0 +1,5 @@
+﻿config,target,beta_h15,beta_h120,mean_mape
+d4_wide,generator_1,0.4,0.3,0.06286136389629658
+d4_wide,generator_all,0.7,0.55,0.04747844952286515
+d6_regularized,generator_1,0.45,0.45,0.06260429034152502
+d6_regularized,generator_all,0.7,0.6,0.047311398553878954

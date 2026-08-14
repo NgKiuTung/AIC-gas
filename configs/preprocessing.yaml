@@ -1,0 +1,7 @@
+frequency_minutes: 15
+timestamp_policy: strict_monotonic
+missing_timestamp_method: lagrange_with_time_local_fallback
+all_null_column_policy: retain_in_raw_drop_from_model_matrix
+outlier_policy: causal_feature_level_robustness
+allow_scoring_data: false
+

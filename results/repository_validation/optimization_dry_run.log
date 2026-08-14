@@ -1,0 +1,7 @@
+PLAN codefiles\legacy\38_optimization_constraint_audit.py
+PLAN codefiles\legacy\39_resource_mechanism_diagnostics.py
+PLAN codefiles\legacy\40_prediction_visualizations.py
+PLAN codefiles\legacy\41_conservative_dispatch_backtest.py
+PLAN codefiles\legacy\42_dispatch_robustness_and_selection.py
+PLAN codefiles\legacy\43_optimization_visualizations.py
+PLAN codefiles\legacy\44_validate_optimization_stage.py

@@ -1,0 +1,9 @@
+Repository validation: 8/8 passed
+[PASS] required_directories: codefiles/src/gas_power, codefiles/pipelines, codefiles/legacy, codefiles/tests, codefiles/tools, configs, docs/design, docs/experimental_docs/preprocessing, docs/experimental_docs/forecasting, docs/experimental_docs/optimization, results/registry
+[PASS] all_45_legacy_scripts: count=45
+[PASS] legacy_roots_migrated: all numbered scripts resolve project root from legacy depth
+[PASS] all_python_under_codefiles: root_python_count=0
+[PASS] root_document_exception_only: root_documents=['README.md']
+[PASS] dataset_ignored_by_policy: dataset was not traversed
+[PASS] experiment_registry_exists: results\registry\experiment_registry.csv
+[PASS] local_releases_excluded_from_git: version archives remain local and are not Git-tracked

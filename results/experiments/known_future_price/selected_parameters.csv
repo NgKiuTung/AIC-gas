@@ -1,0 +1,3 @@
+﻿config,target,beta_h15,beta_h120,mean_mape
+d5_known_future_price,generator_1,0.45,0.35,0.0627446869989544
+d5_known_future_price,generator_all,0.7,0.6,0.0474288368201854

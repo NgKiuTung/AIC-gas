@@ -1,0 +1,7 @@
+﻿fold,config,features,runtime_seconds,device_requested
+fold_1,d4_wide,801,80.19874100000015,cuda
+fold_1,d6_regularized,801,97.6886117000031,cuda
+fold_2,d4_wide,801,82.93135460000121,cuda
+fold_2,d6_regularized,801,115.89379570000165,cuda
+fold_3,d4_wide,801,84.90494549999858,cuda
+fold_3,d6_regularized,801,122.78685010000117,cuda

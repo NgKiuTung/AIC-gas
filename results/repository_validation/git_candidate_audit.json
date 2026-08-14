@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-08-06T13:01:00.436462+00:00",
+  "dataset_pathspec_used": false,
+  "external_scoring_data_accessed": false,
+  "candidate_files": 35,
+  "candidate_bytes": 1878552,
+  "largest_candidates": [
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.png",
+      "bytes": 367572
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.png",
+      "bytes": 331706
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.png",
+      "bytes": 262042
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.svg",
+      "bytes": 116596
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.png",
+      "bytes": 109387
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.png",
+      "bytes": 97432
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.svg",
+      "bytes": 64670
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/manifests/full_archive_inventory.json",
+      "bytes": 61972
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.png",
+      "bytes": 52618
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.pdf",
+      "bytes": 51586
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.pdf",
+      "bytes": 50956
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.svg",
+      "bytes": 50811
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.pdf",
+      "bytes": 49460
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.pdf",
+      "bytes": 42526
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.pdf",
+      "bytes": 41396
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.svg",
+      "bytes": 38247
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.pdf",
+      "bytes": 25814
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.svg",
+      "bytes": 24848
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.svg",
+      "bytes": 9176
+    },
+    {
+      "path": "results/releases/v0.1.1-archive/checksums.json",
+      "bytes": 8947
+    }
+  ],
+  "files_over_10_mib": []
+}

@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-08-14T03:47:11.446156+00:00",
+  "external_scoring_data_accessed": false,
+  "dataset_directory_traversed": false,
+  "checks": [
+    {
+      "check": "required_directories",
+      "passed": true,
+      "evidence": "codefiles/src/gas_power, codefiles/pipelines, codefiles/legacy, codefiles/tests, codefiles/tools, configs, docs/design, docs/experimental_docs/preprocessing, docs/experimental_docs/forecasting, docs/experimental_docs/optimization, results/registry"
+    },
+    {
+      "check": "all_45_legacy_scripts",
+      "passed": true,
+      "evidence": "count=45"
+    },
+    {
+      "check": "legacy_roots_migrated",
+      "passed": true,
+      "evidence": "all numbered scripts resolve project root from legacy depth"
+    },
+    {
+      "check": "all_python_under_codefiles",
+      "passed": true,
+      "evidence": "root_python_count=0"
+    },
+    {
+      "check": "root_document_exception_only",
+      "passed": true,
+      "evidence": "root_documents=['README.md']"
+    },
+    {
+      "check": "dataset_ignored_by_policy",
+      "passed": true,
+      "evidence": "dataset was not traversed"
+    },
+    {
+      "check": "experiment_registry_exists",
+      "passed": true,
+      "evidence": "results\\registry\\experiment_registry.csv"
+    },
+    {
+      "check": "local_releases_excluded_from_git",
+      "passed": true,
+      "evidence": "version archives remain local and are not Git-tracked"
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "overall_pass": true
+}

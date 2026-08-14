@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-08-03T12:42:52.055996+00:00",
+  "source": "results\\features\\train_supervised_features.pkl",
+  "official_test_accessed": false,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "xgboost_version": "3.0.5",
+  "configs": {
+    "xgb_d3": {
+      "n_estimators": 450,
+      "max_depth": 3,
+      "learning_rate": 0.025,
+      "min_child_weight": 20,
+      "subsample": 0.85,
+      "colsample_bytree": 0.75,
+      "reg_alpha": 1.0,
+      "reg_lambda": 20.0
+    },
+    "xgb_d5": {
+      "n_estimators": 350,
+      "max_depth": 5,
+      "learning_rate": 0.025,
+      "min_child_weight": 30,
+      "subsample": 0.85,
+      "colsample_bytree": 0.7,
+      "reg_alpha": 2.0,
+      "reg_lambda": 30.0
+    }
+  },
+  "blends": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "best": {
+    "model": "xgb_d5",
+    "blend": 0.25,
+    "mean_mape": 0.056853036240985,
+    "std_mape": 0.02209441826162454,
+    "worst_mape": 0.09876441955566406,
+    "mean_score": 0.943146963759015
+  }
+}

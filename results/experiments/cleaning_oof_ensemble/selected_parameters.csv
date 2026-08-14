@@ -1,0 +1,3 @@
+﻿target,weight_enhanced,weight_base,beta_h15,beta_h120,mean_mape
+generator_1,1.0,0.0,0.4,0.4,0.06268370163881777
+generator_all,0.7,0.30000000000000004,0.7,0.6,0.0473492062982758

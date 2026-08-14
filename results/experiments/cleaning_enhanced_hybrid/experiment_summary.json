@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-08-03T13:31:06.469372+00:00",
+  "source_scope": "cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "feature_count": 869,
+  "parameters": {
+    "n_estimators": 350,
+    "max_depth": 5,
+    "learning_rate": 0.025,
+    "min_child_weight": 30,
+    "subsample": 0.85,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 2.0,
+    "reg_lambda": 30.0
+  },
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "beta_h15": 0.4,
+      "beta_h120": 0.4,
+      "mean_mape": 0.06268370169599922
+    },
+    {
+      "target": "generator_all",
+      "beta_h15": 0.7,
+      "beta_h120": 0.6,
+      "mean_mape": 0.047389168487291945
+    }
+  ],
+  "persistence_mape": 0.05805044029249797,
+  "model_mape": 0.05503643509164558,
+  "score": 0.9449635649083544,
+  "relative_reduction_vs_persistence": 0.05192045375824478
+}

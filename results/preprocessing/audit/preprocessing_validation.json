@@ -1,0 +1,131 @@
+{
+  "created_utc": "2026-08-06T12:47:50.667397+00:00",
+  "passed": true,
+  "official_test_accessed": false,
+  "summary": {
+    "checks_total": 23,
+    "checks_passed": 23,
+    "checks_failed": 0,
+    "shape": [
+      11521,
+      103
+    ]
+  },
+  "checks": [
+    {
+      "check": "offline_and_causal_schema_equal",
+      "passed": true,
+      "detail": "(11521, 103)"
+    },
+    {
+      "check": "offline_datetime_valid_unique",
+      "passed": true,
+      "detail": "invalid=0"
+    },
+    {
+      "check": "offline_15min_continuous",
+      "passed": true,
+      "detail": "non15=0"
+    },
+    {
+      "check": "offline_split_marker",
+      "passed": true,
+      "detail": "['train']"
+    },
+    {
+      "check": "offline_features_complete",
+      "passed": true,
+      "detail": "missing=0"
+    },
+    {
+      "check": "offline_features_finite",
+      "passed": true,
+      "detail": "all feature cells checked"
+    },
+    {
+      "check": "causal_datetime_valid_unique",
+      "passed": true,
+      "detail": "invalid=0"
+    },
+    {
+      "check": "causal_15min_continuous",
+      "passed": true,
+      "detail": "non15=0"
+    },
+    {
+      "check": "causal_split_marker",
+      "passed": true,
+      "detail": "['train']"
+    },
+    {
+      "check": "causal_features_complete",
+      "passed": true,
+      "detail": "missing=0"
+    },
+    {
+      "check": "causal_features_finite",
+      "passed": true,
+      "detail": "all feature cells checked"
+    },
+    {
+      "check": "generator_1_original_observations_preserved",
+      "passed": true,
+      "detail": "original_missing=2"
+    },
+    {
+      "check": "generator_1_continuous_input_complete",
+      "passed": true,
+      "detail": "offline_missing=0, causal_missing=0"
+    },
+    {
+      "check": "generator_all_original_observations_preserved",
+      "passed": true,
+      "detail": "original_missing=2"
+    },
+    {
+      "check": "generator_all_continuous_input_complete",
+      "passed": true,
+      "detail": "offline_missing=0, causal_missing=0"
+    },
+    {
+      "check": "all_null_columns_excluded",
+      "passed": true,
+      "detail": "['blast_furnace_3', 'air_heater_3', 'blast_furnace_gas_holder_1', 'converter_user3']"
+    },
+    {
+      "check": "observed_family_aggregates_present",
+      "passed": true,
+      "detail": "['feat_blast_furnace_observed_sum', 'feat_air_heater_observed_sum', 'feat_blast_furnace_user_observed_sum', 'feat_converter_user_observed_sum']"
+    },
+    {
+      "check": "no_unresolved_imputation",
+      "passed": true,
+      "detail": "offline and causal method logs checked"
+    },
+    {
+      "check": "training_only_state",
+      "passed": true,
+      "detail": "official training CSV and auxiliary XLSX files only"
+    },
+    {
+      "check": "training_only_manifest",
+      "passed": true,
+      "detail": "['dataset\\\\初赛-数据集\\\\Pre_gas.csv', 'dataset\\\\初赛-数据集\\\\Pre_gas_holder.csv', 'dataset\\\\初赛-数据集\\\\Pre_gas_user.csv', 'dataset\\\\初赛-数据集\\\\Pre_load.csv', 'dataset\\\\初赛-数据集\\\\price.xlsx', 'dataset\\\\初赛-数据集\\\\data_dictionary.xlsx']"
+    },
+    {
+      "check": "training_only_interpolation_benchmark",
+      "passed": true,
+      "detail": "official training CSV files only"
+    },
+    {
+      "check": "no_scoring_test_derived_csv",
+      "passed": true,
+      "detail": "no processed scoring-test copy exists under results/preprocessing/processed"
+    },
+    {
+      "check": "observed_target_hierarchy",
+      "passed": true,
+      "detail": "violations=0"
+    }
+  ]
+}

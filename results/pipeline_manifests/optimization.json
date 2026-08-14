@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-08-14T03:47:11.385236+00:00",
+  "stage": "optimization",
+  "external_scoring_data_accessed": false,
+  "dry_run": true,
+  "steps": [
+    {
+      "script": "38_optimization_constraint_audit.py",
+      "status": "planned"
+    },
+    {
+      "script": "39_resource_mechanism_diagnostics.py",
+      "status": "planned"
+    },
+    {
+      "script": "40_prediction_visualizations.py",
+      "status": "planned"
+    },
+    {
+      "script": "41_conservative_dispatch_backtest.py",
+      "status": "planned"
+    },
+    {
+      "script": "42_dispatch_robustness_and_selection.py",
+      "status": "planned"
+    },
+    {
+      "script": "43_optimization_visualizations.py",
+      "status": "planned"
+    },
+    {
+      "script": "44_validate_optimization_stage.py",
+      "status": "planned"
+    }
+  ]
+}

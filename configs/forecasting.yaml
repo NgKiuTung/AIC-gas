@@ -1,0 +1,7 @@
+forecast_horizons_minutes: [15, 30, 45, 60, 75, 90, 105, 120]
+validation: expanding_time_series_3_fold
+primary_metric: mape
+best_validated_mape_percent: 5.4671
+device: cuda
+random_seed: 42
+

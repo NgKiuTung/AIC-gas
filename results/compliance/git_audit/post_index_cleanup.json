@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-08-14T03:45:04.993186+00:00",
+  "label": "post_index_cleanup",
+  "dataset_directory_traversed": false,
+  "external_scoring_data_accessed": false,
+  "tracked_sensitive_findings": 0,
+  "overall_pass": true,
+  "findings": []
+}

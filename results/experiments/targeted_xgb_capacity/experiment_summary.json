@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-08-03T14:10:25.709481+00:00",
+  "source_scope": "selected cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "features": 801,
+  "configs": {
+    "d4_wide": {
+      "n_estimators": 500,
+      "max_depth": 4,
+      "learning_rate": 0.02,
+      "min_child_weight": 15,
+      "subsample": 0.9,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 1.0,
+      "reg_lambda": 20.0,
+      "max_bin": 512
+    },
+    "d6_regularized": {
+      "n_estimators": 450,
+      "max_depth": 6,
+      "learning_rate": 0.02,
+      "min_child_weight": 40,
+      "subsample": 0.9,
+      "colsample_bytree": 0.75,
+      "reg_alpha": 3.0,
+      "reg_lambda": 40.0,
+      "max_bin": 256
+    }
+  },
+  "best": {
+    "config": "d6_regularized",
+    "mean_mape": 0.05495784444770199,
+    "worst_mape": 0.09750997411788587,
+    "persistence_mape": 0.05805044029249797,
+    "score": 0.945042155552298
+  },
+  "selected_parameters": [
+    {
+      "config": "d4_wide",
+      "target": "generator_1",
+      "beta_h15": 0.4,
+      "beta_h120": 0.3,
+      "mean_mape": 0.06286136389629658
+    },
+    {
+      "config": "d4_wide",
+      "target": "generator_all",
+      "beta_h15": 0.7,
+      "beta_h120": 0.55,
+      "mean_mape": 0.04747844952286515
+    },
+    {
+      "config": "d6_regularized",
+      "target": "generator_1",
+      "beta_h15": 0.45,
+      "beta_h120": 0.45,
+      "mean_mape": 0.06260429034152502
+    },
+    {
+      "config": "d6_regularized",
+      "target": "generator_all",
+      "beta_h15": 0.7,
+      "beta_h120": 0.6,
+      "mean_mape": 0.047311398553878954
+    }
+  ]
+}

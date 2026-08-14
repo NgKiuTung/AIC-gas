@@ -1,0 +1,5 @@
+﻿target,beta_h15,beta_h120,mean_mape,model
+generator_1,0.1,0.15,0.06413645735238206,base_features
+generator_all,0.65,0.6,0.04764906859681461,base_features
+generator_1,0.1,0.15,0.06412581087429908,time_augmented
+generator_all,0.6,0.55,0.047790498708618435,time_augmented

@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-08-03T13:05:24.838478+00:00",
+  "source_scope": "training-only out-of-fold predictions and causal origin-time features",
+  "external_scoring_data_accessed": false,
+  "selected_policy": {
+    "generator_1": {
+      "beta_h15": 0.1,
+      "beta_h120": 0.15
+    },
+    "generator_all": {
+      "beta_h15": 0.65,
+      "beta_h120": 0.6
+    }
+  },
+  "overall_persistence_mape": 0.058050440173177086,
+  "overall_selected_mape": 0.05589276297459833,
+  "relative_mape_reduction": 0.03716900668008604,
+  "fold_target_horizon_comparisons": 48,
+  "fold_target_horizon_wins": 41,
+  "bootstrap": {
+    "days": 45,
+    "daily_block_bootstrap_repeats": 5000,
+    "mean_absolute_mape_reduction": 0.002159098670344045,
+    "ci95_low": 0.0012808704711313411,
+    "ci95_high": 0.0030189601678169324,
+    "probability_improvement_positive": 1.0,
+    "fraction_days_selected_wins": 0.7777777777777778
+  }
+}

@@ -1,0 +1,8 @@
+holder_min_m3: 30000
+holder_max_m3: 180000
+generator_50mw_group_capacity_mw: 200
+generator_120mw_group_capacity_mw: 240
+selected_scenario: balanced
+historical_uplift_percent: 3.2159
+bootstrap_ci95_percent: [2.8985, 3.5400]
+

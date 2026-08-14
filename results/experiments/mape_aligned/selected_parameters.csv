@@ -1,0 +1,5 @@
+﻿config,target,beta_h15,beta_h120,mean_mape
+weighted_mae,generator_1,0.0,0.05,0.06453962945841323
+weighted_mae,generator_all,0.0,0.1,0.050742247992323186
+weighted_mse,generator_1,0.0,0.05,0.06443757860526222
+weighted_mse,generator_all,0.0,0.1,0.05091230845249401

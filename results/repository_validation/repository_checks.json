@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-08-14T03:47:13.732914+00:00",
+  "external_scoring_data_accessed": false,
+  "checks": [
+    {
+      "check": "compileall",
+      "returncode": 0,
+      "elapsed_seconds": 0.11073709999982384
+    },
+    {
+      "check": "ruff",
+      "returncode": 0,
+      "elapsed_seconds": 0.07128939999984141
+    },
+    {
+      "check": "pytest",
+      "returncode": 0,
+      "elapsed_seconds": 0.49242969999977504
+    },
+    {
+      "check": "sensitive_git_content",
+      "returncode": 0,
+      "elapsed_seconds": 0.10726320000048872
+    },
+    {
+      "check": "optimization_dry_run",
+      "returncode": 0,
+      "elapsed_seconds": 0.06902639999952953
+    },
+    {
+      "check": "layout",
+      "returncode": 0,
+      "elapsed_seconds": 0.05991919999996753
+    },
+    {
+      "check": "release_verification",
+      "returncode": 0,
+      "elapsed_seconds": 2.280658200000289
+    }
+  ],
+  "overall_pass": true
+}

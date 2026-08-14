@@ -1,0 +1,27 @@
+﻿check,passed,detail
+exists::xgboost_hybrid_forecaster.json,True,results\models\power_forecaster\xgboost_hybrid_forecaster.json
+exists::model_manifest.json,True,results\models\power_forecaster\model_manifest.json
+exists::feature_schema.csv,True,results\models\power_forecaster\feature_schema.csv
+exists::feature_importance.csv,True,results\models\power_forecaster\feature_importance.csv
+exists::training_feature_inference_check.csv,True,results\models\power_forecaster\training_feature_inference_check.csv
+exists::hybrid_summary.json,True,results\experiments\hybrid_target\hybrid_summary.json
+exists::diagnostic_summary.json,True,results\experiments\final_hybrid_diagnostics\diagnostic_summary.json
+exists::temporal_effect_summary.json,True,results\experiments\temporal_effects\temporal_effect_summary.json
+model_hash,True,57ed536dae4a417f16393cdaec6321ffab902f7605e5e35cc4072facebc7e9c7
+training_only_manifest,True,causal preprocessed training data only
+gpu_training,True,NVIDIA GeForce RTX 4060 Laptop GPU
+feature_count,True,560
+horizon_count,True,"[15, 30, 45, 60, 75, 90, 105, 120]"
+schema_rows,True,rows=560
+schema_unique,True,unique=560
+feature_name_leakage,True,[]
+model_load,True,3.0.5
+inference_rows,True,rows=10832
+inference_finite,True,numeric_columns=16
+prediction_hierarchy,True,generator_all >= generator_1 for every row/horizon
+cv_improves_persistence,True,0.055528 < 0.058050
+bootstrap_positive,True,"{'days': 45, 'repeats': 5000, 'ci95_low': 0.0015084502436059273, 'ci95_high': 0.0034910658961361286, 'probability_improvement_positive': 1.0, 'fraction_days_hybrid_wins': 0.7777777777777778}"
+all_folds_improve,True,"[{""fold"":""fold_1"",""persistence_mape"":0.0632061265,""hybrid_mape"":0.0617052051},{""fold"":""fold_2"",""persistence_mape"":0.0610888944,""hybrid_mape"":0.0578025251},{""fold"":""fold_3"",""persistence_mape"":0.0498562996,""hybrid_mape"":0.0470773645}]"
+all_operating_regimes_improve,True,True
+all_time_sessions_improve,True,True
+no_scoring_derivative,True,results\preprocessing\processed\preprocessed_test.csv

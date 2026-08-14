@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-08-03T13:40:23.630364+00:00",
+  "source_scope": "cleaning-enhanced causal training features only",
+  "external_scoring_data_accessed": false,
+  "features": 869,
+  "parameters": {
+    "n_estimators": 450,
+    "max_depth": 4,
+    "learning_rate": 0.025,
+    "min_child_weight": 20,
+    "subsample": 0.85,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 1.0,
+    "reg_lambda": 20.0
+  },
+  "configs": {
+    "weighted_mae": {
+      "objective": "reg:absoluteerror",
+      "weight_power": 1.0
+    },
+    "weighted_mse": {
+      "objective": "reg:squarederror",
+      "weight_power": 2.0
+    }
+  },
+  "best": {
+    "config": "weighted_mae",
+    "mean_mape": 0.057640938725368206,
+    "worst_mape": 0.09966989365606706,
+    "persistence_mape": 0.05805044029249797,
+    "score": 0.9423590612746318
+  },
+  "selected_parameters": [
+    {
+      "config": "weighted_mae",
+      "target": "generator_1",
+      "beta_h15": 0.0,
+      "beta_h120": 0.05,
+      "mean_mape": 0.06453962945841323
+    },
+    {
+      "config": "weighted_mae",
+      "target": "generator_all",
+      "beta_h15": 0.0,
+      "beta_h120": 0.1,
+      "mean_mape": 0.050742247992323186
+    },
+    {
+      "config": "weighted_mse",
+      "target": "generator_1",
+      "beta_h15": 0.0,
+      "beta_h120": 0.05,
+      "mean_mape": 0.06443757860526222
+    },
+    {
+      "config": "weighted_mse",
+      "target": "generator_all",
+      "beta_h15": 0.0,
+      "beta_h120": 0.1,
+      "mean_mape": 0.05091230845249401
+    }
+  ]
+}

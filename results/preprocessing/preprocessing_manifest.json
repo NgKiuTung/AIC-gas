@@ -1,0 +1,103 @@
+{
+  "run_started_utc": "2026-08-03T10:34:46.273800+00:00",
+  "run_finished_utc": "2026-08-03T10:34:53.422391+00:00",
+  "official_test_accessed": false,
+  "script": "codefiles\\02_preprocess.py",
+  "script_sha256": "d45930d9e7616c7dc88b31fc5b16875368722463ee4fb9abe2646049e6bd5000",
+  "inputs": [
+    {
+      "path": "dataset\\初赛-数据集\\Pre_gas.csv",
+      "sha256": "6af59cdf90a7986a99a28171c75d9e1653a8d9270247908dbade81f429b50dc3",
+      "role": "official_training"
+    },
+    {
+      "path": "dataset\\初赛-数据集\\Pre_gas_holder.csv",
+      "sha256": "42929b4815f06f703e3a2504ac1d6c07a47677817687e378c7cd45935e40b3f1",
+      "role": "official_training"
+    },
+    {
+      "path": "dataset\\初赛-数据集\\Pre_gas_user.csv",
+      "sha256": "677a6b9e40349d144dc7c78985110131a291e859cf74d46d1e71bbf6de13ac92",
+      "role": "official_training"
+    },
+    {
+      "path": "dataset\\初赛-数据集\\Pre_load.csv",
+      "sha256": "64c68d5e325a6aad40530f533110161205ed207adfb9ab27a28f4b762e6a5458",
+      "role": "official_training"
+    },
+    {
+      "path": "dataset\\初赛-数据集\\price.xlsx",
+      "sha256": "fc12dddbbbcb1f7947b5e88d080a6c912a41d29cae11381712f43da2b3a4f73b",
+      "role": "auxiliary"
+    },
+    {
+      "path": "dataset\\初赛-数据集\\data_dictionary.xlsx",
+      "sha256": "feba3582133aeda5a55a6645a18586250d397a340ad5d7d4b90dbd71f5bd9d5e",
+      "role": "auxiliary"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results\\preprocessing\\processed\\preprocessed_train.csv",
+      "sha256": "829b713334b7b2af5b7826b736530a5e1053be57aeeb4fe8515b421f99edbd2b",
+      "size_bytes": 5526295
+    },
+    {
+      "path": "results\\preprocessing\\processed\\preprocessed_train_causal.csv",
+      "sha256": "8d9459f6658a4501cb5837b0412c061a23b40ddcc632af6e00e33355f6fc3eb2",
+      "size_bytes": 5526258
+    },
+    {
+      "path": "results\\preprocessing\\processed\\preprocessing_state_full_train.json",
+      "sha256": "29799e31da71e40b7134af938eddd450595f8f784dfa966ab41ab7c5684486e3",
+      "size_bytes": 7642
+    },
+    {
+      "path": "results\\preprocessing\\audit\\imputation_summary.csv",
+      "sha256": "2e5f92da192affdf44e8cf2db24db592532d63288f1bc9fcb7e7179d18e18b3b",
+      "size_bytes": 4789
+    },
+    {
+      "path": "results\\preprocessing\\audit\\outlier_flag_summary.csv",
+      "sha256": "a77c755cd3a7429a3848fc6cb834e3614916b927ec55b9fe92b9821de61ee646",
+      "size_bytes": 2779
+    },
+    {
+      "path": "results\\preprocessing\\audit\\column_lineage.csv",
+      "sha256": "df7dea75f82c1ce81eb8b10c97f2bdc5d8ece4746db4aefed50b68f48ededb74",
+      "size_bytes": 1622
+    },
+    {
+      "path": "results\\preprocessing\\audit\\interpolation_benchmark_metrics.csv",
+      "sha256": "9cfcfa30e6e67ad91e192fb052cb397f81362d692e43cae6e1098d927ce34324",
+      "size_bytes": 40822
+    },
+    {
+      "path": "results\\preprocessing\\audit\\interpolation_method_selection.csv",
+      "sha256": "65254141abd82faf7c1598c840e6d874ef0eb08fa7a01452cce5301808109b0c",
+      "size_bytes": 10138
+    },
+    {
+      "path": "results\\preprocessing\\audit\\interpolation_global_summary.csv",
+      "sha256": "e8d7efb84dcbea7b2b8e2fa30a01e4d50552acd54d19786dd4eb9e6763914804",
+      "size_bytes": 1022
+    },
+    {
+      "path": "results\\preprocessing\\audit\\interpolation_selection.json",
+      "sha256": "a50b2436d2a3f2a3605517f107baecd39e8e443c8393b8f0f50fede96cfa996d",
+      "size_bytes": 3130
+    },
+    {
+      "path": "results\\preprocessing\\audit\\all_null_proxy_experiments.csv",
+      "sha256": "720f534e6a499f45d02b262337560163b4bbf066c6d76dd932a73dfb31375fb6",
+      "size_bytes": 1467
+    },
+    {
+      "path": "results\\preprocessing\\audit\\all_null_column_analysis.json",
+      "sha256": "c1ea572b57ee4f9c03b405bd35be128f187a1337c40ca001a4b20b0eeb930c2e",
+      "size_bytes": 3657
+    }
+  ],
+  "rows": 11521,
+  "columns": 103
+}

@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-08-03T12:38:33.690850+00:00",
+  "source": "results\\features\\train_supervised_features.pkl",
+  "official_test_accessed": false,
+  "folds": [
+    {
+      "name": "fold_1",
+      "valid_start": "2025-03-01 00:00:00",
+      "valid_end": "2025-03-15 23:45:00"
+    },
+    {
+      "name": "fold_2",
+      "valid_start": "2025-04-01 00:00:00",
+      "valid_end": "2025-04-15 23:45:00"
+    },
+    {
+      "name": "fold_3",
+      "valid_start": "2025-04-16 00:00:00",
+      "valid_end": "2025-04-30 21:45:00"
+    }
+  ],
+  "training_label_gap_minutes": 120,
+  "official_metric_aggregation": "mean MAPE over generator_1 and generator_all, 8 horizons, 3 folds",
+  "best_model": {
+    "model": "persistence",
+    "mean_mape": 0.05803031004810085,
+    "std_mape": 0.022038433168415056,
+    "worst_mape": 0.10060849785804749,
+    "mean_score": 0.9419696899518991,
+    "total_runtime_seconds": 0.00392319995444268
+  }
+}

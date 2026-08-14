@@ -1,0 +1,4 @@
+﻿fold,config,features,runtime_seconds,device_requested
+fold_1,d5_known_future_price,875,54.80652160000318,cuda
+fold_2,d5_known_future_price,875,61.00593299999673,cuda
+fold_3,d5_known_future_price,875,63.59826800000155,cuda

@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-08-03T13:32:39.573640+00:00",
+  "source_scope": "training-only OOF predictions",
+  "external_scoring_data_accessed": false,
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "weight_enhanced": 1.0,
+      "weight_base": 0.0,
+      "beta_h15": 0.4,
+      "beta_h120": 0.4,
+      "mean_mape": 0.06268370163881777
+    },
+    {
+      "target": "generator_all",
+      "weight_enhanced": 0.7,
+      "weight_base": 0.30000000000000004,
+      "beta_h15": 0.7,
+      "beta_h120": 0.6,
+      "mean_mape": 0.0473492062982758
+    }
+  ],
+  "persistence_mape": 0.05805044027869182,
+  "ensemble_mape": 0.055016453968546784,
+  "score": 0.9449835460314532,
+  "relative_reduction_vs_persistence": 0.05226465631577133
+}

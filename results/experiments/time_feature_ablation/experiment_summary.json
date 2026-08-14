@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-08-03T13:04:32.030294+00:00",
+  "source": "results\\features\\train_supervised_features_time_augmented.pkl",
+  "source_scope": "causal_preprocessed_training_data_only",
+  "external_scoring_data_accessed": false,
+  "target_design": "direct residual forecasts for generator_1 and generator_all",
+  "configs": {
+    "direct_d5_time_augmented": {
+      "n_estimators": 350,
+      "max_depth": 5,
+      "learning_rate": 0.025,
+      "min_child_weight": 30,
+      "subsample": 0.85,
+      "colsample_bytree": 0.7,
+      "reg_alpha": 2.0,
+      "reg_lambda": 30.0
+    }
+  },
+  "blend_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "selection": [
+    {
+      "model": "direct_d5_time_augmented",
+      "target": "generator_1",
+      "blend": 0.15,
+      "mean_mape": 0.06412869070967038,
+      "std_mape": 0.021103503944301095,
+      "worst_mape": 0.09854152798652649
+    },
+    {
+      "model": "direct_d5_time_augmented",
+      "target": "generator_all",
+      "blend": 0.55,
+      "mean_mape": 0.047796736393744745,
+      "std_mape": 0.020135449922183732,
+      "worst_mape": 0.08885277807712555
+    }
+  ],
+  "best": {
+    "model": "direct_d5_time_augmented",
+    "mean_mape": 0.055962713551707566,
+    "worst_mape": 0.09854152798652649,
+    "mean_score": 0.9440372864482924
+  }
+}

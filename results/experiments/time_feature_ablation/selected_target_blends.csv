@@ -1,0 +1,3 @@
+﻿model,target,blend,mean_mape,std_mape,worst_mape
+direct_d5_time_augmented,generator_1,0.15,0.06412869070967038,0.021103503944301095,0.09854152798652649
+direct_d5_time_augmented,generator_all,0.55,0.047796736393744745,0.020135449922183732,0.08885277807712555

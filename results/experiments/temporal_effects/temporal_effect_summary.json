@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-08-03T13:07:01.284665+00:00",
+  "source_scope": "training-only OOF predictions and causal training observations",
+  "external_scoring_data_accessed": false,
+  "available_training_months": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05"
+  ],
+  "quarter_assessment": "not identifiable: Q1 has Jan-Mar, Q2 has Apr plus only one May timestamp, and validation month is confounded with fold/time",
+  "time_feature_ablation": [
+    {
+      "model": "base_features",
+      "mean_mape": 0.05589276297459833,
+      "std_fold_target_horizon_mape": 0.021976317593500598
+    },
+    {
+      "model": "time_augmented",
+      "mean_mape": 0.05595815479145876,
+      "std_fold_target_horizon_mape": 0.022016459984757666
+    }
+  ],
+  "selected_parameters": [
+    {
+      "target": "generator_1",
+      "beta_h15": 0.1,
+      "beta_h120": 0.15,
+      "mean_mape": 0.06413645735238206,
+      "model": "base_features"
+    },
+    {
+      "target": "generator_all",
+      "beta_h15": 0.65,
+      "beta_h120": 0.6,
+      "mean_mape": 0.04764906859681461,
+      "model": "base_features"
+    },
+    {
+      "target": "generator_1",
+      "beta_h15": 0.1,
+      "beta_h120": 0.15,
+      "mean_mape": 0.06412581087429908,
+      "model": "time_augmented"
+    },
+    {
+      "target": "generator_all",
+      "beta_h15": 0.6,
+      "beta_h120": 0.55,
+      "mean_mape": 0.047790498708618435,
+      "model": "time_augmented"
+    }
+  ]
+}
