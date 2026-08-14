@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-08-14T06:03:10.279896+00:00",
+  "phase": "phase4_python310_runtime_and_packaging",
+  "official_scoring_data_accessed": false,
+  "formal_submission_created": false,
+  "artifacts": [
+    {
+      "path": "results/phase4_runtime_validation/python310_container_validation_summary.json",
+      "bytes": 2887,
+      "sha256": "eefdcdeba9f5afae276f63cf9e8395f15233c56e7d94d7c332da4a0b651ef647"
+    },
+    {
+      "path": "results/phase4_runtime_validation/python310_container_validation.log",
+      "bytes": 28214,
+      "sha256": "6d80471a67d3b5a0018287631c9e9b66b5dfc2098e79371bd193d5e87c6a4a5b"
+    },
+    {
+      "path": "results/phase4_runtime_validation/synthetic_package_validation_summary.json",
+      "bytes": 585,
+      "sha256": "5344eedfc18b6faf69bf4eeaa6e878635475e9aeb3a3771bbc4196048c56d3de"
+    },
+    {
+      "path": "results/phase4_runtime_validation/synthetic_package_validation.log",
+      "bytes": 591,
+      "sha256": "42da032e9ddb2a5a893bc76d67cec26c09f1cb34021902f800df95e422050055"
+    },
+    {
+      "path": "results/phase4_runtime_validation/synthetic_contract_test_gas_predict_prelim.zip",
+      "bytes": 1050,
+      "sha256": "d071f6c66f4420c140cf00bbee6091ab444e325378d4ec7938ee65367fdee100"
+    },
+    {
+      "path": "results/figures_safe/phase4/python310_runtime_validation.png",
+      "bytes": 42665,
+      "sha256": "7e76ff29efcc4d8de8d7eecd9ea05f7ca5ef563a5832f54076e5f55201014b9e"
+    },
+    {
+      "path": "results/figures_safe/phase4/python310_runtime_validation.pdf",
+      "bytes": 15636,
+      "sha256": "e0c096c1f33045bfd5fc156b17e800c89490cfb5711aca0c6fb8a8979cb55edd"
+    },
+    {
+      "path": "results/compliance/phase4_runtime_packaging_gate.json",
+      "bytes": 1621,
+      "sha256": "45f98dbc0be82edc0393eda6e63c8ff42101b58d39cffcf678a93a47c2f68996"
+    },
+    {
+      "path": "docs/experimental_docs/forecasting/08_Python310隔离运行与提交打包验证实验报告.md",
+      "bytes": 5226,
+      "sha256": "18e40e59f1e5e39523ded735c1b2c7ceceb5e71ae7c2c44124c16ddbde745c52"
+    },
+    {
+      "path": "requirements/runtime-py310.txt",
+      "bytes": 224,
+      "sha256": "470b4155efed04da7d2b0575339420b90428f35ea68dd712f7682bb4c7c86a51"
+    }
+  ]
+}

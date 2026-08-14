@@ -31,3 +31,12 @@ validation:
   finite_predictions: true
   non_negative_predictions: true
   generator_hierarchy: generator_all >= generator_1
+synthetic_contract_validation:
+  status: passed
+  rows: 16
+  columns: 17
+  zip_members:
+  - result.csv
+  formal_submission: false
+  official_scoring_data_accessed: false
+  summary: results/phase4_runtime_validation/synthetic_package_validation_summary.json

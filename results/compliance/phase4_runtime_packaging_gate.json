@@ -1,0 +1,35 @@
+{
+  "phase": "phase4_python310_runtime_and_packaging",
+  "created_utc": "2026-08-14T05:59:56.282101+00:00",
+  "official_scoring_data_accessed": false,
+  "scoring_directory_mounted": false,
+  "checks": {
+    "official_python_range_satisfied": true,
+    "python_version": "3.10",
+    "isolated_container_image": "python:3.10-slim",
+    "container_image_id": "sha256:a45c323edaa44976ef63b9a85e0d3bd7bbf31676029dccfbc119f88a65311852",
+    "repository_snapshot_commit": "5386882516fb5a45af886a22841e79f8440fe7e6",
+    "forbidden_data_members": 0,
+    "tests_passed": 21,
+    "tests_failed": 0,
+    "training_replay_rows": 10832,
+    "training_replay_features": 801,
+    "training_replay_max_abs_difference": 0.0,
+    "future_mutation_max_abs_difference": 0.0,
+    "finite_predictions": true,
+    "generator_hierarchy_satisfied": true,
+    "synthetic_zip_single_result_csv": true,
+    "synthetic_zip_rows": 16,
+    "synthetic_zip_columns": 17,
+    "synthetic_zip_utf8": true,
+    "synthetic_zip_minimum_three_decimals": true,
+    "formal_result_created": false,
+    "all_passed": true
+  },
+  "transparent_remediation": [
+    "Attempt 1 failed before tests because dev dependencies were not installed; requirements/dev.txt was added to the isolated command.",
+    "Attempt 2 passed 21 tests but could not replay features because v0.5 private archive omitted two training-derived artifacts.",
+    "Attempt 3 explicitly supplemented the two hashed training-derived artifacts and passed; future archive versions include them automatically."
+  ],
+  "next_gate": "Explicit user authorization for read-only final scoring inference"
+}
