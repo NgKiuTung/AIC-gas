@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-08-14T05:34:28.407995+00:00",
+  "official_scoring_data_accessed": false,
+  "official_alignment": {
+    "reference_time_information_only": true,
+    "forecast_horizons_15_to_120_minutes": true,
+    "targets": [
+      "generator_1",
+      "generator_all"
+    ],
+    "submission_result_created": false
+  },
+  "training_replay": {
+    "rows_expected": 10832,
+    "rows_aligned": 10832,
+    "feature_count": 801,
+    "max_abs_difference": 0.0,
+    "tolerance": 1e-09,
+    "all_features_match": true,
+    "seconds": 7.1929124999987835
+  },
+  "synthetic_end_to_end": {
+    "raw_rows": 800,
+    "feature_count": 801,
+    "prediction_origins": 16,
+    "forecast_horizons_minutes": [
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120
+    ],
+    "finite_features": true,
+    "finite_predictions": true,
+    "hierarchy_satisfied": true,
+    "future_mutation_feature_max_abs_difference": 0.0,
+    "future_independence_pass": true,
+    "seconds": 4.0269386999989365
+  },
+  "figures": [
+    "results\\figures_safe\\phase3\\synthetic_end_to_end_forecasts.png",
+    "results\\figures_safe\\phase3\\synthetic_end_to_end_forecasts.pdf"
+  ],
+  "all_passed": true
+}

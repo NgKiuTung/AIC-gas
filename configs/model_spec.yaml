@@ -1,5 +1,5 @@
 model_spec_id: gas_forecast_multidepth_v1
-status: production_bundle_validated_pending_submission_pipeline
+status: causal_inference_pipeline_validated_pending_explicit_scoring_authorization
 created_utc: '2026-08-14T05:02:25.965137+00:00'
 protocol_frozen_commit: b56ce77
 training_scope: official preliminary training period only
@@ -93,7 +93,7 @@ reported_metrics:
   retrospective_nested_outer_mape: 0.04714938642843055
   retrospective_nested_outer_score: 0.9528506135715694
 production_bundle_available: true
-next_required_phase: build causal raw-table inference and submission adapter
+next_required_phase: validate Python 3.10 package and request explicit scoring-inference authorization
 production_bundle:
   storage: local_only_gitignored
   path: results/models/production_forecaster
@@ -109,3 +109,21 @@ production_bundle:
     model_sha256: f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f
   full_row_gpu_cpu_parity: true
   cpu_feature_to_prediction_seconds: 0.26866270000027725
+inference_pipeline:
+  raw_table_sources:
+  - gas
+  - holder
+  - user
+  - load
+  preprocessing: complete 15-minute grid with current-and-past-only causal filling
+  max_lookback_steps: 672
+  max_lookback_days: 7
+  feature_count: 801
+  training_replay_rows: 10832
+  training_replay_max_abs_difference: 0.0
+  future_mutation_max_abs_difference: 0.0
+  synthetic_raw_rows: 800
+  synthetic_prediction_origins: 16
+  exact_official_submission_columns: 17
+  validation_summary: results/phase3_inference_validation/phase3_inference_validation_summary.json
+  official_scoring_data_accessed: false
