@@ -1,5 +1,5 @@
 model_spec_id: gas_forecast_multidepth_v1
-status: python310_runtime_and_packaging_validated_pending_explicit_scoring_authorization
+status: final_scoring_read_only_inference_completed
 created_utc: '2026-08-14T05:02:25.965137+00:00'
 protocol_frozen_commit: b56ce77
 training_scope: official preliminary training period only
@@ -9,7 +9,7 @@ raw_observation_range:
 supervised_origin_range:
 - '2025-01-01 00:00:00'
 - '2025-04-30 21:45:00'
-external_scoring_data_accessed: false
+external_scoring_data_accessed: true
 feature_version: cleaning_enhanced_core_smooth_transition_ratio_clean
 feature_groups:
 - base
@@ -93,7 +93,7 @@ reported_metrics:
   retrospective_nested_outer_mape: 0.04714938642843055
   retrospective_nested_outer_score: 0.9528506135715694
 production_bundle_available: true
-next_required_phase: request explicit scoring-inference authorization
+next_required_phase: submit validated archive and monitor official score
 production_bundle:
   storage: local_only_gitignored
   path: results/models/production_forecaster
@@ -150,3 +150,24 @@ submission_packaging_validation:
   minimum_three_decimals: true
   formal_submission: false
   validation_summary: results/phase4_runtime_validation/synthetic_package_validation_summary.json
+final_scoring_inference:
+  authorization: explicit_user_authorization_read_only
+  official_scoring_data_accessed: true
+  training_or_tuning_performed: false
+  label_metrics_computed: false
+  reference_rows: 192
+  reference_start: '2025-05-01 00:00:00'
+  reference_end: '2025-05-02 23:45:00'
+  feature_count: 801
+  input_read_only_hash_match: true
+  finite_predictions: true
+  generator_hierarchy_satisfied: true
+  package_rows: 192
+  package_columns: 17
+  package_members:
+  - result.csv
+  elapsed_seconds: 15.69723090000116
+  under_30_minutes: true
+  formal_submission: true
+  submission_storage: local_only_gitignored
+  manifest: results/final_inference_audit/final_scoring_inference_manifest.json

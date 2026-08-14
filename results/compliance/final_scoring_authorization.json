@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-08-14T06:47:00Z",
+  "authorized": true,
+  "authorization_source": "User explicitly stated that 'continue' authorizes the agreed execution path.",
+  "permitted_scope": [
+    "Read the four expected official scoring input files directly and read-only.",
+    "Run inference with the already frozen feature schema, models, and ensemble.",
+    "Validate the output schema and package the final submission archive."
+  ],
+  "prohibited_scope": [
+    "Training or fitting on official scoring data.",
+    "Hyperparameter tuning, feature selection, or model selection on official scoring data.",
+    "Label-based metric computation on official scoring data.",
+    "Writing to or modifying the official scoring input directory."
+  ],
+  "fail_closed_token": "AUTHORIZED_FINAL_SCORING_READ_ONLY"
+}
