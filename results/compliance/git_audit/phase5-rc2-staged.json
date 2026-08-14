@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-08-14T07:49:08.389232+00:00",
+  "label": "phase5-rc2-staged",
+  "dataset_directory_traversed": false,
+  "external_scoring_data_accessed": false,
+  "tracked_sensitive_findings": 0,
+  "overall_pass": true,
+  "findings": []
+}

@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-14T06:52:58.375181+00:00",
+  "created_utc": "2026-08-14T07:48:44.893258+00:00",
   "phase": "phase5_final_scoring_read_only_inference",
   "official_scoring_data_accessed": true,
   "training_or_tuning_performed": false,
@@ -81,8 +81,20 @@
     {
       "path": "docs/experimental_docs/forecasting/09_最终评分只读推理与提交验包实验报告.md",
       "classification": "safe",
-      "bytes": 6821,
-      "sha256": "4bab10376784ee0bf890cd9a7552e26970cd7bd91436d971a57afad2de121448"
+      "bytes": 7679,
+      "sha256": "e79e9930967f0020f06bc06876ba9252bfc78f13d06ea86287d5e0418fc371be"
+    },
+    {
+      "path": "results/repository_validation/release_v0.7.0-submission-rc1_verification.json",
+      "classification": "safe_metadata",
+      "bytes": 354,
+      "sha256": "fc4df17bb499d9cc88cee58374d8e89001e8575fbd322a88d4391a8dc09598bf"
+    },
+    {
+      "path": "results/repository_validation/release_v0.7.0-submission-rc1_verification_history.txt",
+      "classification": "safe_log",
+      "bytes": 1886,
+      "sha256": "d6c99552e563d9a7c75b6a275412490acfcd4e0e0b43c27123e35fd77d339667"
     }
   ]
 }

@@ -54,6 +54,20 @@ ARTIFACTS = (
         / "09_最终评分只读推理与提交验包实验报告.md",
         "safe",
     ),
+    (
+        ROOT
+        / "results"
+        / "repository_validation"
+        / "release_v0.7.0-submission-rc1_verification.json",
+        "safe_metadata",
+    ),
+    (
+        ROOT
+        / "results"
+        / "repository_validation"
+        / "release_v0.7.0-submission-rc1_verification_history.txt",
+        "safe_log",
+    ),
 )
 
 
