@@ -12,7 +12,7 @@ import seaborn as sns
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUT_DIR = ROOT / "results" / "experiments" / "nested_temporal_validation"
-OUTPUT_DIR = ROOT / "results" / "visualizations" / "evaluation"
+OUTPUT_DIR = ROOT / "results" / "figures_safe" / "phase1"
 
 
 def main() -> None:

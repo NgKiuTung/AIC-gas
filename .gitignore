@@ -33,6 +33,7 @@ results/models/
 results/submissions/
 results/releases/
 results/visualizations/
+results/figures_safe/**/*.svg
 results/optimization/
 results/**/logs/
 results/features/

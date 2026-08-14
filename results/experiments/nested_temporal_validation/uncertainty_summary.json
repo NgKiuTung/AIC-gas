@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-08-14T04:31:47.598335+00:00",
+  "method": "paired outer-window nonparametric bootstrap",
+  "descriptive_only_not_used_for_model_selection": true,
+  "seed": 20260814,
+  "bootstrap_draws": 20000,
+  "outer_windows": 5,
+  "model_mape_quantiles_2.5_50_97.5": [
+    0.034672833423107535,
+    0.04728123205747566,
+    0.056629430735379606
+  ],
+  "persistence_mape_quantiles_2.5_50_97.5": [
+    0.0367994688796105,
+    0.051364658280695516,
+    0.06114465823130875
+  ],
+  "absolute_improvement_quantiles_2.5_50_97.5": [
+    0.0016522165906588393,
+    0.004209842803098544,
+    0.006286087434343807
+  ],
+  "bootstrap_probability_improvement": 0.99985,
+  "observed_windows_improved": 4,
+  "observed_windows_total": 5,
+  "external_scoring_data_accessed": false,
+  "caveat": "Five outer windows give limited uncertainty resolution; historical architecture selection remains post hoc."
+}

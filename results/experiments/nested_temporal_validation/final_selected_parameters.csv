@@ -1,0 +1,3 @@
+﻿target,training_oof_mape,candidate_id,weight_name,weight_d5,weight_d4,weight_d6,threshold,gate_floor,beta_h15,beta_h120
+generator_1,0.06262698258553184,d6__t0.08__f0.75__b0.55-0.45,d6,0.0,0.0,1.0,0.08,0.75,0.55,0.45
+generator_all,0.046787144887333786,d5_d6__t0.08__f0.25__b1.00-0.80,d5_d6,0.5,0.0,0.5,0.08,0.25,1.0,0.8

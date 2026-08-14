@@ -7,6 +7,7 @@
 - `competition/`：赛题理解与官方材料；官方 PDF 仅本地保留，不进入 Git。
 - `design/`：架构、数据契约、建模思路和优化数学约束。
 - `experimental_docs/`：按预处理、预测、优化阶段归档实验报告。
+- `compliance/`：官方要求映射、数据合规整改与阶段准入报告。
 - `guides/`：环境、复现、实验登记和版本回退流程。
 
 当前结论与可视化索引见 [实验索引](experimental_docs/experiment_index.md)，代码执行入口见 [复现指南](guides/reproduction.md)，版本存档见 [版本回退指南](guides/versioning_and_rollback.md)，实验资产保护规则见 [实验归档策略](guides/experiment_archive_policy.md)。

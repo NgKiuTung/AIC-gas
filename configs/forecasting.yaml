@@ -1,7 +1,10 @@
 forecast_horizons_minutes: [15, 30, 45, 60, 75, 90, 105, 120]
-validation: expanding_time_series_3_fold
+validation: nested_temporal_pseudotest_v1
 primary_metric: mape
-best_validated_mape_percent: 5.4671
-device: cuda
+post_selection_oof_mape_percent: 5.4671
+retrospective_nested_outer_mape_percent: 4.7149
+retrospective_nested_outer_score: 0.9528506
+production_bundle_status: pending_phase2_refit
+training_device: cuda
+inference_device: auto
 random_seed: 42
-

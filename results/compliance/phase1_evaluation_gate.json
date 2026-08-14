@@ -1,0 +1,18 @@
+{
+  "created_date": "2026-08-14",
+  "phase": "phase1_frozen_evaluation_protocol",
+  "protocol_preregistered_commit": "b56ce77",
+  "external_scoring_data_accessed": false,
+  "retrospective_nested_outer_mape": 0.04714938642843055,
+  "retrospective_nested_outer_score": 0.9528506135715694,
+  "persistence_mape": 0.051309648923043925,
+  "relative_improvement_vs_persistence": 0.08108148431990031,
+  "outer_windows_improved": 4,
+  "outer_windows_total": 5,
+  "all_target_intraday_sessions_improve": true,
+  "production_model_spec_frozen": true,
+  "production_model_bundle_available": false,
+  "phase1_gate": "pass_to_phase2",
+  "submission_ready": false,
+  "next_required_phase": "refit and serialize d5 and d6 production components with reload parity"
+}

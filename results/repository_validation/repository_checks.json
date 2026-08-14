@@ -1,41 +1,41 @@
 {
-  "created_utc": "2026-08-14T03:53:36.083830+00:00",
+  "created_utc": "2026-08-14T04:31:19.427140+00:00",
   "external_scoring_data_accessed": false,
   "checks": [
     {
       "check": "compileall",
       "returncode": 0,
-      "elapsed_seconds": 0.07616719999987254
+      "elapsed_seconds": 0.09277539999857254
     },
     {
       "check": "ruff",
       "returncode": 0,
-      "elapsed_seconds": 0.07816600000023755
+      "elapsed_seconds": 0.09068769999976212
     },
     {
       "check": "pytest",
       "returncode": 0,
-      "elapsed_seconds": 0.4875357000000804
+      "elapsed_seconds": 0.4949333000004117
     },
     {
       "check": "sensitive_git_content",
       "returncode": 0,
-      "elapsed_seconds": 0.10106080000059592
+      "elapsed_seconds": 0.14163449999978184
     },
     {
       "check": "optimization_dry_run",
       "returncode": 0,
-      "elapsed_seconds": 0.08119040000019595
+      "elapsed_seconds": 0.07631749999927706
     },
     {
       "check": "layout",
       "returncode": 0,
-      "elapsed_seconds": 0.05147279999982857
+      "elapsed_seconds": 0.054487600000356906
     },
     {
       "check": "release_verification",
       "returncode": 0,
-      "elapsed_seconds": 2.3480690999995204
+      "elapsed_seconds": 3.477980400000888
     }
   ],
   "overall_pass": true

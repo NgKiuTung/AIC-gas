@@ -1,5 +1,6 @@
 protocol_id: nested_temporal_pseudotest_v1
 frozen_date: 2026-08-14
+frozen_commit: b56ce77
 status: preregistered_before_execution
 official_alignment:
   training_period: [2025-01-01, 2025-04-30]

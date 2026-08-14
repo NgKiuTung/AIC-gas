@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-08-14T04:31:20.113197+00:00",
+  "label": "phase1_final",
+  "dataset_directory_traversed": false,
+  "external_scoring_data_accessed": false,
+  "tracked_sensitive_findings": 0,
+  "overall_pass": true,
+  "findings": []
+}

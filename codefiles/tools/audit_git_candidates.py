@@ -27,7 +27,7 @@ PATHS = [
 
 def main() -> None:
     completed = subprocess.run(
-        ["git", "ls-files", "--others", "--exclude-standard", "--", *PATHS],
+        ["git", "ls-files", "-z", "--others", "--exclude-standard", "--", *PATHS],
         cwd=ROOT,
         capture_output=True,
         text=True,
@@ -36,7 +36,9 @@ def main() -> None:
         check=True,
     )
     rows = []
-    for relative in completed.stdout.splitlines():
+    for relative in completed.stdout.split("\0"):
+        if not relative:
+            continue
         path = ROOT / relative
         if path.is_file():
             rows.append({"path": relative.replace("\\", "/"), "bytes": path.stat().st_size})
@@ -66,4 +68,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

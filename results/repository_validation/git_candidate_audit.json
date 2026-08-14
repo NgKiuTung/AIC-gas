@@ -1,89 +1,89 @@
 {
-  "created_utc": "2026-08-06T13:01:00.436462+00:00",
+  "created_utc": "2026-08-14T04:32:34.231208+00:00",
   "dataset_pathspec_used": false,
   "external_scoring_data_accessed": false,
-  "candidate_files": 35,
-  "candidate_bytes": 1878552,
+  "candidate_files": 23,
+  "candidate_bytes": 935150,
   "largest_candidates": [
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.png",
-      "bytes": 367572
+      "path": "results/figures_safe/phase1/nested_temporal_validation.png",
+      "bytes": 352185
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.png",
-      "bytes": 331706
+      "path": "results/figures_safe/phase1/nested_temporal_time_slices.png",
+      "bytes": 306216
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.png",
-      "bytes": 262042
+      "path": "results/figures_safe/phase1/nested_temporal_validation.svg",
+      "bytes": 94421
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.svg",
-      "bytes": 116596
+      "path": "results/figures_safe/phase1/nested_temporal_time_slices.svg",
+      "bytes": 66265
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.png",
-      "bytes": 109387
+      "path": "results/experiments/nested_temporal_validation/candidate_family.csv",
+      "bytes": 33857
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.png",
-      "bytes": 97432
+      "path": "results/figures_safe/phase1/nested_temporal_validation.pdf",
+      "bytes": 27661
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.svg",
-      "bytes": 64670
+      "path": "results/figures_safe/phase1/nested_temporal_time_slices.pdf",
+      "bytes": 21610
     },
     {
-      "path": "results/releases/v0.1.1-archive/manifests/full_archive_inventory.json",
-      "bytes": 61972
+      "path": "docs/experimental_docs/forecasting/05_嵌套时间评估与模型规范冻结实验报告.md",
+      "bytes": 5580
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.png",
-      "bytes": 52618
+      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_target_horizon.csv",
+      "bytes": 5572
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_weekday_hour_heatmap.pdf",
-      "bytes": 51586
+      "path": "codefiles/tools/analyze_nested_time_slices.py",
+      "bytes": 4761
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_oof_overview.pdf",
-      "bytes": 50956
+      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_hour.csv",
+      "bytes": 3943
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.svg",
-      "bytes": 50811
+      "path": "results/experiments/nested_temporal_validation/selection_trace.csv",
+      "bytes": 2433
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_dispatch_overview.pdf",
-      "bytes": 49460
+      "path": "codefiles/tools/summarize_nested_uncertainty.py",
+      "bytes": 2326
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.pdf",
-      "bytes": 42526
+      "path": "configs/model_spec.yaml",
+      "bytes": 1766
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.pdf",
-      "bytes": 41396
+      "path": "results/experiments/nested_temporal_validation/nested_validation_summary.json",
+      "bytes": 1601
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/prediction/prediction_representative_day.svg",
-      "bytes": 38247
+      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_forecast_session.csv",
+      "bytes": 994
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.pdf",
-      "bytes": 25814
+      "path": "results/experiments/nested_temporal_validation/uncertainty_summary.json",
+      "bytes": 926
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_uplift_distribution.svg",
-      "bytes": 24848
+      "path": "results/compliance/phase1_evaluation_gate.json",
+      "bytes": 750
     },
     {
-      "path": "results/releases/v0.1.1-archive/figures/optimization/optimization_fold_stability.svg",
-      "bytes": 9176
+      "path": "results/experiments/nested_temporal_validation/outer_window_summary.csv",
+      "bytes": 643
     },
     {
-      "path": "results/releases/v0.1.1-archive/checksums.json",
-      "bytes": 8947
+      "path": "results/experiments/nested_temporal_validation/time_slice_summary.json",
+      "bytes": 624
     }
   ],
   "files_over_10_mib": []

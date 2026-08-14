@@ -1,0 +1,54 @@
+model_spec_id: gas_forecast_multidepth_v1
+status: evaluation_frozen_pending_phase2_production_refit
+created_utc: '2026-08-14T04:31:47.003837+00:00'
+protocol_frozen_commit: b56ce77
+training_scope: official preliminary training period only
+raw_observation_range:
+- '2025-01-01 00:00:00'
+- '2025-04-30 23:45:00'
+supervised_origin_range:
+- '2025-01-01 00:00:00'
+- '2025-04-30 21:45:00'
+external_scoring_data_accessed: false
+feature_version: cleaning_enhanced_core_smooth_transition_ratio_clean
+target_design:
+  generator_1: relative_correction
+  generator_all: absolute_correction
+component_models:
+  d5: 350 trees, depth 5, cleaning-enhanced selected feature groups
+  d4: 500 trees, depth 4, wide capacity candidate
+  d6: 450 trees, depth 6, regularized capacity candidate
+production_components_with_nonzero_weight:
+- d5
+- d6
+ensemble_parameters:
+- target: generator_1
+  training_oof_mape: 0.06262698258553184
+  candidate_id: d6__t0.08__f0.75__b0.55-0.45
+  weight_name: d6
+  weight_d5: 0.0
+  weight_d4: 0.0
+  weight_d6: 1.0
+  threshold: 0.08
+  gate_floor: 0.75
+  beta_h15: 0.55
+  beta_h120: 0.45
+- target: generator_all
+  training_oof_mape: 0.046787144887333786
+  candidate_id: d5_d6__t0.08__f0.25__b1.00-0.80
+  weight_name: d5_d6
+  weight_d5: 0.5
+  weight_d4: 0.0
+  weight_d6: 0.5
+  threshold: 0.08
+  gate_floor: 0.25
+  beta_h15: 1.0
+  beta_h120: 0.8
+validation_protocol: nested_temporal_pseudotest_v1
+reported_metrics:
+  post_selection_oof_mape: 0.054671132544103794
+  retrospective_nested_outer_mape: 0.04714938642843055
+  retrospective_nested_outer_score: 0.9528506135715694
+production_bundle_available: false
+next_required_phase: refit and serialize every non-zero component model, then verify
+  reload parity

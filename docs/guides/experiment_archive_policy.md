@@ -11,4 +11,6 @@
 
 完整实验包保存在 `results/releases/<version>/artifacts/full_experiment_archive.zip`。整个 `results/releases/` 必须被 Git 忽略，也不得作为 GitHub Release 公开发布；跨机器备份只能使用访问受控且符合赛事规则的私有存储。评分集和原始数据目录禁止进入归档。
 
+允许将经过审计的聚合图保存到 `results/figures_safe/` 并提交协作仓库，但图中不得包含逐行时间戳、真实值、预测值或可反推出赛事原始序列的数据。逐行诊断图和源数据仍只能保存在被忽略的本地目录。
+
 版本快照采用只增不改策略：同名版本存在时，创建脚本必须失败。需要补充资料时应提升版本号，不得修改旧快照。

@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-14T04:31:49.489559+00:00",
+  "descriptive_only_not_used_for_model_selection": true,
+  "time_basis": "forecast target datetime = origin datetime + horizon",
+  "all_target_sessions_improve": true,
+  "worst_target_session": {
+    "target": "generator_1",
+    "forecast_session": "morning_06_09",
+    "model_mape": 0.08688839556829228,
+    "persistence_mape": 0.08950957763474336
+  },
+  "quarter_effect_evaluated": false,
+  "quarter_effect_reason": "All preregistered outer pseudo-tests are in April to approximate the May scoring boundary.",
+  "external_scoring_data_accessed": false
+}
