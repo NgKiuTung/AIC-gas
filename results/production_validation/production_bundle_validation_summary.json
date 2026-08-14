@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-08-14T05:03:42.425232+00:00",
+  "external_scoring_data_accessed": false,
+  "validation_rows": 10832,
+  "checks": 22,
+  "passed": 22,
+  "failed": 0,
+  "cpu_feature_to_prediction_seconds": 0.26866270000027725,
+  "raw_hierarchy_violations_before_projection": 4,
+  "raw_hierarchy_violation_rate": 4.615952732644018e-05,
+  "raw_hierarchy_maximum_gap": 2.2658830010296818,
+  "hierarchy_projection_applied": true,
+  "all_passed": true
+}

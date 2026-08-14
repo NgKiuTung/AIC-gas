@@ -1,89 +1,65 @@
 {
-  "created_utc": "2026-08-14T04:32:34.231208+00:00",
+  "created_utc": "2026-08-14T05:05:53.367240+00:00",
   "dataset_pathspec_used": false,
   "external_scoring_data_accessed": false,
-  "candidate_files": 23,
-  "candidate_bytes": 935150,
+  "candidate_files": 14,
+  "candidate_bytes": 36354,
   "largest_candidates": [
     {
-      "path": "results/figures_safe/phase1/nested_temporal_validation.png",
-      "bytes": 352185
+      "path": "codefiles/pipelines/run_production_refit.py",
+      "bytes": 9289
     },
     {
-      "path": "results/figures_safe/phase1/nested_temporal_time_slices.png",
-      "bytes": 306216
+      "path": "codefiles/pipelines/validate_production_bundle.py",
+      "bytes": 8297
     },
     {
-      "path": "results/figures_safe/phase1/nested_temporal_validation.svg",
-      "bytes": 94421
+      "path": "docs/experimental_docs/forecasting/06_生产模型重训与重载一致性实验报告.md",
+      "bytes": 4059
     },
     {
-      "path": "results/figures_safe/phase1/nested_temporal_time_slices.svg",
-      "bytes": 66265
+      "path": "codefiles/tools/audit_hierarchy_projection.py",
+      "bytes": 3084
     },
     {
-      "path": "results/experiments/nested_temporal_validation/candidate_family.csv",
-      "bytes": 33857
+      "path": "codefiles/src/gas_power/forecasting/production.py",
+      "bytes": 3033
     },
     {
-      "path": "results/figures_safe/phase1/nested_temporal_validation.pdf",
-      "bytes": 27661
+      "path": "codefiles/tests/unit/test_production_forecasting.py",
+      "bytes": 2419
     },
     {
-      "path": "results/figures_safe/phase1/nested_temporal_time_slices.pdf",
-      "bytes": 21610
+      "path": "results/production_validation/production_model_manifest.json",
+      "bytes": 2211
     },
     {
-      "path": "docs/experimental_docs/forecasting/05_嵌套时间评估与模型规范冻结实验报告.md",
-      "bytes": 5580
+      "path": "results/production_validation/production_bundle_checks.csv",
+      "bytes": 1250
     },
     {
-      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_target_horizon.csv",
-      "bytes": 5572
+      "path": "results/compliance/phase2_model_gate.json",
+      "bytes": 659
     },
     {
-      "path": "codefiles/tools/analyze_nested_time_slices.py",
-      "bytes": 4761
+      "path": "results/production_validation/hierarchy_projection_audit.json",
+      "bytes": 606
     },
     {
-      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_hour.csv",
-      "bytes": 3943
+      "path": "results/production_validation/production_bundle_validation_summary.json",
+      "bytes": 467
     },
     {
-      "path": "results/experiments/nested_temporal_validation/selection_trace.csv",
-      "bytes": 2433
+      "path": "results/production_validation/component_reload_parity.csv",
+      "bytes": 366
     },
     {
-      "path": "codefiles/tools/summarize_nested_uncertainty.py",
-      "bytes": 2326
+      "path": "results/production_validation/phase2_refit_summary.json",
+      "bytes": 364
     },
     {
-      "path": "configs/model_spec.yaml",
-      "bytes": 1766
-    },
-    {
-      "path": "results/experiments/nested_temporal_validation/nested_validation_summary.json",
-      "bytes": 1601
-    },
-    {
-      "path": "results/experiments/nested_temporal_validation/outer_metrics_by_forecast_session.csv",
-      "bytes": 994
-    },
-    {
-      "path": "results/experiments/nested_temporal_validation/uncertainty_summary.json",
-      "bytes": 926
-    },
-    {
-      "path": "results/compliance/phase1_evaluation_gate.json",
-      "bytes": 750
-    },
-    {
-      "path": "results/experiments/nested_temporal_validation/outer_window_summary.csv",
-      "bytes": 643
-    },
-    {
-      "path": "results/experiments/nested_temporal_validation/time_slice_summary.json",
-      "bytes": 624
+      "path": "results/compliance/git_audit/phase2_final.json",
+      "bytes": 250
     }
   ],
   "files_over_10_mib": []

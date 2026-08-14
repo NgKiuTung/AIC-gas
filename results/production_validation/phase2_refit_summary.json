@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-14T04:59:28.562593+00:00",
+  "external_scoring_data_accessed": false,
+  "required_components": [
+    "d5",
+    "d6"
+  ],
+  "training_rows": 10832,
+  "feature_count": 801,
+  "gpu_training": true,
+  "cpu_inference_verified": true,
+  "reload_parity_verified": true,
+  "prediction_hierarchy": true,
+  "all_checks_pass": true
+}

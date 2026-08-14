@@ -1,6 +1,6 @@
 # 煤气发电预测与发电优化
 
-本仓库用于竞赛初赛阶段的训练数据治理、多步发电预测和约束发电优化。历史三折结果 **5.4671% MAPE** 属于同一 OOF 上选参后的研究指标；预注册的 5 个两天嵌套时间伪测试给出 **4.7149% MAPE / 0.95285 分**，相对 persistence 降低 8.11%。该结果仍是训练期回放而非官方评分成绩，且生产模型包尚待 Phase 2 重训与序列化。
+本仓库用于竞赛初赛阶段的训练数据治理、多步发电预测和约束发电优化。历史三折结果 **5.4671% MAPE** 属于同一 OOF 上选参后的研究指标；预注册的 5 个两天嵌套时间伪测试给出 **4.7149% MAPE / 0.95285 分**，相对 persistence 降低 8.11%。该结果仍是训练期回放而非官方评分成绩。冻结的 d5/d6 生产组件已完成 RTX 4060 重训、全量重载及 CPU parity 验证；正式原始表推理与提交链仍待 Phase 3–4 完成。
 
 > 数据合规：比赛数据不随仓库发布。任何训练、实验或 CI 流程都不得读取 `dataset/初赛-评分所用测试集`，评分集也不得参与训练或模型选择。
 
@@ -13,6 +13,14 @@ pip install -r requirements\base.txt -r requirements\gpu.txt -r requirements\dev
 pip install -e .
 pytest
 python codefiles\pipelines\run_validation.py
+```
+
+训练期评估与生产模型构建：
+
+```powershell
+python codefiles\pipelines\run_nested_validation.py
+python codefiles\pipelines\run_production_refit.py --device cuda
+python codefiles\pipelines\validate_production_bundle.py
 ```
 
 关键入口：

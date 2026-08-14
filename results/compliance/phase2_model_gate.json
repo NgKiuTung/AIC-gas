@@ -1,0 +1,18 @@
+{
+  "created_date": "2026-08-14",
+  "phase": "phase2_research_serving_alignment",
+  "external_scoring_data_accessed": false,
+  "model_spec_id": "gas_forecast_multidepth_v1",
+  "required_components": ["d5", "d6"],
+  "training_rows": 10832,
+  "feature_count": 801,
+  "gpu_training": true,
+  "reload_parity_verified": true,
+  "full_row_gpu_cpu_parity_verified": true,
+  "full_row_validation_checks_passed": 22,
+  "full_row_validation_checks_total": 22,
+  "hierarchy_projection_applied": true,
+  "phase2_gate": "pass_to_phase3",
+  "submission_ready": false,
+  "next_required_phase": "causal raw-table feature construction and scoring-only inference entrypoint"
+}

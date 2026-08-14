@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-08-14T04:59:28.562593+00:00",
+  "model_spec_id": "gas_forecast_multidepth_v1",
+  "protocol_frozen_commit": "b56ce77",
+  "external_scoring_data_accessed": false,
+  "training_rows": 10832,
+  "feature_count": 801,
+  "output_count_per_component": 16,
+  "device_requested": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 566.14, 8188 MiB",
+  "python": "3.13.7",
+  "numpy": "2.3.5",
+  "pandas": "2.2.2",
+  "xgboost": "3.0.5",
+  "input_sha256": {
+    "features": "313e485a2b6cb763af83cff9344a7d13f581ee17840c26a11a18100667a84f7f",
+    "catalog": "724b501c476e9c6526b74da329e7add4279a85d316d5b57e78be14d666ad973d"
+  },
+  "feature_schema_sha256": "0031c08b134031e47c0a17b1ffd6735f89ae6715cf92f8b20066097dffa54866",
+  "components": [
+    {
+      "component": "d5",
+      "model_file": "d5_xgboost.json",
+      "model_bytes": 17083452,
+      "model_sha256": "ec42dd857ffaa017ef2a06171e67a1797bd201e01286cba8ca635396a3cb2828",
+      "training_seconds": 63.64359060000061,
+      "reload_max_abs_diff": 0.0,
+      "cpu_max_abs_diff": 0.0,
+      "parity_pass": true,
+      "parameters": {
+        "n_estimators": 350,
+        "max_depth": 5,
+        "learning_rate": 0.025,
+        "min_child_weight": 30,
+        "subsample": 0.85,
+        "colsample_bytree": 0.7,
+        "reg_alpha": 2.0,
+        "reg_lambda": 30.0,
+        "max_bin": 256
+      }
+    },
+    {
+      "component": "d6",
+      "model_file": "d6_xgboost.json",
+      "model_bytes": 30937680,
+      "model_sha256": "f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f",
+      "training_seconds": 128.6790815000004,
+      "reload_max_abs_diff": 0.0,
+      "cpu_max_abs_diff": 0.0,
+      "parity_pass": true,
+      "parameters": {
+        "n_estimators": 450,
+        "max_depth": 6,
+        "learning_rate": 0.02,
+        "min_child_weight": 40,
+        "subsample": 0.9,
+        "colsample_bytree": 0.75,
+        "reg_alpha": 3.0,
+        "reg_lambda": 40.0,
+        "max_bin": 256
+      }
+    }
+  ],
+  "smoke_rows": 256,
+  "finite_predictions": true,
+  "prediction_hierarchy": true,
+  "reload_parity_tolerance": 1e-06,
+  "all_checks_pass": true
+}

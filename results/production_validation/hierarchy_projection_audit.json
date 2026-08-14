@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-08-14T05:01:52.940217+00:00",
+  "external_scoring_data_accessed": false,
+  "rows": 7360,
+  "hierarchy_violations": 0,
+  "hierarchy_violation_rate": 0.0,
+  "maximum_violation": 0.0,
+  "generator_1_mape": 0.054989158583811336,
+  "generator_all_mape_before_projection": 0.03930961427304976,
+  "generator_all_mape_after_projection": 0.03930961427304976,
+  "overall_mape_before_projection": 0.04714938642843055,
+  "overall_mape_after_projection": 0.04714938642843055,
+  "projection_mape_delta": 0.0,
+  "projection_rule": "generator_all = max(generator_all, generator_1)"
+}

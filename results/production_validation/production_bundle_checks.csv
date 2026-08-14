@@ -1,0 +1,23 @@
+﻿check,passed,detail
+training_only_spec,True,gas_forecast_multidepth_v1
+training_only_manifest,True,gas_forecast_multidepth_v1
+feature_schema_exact,True,features=801
+feature_schema_unique,True,unique=801
+feature_schema_hash,True,0031c08b134031e47c0a17b1ffd6735f89ae6715cf92f8b20066097dffa54866
+input_feature_hash,True,313e485a2b6cb763af83cff9344a7d13f581ee17840c26a11a18100667a84f7f
+input_catalog_hash,True,724b501c476e9c6526b74da329e7add4279a85d316d5b57e78be14d666ad973d
+full_matrix_finite,True,"shape=(10832, 801)"
+d5_model_hash,True,ec42dd857ffaa017ef2a06171e67a1797bd201e01286cba8ca635396a3cb2828
+d5_output_shape,True,"(10832, 16)"
+d5_output_finite,True,rows=10832
+d5_full_gpu_cpu_parity,True,max_abs_diff=0
+d5_cpu_runtime,True,seconds=0.083111
+d6_model_hash,True,f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f
+d6_output_shape,True,"(10832, 16)"
+d6_output_finite,True,rows=10832
+d6_full_gpu_cpu_parity,True,max_abs_diff=0
+d6_cpu_runtime,True,seconds=0.170567
+full_ensemble_finite,True,rows=10832
+raw_hierarchy_violation_audited,True,count=4; rate=0.00004616; max_gap=2.26588300
+full_prediction_hierarchy,True,generator_all >= generator_1
+feature_to_prediction_cpu_under_30_minutes,True,seconds=0.268663

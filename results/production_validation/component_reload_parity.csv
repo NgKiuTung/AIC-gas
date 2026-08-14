@@ -1,0 +1,3 @@
+﻿component,model_file,model_bytes,model_sha256,training_seconds,reload_max_abs_diff,cpu_max_abs_diff,parity_pass
+d5,d5_xgboost.json,17083452,ec42dd857ffaa017ef2a06171e67a1797bd201e01286cba8ca635396a3cb2828,63.64359060000061,0.0,0.0,True
+d6,d6_xgboost.json,30937680,f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f,128.6790815000004,0.0,0.0,True

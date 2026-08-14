@@ -1,6 +1,6 @@
 model_spec_id: gas_forecast_multidepth_v1
-status: evaluation_frozen_pending_phase2_production_refit
-created_utc: '2026-08-14T04:31:47.003837+00:00'
+status: production_bundle_validated_pending_submission_pipeline
+created_utc: '2026-08-14T05:02:25.965137+00:00'
 protocol_frozen_commit: b56ce77
 training_scope: official preliminary training period only
 raw_observation_range:
@@ -11,16 +11,59 @@ supervised_origin_range:
 - '2025-04-30 21:45:00'
 external_scoring_data_accessed: false
 feature_version: cleaning_enhanced_core_smooth_transition_ratio_clean
+feature_groups:
+- base
+- clean_view
+- difference
+- lag
+- mechanism_ratio
+- rolling
+- smooth
+- transition
 target_design:
   generator_1: relative_correction
   generator_all: absolute_correction
 component_models:
-  d5: 350 trees, depth 5, cleaning-enhanced selected feature groups
-  d4: 500 trees, depth 4, wide capacity candidate
-  d6: 450 trees, depth 6, regularized capacity candidate
+  d5:
+    required_for_production: true
+    n_estimators: 350
+    max_depth: 5
+    learning_rate: 0.025
+    min_child_weight: 30
+    subsample: 0.85
+    colsample_bytree: 0.7
+    reg_alpha: 2.0
+    reg_lambda: 30.0
+    max_bin: 256
+  d4:
+    required_for_production: false
+    n_estimators: 500
+    max_depth: 4
+    learning_rate: 0.02
+    min_child_weight: 15
+    subsample: 0.9
+    colsample_bytree: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 20.0
+    max_bin: 512
+  d6:
+    required_for_production: true
+    n_estimators: 450
+    max_depth: 6
+    learning_rate: 0.02
+    min_child_weight: 40
+    subsample: 0.9
+    colsample_bytree: 0.75
+    reg_alpha: 3.0
+    reg_lambda: 40.0
+    max_bin: 256
 production_components_with_nonzero_weight:
 - d5
 - d6
+postprocessing:
+  non_negative: true
+  generator_hierarchy: generator_all = max(generator_all, generator_1)
+  nested_outer_projection_mape_delta: 0.0
 ensemble_parameters:
 - target: generator_1
   training_oof_mape: 0.06262698258553184
@@ -49,6 +92,20 @@ reported_metrics:
   post_selection_oof_mape: 0.054671132544103794
   retrospective_nested_outer_mape: 0.04714938642843055
   retrospective_nested_outer_score: 0.9528506135715694
-production_bundle_available: false
-next_required_phase: refit and serialize every non-zero component model, then verify
-  reload parity
+production_bundle_available: true
+next_required_phase: build causal raw-table inference and submission adapter
+production_bundle:
+  storage: local_only_gitignored
+  path: results/models/production_forecaster
+  manifest: results/production_validation/production_model_manifest.json
+  training_rows: 10832
+  feature_count: 801
+  components:
+  - component: d5
+    model_file: d5_xgboost.json
+    model_sha256: ec42dd857ffaa017ef2a06171e67a1797bd201e01286cba8ca635396a3cb2828
+  - component: d6
+    model_file: d6_xgboost.json
+    model_sha256: f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f
+  full_row_gpu_cpu_parity: true
+  cpu_feature_to_prediction_seconds: 0.26866270000027725
