@@ -1,0 +1,54 @@
+================================================================================
+DATA PROCESSING OPTIMIZATION TESTS
+================================================================================
+
+[1/6] Loading data...
+  Data loaded: 11519 rows
+
+[2/6] Building base features...
+  Shape: (11521, 878)
+
+[3/6] Applying Optimization 1: Outlier Detection...
+  Fixed 16343 outliers
+
+[4/6] Training baseline model (fold 2)...
+  Baseline MAPE: 5.7433%
+
+[5/6] Testing optimizations...
+
+  Optimization 1 (Outlier Detection):
+    MAPE: 5.7269%
+    vs Baseline: +0.0164pp
+
+  Optimization 2 (Target Transform):
+    MAPE: 5.7392%
+    vs Baseline: +0.0041pp
+
+  Optimization 3 (Label Smoothing):
+    MAPE: 5.3646%
+    vs Baseline: +0.3787pp
+
+  All Optimizations Combined:
+    MAPE: 5.3130%
+    vs Baseline: +0.4303pp
+
+================================================================================
+[6/6] SUMMARY
+================================================================================
+
+Results (Fold 2 only):
+Strategy                       MAPE       Improvement 
+------------------------------------------------------------
+Baseline                       5.7433%   +0.0000pp
++ Outlier Detection            5.7269%   +0.0164pp
++ Target Transform             5.7392%   +0.0041pp
++ Label Smoothing              5.3646%   +0.3787pp
++ All Combined                 5.3130%   +0.4303pp
+
+Best optimization: + All Combined
+  MAPE: 5.3130%
+  Improvement: +0.4303pp
+Traceback (most recent call last):
+  File "F:\Code2\AIC\AIC-gas\codefiles\tools\test_data_optimizations.py", line 301, in <module>
+    print(f"\n\u2705 SUCCESS! Found {best_improvement:.4f}pp improvement!")
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2705' in position 2: illegal multibyte sequence

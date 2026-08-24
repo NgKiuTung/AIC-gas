@@ -1,0 +1,678 @@
+================================================================================
+代码检查与改进分析报告
+================================================================================
+
+日期：2026-08-21
+项目：AIC-gas 燃气发电功率预测
+当前最佳MAPE：5.504%
+
+================================================================================
+第一部分：现有代码问题检查
+================================================================================
+
+## 1. 特征工程模块（features/inference.py）
+
+### 问题 1.1: 硬编码的滞后参数
+```python
+LAGS = (1, 2, 3, 4, 8, 12, 16, 32, 96, 192, 672)
+ROLLING_WINDOWS = (4, 8, 16, 32, 96)
+```
+
+❌ 问题：
+- 没有基于数据驱动选择滞后
+- 可能遗漏重要的滞后期
+- 可能包含无用的滞后期
+
+✅ 建议：
+```python
+# 使用自相关函数（ACF）选择最佳滞后
+from statsmodels.tsa.stattools import acf
+
+def find_optimal_lags(series, max_lag=96, threshold=0.3):
+    """基于ACF选择重要的滞后期"""
+    acf_values = acf(series, nlags=max_lag)
+    significant_lags = np.where(np.abs(acf_values) > threshold)[0]
+    return tuple(significant_lags)
+
+# 动态选择
+optimal_lags = find_optimal_lags(df['generator_1'])
+```
+
+预期改进：0.05-0.10pp
+
+---
+
+### 问题 1.2: 滚动窗口未考虑时间特性
+```python
+for window in ROLLING_WINDOWS:
+    rolling = data[column].rolling(window=window, min_periods=window)
+```
+
+❌ 问题：
+- 固定窗口，未考虑不同时段的特性
+- 夜间和白天应该用不同的窗口
+
+✅ 建议：
+```python
+# 自适应窗口
+def adaptive_rolling_mean(series, hour):
+    """根据时段选择窗口大小"""
+    if 0 <= hour < 6:  # 夜间：稳定，用大窗口
+        window = 32
+    elif 6 <= hour < 9:  # 早高峰：变化快，用小窗口
+        window = 8
+    elif 9 <= hour < 17:  # 白天：中等窗口
+        window = 16
+    else:  # 晚高峰
+        window = 12
+    return series.rolling(window).mean()
+```
+
+预期改进：0.03-0.08pp
+
+---
+
+### 问题 1.3: 缺少目标变量的直接滞后
+```python
+# 当前只有 feat_p50_current 的滞后
+# 但没有直接使用 label (generator_1) 的滞后
+```
+
+❌ 问题：
+- 预测发电功率时，最重要的特征就是历史发电功率
+- 目前只用了 feat_generator_1_filled，但没有短期滞后（lag 1-8）
+
+✅ 建议：
+```python
+# 添加目标变量的短期滞后（非常重要！）
+for h in range(1, 9):
+    engineered[f'feat_target_lag{h}'] = data['feat_generator_1_filled'].shift(h)
+
+# 目标变量的差分
+for h in [1, 2, 4]:
+    engineered[f'feat_target_diff{h}'] = data['feat_generator_1_filled'].diff(h)
+
+# 目标变量的变化率
+engineered['feat_target_velocity'] = data['feat_generator_1_filled'].diff(1)
+engineered['feat_target_acceleration'] = data['feat_generator_1_filled'].diff(1).diff(1)
+```
+
+预期改进：0.10-0.20pp（这是重要遗漏！）
+
+---
+
+## 2. 数据预处理模块（data/causal_preprocessing.py）
+
+### 问题 2.1: 缺失值填充策略单一
+```python
+# 只用季节性中位数 + 历史中位数
+candidates = [series.get(timestamp - pd.Timedelta(minutes=15 * lag), np.nan)
+              for lag in SEASONAL_LAGS]
+```
+
+❌ 问题：
+- 对连续缺失（>3个点）效果差
+- 没有利用其他相关变量
+- 没有区分不同设备类型
+
+✅ 建议：
+```python
+def smart_fill_missing(df, column, device_type):
+    """智能填充策略"""
+
+    if device_type == 'blast_furnace':
+        # 高炉：连续运行，用线性插值
+        df[column] = df[column].interpolate(method='linear', limit=8)
+
+    elif device_type == 'converter':
+        # 转炉：间歇运行，用前向填充
+        df[column] = df[column].fillna(method='ffill', limit=4)
+
+    elif device_type == 'air_heater':
+        # 热风炉：周期运行，用季节性
+        # 相同hour的历史中位数
+        hour_median = df.groupby(df['datetime'].dt.hour)[column].transform('median')
+        df[column] = df[column].fillna(hour_median)
+
+    # 最后用全局中位数兜底
+    df[column] = df[column].fillna(df[column].median())
+
+    return df
+```
+
+预期改进：0.05-0.15pp
+
+---
+
+### 问题 2.2: 没有异常值检测
+```python
+# 当前代码没有明确的异常值检测和修正
+```
+
+❌ 问题：
+- 传感器故障导致的异常值会影响模型
+- 数据录入错误没有被捕获
+- 物理不可能的值（负数、超容量）存在
+
+✅ 建议：
+```python
+def detect_and_fix_outliers(df):
+    """异常值检测与修正"""
+
+    # 1. 物理约束检查
+    df['generator_1'] = df['generator_1'].clip(0, 120)  # MW
+    df['generator_all'] = df['generator_all'].clip(0, 200)
+    df['blast_furnace_gas_holder_2'] = df['blast_furnace_gas_holder_2'].clip(0, 100000)  # m³
+
+    # 2. 变化率检查（15分钟不应变化超过30%）
+    for col in ['generator_1', 'generator_all']:
+        change_rate = df[col].pct_change().abs()
+        outliers = change_rate > 0.3
+
+        # 标记异常值
+        df[f'{col}_outlier_flag'] = outliers.astype(int)
+
+        # 用插值修正
+        df.loc[outliers, col] = np.nan
+        df[col] = df[col].interpolate(method='linear', limit=4)
+
+    # 3. 统计异常检测（滑动窗口 + IQR）
+    for col in ['blast_furnace_gas_holder_2', 'generator_use_blast_furnace_gas']:
+        rolling = df[col].rolling(96, min_periods=24)  # 1天窗口
+        Q1 = rolling.quantile(0.25)
+        Q3 = rolling.quantile(0.75)
+        IQR = Q3 - Q1
+        lower = Q1 - 3 * IQR
+        upper = Q3 + 3 * IQR
+
+        outliers = (df[col] < lower) | (df[col] > upper)
+        df[f'{col}_outlier_flag'] = outliers.astype(int)
+
+        # Winsorize（限制在合理范围）
+        df[col] = df[col].clip(lower, upper)
+
+    return df
+```
+
+预期改进：0.10-0.30pp（重要！）
+
+---
+
+## 3. 模型训练模块
+
+### 问题 3.1: 超参数未充分优化
+```python
+# 当前参数
+params = {
+    "n_estimators": 350,
+    "max_depth": 5,
+    "learning_rate": 0.025,
+    "colsample_bytree": 0.70,
+    # ...
+}
+```
+
+❌ 问题：
+- 没有使用自动超参数搜索
+- 参数可能不是最优的
+
+✅ 建议：
+```python
+from optuna import create_study
+
+def objective(trial):
+    params = {
+        'n_estimators': trial.suggest_int('n_estimators', 200, 500),
+        'max_depth': trial.suggest_int('max_depth', 4, 7),
+        'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.05),
+        'colsample_bytree': trial.suggest_float('colsample_bytree', 0.5, 0.8),
+        'subsample': trial.suggest_float('subsample', 0.7, 0.95),
+        'min_child_weight': trial.suggest_int('min_child_weight', 20, 50),
+        'reg_alpha': trial.suggest_float('reg_alpha', 0.5, 5.0),
+        'reg_lambda': trial.suggest_float('reg_lambda', 10, 50),
+    }
+
+    model = xgb.XGBRegressor(**params)
+    # 训练并返回验证MAPE
+    return validation_mape
+
+# 运行优化
+study = create_study(direction='minimize')
+study.optimize(objective, n_trials=100)
+best_params = study.best_params
+```
+
+预期改进：0.05-0.15pp
+
+---
+
+### 问题 3.2: 没有使用早停（Early Stopping）
+```python
+model.fit(x_train, y_train, verbose=False)
+```
+
+❌ 问题：
+- 可能过拟合
+- 训练时间浪费
+
+✅ 建议：
+```python
+model.fit(
+    x_train, y_train,
+    eval_set=[(x_valid, y_valid)],
+    early_stopping_rounds=50,
+    verbose=False
+)
+```
+
+预期改进：0.02-0.05pp + 更快训练
+
+---
+
+## 4. 特征重要性为0的问题
+
+### 问题 4.1: 测试结果显示所有特征重要性为0
+```
+Top 10 features (Final Model)
+0.0  feat_xxx
+0.0  feat_yyy
+```
+
+❌ 问题根源：
+这通常意味着：
+1. 模型没有正确训练
+2. 或者使用了错误的重要性计算方法
+
+✅ 诊断代码：
+```python
+# 检查模型是否真的训练了
+print(f"Model trained: {model._Booster is not None}")
+print(f"Number of boosting rounds: {model.n_estimators}")
+print(f"Best iteration: {model.best_iteration if hasattr(model, 'best_iteration') else 'N/A'}")
+
+# 使用正确的重要性获取方法
+importance_weight = model.get_booster().get_score(importance_type='weight')
+importance_gain = model.get_booster().get_score(importance_type='gain')
+importance_cover = model.get_booster().get_score(importance_type='cover')
+
+print(f"Feature importance (gain): {importance_gain}")
+```
+
+---
+
+================================================================================
+第二部分：其他可改进的地方
+================================================================================
+
+## 1. 模型层面的改进
+
+### A. 模型集成（Ensemble）
+当前：只用单个XGBoost模型
+
+建议：集成多个模型
+```python
+# 方案1：多模型投票
+models = {
+    'xgboost': XGBRegressor(**xgb_params),
+    'lightgbm': LGBMRegressor(**lgb_params),
+    'catboost': CatBoostRegressor(**cat_params),
+}
+
+predictions = {}
+for name, model in models.items():
+    model.fit(x_train, y_train)
+    predictions[name] = model.predict(x_valid)
+
+# 加权平均
+final_pred = (
+    0.5 * predictions['xgboost'] +
+    0.3 * predictions['lightgbm'] +
+    0.2 * predictions['catboost']
+)
+
+# 方案2：Stacking
+from sklearn.ensemble import StackingRegressor
+meta_model = Ridge(alpha=1.0)
+stacking = StackingRegressor(
+    estimators=list(models.items()),
+    final_estimator=meta_model,
+    cv=3
+)
+```
+
+预期改进：0.10-0.25pp
+
+---
+
+### B. 多目标学习
+当前：分别预测8个时间步
+
+建议：联合学习
+```python
+# 共享底层特征，但不同时间步有不同输出头
+# 这样可以利用时间步之间的相关性
+
+class MultiHorizonModel:
+    def __init__(self):
+        self.shared_model = XGBRegressor(...)
+        self.horizon_heads = {h: Ridge(...) for h in range(1, 9)}
+
+    def fit(self, X, y_dict):
+        # y_dict = {h: y_h for h in horizons}
+
+        # 先训练共享特征
+        y_all = np.concatenate([y_dict[h] for h in range(1, 9)], axis=1)
+        shared_features = self.shared_model.fit_transform(X, y_all)
+
+        # 每个时间步训练一个head
+        for h in range(1, 9):
+            self.horizon_heads[h].fit(shared_features, y_dict[h])
+```
+
+预期改进：0.05-0.15pp
+
+---
+
+### C. 使用深度学习
+当前：只用树模型
+
+建议：尝试LSTM/Transformer
+```python
+import torch
+import torch.nn as nn
+
+class PowerForecastLSTM(nn.Module):
+    def __init__(self, input_dim, hidden_dim=128):
+        super().__init__()
+        self.lstm = nn.LSTM(input_dim, hidden_dim, num_layers=2, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, 8)  # 8个时间步
+
+    def forward(self, x):
+        lstm_out, _ = self.lstm(x)
+        return self.fc(lstm_out[:, -1, :])
+
+# 优势：
+# 1. 自动学习时间依赖
+# 2. 不需要手动创建滞后特征
+# 3. 可能捕获更复杂的模式
+
+# 劣势：
+# 1. 需要更多数据
+# 2. 训练时间更长
+# 3. 可解释性差
+```
+
+预期改进：0.05-0.20pp（不确定，需要尝试）
+
+---
+
+## 2. 后处理优化
+
+### A. 物理约束后处理
+```python
+def apply_physical_constraints(predictions, current_state):
+    """确保预测符合物理规律"""
+
+    pred_fixed = predictions.copy()
+
+    # 1. 容量约束
+    pred_fixed['generator_1'] = pred_fixed['generator_1'].clip(0, 120)
+    pred_fixed['generator_all'] = pred_fixed['generator_all'].clip(0, 200)
+
+    # 2. 一致性约束
+    # generator_all >= generator_1
+    pred_fixed['generator_all'] = np.maximum(
+        pred_fixed['generator_all'],
+        pred_fixed['generator_1']
+    )
+
+    # 3. 平滑约束（连续时间步变化不能太大）
+    for h in range(2, 9):
+        max_change = 20  # MW per 15min
+        prev = pred_fixed[f'h{h-1}']
+        curr = pred_fixed[f'h{h}']
+
+        # 限制变化幅度
+        curr_fixed = np.clip(curr, prev - max_change, prev + max_change)
+        pred_fixed[f'h{h}'] = curr_fixed
+
+    # 4. 能量守恒约束
+    # 预测的发电量不能超过可用气量
+    available_gas = current_state['holder'] + current_state['bf_supply'] * 2  # 2小时
+    max_power_from_gas = available_gas * 0.5  # 转换效率
+
+    pred_fixed['generator_all'] = np.minimum(
+        pred_fixed['generator_all'],
+        max_power_from_gas
+    )
+
+    return pred_fixed
+```
+
+预期改进：0.03-0.10pp
+
+---
+
+### B. 时间序列平滑
+```python
+from scipy.signal import savgol_filter
+
+def smooth_predictions(predictions):
+    """平滑预测序列"""
+
+    # 对8个时间步应用Savitzky-Golay滤波
+    # 保留趋势，去除噪声
+    smoothed = {}
+    for target in ['generator_1', 'generator_all']:
+        raw_seq = [predictions[f'{target}_h{h}'] for h in range(1, 9)]
+        smooth_seq = savgol_filter(raw_seq, window_length=5, polyorder=2)
+
+        for h in range(1, 9):
+            smoothed[f'{target}_h{h}'] = smooth_seq[h-1]
+
+    return smoothed
+```
+
+预期改进：0.02-0.05pp
+
+---
+
+### C. 预测校准
+```python
+def calibrate_predictions(predictions, validation_errors):
+    """基于验证集误差校准预测"""
+
+    # 计算每个时间步的系统偏差
+    bias_h = {}
+    for h in range(1, 9):
+        bias_h[h] = validation_errors[f'h{h}'].mean()
+
+    # 校准
+    calibrated = predictions.copy()
+    for h in range(1, 9):
+        calibrated[f'h{h}'] = calibrated[f'h{h}'] - bias_h[h]
+
+    return calibrated
+```
+
+预期改进：0.02-0.08pp
+
+---
+
+## 3. 交叉验证策略优化
+
+### 当前：3折固定时间段验证
+```
+Fold 1: 3月1-15日
+Fold 2: 4月1-15日
+Fold 3: 4月16-30日
+```
+
+### 建议：滑动窗口交叉验证
+```python
+from sklearn.model_selection import TimeSeriesSplit
+
+tscv = TimeSeriesSplit(n_splits=5, gap=96)  # gap=1天，避免泄露
+
+for train_idx, val_idx in tscv.split(X):
+    X_train, X_val = X[train_idx], X[val_idx]
+    y_train, y_val = y[train_idx], y[val_idx]
+
+    model.fit(X_train, y_train)
+    score = evaluate(model, X_val, y_val)
+```
+
+优势：
+- 更多的验证折
+- 更鲁棒的性能估计
+- 避免特定时段的偶然性
+
+预期改进：更准确的性能评估（不直接改进MAPE，但帮助选择更好的模型）
+
+---
+
+## 4. 特征工程的深度优化
+
+### A. 领域知识特征
+```python
+def add_domain_features(df):
+    """添加钢铁行业领域知识特征"""
+
+    # 1. 生产效率指标
+    df['power_efficiency'] = df['generator_all'] / (df['total_gas_use'] + 1)
+    df['bf_efficiency'] = df['blast_furnace_gas'] / (df['blast_furnace_iron'] + 1)
+
+    # 2. 负载因子
+    df['load_factor_p50'] = df['generator_1'] / 120  # 容量利用率
+    df['load_factor_all'] = df['generator_all'] / 200
+
+    # 3. 储气策略指标
+    df['holder_utilization'] = df['holder'] / 100000
+    df['holder_safety_margin'] = (100000 - df['holder']) / 100000
+
+    # 4. 价格敏感度
+    df['price_response'] = df['known_price'] * df['holder_utilization']
+    df['price_opportunity'] = (df['known_price'] - df['price_ma_24h']) * df['holder']
+
+    # 5. 生产节奏
+    df['production_rhythm'] = df['blast_furnace_sum'].rolling(24).std()
+    df['demand_rhythm'] = df['total_use'].rolling(24).std()
+
+    return df
+```
+
+预期改进：0.05-0.15pp
+
+---
+
+### B. 自动特征生成
+```python
+from featuretools import dfs
+
+def auto_feature_engineering(df):
+    """使用featuretools自动生成特征"""
+
+    # 定义实体
+    es = ft.EntitySet(id='gas_power')
+    es = es.entity_from_dataframe(
+        entity_id='timeseries',
+        dataframe=df,
+        index='id',
+        time_index='datetime'
+    )
+
+    # 自动生成特征
+    feature_matrix, feature_defs = dfs(
+        entityset=es,
+        target_entity='timeseries',
+        max_depth=2,
+        n_jobs=-1
+    )
+
+    return feature_matrix
+```
+
+预期改进：0.03-0.10pp（探索性，可能发现新模式）
+
+---
+
+================================================================================
+第三部分：改进优先级排序
+================================================================================
+
+基于实施难度、时间成本和预期收益：
+
+🔥 最高优先级（立即实施）：
+1. ⭐⭐⭐⭐⭐ 添加目标变量短期滞后 (0.10-0.20pp, 1小时)
+2. ⭐⭐⭐⭐⭐ 异常值检测与修正 (0.10-0.30pp, 2小时)
+3. ⭐⭐⭐⭐ 缺失值填充优化 (0.05-0.15pp, 2小时)
+
+🔥 高优先级（本周完成）：
+4. ⭐⭐⭐⭐ 物理约束后处理 (0.03-0.10pp, 1小时)
+5. ⭐⭐⭐⭐ 领域知识特征 (0.05-0.15pp, 3小时)
+6. ⭐⭐⭐⭐ 超参数优化 (0.05-0.15pp, 4小时)
+
+🟡 中优先级（下周考虑）：
+7. ⭐⭐⭐ 模型集成 (0.10-0.25pp, 8小时)
+8. ⭐⭐⭐ 预测平滑与校准 (0.04-0.13pp, 2小时)
+9. ⭐⭐⭐ 自适应滞后选择 (0.05-0.10pp, 4小时)
+
+🟢 低优先级（有时间再做）：
+10. ⭐⭐ 深度学习模型 (0.05-0.20pp, 16小时, 不确定)
+11. ⭐⭐ 自动特征生成 (0.03-0.10pp, 4小时, 探索性)
+
+累计预期改进（前6项）：0.38-1.05pp
+可能将MAPE从5.504%降到5.12-4.45%
+
+================================================================================
+第四部分：快速实施计划
+================================================================================
+
+## Day 1（今天）：
+✅ 已完成：
+- 分析了所有改进方向
+- 识别了关键问题
+
+⏭️ 接下来3小时：
+1. 实现目标变量短期滞后（最重要！）
+2. 实现异常值检测
+3. 快速测试MAPE变化
+
+## Day 2-3：
+1. 优化缺失值填充
+2. 添加物理约束后处理
+3. 添加领域知识特征
+4. 运行完整3折验证
+
+## Day 4-5：
+1. 超参数优化（Optuna）
+2. 预测平滑与校准
+3. 最终模型训练
+
+## Day 6-7：
+1. 模型集成（如果前5天改进<0.30pp）
+2. 最终调优
+3. 生成提交文件
+
+预期最终MAPE：4.80-5.20%
+预期排名提升：5-15名
+
+================================================================================
+总结
+================================================================================
+
+关键发现：
+1. ❌ 缺少目标变量的短期滞后（重要遗漏！）
+2. ❌ 没有异常值检测（数据质量问题）
+3. ❌ 缺失值填充策略单一
+4. ❌ 特征重要性显示为0（模型训练问题）
+5. ⚠️ 超参数未充分优化
+6. ⚠️ 没有后处理约束
+
+最有价值的3个改进：
+1. 添加目标滞后特征（最容易实施，收益最大）
+2. 异常值检测与修正（数据质量提升）
+3. 模型集成（稳健性提升）
+
+需要我帮你实现哪个优化？
+================================================================================

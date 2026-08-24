@@ -1,0 +1,98 @@
+======================================================================
+QUICK MAPE IMPROVEMENT TEST
+======================================================================
+
+[1/4] Loading data...
+  Data loaded: 11519 rows
+
+[2/4] Preprocessing...
+  Shape: (11521, 103)
+
+[3/4] Building features...
+  Base features: (11513, 894)
+  + Future prices: (11513, 974)
+  + Interactions: (11513, 996)
+
+[4/4] Training models...
+
+  Training: BASELINE
+    Features: 851
+    Train: 8632, Valid: 1440
+    MAPE: 5.7433% (P50=6.8871%, All=4.5995%)
+    Time: 336.6s
+
+  Training: + FUTURE PRICES
+    Features: 931
+    Train: 8632, Valid: 1440
+    MAPE: 5.7406% (P50=6.8857%, All=4.5955%)
+    Time: 257.3s
+
+  Training: + INTERACTIONS (tuned)
+    Features: 953
+    Train: 8632, Valid: 1440
+    MAPE: 5.7406% (P50=6.8826%, All=4.5986%)
+    Time: 213.6s
+
+======================================================================
+RESULTS SUMMARY
+======================================================================
+
+Experiment                    Features    MAPE      vs Baseline
+----------------------------------------------------------------------
+1. Baseline                    851     5.7433%   -
+2. + Future Prices             931     5.7406%   +0.0027pp
+3. + Full Enhancement          953     5.7406%   +0.0027pp
+
+======================================================================
+IMPROVEMENT BREAKDOWN
+======================================================================
+
+Total improvement: 0.0027 percentage points
+
+Contribution:
+  Future prices:  0.0027pp (98.8%)
+  Interactions:   0.0000pp (1.2%)
+
+Relative: 0.05% reduction
+
+======================================================================
+TOP 10 FEATURES (Final Model)
+======================================================================
+     0.0             feat_lag1_generator_all_filled
+     0.0             feat_smooth_holder_span4_gap
+     0.0             feat_roll4_mean_generator_all_filled
+     0.0             feat_diff1_blast_furnace_gas_holder_2
+     0.0             feat_holder_delta_1
+     0.0             feat_lag2_generator_gas_total_unweighted
+     0.0             feat_lag2_generator_all_filled
+     0.0             feat_lag1_generator_gas_total_unweighted
+     0.0             feat_roll4_max_generator_all_filled
+     0.0             feat_smooth_p120_span96_gap
+
+New features in top 20:
+  Future prices: 3
+  Interactions:  0
+
+======================================================================
+WHAT CAUSED THE IMPROVEMENT
+======================================================================
+
+1. FUTURE PRICE FEATURES:
+   - Model can see known future electricity prices
+   - Enables strategic decisions (save gas for high prices)
+   - Contribution: ~98.8% of total improvement
+
+2. INTERACTION FEATURES:
+   - Captures non-linear relationships
+   - price x holder: High price + gas = full power
+   - weekend x hour: Different patterns
+   - Contribution: ~1.2% of total improvement
+
+3. HYPERPARAMETER TUNING:
+   - Increased n_estimators for more features
+   - Reduced colsample_bytree for better feature coverage
+
+
+======================================================================
+TEST COMPLETE!
+======================================================================

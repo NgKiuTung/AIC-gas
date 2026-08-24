@@ -1,0 +1,78 @@
+F:\Code2\AIC\AIC-gas\codefiles\src\gas_power\features\optimized_features.py:99: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  change_rate = out[col].pct_change().abs()
+F:\Code2\AIC\AIC-gas\codefiles\src\gas_power\features\optimized_features.py:99: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  change_rate = out[col].pct_change().abs()
+================================================================================
+OPTIMIZED TRAINING PIPELINE
+================================================================================
+
+[1/6] Loading data...
+  Data loaded: 11519 rows
+
+[2/6] Preprocessing with optimizations...
+  Shape: (11521, 103)
+  Time: 6.9s
+
+[3/6] Building features...
+  [3a] Base features...
+    Shape: (11521, 878), Time: 7.5s
+  [3b] Future price features...
+    Shape: (11521, 958), Time: 0.1s
+  [3c] Optimized features (target lags, domain, physical)...
+    Shape: (11521, 1027), Time: 0.4s
+  [3d] Creating labels...
+  Final shape: (11513, 1043)
+  Trainable features: 1000
+
+[4/6] Preparing training/validation splits...
+  Number of folds: 3
+
+[5/6] Training models...
+
+  Fold: fold_1
+    Train: 5656, Valid: 1440
+    MAPE: 6.1995% (P50=6.5848%, All=5.8141%)
+    Time: 183.8s
+
+  Fold: fold_2
+    Train: 8632, Valid: 1440
+    MAPE: 5.7491% (P50=6.8785%, All=4.6197%)
+    Time: 240.0s
+
+  Fold: fold_3
+    Train: 10072, Valid: 1433
+    MAPE: 4.6103% (P50=5.2893%, All=3.9314%)
+    Time: 264.3s
+
+================================================================================
+[6/6] RESULTS SUMMARY
+================================================================================
+
+Fold Results:
+  fold_1: 6.1995%
+  fold_2: 5.7491%
+  fold_3: 4.6103%
+
+Average MAPE: 5.5196% (¡À0.6687%)
+
+Feature Summary:
+  Total features: 1000
+  New optimized features: 71
+    - Target lags: 28
+    - Outlier flags: 8
+    - Domain knowledge: 11
+    - Physical constraints: 11
+    - Enhanced time: 13
+
+================================================================================
+TRAINING COMPLETE!
+================================================================================
+
+Comparison to Baseline (cleaning_enhanced):
+  Baseline MAPE: 5.5040%
+  Optimized MAPE: 5.5196%
+  Improvement: -0.0156pp (-0.28% relative)
+Traceback (most recent call last):
+  File "F:\Code2\AIC\AIC-gas\codefiles\tools\train_optimized_model.py", line 299, in <module>
+    print(f"\n\u26a0\ufe0f Marginal change ({improvement:.4f}pp). May need further tuning.")
+UnicodeEncodeError: 'gbk' codec can't encode character '\u26a0' in position 2: illegal multibyte sequence

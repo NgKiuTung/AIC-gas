@@ -1,0 +1,143 @@
+================================================================================
+NEW FEATURES IMPORTANCE ANALYSIS
+================================================================================
+
+[1/4] Loading data...
+  Base features: (11521, 878)
+  With new features: (11521, 1020)
+
+Feature breakdown:
+  Base features: 851
+  New features: 142
+  Total: 993
+
+[2/4] Training baseline model (base features only)...
+  Train: 8632, Valid: 1440
+  Baseline MAPE: 5.7433%
+
+[3/4] Training with all features and analyzing new feature importance...
+  All features MAPE: 5.7358%
+  Difference: -0.0075pp
+
+New features importance:
+  Total new features: 142
+  Zero importance: 20 (14.1%)
+
+Top 20 new features by importance:
+   1. feat_target_pall_lag1                                           58911.4
+   2. feat_target_pall_recent4                                        52110.3
+   3. feat_target_pall_lag2                                           22905.0
+   4. feat_physical_pall_headroom                                     13493.5
+   5. feat_future_price_path_min_h8                                   12439.1
+   6. feat_future_price_min_all                                       11687.1
+   7. feat_time_is_night                                              11234.4
+   8. feat_time_is_morning_peak                                        9647.8
+   9. feat_target_pall_lag3                                            9065.3
+  10. feat_domain_holder_safety_margin                                 8698.8
+  11. feat_future_price_path_min_h7                                    7860.6
+  12. feat_future_price_h3                                             7410.2
+  13. feat_future_price_h4                                             7371.0
+  14. feat_future_price_path_min_h5                                    7141.4
+  15. feat_future_price_path_min_h6                                    6598.3
+  16. feat_target_pall_velocity                                        6412.8
+  17. feat_future_price_path_min_h3                                    6279.7
+  18. feat_future_price_mean_all                                       6216.4
+  19. feat_future_price_h6                                             6066.3
+  20. feat_future_price_h7                                             5915.6
+
+Bottom 20 new features (zero or low importance):
+   1. feat_future_price_up_h1                                             0.0
+   2. feat_future_price_down_h1                                           0.0
+   3. feat_future_price_path_min_h1                                       0.0
+   4. feat_future_price_path_range_h1                                     0.0
+   5. feat_future_price_up_h2                                             0.0
+   6. feat_future_price_path_range_h2                                     0.0
+   7. feat_future_price_up_h3                                             0.0
+   8. feat_future_price_down_h3                                           0.0
+   9. feat_future_price_down_h4                                           0.0
+  10. feat_future_price_up_h6                                             0.0
+  11. feat_future_price_up_h7                                             0.0
+  12. feat_future_price_down_h7                                           0.0
+  13. feat_future_price_down_h8                                           0.0
+  14. feat_physical_can_increase_power                                    0.0
+  15. feat_physical_must_use_gas                                          0.0
+  16. feat_physical_low_gas_warning                                       0.0
+  17. feat_physical_consistency_violation                                 0.0
+  18. feat_time_is_late_night                                             0.0
+  19. feat_time_quarter                                                   0.0
+  20. feat_time_is_month_end                                              0.0
+
+[4/4] Testing feature selection strategies...
+
+  Remove zero-importance new features:
+    Total features: 973 (base 851 + new 122)
+    MAPE: 5.7379%
+    vs Baseline: +0.0054pp
+
+  Keep top 50% new features:
+    Total features: 922 (base 851 + new 71)
+    MAPE: 5.7365%
+    vs Baseline: +0.0068pp
+
+  Keep top 30 new features:
+    Total features: 881 (base 851 + new 30)
+    MAPE: 5.7395%
+    vs Baseline: +0.0038pp
+
+  Keep top 20 new features:
+    Total features: 871 (base 851 + new 20)
+    MAPE: 5.7357%
+    vs Baseline: +0.0076pp
+
+  Keep top 10 new features:
+    Total features: 861 (base 851 + new 10)
+    MAPE: 5.7442%
+    vs Baseline: -0.0009pp
+
+================================================================================
+SUMMARY
+================================================================================
+
+Comparison:
+Strategy                            MAPE       Features        vs Baseline 
+--------------------------------------------------------------------------------
+Baseline (base only)                5.7433%    851 (  0 new)   +0.0000pp
+All features (base + all new)       5.7358%    993 (142 new)   +0.0075pp
+Base + non-zero new                 5.7379%    973 (122 new)   +0.0054pp
+Base + top 50% new                  5.7365%    922 ( 71 new)   +0.0068pp
+Base + top 30 new                   5.7395%    881 ( 30 new)   +0.0038pp
+Base + top 20 new                   5.7357%    871 ( 20 new)   +0.0076pp
+Base + top 10 new                   5.7442%    861 ( 10 new)   -0.0009pp
+
+Best strategy: Base + top 20 new
+  MAPE: 5.7357%
+  Improvement vs baseline: +0.0076pp
+  Features: 851 base + 20 new = 871
+
+Selected new features to keep:
+  feat_target_pall_lag1                                           58911.4
+  feat_target_pall_recent4                                        52110.3
+  feat_target_pall_lag2                                           22905.0
+  feat_physical_pall_headroom                                     13493.5
+  feat_future_price_path_min_h8                                   12439.1
+  feat_future_price_min_all                                       11687.1
+  feat_time_is_night                                              11234.4
+  feat_time_is_morning_peak                                        9647.8
+  feat_target_pall_lag3                                            9065.3
+  feat_domain_holder_safety_margin                                 8698.8
+  feat_future_price_path_min_h7                                    7860.6
+  feat_future_price_h3                                             7410.2
+  feat_future_price_h4                                             7371.0
+  feat_future_price_path_min_h5                                    7141.4
+  feat_future_price_path_min_h6                                    6598.3
+  feat_target_pall_velocity                                        6412.8
+  feat_future_price_path_min_h3                                    6279.7
+  feat_future_price_mean_all                                       6216.4
+  feat_future_price_h6                                             6066.3
+  feat_future_price_h7                                             5915.6
+
+Selected new features saved to: F:\Code2\AIC\AIC-gas\selected_new_features.txt
+
+================================================================================
+ANALYSIS COMPLETE!
+================================================================================

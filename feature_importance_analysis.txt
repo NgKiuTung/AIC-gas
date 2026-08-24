@@ -1,0 +1,92 @@
+================================================================================
+FEATURE IMPORTANCE ANALYSIS
+================================================================================
+
+[1/5] Loading data...
+  Data loaded: 11519 rows
+  Features: (11521, 878)
+  Trainable features: 851
+
+[2/5] Training model to analyze feature importance...
+  Train: 8632, Valid: 1440
+  Baseline MAPE: 5.7433% (P50=6.8871%, All=4.5995%)
+
+[3/5] Analyzing feature importance...
+
+Top 20 most important features:
+   1. feat_lag1_generator_all_filled                        53941.2
+   2. feat_smooth_holder_span4_gap                          43251.4
+   3. feat_roll4_mean_generator_all_filled                  41782.9
+   4. feat_diff1_blast_furnace_gas_holder_2                 36662.8
+   5. feat_lag2_generator_all_filled                        29314.4
+   6. feat_lag2_generator_gas_total_unweighted              26589.1
+   7. feat_holder_delta_1                                   25891.4
+   8. feat_lag1_generator_gas_total_unweighted              25783.0
+   9. feat_roll4_mean_p120_current                          23379.5
+  10. feat_smooth_p120_span96_gap                           20023.3
+  11. feat_roll4_max_generator_all_filled                   19591.7
+  12. feat_diff4_blast_furnace_gas_holder_2                 18069.5
+  13. feat_transition_holder_w4_step_mean                   17742.9
+  14. feat_ratio_bfg_generator_use_to_supply                11605.6
+  15. feat_roll8_mean_p120_current                          10261.0
+  16. feat_holder_delta_4                                    9877.9
+  17. feat_smooth_p120_span32_gap                            8832.8
+  18. feat_transition_p120_w32_step_mean                     8766.0
+  19. feat_lag2_p120_current                                 7932.1
+  20. feat_lag3_generator_all_filled                         7766.7
+
+Feature importance summary:
+  Total features: 851
+  Zero importance: 84 (9.9%)
+  Low importance (<10th percentile): 77 (9.0%)
+  Can potentially remove: 161
+
+[4/5] Testing feature selection strategies...
+
+  Strategy 1: Remove zero-importance:
+    Features: 767 (removed 84)
+    MAPE: 5.7421%
+    vs Baseline: +0.0012pp
+
+  Strategy 2: Remove zero + low importance:
+    Features: 690 (removed 161)
+    MAPE: 5.7557%
+    vs Baseline: -0.0124pp
+
+  Strategy 3: Keep top 50%:
+    Features: 425 (removed 426)
+    MAPE: 5.7623%
+    vs Baseline: -0.0190pp
+
+  Strategy 4: Keep top 200:
+    Features: 200 (removed 651)
+    MAPE: 5.7763%
+    vs Baseline: -0.0330pp
+
+  Strategy 5: Keep top 100:
+    Features: 100 (removed 751)
+    MAPE: 5.7276%
+    vs Baseline: +0.0157pp
+
+================================================================================
+[5/5] SUMMARY AND RECOMMENDATION
+================================================================================
+
+Comparison:
+  Baseline (all 851 features)   : 5.7433% (851 features, +0.0000pp)
+  Remove zero-importance        : 5.7421% (767 features, +0.0012pp)
+  Remove zero + low             : 5.7557% (690 features, -0.0124pp)
+  Top 50%                       : 5.7623% (425 features, -0.0190pp)
+  Top 200                       : 5.7763% (200 features, -0.0330pp)
+  Top 100                       : 5.7276% (100 features, +0.0157pp)
+
+Best strategy: Top 100
+  MAPE: 5.7276%
+  Improvement: +0.0157pp
+  Features: 100 (removed 751)
+
+Selected features saved to: F:\Code2\AIC\AIC-gas\selected_features.txt
+
+================================================================================
+ANALYSIS COMPLETE!
+================================================================================
