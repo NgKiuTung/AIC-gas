@@ -327,7 +327,7 @@ def add_autocorrelation_features(
 
             rolled = df[col].rolling(window, min_periods=window//2)
 
-            def compute_autocorr(x):
+            def compute_autocorr(x, lag=lag):  # Bind lag as default parameter
                 if len(x) < lag + 1:
                     return np.nan
                 return np.corrcoef(x[:-lag], x[lag:])[0, 1] if len(x) > lag else np.nan

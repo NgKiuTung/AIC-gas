@@ -131,7 +131,10 @@ def add_interaction_features(frame: pd.DataFrame) -> pd.DataFrame:
         return np.clip(series.to_numpy() / typical_max, 0, 1).astype(np.float32)
 
     # Normalize key features (with safe column access)
-    holder_col = "blast_furnace_gas_holder_2" if "blast_furnace_gas_holder_2" in out else "feat_cleanview_blast_furnace_gas_holder_2"
+    if "blast_furnace_gas_holder_2" in out:
+        holder_col = "blast_furnace_gas_holder_2"
+    else:
+        holder_col = "feat_cleanview_blast_furnace_gas_holder_2"
     holder_norm = normalize(out[holder_col], 100000)
 
     p50_col = "feat_p50_current" if "feat_p50_current" in out else "feat_generator_1_filled"
