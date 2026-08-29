@@ -18,6 +18,36 @@ ALL_NULL_EXPECTED = (
     "converter_user3",
 )
 
+# The raw data currently contains measurements rather than a separate device-status
+# table.  Name-based fallback keeps the policy usable if status columns are added.
+HOLDER_FIELDS = {"blast_furnace_gas_holder_2"}
+LOAD_FIELDS = set(TARGETS)
+STATE_FIELDS: set[str] = set()
+SHORT_GAP_STEPS = 2
+
+
+def field_category(column: str) -> str:
+    """Return the missing-value policy category for one raw measurement."""
+    lowered = column.lower()
+    if column in STATE_FIELDS or "status" in lowered or "state" in lowered:
+        return "state"
+    if column in HOLDER_FIELDS or "holder" in lowered:
+        return "holder"
+    if column in LOAD_FIELDS:
+        return "load"
+    return "flow"
+
+
+def _missing_run_lengths(mask: pd.Series) -> tuple[int, int]:
+    """Return total missing cells and the longest consecutive missing run."""
+    current = 0
+    longest = 0
+    total = int(mask.sum())
+    for missing in mask.astype(bool):
+        current = current + 1 if missing else 0
+        longest = max(longest, current)
+    return total, longest
+
 
 def _validate_raw_table(source: str, frame: pd.DataFrame) -> pd.DataFrame:
     if "datetime" not in frame:
@@ -54,8 +84,15 @@ def merge_raw_tables(tables: Mapping[str, pd.DataFrame]) -> pd.DataFrame:
     return grid
 
 
-def causal_fill(series: pd.Series, timestamps: pd.Series) -> tuple[pd.Series, pd.Series]:
-    """Fill from current/past observations only; future values are never consulted."""
+def causal_fill(
+    series: pd.Series,
+    timestamps: pd.Series,
+    *,
+    category: str = "flow",
+) -> tuple[pd.Series, pd.Series]:
+    """Fill with a category-specific policy using current/past values only."""
+    if category not in {"flow", "holder", "load", "state"}:
+        raise ValueError(f"Unsupported field category: {category}")
     raw = pd.to_numeric(series, errors="coerce")
     values: list[float] = []
     methods: list[str] = []
@@ -72,7 +109,10 @@ def causal_fill(series: pd.Series, timestamps: pd.Series) -> tuple[pd.Series, pd
             observed_history.append(filled)
         else:
             missing_run += 1
-            if missing_run <= 2 and np.isfinite(last):
+            if category == "state" and np.isfinite(last):
+                filled = float(last)
+                method = "causal_state_ffill"
+            elif missing_run <= SHORT_GAP_STEPS and np.isfinite(last):
                 filled = float(last)
                 method = "causal_ffill"
             else:
@@ -120,11 +160,22 @@ def add_known_features(frame: pd.DataFrame, price_lookup: Mapping[tuple[int, int
         raise ValueError(f"Price lookup does not cover month/slot {error.args[0]}") from error
     ranks = {value: rank for rank, value in enumerate(sorted(set(price_lookup.values())))}
     out["feat_price_level"] = out["feat_known_price"].map(ranks).astype("int16")
+
+    # Additional features
+    out["feat_is_peak_hour"] = ((dt.dt.hour >= 8) & (dt.dt.hour < 22)).astype("int8")
+    out["feat_price_time_interaction"] = out["feat_price_level"] * out["feat_time_of_day_sin"]
+    out["feat_day_of_month_normalized"] = (dt.dt.day - 1) / (dt.dt.days_in_month - 1)
+
     return out
 
 
-def add_observed_family_aggregates(frame: pd.DataFrame) -> pd.DataFrame:
+def add_observed_family_aggregates(
+    frame: pd.DataFrame,
+    observed_frame: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Add family aggregates from raw observations, not imputed values."""
     out = frame.copy()
+    observed = frame if observed_frame is None else observed_frame
     families = {
         "blast_furnace": ["blast_furnace_1", "blast_furnace_2", "blast_furnace_4", "blast_furnace_5"],
         "air_heater": ["air_heater_1", "air_heater_2", "air_heater_4", "air_heater_5"],
@@ -135,8 +186,8 @@ def add_observed_family_aggregates(frame: pd.DataFrame) -> pd.DataFrame:
         missing = [column for column in columns if column not in out]
         if missing:
             raise ValueError(f"Missing columns for {name} aggregate: {missing}")
-        out[f"feat_{name}_observed_sum"] = out[columns].sum(axis=1)
-        out[f"feat_{name}_observed_nonzero_count"] = (out[columns] > 0).sum(axis=1).astype("int8")
+        out[f"feat_{name}_observed_sum"] = observed[columns].sum(axis=1)
+        out[f"feat_{name}_observed_nonzero_count"] = (observed[columns] > 0).sum(axis=1).astype("int8")
     return out
 
 
@@ -173,19 +224,62 @@ def preprocess_causal_raw_tables(
         raise ValueError(f"Unexpected all-null columns: {all_null}")
     usable = [column for column in raw_columns if column not in all_null]
     causal = merged.drop(columns=all_null).copy()
+    observed_values = merged.drop(columns=all_null).copy()
     method_rows: list[dict[str, object]] = []
+    source_by_column = {
+        column: source
+        for source, table in tables.items()
+        for column in table.columns
+        if column != "datetime"
+    }
+    for column in all_null:
+        method_rows.append(
+            {
+                "source": source_by_column.get(column, ""),
+                "column": column,
+                "category": field_category(column),
+                "method": "structural_missing_not_filled",
+                "count": int(len(merged)),
+                "raw_missing_count": int(len(merged)),
+                "max_missing_run_steps": int(len(merged)),
+                "max_missing_run_minutes": int((len(merged) - 1) * 15),
+                "source_row_missing_count": 0,
+                "structural_missing": True,
+            }
+        )
     for column in usable:
-        causal[f"feat_missing_{column}"] = merged[column].isna().astype("int8")
-        filled, methods = causal_fill(merged[column], merged["datetime"])
+        raw_missing = merged[column].isna()
+        raw_missing_count, max_missing_run_steps = _missing_run_lengths(raw_missing)
+        category = field_category(column)
+        causal[f"feat_missing_{column}"] = raw_missing.astype("int8")
+        filled, methods = causal_fill(merged[column], merged["datetime"], category=category)
         if filled.isna().any():
             raise ValueError(f"Causal fill unresolved for {column}; the first raw value must be observed")
         for method, count in methods.value_counts().items():
-            method_rows.append({"column": column, "method": method, "count": int(count)})
+            method_rows.append(
+                {
+                    "source": source_by_column.get(column, ""),
+                    "column": column,
+                    "category": category,
+                    "method": method,
+                    "count": int(count),
+                    "raw_missing_count": raw_missing_count,
+                    "max_missing_run_steps": max_missing_run_steps,
+                    "max_missing_run_minutes": int(max_missing_run_steps * 15),
+                    "source_row_missing_count": int(
+                        ((merged[f"feat_source_missing_{source_by_column[column]}"] == 1) & raw_missing).sum()
+                    ),
+                    "structural_missing": False,
+                }
+            )
         if column in TARGETS:
             causal[f"feat_{column}_filled"] = filled
         else:
             causal[column] = filled
-    causal = add_observed_family_aggregates(add_known_features(causal, price_lookup))
+    causal = add_observed_family_aggregates(
+        add_known_features(causal, price_lookup),
+        observed_frame=observed_values,
+    )
     flag_values = [column for column in usable if column not in TARGETS]
     flag_values.extend(f"feat_{target}_filled" for target in TARGETS)
     for column, flag in causal_outlier_flags(causal, flag_values).items():

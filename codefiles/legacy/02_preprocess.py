@@ -244,11 +244,22 @@ def add_known_features(frame: pd.DataFrame, price: dict[tuple[int, int], float])
     out["feat_known_price"] = [price[(int(m), int(s))] for m, s in zip(dt.dt.month, half_hour)]
     ranks = {value: rank for rank, value in enumerate(sorted(set(price.values())))}
     out["feat_price_level"] = out["feat_known_price"].map(ranks).astype("int8")
+
+    # Additional features
+    out["feat_is_peak_hour"] = ((dt.dt.hour >= 8) & (dt.dt.hour < 22)).astype("int8")
+    out["feat_price_time_interaction"] = out["feat_price_level"] * out["feat_time_of_day_sin"]
+    out["feat_day_of_month_normalized"] = (dt.dt.day - 1) / (dt.dt.days_in_month - 1)
+
     return out
 
 
-def add_observed_family_aggregates(frame: pd.DataFrame) -> pd.DataFrame:
+def add_observed_family_aggregates(
+    frame: pd.DataFrame,
+    observed_frame: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Add family aggregates from raw observations, not imputed values."""
     out = frame.copy()
+    observed = frame if observed_frame is None else observed_frame
     families = {
         "blast_furnace": ["blast_furnace_1", "blast_furnace_2", "blast_furnace_4", "blast_furnace_5"],
         "air_heater": ["air_heater_1", "air_heater_2", "air_heater_4", "air_heater_5"],
@@ -256,8 +267,8 @@ def add_observed_family_aggregates(frame: pd.DataFrame) -> pd.DataFrame:
         "converter_user": ["converter_user1", "converter_user2"],
     }
     for name, columns in families.items():
-        out[f"feat_{name}_observed_sum"] = out[columns].sum(axis=1)
-        out[f"feat_{name}_observed_nonzero_count"] = (out[columns] > 0).sum(axis=1).astype("int8")
+        out[f"feat_{name}_observed_sum"] = observed[columns].sum(axis=1)
+        out[f"feat_{name}_observed_nonzero_count"] = (observed[columns] > 0).sum(axis=1).astype("int8")
     return out
 
 
@@ -294,6 +305,7 @@ def main() -> None:
         raise AssertionError(f"Unexpected all-null columns: {all_null}")
     usable = [c for c in raw_columns if c not in all_null]
     base = merged.drop(columns=all_null)
+    observed_values = base.copy()
     offline = base.copy()
     causal = base.copy()
     method_rows: list[dict[str, Any]] = []
@@ -314,8 +326,14 @@ def main() -> None:
             causal[col] = causal_filled
 
     price = load_price_lookup()
-    offline = add_observed_family_aggregates(add_known_features(offline, price))
-    causal = add_observed_family_aggregates(add_known_features(causal, price))
+    offline = add_observed_family_aggregates(
+        add_known_features(offline, price),
+        observed_frame=observed_values,
+    )
+    causal = add_observed_family_aggregates(
+        add_known_features(causal, price),
+        observed_frame=observed_values,
+    )
     flag_values = [c for c in usable if c not in TARGETS] + [f"feat_{t}_filled" for t in TARGETS]
     outlier_rows: list[dict[str, Any]] = []
     for col, flag in causal_outlier_flags(causal, flag_values).items():
