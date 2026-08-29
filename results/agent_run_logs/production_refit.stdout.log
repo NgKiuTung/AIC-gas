@@ -1,0 +1,5 @@
+2026-08-27 18:08:56,441 | INFO | Training d5 on cpu: rows=10832 features=801
+2026-08-27 18:15:09,620 | INFO | d5 saved in 371.40s; reload diff=0; CPU diff=0
+2026-08-27 18:15:09,629 | INFO | Training d6 on cpu: rows=10832 features=801
+2026-08-27 18:26:52,595 | INFO | d6 saved in 699.46s; reload diff=0; CPU diff=0
+2026-08-27 18:26:52,760 | INFO | Summary: {"created_utc": "2026-08-27T10:26:52.608833+00:00", "external_scoring_data_accessed": false, "required_components": ["d5", "d6"], "training_rows": 10832, "feature_count": 801, "gpu_training": false, "cpu_inference_verified": true, "reload_parity_verified": true, "prediction_hierarchy": true, "all_checks_pass": true}

@@ -9,19 +9,19 @@ Expected runtime: 10-15 minutes
 """
 
 import sys
-from pathlib import Path
 import time
+from pathlib import Path
 
-import pandas as pd
 import numpy as np
+import pandas as pd
 import xgboost as xgb
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))
 
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.enhanced_interactions import add_future_price_features, add_interaction_features
+from gas_power.features.inference import build_inference_feature_frame
 
 print("="*70)
 print("QUICK MAPE IMPROVEMENT TEST")
@@ -36,7 +36,7 @@ tables = {
     "user": pd.read_csv(RAW_DIR / "Pre_gas_user.csv", encoding="utf-8-sig"),
     "load": pd.read_csv(RAW_DIR / "Pre_load.csv", encoding="utf-8-sig"),
 }
-for name, df in tables.items():
+for _name, df in tables.items():
     df["datetime"] = pd.to_datetime(df["datetime"])
 
 price_table = pd.read_excel(RAW_DIR / "price.xlsx")
@@ -201,7 +201,7 @@ print(f"\nRelative: {improvement_full/mape_baseline*100:.2f}% reduction")
 print("\n" + "="*70)
 print("TOP 10 FEATURES (Final Model)")
 print("="*70)
-for idx, row in imp_full.head(10).iterrows():
+for _idx, row in imp_full.head(10).iterrows():
     feat_type = ""
     if "future_price" in row["feature"]:
         feat_type = "[FUTURE]"

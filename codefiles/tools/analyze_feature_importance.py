@@ -10,10 +10,10 @@ This script:
 
 import sys
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-from collections import Counter
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))

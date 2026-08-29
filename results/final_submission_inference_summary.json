@@ -1,0 +1,18 @@
+{
+  "official_scoring_data_accessed": true,
+  "scoring_access_purpose": "final_submission_inference",
+  "training_rows_used_for_context": 11518,
+  "scoring_rows": 192,
+  "input_rows": 192,
+  "input_columns": 802,
+  "model_feature_count": 801,
+  "result_rows": 192,
+  "result_columns": 17,
+  "finite_model_matrix": true,
+  "finite_predictions": true,
+  "generator_hierarchy": true,
+  "imputation_rows": 63,
+  "imputation_audit_output": "results\\final_submission_imputation_audit.csv",
+  "input_output": "input.csv",
+  "result_output": "result.csv"
+}

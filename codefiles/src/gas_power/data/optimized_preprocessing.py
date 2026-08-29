@@ -9,6 +9,7 @@ This module enhances the original causal_preprocessing.py with:
 from __future__ import annotations
 
 from collections.abc import Mapping
+
 import numpy as np
 import pandas as pd
 from scipy.signal import savgol_filter
@@ -219,10 +220,7 @@ def preprocess_with_optimization(
     root = Path(__file__).resolve().parents[3]
     sys.path.insert(0, str(root / 'codefiles' / 'src'))
 
-    from gas_power.data.causal_preprocessing import (
-        merge_raw_tables,
-        add_known_features
-    )
+    from gas_power.data.causal_preprocessing import add_known_features, merge_raw_tables
 
     # Step 1: Merge tables
     merged = merge_raw_tables(tables)

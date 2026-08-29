@@ -111,7 +111,7 @@ def main() -> None:
     results_original = []
     results_enhanced = []
 
-    for fold_idx, (fold_name, start_text, end_text) in enumerate(FOLDS, 1):
+    for _fold_idx, (fold_name, start_text, end_text) in enumerate(FOLDS, 1):
         print(f"\n[{fold_name}] Processing...")
 
         start = pd.Timestamp(start_text)

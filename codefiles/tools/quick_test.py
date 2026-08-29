@@ -14,11 +14,9 @@ print(f"Working directory: {Path.cwd()}")
 print("\n[1/5] Testing imports...")
 try:
     import pandas as pd
-    import numpy as np
-    import xgboost as xgb
     from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-    from gas_power.features.inference import build_inference_feature_frame
     from gas_power.features.enhanced_interactions import add_future_price_features, add_interaction_features
+    from gas_power.features.inference import build_inference_feature_frame
     print("  [OK] All imports successful")
 except Exception as e:
     print(f"  [FAIL] Import failed: {e}")

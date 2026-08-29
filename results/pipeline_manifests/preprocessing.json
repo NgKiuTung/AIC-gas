@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-08-28T16:57:39.803676+00:00",
+  "stage": "preprocessing",
+  "external_scoring_data_accessed": false,
+  "dry_run": false,
+  "steps": [
+    {
+      "script": "01_data_audit.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.28334919991903
+    },
+    {
+      "script": "02_preprocess.py",
+      "returncode": 0,
+      "elapsed_seconds": 9.736502500018105
+    },
+    {
+      "script": "03_validate_preprocessing.py",
+      "returncode": 0,
+      "elapsed_seconds": 0.6340061000082642
+    },
+    {
+      "script": "04_interpolation_benchmark.py",
+      "returncode": 0,
+      "elapsed_seconds": 3.9566895000170916
+    },
+    {
+      "script": "05_all_null_column_analysis.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.4523566999705508
+    },
+    {
+      "script": "06_environment_check.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.6552153000375256
+    },
+    {
+      "script": "07_build_supervised_features.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.04624379996676
+    }
+  ]
+}

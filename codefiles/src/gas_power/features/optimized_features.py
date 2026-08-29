@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
-from typing import Optional
 
 
 def add_target_lag_features(frame: pd.DataFrame) -> pd.DataFrame:

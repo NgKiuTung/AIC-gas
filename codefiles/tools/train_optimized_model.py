@@ -11,8 +11,9 @@ This script implements all the improvements:
 """
 
 import sys
-from pathlib import Path
 import time
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
@@ -22,8 +23,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))
 
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.enhanced_interactions import add_future_price_features
+from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.optimized_features import build_optimized_features
 
 print("="*80)
@@ -272,6 +273,7 @@ print("\nFeature Summary:")
 print(f"  Total features: {len(feature_cols)}")
 
 from gas_power.features.optimized_features import get_optimized_feature_summary
+
 opt_summary = get_optimized_feature_summary()
 print(f"  New optimized features: {opt_summary['total_new']}")
 print(f"    - Target lags: {opt_summary['target_lags']}")

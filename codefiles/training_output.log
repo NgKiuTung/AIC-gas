@@ -1,0 +1,21 @@
+08_baseline_experiments.py: returncode=0, elapsed=13.45s
+09_xgboost_gpu_experiments.py: returncode=0, elapsed=155.15s
+10_xgboost_crossfold_calibration.py: returncode=0, elapsed=96.27s
+11_xgboost_direct_targets.py: returncode=0, elapsed=147.86s
+12_recency_window_screen.py: returncode=0, elapsed=143.45s
+13_oof_ensemble_and_shrinkage.py: returncode=0, elapsed=25.42s
+14_forecast_robustness_analysis.py: returncode=0, elapsed=1.18s
+15_build_time_augmented_features.py: returncode=0, elapsed=0.93s
+16_time_feature_ablation.py: returncode=0, elapsed=110.44s
+17_temporal_effect_analysis.py: returncode=0, elapsed=5.56s
+18_relative_residual_ablation.py: returncode=0, elapsed=105.61s
+19_hybrid_target_selection.py: returncode=0, elapsed=13.93s
+20_train_final_forecaster.py: returncode=0, elapsed=38.92s
+22_final_hybrid_error_analysis.py: returncode=0, elapsed=0.64s
+23_validate_modeling_stage.py: returncode=1, elapsed=1.99s
+Traceback (most recent call last):
+  File "F:\Code2\AIC\AIC-gas\codefiles\pipelines\run_training.py", line 29, in <module>
+    run_legacy_scripts(selected, "training", args.dry_run)
+  File "F:\Code2\AIC\AIC-gas\codefiles\src\gas_power\utils\pipeline.py", line 51, in run_legacy_scripts
+    raise subprocess.CalledProcessError(completed.returncode, [sys.executable, str(script)])
+subprocess.CalledProcessError: Command '['C:\\Users\\ZZZ\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', 'F:\\Code2\\AIC\\AIC-gas\\codefiles\\legacy\\23_validate_modeling_stage.py']' returned non-zero exit status 1.

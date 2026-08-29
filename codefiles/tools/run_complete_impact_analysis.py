@@ -26,11 +26,11 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))
 
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.enhanced_interactions import (
     add_future_price_features,
     add_interaction_features,
 )
+from gas_power.features.inference import build_inference_feature_frame
 
 # Paths
 RAW_DATA_DIR = Path("F:/Code2/AIC/初赛-参赛者使用")

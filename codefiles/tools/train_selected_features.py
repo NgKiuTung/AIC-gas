@@ -4,8 +4,9 @@ This script uses only the most important features identified by importance analy
 """
 
 import sys
-from pathlib import Path
 import time
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
@@ -94,13 +95,13 @@ print("[2/5] Building features...")
 print("="*80)
 
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.enhanced_interactions import add_future_price_features
+from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.optimized_features import (
-    add_target_lag_features,
+    add_adaptive_time_features,
     add_domain_knowledge_features,
     add_physical_constraint_features,
-    add_adaptive_time_features
+    add_target_lag_features,
 )
 
 # Preprocess

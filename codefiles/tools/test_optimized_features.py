@@ -2,9 +2,8 @@
 
 import sys
 from pathlib import Path
-import numpy as np
+
 import pandas as pd
-import xgboost as xgb
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))
@@ -32,16 +31,19 @@ print(f"Data loaded: {len(tables['gas'])} rows")
 
 # Preprocess
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
+
 causal, _ = preprocess_causal_raw_tables(tables, price_lookup, split="train")
 print(f"Preprocessed: {causal.shape}")
 
 # Build base features
 from gas_power.features.inference import build_inference_feature_frame
+
 base = build_inference_feature_frame(causal)
 print(f"Base features: {base.shape}")
 
 # Add future prices
 from gas_power.features.enhanced_interactions import add_future_price_features
+
 with_prices = add_future_price_features(base, price_lookup)
 print(f"With future prices: {with_prices.shape}")
 

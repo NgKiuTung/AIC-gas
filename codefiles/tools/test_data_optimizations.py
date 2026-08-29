@@ -5,10 +5,10 @@ This script tests all 3 optimizations and compares to baseline.
 
 import sys
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-from scipy.signal import savgol_filter
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "codefiles" / "src"))

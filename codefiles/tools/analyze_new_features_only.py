@@ -5,6 +5,7 @@ Keep all 851 base features, only remove redundant new features.
 
 import sys
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
@@ -41,8 +42,8 @@ for row_idx, row in price_table.iterrows():
 
 # Build features
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.enhanced_interactions import add_future_price_features
+from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.optimized_features import build_optimized_features
 
 causal, _ = preprocess_causal_raw_tables(tables, price_lookup, split="train")
