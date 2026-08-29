@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-03T12:38:33.690850+00:00",
+  "created_utc": "2026-08-28T15:22:15.593059+00:00",
   "source": "results\\features\\train_supervised_features.pkl",
   "official_test_accessed": false,
   "folds": [
@@ -27,6 +27,6 @@
     "std_mape": 0.022038433168415056,
     "worst_mape": 0.10060849785804749,
     "mean_score": 0.9419696899518991,
-    "total_runtime_seconds": 0.00392319995444268
+    "total_runtime_seconds": 0.004127999767661095
   }
 }

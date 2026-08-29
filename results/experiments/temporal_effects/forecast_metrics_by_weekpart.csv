@@ -1,9 +1,9 @@
 ﻿model,target,weekday_weekend,samples,mape
-base_features,generator_1,weekday,24440,0.06850726838041914
-base_features,generator_1,weekend,9984,0.05355588781853994
-base_features,generator_all,weekday,24440,0.049824383818783395
-base_features,generator_all,weekend,9984,0.04242898604407725
-time_augmented,generator_1,weekday,24440,0.06847466396258059
-time_augmented,generator_1,weekend,9984,0.05359834659224999
-time_augmented,generator_all,weekday,24440,0.049936027165135996
-time_augmented,generator_all,weekend,9984,0.04264719122294297
+base_features,generator_1,weekday,24440,0.06851131689849943
+base_features,generator_1,weekend,9984,0.05357139643360517
+base_features,generator_all,weekday,24440,0.049987282929750215
+base_features,generator_all,weekend,9984,0.04262179575429427
+time_augmented,generator_1,weekday,24440,0.06852328555584332
+time_augmented,generator_1,weekend,9984,0.053671185431591974
+time_augmented,generator_all,weekday,24440,0.05009042302738209
+time_augmented,generator_all,weekend,9984,0.042845460279352765

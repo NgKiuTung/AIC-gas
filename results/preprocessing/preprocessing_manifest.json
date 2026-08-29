@@ -1,9 +1,9 @@
 {
-  "run_started_utc": "2026-08-03T10:34:46.273800+00:00",
-  "run_finished_utc": "2026-08-03T10:34:53.422391+00:00",
+  "run_started_utc": "2026-08-28T16:57:21.976571+00:00",
+  "run_finished_utc": "2026-08-28T16:57:30.932934+00:00",
   "official_test_accessed": false,
-  "script": "codefiles\\02_preprocess.py",
-  "script_sha256": "d45930d9e7616c7dc88b31fc5b16875368722463ee4fb9abe2646049e6bd5000",
+  "script": "codefiles\\legacy\\02_preprocess.py",
+  "script_sha256": "c77122896a8ff8cd6d0789a6003d09144a6c8572dc5b54d79856a9fb74341c91",
   "inputs": [
     {
       "path": "dataset\\初赛-数据集\\Pre_gas.csv",
@@ -39,17 +39,17 @@
   "outputs": [
     {
       "path": "results\\preprocessing\\processed\\preprocessed_train.csv",
-      "sha256": "829b713334b7b2af5b7826b736530a5e1053be57aeeb4fe8515b421f99edbd2b",
-      "size_bytes": 5526295
+      "sha256": "f14695952c378f7d0a655eec5488e6fb23526aa79ed6ae237273a701cfa0b935",
+      "size_bytes": 5746159
     },
     {
       "path": "results\\preprocessing\\processed\\preprocessed_train_causal.csv",
-      "sha256": "8d9459f6658a4501cb5837b0412c061a23b40ddcc632af6e00e33355f6fc3eb2",
-      "size_bytes": 5526258
+      "sha256": "be18e3c4fb80474c33ff34c50085f1bf3239bb590aaeb2c67262096fe6d81ff4",
+      "size_bytes": 5746120
     },
     {
       "path": "results\\preprocessing\\processed\\preprocessing_state_full_train.json",
-      "sha256": "29799e31da71e40b7134af938eddd450595f8f784dfa966ab41ab7c5684486e3",
+      "sha256": "95362f479b3fd70fe97579e38732131d490fe9f95ef08723b94b1d4d10ad8d3b",
       "size_bytes": 7642
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "path": "results\\preprocessing\\audit\\interpolation_selection.json",
-      "sha256": "a50b2436d2a3f2a3605517f107baecd39e8e443c8393b8f0f50fede96cfa996d",
+      "sha256": "6f84c94d0379020787e2a71e29659949503baf46a283bb44fcf5bd221d921a28",
       "size_bytes": 3130
     },
     {
@@ -94,10 +94,10 @@
     },
     {
       "path": "results\\preprocessing\\audit\\all_null_column_analysis.json",
-      "sha256": "c1ea572b57ee4f9c03b405bd35be128f187a1337c40ca001a4b20b0eeb930c2e",
+      "sha256": "f20d879cdf9499389ba8fdf76f3862f45eeb3e2f092746cffd99280cda48b891",
       "size_bytes": 3657
     }
   ],
   "rows": 11521,
-  "columns": 103
+  "columns": 106
 }

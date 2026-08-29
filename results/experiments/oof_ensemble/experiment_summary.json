@@ -1,11 +1,11 @@
 {
-  "created_utc": "2026-08-03T12:58:30.520419+00:00",
+  "created_utc": "2026-08-28T15:31:33.112856+00:00",
   "source": "results\\experiments\\xgboost_direct\\raw_oof_predictions_long.csv",
   "source_scope": "training-only out-of-fold predictions",
   "external_scoring_data_accessed": false,
   "policy_complexity": "per target: one d5 ensemble weight and two linear horizon endpoints",
-  "overall_mape": 0.05589276297459833,
-  "overall_score": 0.9441072370254017,
+  "overall_mape": 0.05598190111144504,
+  "overall_score": 0.9440180988885549,
   "selected_parameters": [
     {
       "target": "generator_1",
@@ -13,15 +13,15 @@
       "weight_d3": 0.0,
       "beta_h15": 0.1,
       "beta_h120": 0.15,
-      "mean_mape": 0.06413645735238206
+      "mean_mape": 0.06414396552438305
     },
     {
       "target": "generator_all",
       "weight_d5": 1.0,
       "weight_d3": 0.0,
-      "beta_h15": 0.65,
-      "beta_h120": 0.6,
-      "mean_mape": 0.04764906859681461
+      "beta_h15": 0.7,
+      "beta_h120": 0.55,
+      "mean_mape": 0.047819836698507034
     }
   ]
 }

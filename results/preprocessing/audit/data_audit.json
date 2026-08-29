@@ -1,8 +1,8 @@
 {
-  "run_started_utc": "2026-08-03T10:32:51.182001+00:00",
-  "run_finished_utc": "2026-08-03T10:32:51.576104+00:00",
-  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
-  "pandas": "2.2.2",
+  "run_started_utc": "2026-08-28T16:57:20.416339+00:00",
+  "run_finished_utc": "2026-08-28T16:57:21.244731+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "pandas": "2.3.3",
   "numpy": "2.3.5",
   "source_roots": {
     "train": "dataset\\初赛-数据集"

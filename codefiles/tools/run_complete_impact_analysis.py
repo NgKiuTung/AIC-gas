@@ -199,9 +199,9 @@ def main() -> None:
     print("=" * 80)
     print("COMPLETE PIPELINE WITH ENHANCEMENT IMPACT ANALYSIS")
     print("=" * 80)
-    print(f"\nGoal: Measure MAPE improvement from each enhancement")
-    print(f"Baseline: ~5.504% (cleaning_enhanced)")
-    print(f"Target: 5.10-5.30% (3-7% improvement)")
+    print("\nGoal: Measure MAPE improvement from each enhancement")
+    print("Baseline: ~5.504% (cleaning_enhanced)")
+    print("Target: 5.10-5.30% (3-7% improvement)")
 
     pipeline_start = time.perf_counter()
 
@@ -313,7 +313,7 @@ def main() -> None:
 
     print(f"\n  Added {len(future_price_cols)} future price features")
     print(f"  Time: {future_time:.1f}s")
-    print(f"  Sample features:")
+    print("  Sample features:")
     for feat in sorted(future_price_cols)[:5]:
         print(f"    - {feat}")
 
@@ -376,7 +376,7 @@ def main() -> None:
 
     print(f"\n  Added {len(interaction_cols)} interaction features")
     print(f"  Time: {interact_time:.1f}s")
-    print(f"  Sample features:")
+    print("  Sample features:")
     for feat in sorted(interaction_cols)[:5]:
         print(f"    - {feat}")
 
@@ -389,7 +389,7 @@ def main() -> None:
 
     all_features_final = base_feature_cols + future_price_cols + interaction_cols
     print(f"\nTotal features: {len(all_features_final)}")
-    print(f"Using adjusted hyperparameters:")
+    print("Using adjusted hyperparameters:")
     print(f"  n_estimators: {BASELINE_PARAMS['n_estimators']} -> {ENHANCED_PARAMS['n_estimators']}")
     print(f"  colsample_bytree: {BASELINE_PARAMS['colsample_bytree']} -> {ENHANCED_PARAMS['colsample_bytree']}")
 
@@ -411,7 +411,7 @@ def main() -> None:
         # Check feature usage
         future_in_top20 = [f for f in result['top20_features'] if 'future_price' in f]
         interact_in_top20 = [f for f in result['top20_features'] if 'interact' in f]
-        print(f"  New features in top 20:")
+        print("  New features in top 20:")
         print(f"    Future prices: {len(future_in_top20)}")
         print(f"    Interactions: {len(interact_in_top20)}")
 
@@ -429,28 +429,28 @@ def main() -> None:
     print("FINAL RESULTS SUMMARY")
     print("=" * 80)
 
-    print(f"\nExperiment                      Features    MAPE      vs Baseline")
+    print("\nExperiment                      Features    MAPE      vs Baseline")
     print("-" * 70)
     print(f"1. Baseline                     {len(base_feature_cols):4d}     {baseline_mape:.4f}%   -")
     print(f"2. + Future Prices              {len(all_features_step2):4d}     {future_price_mape:.4f}%   {improvement_step2:+.4f}pp")
     print(f"3. + Future Prices + Interactions {len(all_features_final):4d}     {final_mape:.4f}%   {total_improvement:+.4f}pp")
 
-    print(f"\n" + "=" * 80)
+    print("\n" + "=" * 80)
     print("IMPROVEMENT BREAKDOWN")
     print("=" * 80)
 
     interaction_contribution = (baseline_mape - improvement_step2) - final_mape
 
     print(f"\nTotal MAPE reduction: {total_improvement:.4f} percentage points")
-    print(f"\nContribution from each enhancement:")
+    print("\nContribution from each enhancement:")
     print(f"  1. Future price features:  {improvement_step2:.4f}pp ({improvement_step2/total_improvement*100:.1f}%)")
     print(f"  2. Interaction features:   {interaction_contribution:.4f}pp ({interaction_contribution/total_improvement*100:.1f}%)")
-    print(f"  3. Hyperparameter tuning:  (synergy effect)")
+    print("  3. Hyperparameter tuning:  (synergy effect)")
 
     print(f"\nRelative improvement: {total_improvement/baseline_mape*100:.2f}%")
     print(f"Score improvement: {total_improvement/100:.6f}")
 
-    print(f"\n" + "=" * 80)
+    print("\n" + "=" * 80)
     print("WHAT CAUSED THE IMPROVEMENT")
     print("=" * 80)
 

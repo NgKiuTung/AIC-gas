@@ -301,7 +301,7 @@ print("  1. Outlier detection and correction")
 print("  2. Target transformation (predict absolute change)")
 print("  3. Label smoothing (3-point rolling average)")
 
-print(f"\nModel details:")
+print("\nModel details:")
 print(f"  Training samples: {len(train_features)}")
 print(f"  Features: {len(feat_cols)}")
 print(f"  Test samples: {len(test_features)}")

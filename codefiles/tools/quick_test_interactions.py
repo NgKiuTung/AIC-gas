@@ -219,11 +219,11 @@ def main() -> None:
         print(f"\n  Improvement: {delta:+.4f} percentage points ({improvement:+.2f}% relative)")
 
         if mape_enh < mape_orig:
-            print(f"  Result: BETTER with interactions!")
+            print("  Result: BETTER with interactions!")
         elif mape_enh > mape_orig:
-            print(f"  Result: Worse (may need hyperparameter tuning)")
+            print("  Result: Worse (may need hyperparameter tuning)")
         else:
-            print(f"  Result: No change")
+            print("  Result: No change")
 
         results_original.append({
             "fold": fold_name,
@@ -260,7 +260,7 @@ def main() -> None:
     improvement = ((mean_mape_orig - mean_mape_enh) / mean_mape_orig) * 100
     delta = mean_mape_orig - mean_mape_enh
 
-    print(f"\n" + "=" * 80)
+    print("\n" + "=" * 80)
     print("Summary")
     print("=" * 80)
     print(f"Original MAPE:  {mean_mape_orig:.4f}%")
@@ -269,11 +269,11 @@ def main() -> None:
     print(f"Score change:   {-delta/100:+.6f}")
 
     if mean_mape_enh < mean_mape_orig:
-        print(f"\nResult: SUCCESS! Interaction features improved MAPE")
-        print(f"Recommendation: Use enhanced features in production")
+        print("\nResult: SUCCESS! Interaction features improved MAPE")
+        print("Recommendation: Use enhanced features in production")
     else:
-        print(f"\nResult: No improvement yet")
-        print(f"Recommendation: Try tuning hyperparameters (colsample_bytree, n_estimators)")
+        print("\nResult: No improvement yet")
+        print("Recommendation: Try tuning hyperparameters (colsample_bytree, n_estimators)")
 
     # Save results
     summary = {

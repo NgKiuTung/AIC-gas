@@ -245,25 +245,25 @@ print("\n[5/6] Testing optimizations...")
 
 # Test 1: Outlier detection only
 opt1_mape = train_fold2(base_cleaned)
-print(f"\n  Optimization 1 (Outlier Detection):")
+print("\n  Optimization 1 (Outlier Detection):")
 print(f"    MAPE: {opt1_mape:.4f}%")
 print(f"    vs Baseline: {baseline_mape - opt1_mape:+.4f}pp")
 
 # Test 2: Target transformation only (on baseline data)
 opt2_mape = train_fold2(base, use_target_transform=True)
-print(f"\n  Optimization 2 (Target Transform):")
+print("\n  Optimization 2 (Target Transform):")
 print(f"    MAPE: {opt2_mape:.4f}%")
 print(f"    vs Baseline: {baseline_mape - opt2_mape:+.4f}pp")
 
 # Test 3: Label smoothing only (on baseline data)
 opt3_mape = train_fold2(base, use_label_smoothing=True)
-print(f"\n  Optimization 3 (Label Smoothing):")
+print("\n  Optimization 3 (Label Smoothing):")
 print(f"    MAPE: {opt3_mape:.4f}%")
 print(f"    vs Baseline: {baseline_mape - opt3_mape:+.4f}pp")
 
 # Test 4: All combined
 opt_all_mape = train_fold2(base_cleaned, use_target_transform=True, use_label_smoothing=True)
-print(f"\n  All Optimizations Combined:")
+print("\n  All Optimizations Combined:")
 print(f"    MAPE: {opt_all_mape:.4f}%")
 print(f"    vs Baseline: {baseline_mape - opt_all_mape:+.4f}pp")
 
@@ -302,10 +302,10 @@ if best_improvement > 0.01:
     print(f"\nRecommendation: Implement '{best_name}' in full 3-fold training")
 elif best_improvement > 0:
     print(f"\n⚠️ Marginal improvement ({best_improvement:.4f}pp)")
-    print(f"\nRecommendation: May not be worth the complexity")
+    print("\nRecommendation: May not be worth the complexity")
 else:
-    print(f"\n❌ No improvement found")
-    print(f"\nRecommendation: Try other optimization directions (model ensemble, hyperparameter tuning)")
+    print("\n❌ No improvement found")
+    print("\nRecommendation: Try other optimization directions (model ensemble, hyperparameter tuning)")
 
 print("\n" + "="*80)
 print("TESTING COMPLETE!")

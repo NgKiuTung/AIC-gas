@@ -255,15 +255,15 @@ def compare_feature_importance_potential():
     interact_a = scenario_a["feat_known_price"].iloc[0] * holder_a_norm
     interact_b = scenario_b["feat_known_price"].iloc[0] * holder_b_norm
 
-    print(f"Scenario A: High price (1.2) + High holder (85k)")
-    print(f"  - Without interaction: price=1.2, holder=85000 (separate features)")
+    print("Scenario A: High price (1.2) + High holder (85k)")
+    print("  - Without interaction: price=1.2, holder=85000 (separate features)")
     print(f"  - With interaction: {interact_a:.4f}")
-    print(f"  → Model learns: 'I can aggressively respond to high prices'")
+    print("  → Model learns: 'I can aggressively respond to high prices'")
 
-    print(f"\nScenario B: High price (1.2) + Low holder (25k)")
-    print(f"  - Without interaction: price=1.2, holder=25000 (separate features)")
+    print("\nScenario B: High price (1.2) + Low holder (25k)")
+    print("  - Without interaction: price=1.2, holder=25000 (separate features)")
     print(f"  - With interaction: {interact_b:.4f}")
-    print(f"  → Model learns: 'High price but constrained by low gas'")
+    print("  → Model learns: 'High price but constrained by low gas'")
 
     print(f"\nInteraction contrast: {interact_a:.4f} vs {interact_b:.4f} ({interact_a/interact_b:.1f}x difference)")
     print("This 3.4x signal is INVISIBLE without interaction features!")
@@ -279,16 +279,16 @@ def compare_feature_importance_potential():
     print(f"Current time: {current_time}, price: {current_price:.2f}")
     print(f"Future h4 (11:00), price: {future_price_h4:.2f}")
 
-    print(f"\nWithout future price features:")
-    print(f"  - Model only sees: current_price=0.5")
-    print(f"  - Prediction: 'Low price, reduce generation'")
-    print(f"  → WRONG! Should save gas for 11:00 high price")
+    print("\nWithout future price features:")
+    print("  - Model only sees: current_price=0.5")
+    print("  - Prediction: 'Low price, reduce generation'")
+    print("  → WRONG! Should save gas for 11:00 high price")
 
-    print(f"\nWith future price features:")
-    print(f"  - Model sees: current_price=0.5, future_price_h4=1.2")
-    print(f"  - Model sees: price_delta_h4=+0.7 (+140%)")
-    print(f"  - Prediction: 'Low now but high soon, optimize strategically'")
-    print(f"  → CORRECT! Save gas now, prepare for high-price period")
+    print("\nWith future price features:")
+    print("  - Model sees: current_price=0.5, future_price_h4=1.2")
+    print("  - Model sees: price_delta_h4=+0.7 (+140%)")
+    print("  - Prediction: 'Low now but high soon, optimize strategically'")
+    print("  → CORRECT! Save gas now, prepare for high-price period")
 
     print("\nKey Insight:")
     print("Future price information allows the model to make STRATEGIC decisions,")

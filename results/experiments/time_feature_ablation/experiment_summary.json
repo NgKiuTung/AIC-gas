@@ -1,9 +1,10 @@
 {
-  "created_utc": "2026-08-03T13:04:32.030294+00:00",
+  "created_utc": "2026-08-28T15:33:27.493375+00:00",
   "source": "results\\features\\train_supervised_features_time_augmented.pkl",
   "source_scope": "causal_preprocessed_training_data_only",
   "external_scoring_data_accessed": false,
   "target_design": "direct residual forecasts for generator_1 and generator_all",
+  "target_mode": "absolute",
   "configs": {
     "direct_d5_time_augmented": {
       "n_estimators": 350,
@@ -44,23 +45,23 @@
       "model": "direct_d5_time_augmented",
       "target": "generator_1",
       "blend": 0.15,
-      "mean_mape": 0.06412869070967038,
-      "std_mape": 0.021103503944301095,
-      "worst_mape": 0.09854152798652649
+      "mean_mape": 0.06419378247422476,
+      "std_mape": 0.02111099636670864,
+      "worst_mape": 0.09858684241771698
     },
     {
       "model": "direct_d5_time_augmented",
       "target": "generator_all",
       "blend": 0.55,
-      "mean_mape": 0.047796736393744745,
-      "std_mape": 0.020135449922183732,
-      "worst_mape": 0.08885277807712555
+      "mean_mape": 0.047963812947273254,
+      "std_mape": 0.020243310660935952,
+      "worst_mape": 0.08759423345327377
     }
   ],
   "best": {
     "model": "direct_d5_time_augmented",
-    "mean_mape": 0.055962713551707566,
-    "worst_mape": 0.09854152798652649,
-    "mean_score": 0.9440372864482924
+    "mean_mape": 0.05607879771074901,
+    "worst_mape": 0.09858684241771698,
+    "mean_score": 0.943921202289251
   }
 }

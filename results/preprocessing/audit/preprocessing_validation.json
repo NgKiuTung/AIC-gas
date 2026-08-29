@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-06T12:47:50.667397+00:00",
+  "created_utc": "2026-08-28T16:57:31.636415+00:00",
   "passed": true,
   "official_test_accessed": false,
   "summary": {
@@ -8,14 +8,14 @@
     "checks_failed": 0,
     "shape": [
       11521,
-      103
+      106
     ]
   },
   "checks": [
     {
       "check": "offline_and_causal_schema_equal",
       "passed": true,
-      "detail": "(11521, 103)"
+      "detail": "(11521, 106)"
     },
     {
       "check": "offline_datetime_valid_unique",

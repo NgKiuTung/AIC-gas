@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-03T13:10:01.142884+00:00",
+  "created_utc": "2026-08-28T15:35:20.591425+00:00",
   "source": "results\\features\\train_supervised_features.pkl",
   "source_scope": "causal_preprocessed_training_data_only",
   "external_scoring_data_accessed": false,
@@ -45,23 +45,23 @@
       "model": "direct_d5_relative",
       "target": "generator_1",
       "blend": 0.3,
-      "mean_mape": 0.06341471841248374,
-      "std_mape": 0.02100964374149511,
-      "worst_mape": 0.09702087193727493
+      "mean_mape": 0.06341150434066851,
+      "std_mape": 0.02101851952850022,
+      "worst_mape": 0.0971515104174614
     },
     {
       "model": "direct_d5_relative",
       "target": "generator_all",
       "blend": 0.4,
-      "mean_mape": 0.04911632866909107,
-      "std_mape": 0.02149632187220983,
-      "worst_mape": 0.0953318178653717
+      "mean_mape": 0.049370114924386144,
+      "std_mape": 0.021800301144843718,
+      "worst_mape": 0.09618975222110748
     }
   ],
   "best": {
     "model": "direct_d5_relative",
-    "mean_mape": 0.0562655235407874,
-    "worst_mape": 0.09702087193727493,
-    "mean_score": 0.9437344764592126
+    "mean_mape": 0.05639080963252733,
+    "worst_mape": 0.0971515104174614,
+    "mean_score": 0.9436091903674727
   }
 }

@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-03T13:14:57.652684+00:00",
+  "created_utc": "2026-08-28T15:36:23.136614+00:00",
   "source_scope": "selected training-only out-of-fold hybrid predictions",
   "external_scoring_data_accessed": false,
   "rows": 68848,
@@ -10,14 +10,14 @@
     {
       "target": "generator_1",
       "persistence_mape": 0.06463727959045279,
-      "hybrid_mape": 0.06344401004075463,
-      "absolute_mape_reduction": 0.0011932695496981464
+      "hybrid_mape": 0.06344160167487602,
+      "absolute_mape_reduction": 0.001195677915576767
     },
     {
       "target": "generator_all",
       "persistence_mape": 0.05152834646351054,
-      "hybrid_mape": 0.04767949503820392,
-      "absolute_mape_reduction": 0.003848851425306612
+      "hybrid_mape": 0.04785106912659678,
+      "absolute_mape_reduction": 0.003677277336913758
     }
   ]
 }

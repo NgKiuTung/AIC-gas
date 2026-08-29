@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-03T13:07:01.284665+00:00",
+  "created_utc": "2026-08-28T15:33:33.100188+00:00",
   "source_scope": "training-only OOF predictions and causal training observations",
   "external_scoring_data_accessed": false,
   "available_training_months": [
@@ -13,13 +13,13 @@
   "time_feature_ablation": [
     {
       "model": "base_features",
-      "mean_mape": 0.05589276297459833,
-      "std_fold_target_horizon_mape": 0.021976317593500598
+      "mean_mape": 0.05598190111144504,
+      "std_fold_target_horizon_mape": 0.022064286916621895
     },
     {
       "model": "time_augmented",
-      "mean_mape": 0.05595815479145876,
-      "std_fold_target_horizon_mape": 0.022016459984757666
+      "mean_mape": 0.056069721348624195,
+      "std_fold_target_horizon_mape": 0.02203947582370502
     }
   ],
   "selected_parameters": [
@@ -27,28 +27,28 @@
       "target": "generator_1",
       "beta_h15": 0.1,
       "beta_h120": 0.15,
-      "mean_mape": 0.06413645735238206,
+      "mean_mape": 0.06414396552438305,
       "model": "base_features"
     },
     {
       "target": "generator_all",
-      "beta_h15": 0.65,
-      "beta_h120": 0.6,
-      "mean_mape": 0.04764906859681461,
+      "beta_h15": 0.7,
+      "beta_h120": 0.55,
+      "mean_mape": 0.047819836698507034,
       "model": "base_features"
     },
     {
       "target": "generator_1",
       "beta_h15": 0.1,
       "beta_h120": 0.15,
-      "mean_mape": 0.06412581087429908,
+      "mean_mape": 0.06418179663434434,
       "model": "time_augmented"
     },
     {
       "target": "generator_all",
       "beta_h15": 0.6,
-      "beta_h120": 0.55,
-      "mean_mape": 0.047790498708618435,
+      "beta_h120": 0.5,
+      "mean_mape": 0.04795764606290404,
       "model": "time_augmented"
     }
   ]

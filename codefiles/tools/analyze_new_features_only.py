@@ -68,7 +68,7 @@ base_feat_cols = [c for c in base.columns if c.startswith('feat_')]
 all_feat_cols = [c for c in optimized.columns if c.startswith('feat_')]
 new_feat_cols = [c for c in all_feat_cols if c not in base_feat_cols]
 
-print(f"\nFeature breakdown:")
+print("\nFeature breakdown:")
 print(f"  Base features: {len(base_feat_cols)}")
 print(f"  New features: {len(new_feat_cols)}")
 print(f"  Total: {len(all_feat_cols)}")
@@ -184,17 +184,17 @@ for i, feat_name in enumerate(all_feat_cols):
 
 sorted_new_features = sorted(new_feature_importance.items(), key=lambda x: -x[1])
 
-print(f"\nNew features importance:")
+print("\nNew features importance:")
 print(f"  Total new features: {len(new_feat_cols)}")
 
 zero_importance_new = [f for f, s in new_feature_importance.items() if s == 0.0]
 print(f"  Zero importance: {len(zero_importance_new)} ({len(zero_importance_new)/len(new_feat_cols)*100:.1f}%)")
 
-print(f"\nTop 20 new features by importance:")
+print("\nTop 20 new features by importance:")
 for i, (feat, score) in enumerate(sorted_new_features[:20], 1):
     print(f"  {i:2d}. {feat:60s} {score:10.1f}")
 
-print(f"\nBottom 20 new features (zero or low importance):")
+print("\nBottom 20 new features (zero or low importance):")
 for i, (feat, score) in enumerate(sorted_new_features[-20:], 1):
     print(f"  {i:2d}. {feat:60s} {score:10.1f}")
 
@@ -287,7 +287,7 @@ print(f"  Improvement vs baseline: {baseline_mape - best_mape:+.4f}pp")
 print(f"  Features: {len(base_feat_cols)} base + {len(best_new_feats)} new = {len(base_feat_cols) + len(best_new_feats)}")
 
 if len(best_new_feats) > 0:
-    print(f"\nSelected new features to keep:")
+    print("\nSelected new features to keep:")
     for feat in best_new_feats:
         score = new_feature_importance.get(feat, 0.0)
         print(f"  {feat:60s} {score:10.1f}")

@@ -164,7 +164,7 @@ for i, feat_name in enumerate(feature_cols):
 # Sort by importance
 sorted_features = sorted(feature_importance.items(), key=lambda x: -x[1])
 
-print(f"\nTop 20 most important features:")
+print("\nTop 20 most important features:")
 for i, (feat, score) in enumerate(sorted_features[:20], 1):
     print(f"  {i:2d}. {feat:50s} {score:10.1f}")
 
@@ -172,7 +172,7 @@ for i, (feat, score) in enumerate(sorted_features[:20], 1):
 zero_importance = [f for f, s in feature_importance.items() if s == 0.0]
 low_importance = [f for f, s in feature_importance.items() if s > 0.0 and s < np.percentile([s for s in feature_importance.values() if s > 0], 10)]
 
-print(f"\nFeature importance summary:")
+print("\nFeature importance summary:")
 print(f"  Total features: {len(feature_cols)}")
 print(f"  Zero importance: {len(zero_importance)} ({len(zero_importance)/len(feature_cols)*100:.1f}%)")
 print(f"  Low importance (<10th percentile): {len(low_importance)} ({len(low_importance)/len(feature_cols)*100:.1f}%)")

@@ -144,7 +144,7 @@ if missing_features:
     selected_new_features = [f for f in selected_new_features if f in with_optimized.columns]
     all_feat_cols = base_feat_cols + selected_new_features
 
-print(f"\nFinal feature count:")
+print("\nFinal feature count:")
 print(f"  Base features: {len(base_feat_cols)}")
 print(f"  Selected new features: {len(selected_new_features)}")
 print(f"  Total: {len(all_feat_cols)}")
@@ -264,7 +264,7 @@ print("="*80)
 avg_mape = np.mean([r['mape'] for r in fold_results])
 std_mape = np.std([r['mape'] for r in fold_results])
 
-print(f"\nFold Results:")
+print("\nFold Results:")
 for r in fold_results:
     print(f"  {r['fold']}: {r['mape']:.4f}%")
 
@@ -274,7 +274,7 @@ print(f"\n3-Fold Average MAPE: {avg_mape:.4f}% (±{std_mape:.4f}%)")
 baseline_mape = 5.504
 improvement = baseline_mape - avg_mape
 
-print(f"\nComparison to Baseline (cleaning_enhanced):")
+print("\nComparison to Baseline (cleaning_enhanced):")
 print(f"  Baseline MAPE: {baseline_mape:.4f}%")
 print(f"  Selected Features MAPE: {avg_mape:.4f}%")
 print(f"  Improvement: {improvement:+.4f}pp ({improvement/baseline_mape*100:+.2f}% relative)")
@@ -286,7 +286,7 @@ elif improvement > -0.01:
 else:
     print(f"\n❌ Performance degraded by {-improvement:.4f}pp. Consider adjusting strategy.")
 
-print(f"\nFeature Summary:")
+print("\nFeature Summary:")
 print(f"  Base features: {len(base_feat_cols)}")
 print(f"  New features: {len(selected_new_features)}")
 print(f"  Total: {len(all_feat_cols)}")

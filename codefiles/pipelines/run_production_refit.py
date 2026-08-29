@@ -30,6 +30,7 @@ LOG_DIR = ROOT / "results" / "training" / "logs"
 SEED = 20260803
 PARITY_ROWS = 256
 PARITY_TOLERANCE = 1e-6
+FROZEN_FEATURE_COUNT = 801
 
 
 def setup_logging() -> logging.Logger:
@@ -81,9 +82,21 @@ def main() -> None:
     data["datetime"] = pd.to_datetime(data["datetime"], errors="raise")
     catalog = pd.read_csv(CATALOG_PATH, encoding="utf-8-sig")
     feature_groups = set(spec["feature_groups"])
-    features = catalog.loc[catalog["group"].isin(feature_groups), "feature"].tolist()
+    catalog_features = catalog.loc[catalog["group"].isin(feature_groups), "feature"].tolist()
+    frozen_schema_path = MODEL_DIR / "feature_schema.csv"
+    if frozen_schema_path.exists():
+        frozen_schema = pd.read_csv(frozen_schema_path, encoding="utf-8-sig").sort_values("position")
+        features = frozen_schema["feature"].tolist()
+        if frozen_schema["position"].tolist() != list(range(len(features))):
+            raise ValueError("Frozen feature schema positions are invalid")
+        if not set(features).issubset(set(catalog_features)):
+            raise ValueError("Frozen feature schema contains features outside the current catalog")
+    else:
+        features = catalog_features
     if not features or len(features) != len(set(features)):
         raise ValueError("Feature schema is empty or duplicated")
+    if len(features) != FROZEN_FEATURE_COUNT:
+        raise ValueError(f"Production feature schema must contain {FROZEN_FEATURE_COUNT} features")
     x_train = data[features].to_numpy(dtype=np.float32)
     y_train = build_mixed_targets(data)
     if not np.isfinite(x_train).all() or not np.isfinite(y_train).all():

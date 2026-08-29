@@ -261,14 +261,14 @@ print("="*80)
 avg_mape = np.mean([r['mape'] for r in fold_results])
 std_mape = np.std([r['mape'] for r in fold_results])
 
-print(f"\nFold Results:")
+print("\nFold Results:")
 for r in fold_results:
     print(f"  {r['fold']}: {r['mape']:.4f}%")
 
 print(f"\nAverage MAPE: {avg_mape:.4f}% (±{std_mape:.4f}%)")
 
 # Feature summary
-print(f"\nFeature Summary:")
+print("\nFeature Summary:")
 print(f"  Total features: {len(feature_cols)}")
 
 from gas_power.features.optimized_features import get_optimized_feature_summary
@@ -288,7 +288,7 @@ print("="*80)
 baseline_mape = 5.504  # Your current best
 improvement = baseline_mape - avg_mape
 
-print(f"\nComparison to Baseline (cleaning_enhanced):")
+print("\nComparison to Baseline (cleaning_enhanced):")
 print(f"  Baseline MAPE: {baseline_mape:.4f}%")
 print(f"  Optimized MAPE: {avg_mape:.4f}%")
 print(f"  Improvement: {improvement:.4f}pp ({improvement/baseline_mape*100:.2f}% relative)")
@@ -298,4 +298,4 @@ if improvement > 0:
 elif improvement > -0.05:
     print(f"\n⚠️ Marginal change ({improvement:.4f}pp). May need further tuning.")
 else:
-    print(f"\n❌ Performance degraded. Check feature engineering or parameters.")
+    print("\n❌ Performance degraded. Check feature engineering or parameters.")

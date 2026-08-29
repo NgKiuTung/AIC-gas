@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-03T12:47:34.002809+00:00",
+  "created_utc": "2026-08-28T15:26:17.718864+00:00",
   "source": "results\\features\\train_supervised_features.pkl",
   "source_scope": "causal_preprocessed_training_data_only",
   "external_scoring_data_accessed": false,
@@ -39,11 +39,11 @@
   },
   "best": {
     "model": "xgb_fixed_beta_0.25",
-    "mean_mape": 0.05686431402417172,
-    "std_mape": 0.022084987977649812,
-    "worst_mape": 0.0987644214794674,
-    "mean_score": 0.9431356859758283
+    "mean_mape": 0.05689005939096936,
+    "std_mape": 0.022089142515200857,
+    "worst_mape": 0.09919529245611813,
+    "mean_score": 0.9431099406090308
   },
   "persistence_mape": 0.05805044017541546,
-  "relative_mape_reduction_vs_persistence": 0.020432681434620206
+  "relative_mape_reduction_vs_persistence": 0.01998918149353716
 }

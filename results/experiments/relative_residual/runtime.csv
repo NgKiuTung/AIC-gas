@@ -1,4 +1,4 @@
 ﻿fold,model,train_rows,valid_rows,features,fit_predict_seconds,device_requested
-fold_1,direct_d5_relative,4984,1440,560,38.26029109999945,cuda
-fold_2,direct_d5_relative,7960,1440,560,41.0244062999991,cuda
-fold_3,direct_d5_relative,9400,1423,560,44.5197608999988,cuda
+fold_1,direct_d5_relative,4984,1440,563,32.619933699956164,cuda
+fold_2,direct_d5_relative,7960,1440,563,36.168790900032036,cuda
+fold_3,direct_d5_relative,9400,1423,563,37.143949300050735,cuda

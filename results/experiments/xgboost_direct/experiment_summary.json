@@ -1,9 +1,10 @@
 {
-  "created_utc": "2026-08-03T12:52:13.824533+00:00",
+  "created_utc": "2026-08-28T15:28:43.816102+00:00",
   "source": "results\\features\\train_supervised_features.pkl",
   "source_scope": "causal_preprocessed_training_data_only",
   "external_scoring_data_accessed": false,
   "target_design": "direct residual forecasts for generator_1 and generator_all",
+  "target_mode": "absolute",
   "configs": {
     "direct_d3": {
       "n_estimators": 450,
@@ -42,39 +43,39 @@
       "model": "direct_d3",
       "target": "generator_1",
       "blend": 0.1,
-      "mean_mape": 0.06419367901980877,
-      "std_mape": 0.021130722685833735,
-      "worst_mape": 0.09930640459060669
+      "mean_mape": 0.06418147683143616,
+      "std_mape": 0.021133124329156178,
+      "worst_mape": 0.09933511912822723
     },
     {
       "model": "direct_d3",
       "target": "generator_all",
       "blend": 0.5,
-      "mean_mape": 0.04819460558549812,
-      "std_mape": 0.020630546315163912,
-      "worst_mape": 0.09085037559270859
+      "mean_mape": 0.048322982232396804,
+      "std_mape": 0.020677097670160557,
+      "worst_mape": 0.09000690281391144
     },
     {
       "model": "direct_d5",
       "target": "generator_1",
       "blend": 0.15,
-      "mean_mape": 0.06414621532894671,
-      "std_mape": 0.021098778042266737,
-      "worst_mape": 0.09847651422023773
+      "mean_mape": 0.06415449494185547,
+      "std_mape": 0.021092573691141415,
+      "worst_mape": 0.09842042624950409
     },
     {
       "model": "direct_d5",
       "target": "generator_all",
       "blend": 0.5,
-      "mean_mape": 0.0477852881886065,
-      "std_mape": 0.019958392672202046,
-      "worst_mape": 0.08738652616739273
+      "mean_mape": 0.04792377174211045,
+      "std_mape": 0.020170974555545715,
+      "worst_mape": 0.08765553683042526
     }
   ],
   "best": {
     "model": "direct_d5",
-    "mean_mape": 0.055965751758776605,
-    "worst_mape": 0.09847651422023773,
-    "mean_score": 0.9440342482412234
+    "mean_mape": 0.05603913334198296,
+    "worst_mape": 0.09842042624950409,
+    "mean_score": 0.943960866658017
   }
 }

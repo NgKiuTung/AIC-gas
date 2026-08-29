@@ -1,9 +1,9 @@
 ﻿model,target,day_night,samples,mape
-base_features,generator_1,day_07_19,17223,0.06547636323541664
-base_features,generator_1,night_19_07,17201,0.06286379973223451
-base_features,generator_all,day_07_19,17223,0.0481343106313584
-base_features,generator_all,night_19_07,17201,0.047224097737994755
-time_augmented,generator_1,day_07_19,17223,0.06546798277849719
-time_augmented,generator_1,night_19_07,17201,0.06285050940226941
-time_augmented,generator_all,day_07_19,17223,0.04836280968280318
-time_augmented,generator_all,night_19_07,17201,0.047280587751809044
+base_features,generator_1,day_07_19,17223,0.06548346692962535
+base_features,generator_1,night_19_07,17201,0.06287144096642654
+base_features,generator_all,day_07_19,17223,0.048246047607138035
+base_features,generator_all,night_19_07,17201,0.047455585470393045
+time_augmented,generator_1,day_07_19,17223,0.06553005450972536
+time_augmented,generator_1,night_19_07,17201,0.06289972010422797
+time_augmented,generator_all,day_07_19,17223,0.048444533194520724
+time_augmented,generator_all,night_19_07,17201,0.047533214290392756
