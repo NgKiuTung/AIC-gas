@@ -1,8 +1,11 @@
 """Enhanced preprocessing with advanced data quality improvements."""
 
+from __future__ import annotations
+
+from typing import Dict, List, Tuple
+
 import numpy as np
 import pandas as pd
-from typing import Tuple, Dict, List
 from scipy import stats
 
 
@@ -63,7 +66,11 @@ def add_data_quality_features(frame: pd.DataFrame, value_columns: List[str]) -> 
             continue
 
         # 1. 数据新鲜度：距离上次真实观测的时间步数
-        is_observed = ~frame[f'feat_missing_{col}'].astype(bool) if f'feat_missing_{col}' in frame.columns else pd.Series([True] * len(frame))
+        missing_col = f'feat_missing_{col}'
+        if missing_col in frame.columns:
+            is_observed = ~frame[missing_col].astype(bool)
+        else:
+            is_observed = pd.Series([True] * len(frame))
         time_since_observed = (~is_observed).groupby(is_observed.cumsum()).cumsum()
         out[f'feat_staleness_{col}'] = time_since_observed.astype('int16')
 
@@ -139,7 +146,10 @@ def add_physical_constraint_features(frame: pd.DataFrame) -> pd.DataFrame:
     out = frame.copy()
 
     # 1. 燃气平衡检查（产气 - 用气 - 储罐变化应该接近0）
-    gas_columns = [col for col in frame.columns if 'blast_furnace' in col and 'holder' not in col]
+    gas_columns = [
+        col for col in frame.columns
+        if 'blast_furnace' in col and 'holder' not in col
+    ]
     user_columns = [col for col in frame.columns if 'user' in col]
 
     if gas_columns and user_columns:
