@@ -117,9 +117,9 @@ print("  Field-specific strategies applied")
 print("\n[3/4] Building features...")
 
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
+from gas_power.features.domain_interactions import add_domain_interaction_features
 from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.multiscale_temporal_features import add_all_multiscale_temporal_features
-from gas_power.features.domain_interactions import add_domain_interaction_features
 
 causal, _ = preprocess_causal_raw_tables(tables, price_lookup, split="train")
 features = build_inference_feature_frame(causal)

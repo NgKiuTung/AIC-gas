@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -16,6 +17,21 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[2]
+SOURCE_DIR = ROOT / "codefiles" / "src"
+if str(SOURCE_DIR) not in sys.path:
+    sys.path.insert(0, str(SOURCE_DIR))
+
+from gas_power.features.multivariate_anomaly import (  # noqa: E402
+    add_causal_multivariate_anomaly_features,
+)
+from gas_power.features.domain_interactions import (  # noqa: E402
+    add_domain_interaction_features,
+)
+from gas_power.features.physical_balance import (  # noqa: E402
+    add_physical_balance_features,
+)
+
+
 BASE_MATRIX = ROOT / "results" / "features" / "train_supervised_features.pkl"
 BASE_CATALOG = ROOT / "results" / "features" / "feature_catalog.csv"
 CAUSAL_PATH = ROOT / "results" / "preprocessing" / "processed" / "preprocessed_train_causal.csv"
@@ -162,6 +178,28 @@ def main() -> None:
         "feat_quality_outlier_count", "feat_quality_any_outlier",
     ):
         groups[name] = "quality"
+
+    anomaly_features = add_causal_multivariate_anomaly_features(causal)
+    for name in anomaly_features:
+        added[name] = anomaly_features[name]
+        groups[name] = "multivariate_anomaly"
+
+    physical_balance_features = add_physical_balance_features(causal)
+    for name in (
+        "feat_energy_balance_residual",
+        "feat_energy_balance_abs",
+        "feat_energy_balance_ratio",
+    ):
+        added[name] = physical_balance_features[name]
+        groups[name] = "physical_balance"
+
+    domain_interaction_features = add_domain_interaction_features(causal)
+    for name in (
+        "feat_interact_holder_bfg_balance",
+        "feat_generation_fuel_structure_hhi",
+    ):
+        added[name] = domain_interaction_features[name]
+        groups[name] = "mechanism_interaction"
 
     # Transition-state persistence for the two target levels.
     for stem, values in (("p50", causal["_p50"]), ("pall", causal["_pall"])):

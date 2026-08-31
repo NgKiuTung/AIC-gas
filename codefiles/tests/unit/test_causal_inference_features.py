@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from gas_power.data.causal_preprocessing import causal_fill, merge_raw_tables
+from gas_power.features.domain_interactions import add_domain_interaction_features
 from gas_power.features.inference import build_inference_feature_frame, select_model_features
 
 
@@ -68,3 +69,38 @@ def test_inference_builder_uses_only_current_and_past() -> None:
         select_model_features(first, schema).iloc[690], select_model_features(second, schema).iloc[690]
     )
     assert not any(column.startswith("label_") for column in first)
+
+
+def test_domain_interactions_have_expected_values() -> None:
+    frame = pd.DataFrame(
+        {
+            "feat_blast_furnace_observed_sum": [100.0],
+            "feat_air_heater_observed_sum": [10.0],
+            "feat_blast_furnace_user_observed_sum": [20.0],
+            "into_gas_mixed_blast_furnace": [5.0],
+            "generator_use_blast_furnace_gas": [25.0],
+            "generator_use_coke_gas": [30.0],
+            "generator_use_converter_gas": [0.0],
+            "blast_furnace_gas_holder_2": [100_000.0],
+        }
+    )
+    output = add_domain_interaction_features(frame)
+    assert output.loc[0, "feat_interact_holder_bfg_balance"] == 0.20
+    assert output.loc[0, "feat_generation_fuel_structure_hhi"] == 0.5
+
+
+def test_domain_interaction_handles_zero_supply() -> None:
+    frame = pd.DataFrame(
+        {
+            "feat_blast_furnace_observed_sum": [0.0],
+            "feat_air_heater_observed_sum": [0.0],
+            "feat_blast_furnace_user_observed_sum": [0.0],
+            "into_gas_mixed_blast_furnace": [1.0],
+            "generator_use_blast_furnace_gas": [10.0],
+            "generator_use_coke_gas": [0.0],
+            "generator_use_converter_gas": [0.0],
+            "blast_furnace_gas_holder_2": [100_000.0],
+        }
+    )
+    output = add_domain_interaction_features(frame)
+    assert np.isfinite(output["feat_interact_holder_bfg_balance"]).all()

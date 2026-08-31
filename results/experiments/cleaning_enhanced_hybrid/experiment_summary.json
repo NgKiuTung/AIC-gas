@@ -1,8 +1,8 @@
 {
-  "created_utc": "2026-08-03T13:31:06.469372+00:00",
+  "created_utc": "2026-08-31T04:30:00.243541+00:00",
   "source_scope": "cleaning-enhanced causal training features only",
   "external_scoring_data_accessed": false,
-  "feature_count": 869,
+  "feature_count": 885,
   "parameters": {
     "n_estimators": 350,
     "max_depth": 5,
@@ -16,19 +16,19 @@
   "selected_parameters": [
     {
       "target": "generator_1",
-      "beta_h15": 0.4,
-      "beta_h120": 0.4,
-      "mean_mape": 0.06268370169599922
+      "beta_h15": 0.45,
+      "beta_h120": 0.35,
+      "mean_mape": 0.06279838736978774
     },
     {
       "target": "generator_all",
       "beta_h15": 0.7,
-      "beta_h120": 0.6,
-      "mean_mape": 0.047389168487291945
+      "beta_h120": 0.55,
+      "mean_mape": 0.04746917773204115
     }
   ],
   "persistence_mape": 0.05805044029249797,
-  "model_mape": 0.05503643509164558,
-  "score": 0.9449635649083544,
-  "relative_reduction_vs_persistence": 0.05192045375824478
+  "model_mape": 0.055133782550914445,
+  "score": 0.9448662174490856,
+  "relative_reduction_vs_persistence": 0.050243507661395896
 }

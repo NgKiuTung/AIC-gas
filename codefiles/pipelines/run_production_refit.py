@@ -31,6 +31,16 @@ SEED = 20260803
 PARITY_ROWS = 256
 PARITY_TOLERANCE = 1e-6
 FROZEN_FEATURE_COUNT = 801
+NEW_FEATURE_PREFIXES = (
+    "feat_multivar_anomaly_score_",
+    "feat_multivar_anomaly_",
+    "feat_energy_balance_residual",
+    "feat_energy_balance_abs",
+    "feat_energy_balance_ratio",
+    "feat_interact_holder_bfg_balance",
+    "feat_generation_fuel_structure_hhi",
+)
+RETIRING_FEATURE_PREFIXES = ("feat_future_price_",)
 
 
 def setup_logging() -> logging.Logger:
@@ -71,6 +81,61 @@ def gpu_description() -> str:
     return completed.stdout.strip() if completed.returncode == 0 else "unavailable"
 
 
+def _current_feature_importance(features: list[str]) -> dict[str, float] | None:
+    """Read prior-model importance to replace the weakest engineered features."""
+    importances: list[np.ndarray] = []
+    for component in ("d5", "d6"):
+        model_path = MODEL_DIR / f"{component}_xgboost.json"
+        if not model_path.exists():
+            return None
+        model = xgb.XGBRegressor()
+        try:
+            model.load_model(model_path)
+            values = np.asarray(model.feature_importances_, dtype=float)
+        except (FileNotFoundError, ValueError, xgb.core.XGBoostError):
+            return None
+        if values.shape != (len(features),):
+            return None
+        importances.append(values)
+    return dict(zip(features, np.mean(np.vstack(importances), axis=0), strict=True))
+
+
+def augment_feature_schema(features: list[str], catalog_features: list[str]) -> list[str]:
+    """Replace experimental candidates while preserving the 801-feature contract."""
+    candidates = [
+        feature
+        for feature in catalog_features
+        if feature not in features and feature.startswith(NEW_FEATURE_PREFIXES)
+    ]
+    if not candidates:
+        return features
+    retiring = [feature for feature in features if feature.startswith(RETIRING_FEATURE_PREFIXES)]
+    if len(retiring) >= len(candidates):
+        selected = [feature for feature in features if feature not in set(retiring[:len(candidates)])]
+        selected.extend(candidates)
+        LOGGER.info("Feature schema replaced: added=%d removed=%d", len(candidates), len(retiring[:len(candidates)]))
+        return selected
+    removable = [
+        feature
+        for feature in features
+        if feature.startswith("feat_")
+        and not feature.startswith(("feat_missing_", "feat_source_missing_"))
+    ]
+    if len(removable) < len(candidates):
+        raise ValueError("Not enough engineered features to make room for anomaly candidates")
+    importance = _current_feature_importance(features)
+    if importance is None:
+        drop = set(removable[-len(candidates):])
+    else:
+        positions = {feature: index for index, feature in enumerate(features)}
+        weakest = sorted(removable, key=lambda feature: (importance[feature], positions[feature]))
+        drop = set(weakest[:len(candidates)])
+    selected = [feature for feature in features if feature not in drop]
+    selected.extend(candidates)
+    LOGGER.info("Feature schema augmented: added=%d removed=%d", len(candidates), len(drop))
+    return selected
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--device", choices=("cuda", "cpu"), default="cuda")
@@ -89,8 +154,15 @@ def main() -> None:
         features = frozen_schema["feature"].tolist()
         if frozen_schema["position"].tolist() != list(range(len(features))):
             raise ValueError("Frozen feature schema positions are invalid")
-        if not set(features).issubset(set(catalog_features)):
-            raise ValueError("Frozen feature schema contains features outside the current catalog")
+        current_catalog = set(catalog_features)
+        invalid = {
+            feature
+            for feature in features
+            if feature not in current_catalog and not feature.startswith(RETIRING_FEATURE_PREFIXES)
+        }
+        if invalid:
+            raise ValueError(f"Frozen feature schema contains features outside the current catalog: {sorted(invalid)[:5]}")
+        features = augment_feature_schema(features, catalog_features)
     else:
         features = catalog_features
     if not features or len(features) != len(set(features)):

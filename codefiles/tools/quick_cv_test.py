@@ -97,8 +97,8 @@ print("  Done")
 # Build features
 print("\n[3/5] Building features (including new domain interactions)...")
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
-from gas_power.features.inference import build_inference_feature_frame
 from gas_power.features.domain_interactions import add_domain_interaction_features
+from gas_power.features.inference import build_inference_feature_frame
 
 causal, _ = preprocess_causal_raw_tables(tables, price_lookup, split="train")
 features = build_inference_feature_frame(causal)

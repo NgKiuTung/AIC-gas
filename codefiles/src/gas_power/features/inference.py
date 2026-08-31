@@ -7,6 +7,12 @@ from collections.abc import Sequence
 import numpy as np
 import pandas as pd
 
+from gas_power.features.multivariate_anomaly import (
+    add_causal_multivariate_anomaly_features,
+)
+from gas_power.features.domain_interactions import add_domain_interaction_features
+from gas_power.features.physical_balance import add_physical_balance_features
+
 HORIZONS = tuple(range(1, 9))
 LAGS = (1, 2, 3, 4, 8, 12, 16, 32, 96, 192, 672)
 ROLLING_WINDOWS = (4, 8, 16, 32, 96)
@@ -189,7 +195,9 @@ def _enhanced_features(causal: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(added, index=causal.index)
 
 
-def build_inference_feature_frame(causal: pd.DataFrame) -> pd.DataFrame:
+def build_inference_feature_frame(
+    causal: pd.DataFrame,
+) -> pd.DataFrame:
     """Return a feature superset; no label or negative-shift column is created."""
     if "datetime" not in causal:
         raise ValueError("Causal frame requires datetime")
@@ -202,7 +210,10 @@ def build_inference_feature_frame(causal: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("Expected a complete 15-minute grid")
     base = _base_engineered_features(ordered)
     enhanced = _enhanced_features(ordered)
-    output = pd.concat([base, enhanced], axis=1)
+    anomaly = add_causal_multivariate_anomaly_features(ordered)
+    output = pd.concat([base, enhanced, anomaly], axis=1)
+    output = add_physical_balance_features(output)
+    output = add_domain_interaction_features(output)
     if any(column.startswith("label_") for column in output):
         raise AssertionError("Inference builder must not create label columns")
     return output

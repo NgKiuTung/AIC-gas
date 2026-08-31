@@ -47,7 +47,12 @@ def main() -> None:
 
     check("training_only_spec", spec["external_scoring_data_accessed"] is False, spec["model_spec_id"])
     check("training_only_manifest", manifest["external_scoring_data_accessed"] is False, manifest["model_spec_id"])
-    check("feature_schema_exact", features == expected_features, f"features={len(features)}")
+    check(
+        "feature_schema_allowed_subset",
+        set(features).issubset(set(expected_features)),
+        f"selected={len(features)}; allowed={len(expected_features)}",
+    )
+    check("feature_schema_count", len(features) == 801, f"features={len(features)}")
     check("feature_schema_unique", len(features) == len(set(features)), f"unique={len(set(features))}")
     check(
         "feature_schema_hash",

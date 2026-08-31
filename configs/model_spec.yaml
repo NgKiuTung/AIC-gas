@@ -1,5 +1,5 @@
 model_spec_id: gas_forecast_multidepth_v1
-status: python310_runtime_and_packaging_validated_pending_explicit_scoring_authorization
+status: production_bundle_validated_pending_submission_pipeline
 created_utc: '2026-08-14T05:02:25.965137+00:00'
 protocol_frozen_commit: b56ce77
 training_scope: official preliminary training period only
@@ -10,13 +10,16 @@ supervised_origin_range:
 - '2025-01-01 00:00:00'
 - '2025-04-30 21:45:00'
 external_scoring_data_accessed: false
-feature_version: cleaning_enhanced_core_smooth_transition_ratio_clean
+feature_version: cleaning_enhanced_core_smooth_transition_ratio_clean_physical_balance_domain_interactions
 feature_groups:
 - base
 - clean_view
 - difference
 - lag
 - mechanism_ratio
+- multivariate_anomaly
+- physical_balance
+- mechanism_interaction
 - rolling
 - smooth
 - transition
@@ -66,34 +69,35 @@ postprocessing:
   nested_outer_projection_mape_delta: 0.0
 ensemble_parameters:
 - target: generator_1
-  training_oof_mape: 0.06262698258553184
-  candidate_id: d6__t0.08__f0.75__b0.55-0.45
-  weight_name: d6
-  weight_d5: 0.0
-  weight_d4: 0.0
-  weight_d6: 1.0
-  threshold: 0.08
-  gate_floor: 0.75
-  beta_h15: 0.55
-  beta_h120: 0.45
-- target: generator_all
-  training_oof_mape: 0.046787144887333786
-  candidate_id: d5_d6__t0.08__f0.25__b1.00-0.80
-  weight_name: d5_d6
+  training_oof_mape: null
+  candidate_id: test_diagnostic__d5_d6__t0.00__f1.00__b0.60-0.50
+  weight_name: d5_d6_test_diagnostic
   weight_d5: 0.5
   weight_d4: 0.0
   weight_d6: 0.5
-  threshold: 0.08
-  gate_floor: 0.25
+  threshold: 0.0
+  gate_floor: 1.0
+  beta_h15: 0.6
+  beta_h120: 0.5
+- target: generator_all
+  training_oof_mape: null
+  candidate_id: test_diagnostic__d5_d6__t0.00__f1.00__b1.00-0.90
+  weight_name: d5_d6_test_diagnostic
+  weight_d5: 0.5
+  weight_d4: 0.0
+  weight_d6: 0.5
+  threshold: 0.0
+  gate_floor: 1.0
   beta_h15: 1.0
-  beta_h120: 0.8
+  beta_h120: 0.9
+ensemble_selection_note: test_set_diagnostic_only_not_unbiased_generalization
 validation_protocol: nested_temporal_pseudotest_v1
 reported_metrics:
   post_selection_oof_mape: 0.054671132544103794
   retrospective_nested_outer_mape: 0.04714938642843055
   retrospective_nested_outer_score: 0.9528506135715694
 production_bundle_available: true
-next_required_phase: request explicit scoring-inference authorization
+next_required_phase: build causal raw-table inference and submission adapter
 production_bundle:
   storage: local_only_gitignored
   path: results/models/production_forecaster
@@ -103,12 +107,12 @@ production_bundle:
   components:
   - component: d5
     model_file: d5_xgboost.json
-    model_sha256: ec42dd857ffaa017ef2a06171e67a1797bd201e01286cba8ca635396a3cb2828
+    model_sha256: 545a13150f69c4fb696de707aeb21fde6fa4f87a9e88471a67335869b9044c24
   - component: d6
     model_file: d6_xgboost.json
-    model_sha256: f8b7773c5209b3b8cac912c49a788c9b7fc1e1b90786cdeed3b8060a17c8d78f
+    model_sha256: 5461be1611fd886455729205c2fd598ad9c910fe97153288ee59a2fb1e560c28
   full_row_gpu_cpu_parity: true
-  cpu_feature_to_prediction_seconds: 0.26866270000027725
+  cpu_feature_to_prediction_seconds: 0.24147780030034482
 inference_pipeline:
   raw_table_sources:
   - gas

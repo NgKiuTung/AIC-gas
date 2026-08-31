@@ -169,9 +169,10 @@ def main() -> None:
     training = load_csv_tables(TRAINING_DIR, scoring=False)
     scoring = load_csv_tables(SCORING_DIR, scoring=True)
     combined, reference_times = build_combined_tables(training, scoring)
+    price_lookup = load_price_lookup()
     causal, imputation = preprocess_causal_raw_tables(
         combined,
-        load_price_lookup(),
+        price_lookup,
         split="final_submission_inference",
     )
     imputation = imputation.merge(
