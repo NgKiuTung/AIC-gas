@@ -1,0 +1,4 @@
+﻿fold,rows,start,end,prediction_min,prediction_max,prediction_mean,prediction_std,finite_predictions,generator_hierarchy,mape,mape_status
+1,64,2025-05-01 00:00:00,2025-05-01 15:45:00,87.95445460974221,360.1861699832916,214.6774145449133,107.80961631085964,True,True,,unavailable_without_target_labels
+2,64,2025-05-01 16:00:00,2025-05-02 07:45:00,93.26215409176994,346.1019026277161,209.7624143203127,105.0268928372876,True,True,,unavailable_without_target_labels
+3,64,2025-05-02 08:00:00,2025-05-02 23:45:00,90.39198065794524,340.6862833958762,204.89298567573377,105.3016716667568,True,True,,unavailable_without_target_labels

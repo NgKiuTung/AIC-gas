@@ -1,0 +1,58 @@
+{
+  "data_source": "F:\\Code2\\AIC\\初赛-评分所用测试集",
+  "evaluation_type": "chronological_three_block_inference_without_labels",
+  "official_scoring_data_accessed": true,
+  "fold_count": 3,
+  "rows": 192,
+  "model_feature_count": 801,
+  "mape": null,
+  "mape_status": "unavailable_without_target_labels",
+  "all_predictions_finite": true,
+  "all_folds_hierarchy_valid": true,
+  "folds": [
+    {
+      "fold": 1,
+      "rows": 64,
+      "start": "2025-05-01 00:00:00",
+      "end": "2025-05-01 15:45:00",
+      "prediction_min": 87.95445460974221,
+      "prediction_max": 360.1861699832916,
+      "prediction_mean": 214.6774145449133,
+      "prediction_std": 107.80961631085964,
+      "finite_predictions": true,
+      "generator_hierarchy": true,
+      "mape": null,
+      "mape_status": "unavailable_without_target_labels"
+    },
+    {
+      "fold": 2,
+      "rows": 64,
+      "start": "2025-05-01 16:00:00",
+      "end": "2025-05-02 07:45:00",
+      "prediction_min": 93.26215409176994,
+      "prediction_max": 346.1019026277161,
+      "prediction_mean": 209.7624143203127,
+      "prediction_std": 105.0268928372876,
+      "finite_predictions": true,
+      "generator_hierarchy": true,
+      "mape": null,
+      "mape_status": "unavailable_without_target_labels"
+    },
+    {
+      "fold": 3,
+      "rows": 64,
+      "start": "2025-05-02 08:00:00",
+      "end": "2025-05-02 23:45:00",
+      "prediction_min": 90.39198065794524,
+      "prediction_max": 340.6862833958762,
+      "prediction_mean": 204.89298567573377,
+      "prediction_std": 105.3016716667568,
+      "finite_predictions": true,
+      "generator_hierarchy": true,
+      "mape": null,
+      "mape_status": "unavailable_without_target_labels"
+    }
+  ],
+  "output_predictions": "results\\experiments\\test_set_three_fold_inference\\three_fold_predictions.csv",
+  "output_summary": "results\\experiments\\test_set_three_fold_inference\\fold_summary.csv"
+}
