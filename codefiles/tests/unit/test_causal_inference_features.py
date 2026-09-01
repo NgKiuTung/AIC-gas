@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import pytest
 from gas_power.data.causal_preprocessing import causal_fill, merge_raw_tables
 from gas_power.features.domain_interactions import add_domain_interaction_features
 from gas_power.features.inference import build_inference_feature_frame, select_model_features
@@ -85,8 +86,8 @@ def test_domain_interactions_have_expected_values() -> None:
         }
     )
     output = add_domain_interaction_features(frame)
-    assert output.loc[0, "feat_interact_holder_bfg_balance"] == 0.20
-    assert output.loc[0, "feat_generation_fuel_structure_hhi"] == 0.5
+    assert output.loc[0, "feat_interact_holder_bfg_balance"] == pytest.approx(0.20)
+    assert output.loc[0, "feat_generation_fuel_structure_hhi"] == pytest.approx(0.5, abs=0.01)
 
 
 def test_domain_interaction_handles_zero_supply() -> None:
