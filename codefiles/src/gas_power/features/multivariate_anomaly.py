@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 from scipy.stats import chi2
 
-
 DEFAULT_ANOMALY_GROUPS: dict[str, tuple[str, ...]] = {
     "gas_supply": (
         "feat_blast_furnace_observed_sum",

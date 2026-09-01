@@ -161,7 +161,10 @@ def main() -> None:
             if feature not in current_catalog and not feature.startswith(RETIRING_FEATURE_PREFIXES)
         }
         if invalid:
-            raise ValueError(f"Frozen feature schema contains features outside the current catalog: {sorted(invalid)[:5]}")
+            raise ValueError(
+                f"Frozen feature schema contains features outside the current catalog: "
+                f"{sorted(invalid)[:5]}"
+            )
         features = augment_feature_schema(features, catalog_features)
     else:
         features = catalog_features

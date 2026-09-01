@@ -1,8 +1,9 @@
 """Calculate MAPE between predictions and actual test values."""
 
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
-from pathlib import Path
 
 print("="*80)
 print("MAPE EVALUATION")
@@ -65,11 +66,11 @@ else:
     print("\n" + "="*80)
     print("MAPE RESULTS")
     print("="*80)
-    print(f"\nGenerator 1 (P50):")
+    print("\nGenerator 1 (P50):")
     print(f"  MAPE: {mape_gen1:.4f}%")
     print(f"  MAE:  {mae_gen1:.4f}")
 
-    print(f"\nGenerator All:")
+    print("\nGenerator All:")
     print(f"  MAPE: {mape_genall:.4f}%")
     print(f"  MAE:  {mae_genall:.4f}")
 
@@ -92,11 +93,11 @@ else:
     print("STATISTICAL SUMMARY")
     print("="*80)
 
-    print(f"\nGenerator 1:")
+    print("\nGenerator 1:")
     print(f"  Actual - Mean: {merged['generator_1_actual'].mean():.2f}, Std: {merged['generator_1_actual'].std():.2f}")
     print(f"  Predicted - Mean: {merged['generator_1_pred'].mean():.2f}, Std: {merged['generator_1_pred'].std():.2f}")
 
-    print(f"\nGenerator All:")
+    print("\nGenerator All:")
     print(f"  Actual - Mean: {merged['generator_all_actual'].mean():.2f}, Std: {merged['generator_all_actual'].std():.2f}")
     print(f"  Predicted - Mean: {merged['generator_all_pred'].mean():.2f}, Std: {merged['generator_all_pred'].std():.2f}")
 

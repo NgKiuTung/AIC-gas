@@ -15,12 +15,10 @@ if str(PIPELINE_DIR) not in sys.path:
     sys.path.insert(0, str(PIPELINE_DIR))
 
 import run_final_submission_inference as final_inference  # noqa: E402
-
+import yaml  # noqa: E402
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables  # noqa: E402
 from gas_power.features.inference import build_inference_feature_frame, select_model_features  # noqa: E402
 from gas_power.forecasting.production import apply_frozen_ensemble  # noqa: E402
-import yaml  # noqa: E402
-
 
 OUTPUT_DIR = ROOT / "results" / "experiments" / "test_set_three_fold_inference"
 HORIZONS = tuple(range(1, 9))

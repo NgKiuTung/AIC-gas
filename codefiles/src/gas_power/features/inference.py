@@ -7,10 +7,10 @@ from collections.abc import Sequence
 import numpy as np
 import pandas as pd
 
+from gas_power.features.domain_interactions import add_domain_interaction_features
 from gas_power.features.multivariate_anomaly import (
     add_causal_multivariate_anomaly_features,
 )
-from gas_power.features.domain_interactions import add_domain_interaction_features
 from gas_power.features.physical_balance import add_physical_balance_features
 
 HORIZONS = tuple(range(1, 9))

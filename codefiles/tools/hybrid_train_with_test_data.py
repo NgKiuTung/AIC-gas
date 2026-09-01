@@ -390,15 +390,15 @@ print(f"\n  Predictions saved to: {output_file}")
 print("\n" + "="*80)
 print("HYBRID TRAINING SUMMARY")
 print("="*80)
-print(f"\nTraining data composition:")
+print("\nTraining data composition:")
 print(f"  - Test data (first half): {n_test_first_half} rows")
 print(f"  - Train data (second half): {n_train - n_train_first_half} rows")
 print(f"  - Total hybrid samples: {len(features)} rows (after feature engineering)")
 
-print(f"\nCross-validation performance:")
+print("\nCross-validation performance:")
 print(f"  - Mean MAPE: {results_df['mape_avg'].mean():.4f}% +/- {results_df['mape_avg'].std():.4f}%")
 
-print(f"\nOutput files:")
+print("\nOutput files:")
 print(f"  - CV results: {OUTPUT_DIR / 'hybrid_cv_results.csv'}")
 print(f"  - Predictions: {output_file}")
 
