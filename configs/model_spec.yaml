@@ -165,6 +165,7 @@ final_scoring_inference:
   package_rows: 192
   package_columns: 17
   package_members:
+  - input.csv
   - result.csv
   elapsed_seconds: 15.69723090000116
   under_30_minutes: true

@@ -11,3 +11,5 @@
 *.xlsx binary
 *.pkl binary
 
+# Preserve archived candidate bytes for SHA256 verification across platforms.
+results/experiments/pure_ml_candidate_v2/20260905T071738Z/** -text

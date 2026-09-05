@@ -11,6 +11,7 @@ import xgboost as xgb
 from gas_power.data.causal_preprocessing import preprocess_causal_raw_tables
 from gas_power.features.inference import build_inference_feature_frame, select_model_features
 from gas_power.forecasting.production import apply_frozen_ensemble
+from gas_power.submission.input_schema import validate_input_frame
 from gas_power.submission.schema import build_submission_frame
 
 
@@ -22,13 +23,13 @@ def load_feature_schema(model_dir: str | Path) -> list[str]:
     return features
 
 
-def predict_from_raw_tables(
+def predict_with_input_from_raw_tables(
     combined_tables: dict[str, pd.DataFrame],
     reference_times: pd.DatetimeIndex,
     price_lookup: dict[tuple[int, int], float],
     model_dir: str | Path,
     ensemble_parameters: list[dict[str, object]],
-) -> tuple[pd.DataFrame, dict[str, object]]:
+) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, object]]:
     causal, imputation = preprocess_causal_raw_tables(combined_tables, price_lookup, split="final_inference")
     feature_frame = build_inference_feature_frame(causal)
     row_mask = feature_frame["datetime"].isin(reference_times)
@@ -37,7 +38,8 @@ def predict_from_raw_tables(
     if not selected_times.equals(reference_times):
         raise ValueError("Engineered inference rows do not exactly match scoring reference timestamps")
     schema = load_feature_schema(model_dir)
-    matrix = select_model_features(selected_rows, schema).to_numpy(dtype=np.float32)
+    model_features = select_model_features(selected_rows, schema)
+    matrix = model_features.to_numpy(dtype=np.float32)
     if not np.isfinite(matrix).all():
         raise ValueError("Final inference feature matrix contains NaN or Inf")
     component_raw: dict[str, np.ndarray] = {}
@@ -50,6 +52,15 @@ def predict_from_raw_tables(
     current_all = current_1 + selected_rows["feat_p120_current"].to_numpy(dtype=float)
     predictions = apply_frozen_ensemble(component_raw, current_1, current_all, ensemble_parameters)
     submission = build_submission_frame(selected_times, predictions)
+    input_frame = pd.concat(
+        [selected_rows[["datetime"]].reset_index(drop=True), model_features.reset_index(drop=True)],
+        axis=1,
+    )
+    validate_input_frame(
+        input_frame,
+        expected_datetimes=reference_times,
+        expected_feature_schema=schema,
+    )
     audit = {
         "combined_grid_rows": len(causal),
         "reference_rows": len(reference_times),
@@ -59,4 +70,22 @@ def predict_from_raw_tables(
         "finite_predictions": all(np.isfinite(values).all() for values in predictions.values()),
         "hierarchy_satisfied": bool((predictions["generator_all"] >= predictions["generator_1"]).all()),
     }
+    return submission, input_frame, audit
+
+
+def predict_from_raw_tables(
+    combined_tables: dict[str, pd.DataFrame],
+    reference_times: pd.DatetimeIndex,
+    price_lookup: dict[tuple[int, int], float],
+    model_dir: str | Path,
+    ensemble_parameters: list[dict[str, object]],
+) -> tuple[pd.DataFrame, dict[str, object]]:
+    """Compatibility wrapper for callers that only need predictions."""
+    submission, _, audit = predict_with_input_from_raw_tables(
+        combined_tables,
+        reference_times,
+        price_lookup,
+        model_dir,
+        ensemble_parameters,
+    )
     return submission, audit

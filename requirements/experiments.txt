@@ -1,0 +1,8 @@
+-r base.txt
+-r gpu.txt
+
+# Training-side benchmark and hyperparameter optimization only.
+lightgbm>=4.5,<5
+optuna>=4,<5
+catboost>=1.2,<2
+imbalanced-learn>=0.13,<1

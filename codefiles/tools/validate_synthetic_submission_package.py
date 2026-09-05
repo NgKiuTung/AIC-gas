@@ -32,11 +32,23 @@ def setup_logging() -> logging.Logger:
 
 def main() -> None:
     logger = setup_logging()
+    team_name = "synthetic_contract_test"
     frame = pd.read_csv(INPUT, encoding="utf-8")
     frame["datetime"] = pd.to_datetime(frame["datetime"], errors="raise")
-    destination = RESULT_DIR / official_zip_name("synthetic_contract_test")
-    build_submission_zip(frame, destination)
-    result = validate_submission_zip(destination, expected_datetimes=frame["datetime"])
+    input_frame = pd.DataFrame(
+        {
+            "datetime": frame["datetime"],
+            "feat_synthetic_contract": range(len(frame)),
+        }
+    )
+    destination = RESULT_DIR / official_zip_name(team_name)
+    build_submission_zip(frame, input_frame, destination)
+    result = validate_submission_zip(
+        destination,
+        expected_datetimes=frame["datetime"],
+        expected_team_name=team_name,
+        expected_feature_schema=["feat_synthetic_contract"],
+    )
     result.update(
         {
             "created_utc": datetime.now(timezone.utc).isoformat(),

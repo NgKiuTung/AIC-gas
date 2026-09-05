@@ -1,0 +1,92 @@
+{
+  "comparison": {
+    "all": {
+      "n": 9216,
+      "baseline_mape_pct": 4.325068653819013,
+      "candidate_mape_pct": 4.2236551463772605,
+      "gain_pp": 0.10141350744175259
+    },
+    "2025-04-01": {
+      "n": 3072,
+      "baseline_mape_pct": 5.526813614371754,
+      "candidate_mape_pct": 5.42427305002949,
+      "gain_pp": 0.10254056434226388
+    },
+    "generator_1": {
+      "n": 4608,
+      "baseline_mape_pct": 5.529659422484458,
+      "candidate_mape_pct": 5.341362071146686,
+      "gain_pp": 0.1882973513377717
+    },
+    "horizon_15": {
+      "n": 1152,
+      "baseline_mape_pct": 1.9182401097520807,
+      "candidate_mape_pct": 1.9043674749944453,
+      "gain_pp": 0.01387263475763545
+    },
+    "horizon_30": {
+      "n": 1152,
+      "baseline_mape_pct": 2.6731034329391856,
+      "candidate_mape_pct": 2.6626205191870915,
+      "gain_pp": 0.010482913752094092
+    },
+    "horizon_45": {
+      "n": 1152,
+      "baseline_mape_pct": 3.4993666319007475,
+      "candidate_mape_pct": 3.3663853091519016,
+      "gain_pp": 0.1329813227488459
+    },
+    "horizon_60": {
+      "n": 1152,
+      "baseline_mape_pct": 4.133194539190192,
+      "candidate_mape_pct": 4.04791504374842,
+      "gain_pp": 0.08527949544177194
+    },
+    "horizon_75": {
+      "n": 1152,
+      "baseline_mape_pct": 4.732887614351393,
+      "candidate_mape_pct": 4.663887680340354,
+      "gain_pp": 0.06899993401103899
+    },
+    "horizon_90": {
+      "n": 1152,
+      "baseline_mape_pct": 5.386729878742037,
+      "candidate_mape_pct": 5.27667856016061,
+      "gain_pp": 0.11005131858142736
+    },
+    "horizon_105": {
+      "n": 1152,
+      "baseline_mape_pct": 5.815124637953393,
+      "candidate_mape_pct": 5.726040259871829,
+      "gain_pp": 0.089084378081564
+    },
+    "horizon_120": {
+      "n": 1152,
+      "baseline_mape_pct": 6.441902385723074,
+      "candidate_mape_pct": 6.141346323563432,
+      "gain_pp": 0.30055606215964215
+    },
+    "generator_all": {
+      "n": 4608,
+      "baseline_mape_pct": 3.120477885153568,
+      "candidate_mape_pct": 3.105948221607835,
+      "gain_pp": 0.01452966354573304
+    },
+    "2025-04-15": {
+      "n": 3072,
+      "baseline_mape_pct": 2.9946070791224755,
+      "candidate_mape_pct": 2.6951233714489438,
+      "gain_pp": 0.2994837076735317
+    },
+    "2025-04-22": {
+      "n": 3072,
+      "baseline_mape_pct": 4.453785267962808,
+      "candidate_mape_pct": 4.551569017653347,
+      "gain_pp": -0.09778374969053871
+    }
+  },
+  "identical_origin_target_horizon_and_truth": true,
+  "zero_validation_labels": 0,
+  "promoted": false,
+  "reason": "Mean improved but latest window regressed; reused dates, different model/feature recipes, not a single-factor ablation."
+}

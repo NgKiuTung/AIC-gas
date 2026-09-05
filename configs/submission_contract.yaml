@@ -23,7 +23,12 @@ encoding: utf-8
 timestamp_format: '%Y-%m-%d %H:%M:%S'
 minimum_decimal_places: 3
 submission_filename: result.csv
-zip_member_count: 1
+zip_member_count: 2
+zip_members: [input.csv, result.csv]
+preliminary_score_weights:
+  preprocessing: 0.5
+  short_horizon_forecast: 0.5
+preprocessing_score_formula: unknown_pending_official_details
 zip_filename_template: teamname_gas_predict_prelim.zip
 validation:
   unique_timestamps: true
@@ -47,6 +52,7 @@ final_scoring_validation:
   columns: 17
   prediction_columns: 16
   zip_members:
+  - input.csv
   - result.csv
   utf8: true
   minimum_decimal_places: 3

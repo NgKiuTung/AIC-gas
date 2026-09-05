@@ -15,6 +15,7 @@ import _bootstrap  # noqa: F401
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from gas_power.forecasting.final_inference import load_feature_schema
 from gas_power.submission.package import validate_submission_zip
 from gas_power.submission.schema import HORIZONS_MINUTES
 
@@ -22,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "results" / "final_inference_audit"
 DIAGNOSTIC_DIR = ROOT / "results" / "submissions" / "final" / "diagnostics"
 EXPECTED_TIMES = pd.date_range("2025-05-01 00:00:00", periods=192, freq="15min")
+MODEL_DIR = ROOT / "results" / "models" / "production_forecaster"
 
 
 def setup_logging() -> logging.Logger:
@@ -101,9 +103,15 @@ def plot_diagnostics(frame: pd.DataFrame) -> Path:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("zip_path", type=Path)
+    parser.add_argument("--team-name")
     args = parser.parse_args()
     logger = setup_logging()
-    package_audit = validate_submission_zip(args.zip_path, expected_datetimes=EXPECTED_TIMES)
+    package_audit = validate_submission_zip(
+        args.zip_path,
+        expected_datetimes=EXPECTED_TIMES,
+        expected_team_name=args.team_name,
+        expected_feature_schema=load_feature_schema(MODEL_DIR),
+    )
     frame = load_result(args.zip_path)
     figure_path = plot_diagnostics(frame)
     payload = {

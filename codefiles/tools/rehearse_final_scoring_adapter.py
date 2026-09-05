@@ -22,7 +22,7 @@ from gas_power.data.raw_inputs import (
     load_scoring_raw_tables,
     load_training_raw_tables,
 )
-from gas_power.forecasting.final_inference import predict_from_raw_tables
+from gas_power.forecasting.final_inference import load_feature_schema, predict_with_input_from_raw_tables
 from gas_power.submission.package import build_submission_zip, official_zip_name, validate_submission_zip
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -133,7 +133,7 @@ def main() -> None:
     combined, reference_times = combine_history_and_scoring_tables(training, scoring)
     spec = yaml.safe_load(SPEC_PATH.read_text(encoding="utf-8"))
     started = time.perf_counter()
-    submission, inference_audit = predict_from_raw_tables(
+    submission, input_frame, inference_audit = predict_with_input_from_raw_tables(
         combined,
         reference_times,
         synthetic_price_lookup(),
@@ -141,9 +141,15 @@ def main() -> None:
         spec["ensemble_parameters"],
     )
     inference_seconds = time.perf_counter() - started
-    zip_path = RESULT_DIR / official_zip_name("synthetic_192row_rehearsal")
-    build_submission_zip(submission, zip_path)
-    package_audit = validate_submission_zip(zip_path, expected_datetimes=reference_times)
+    team_name = "synthetic_192row_rehearsal"
+    zip_path = RESULT_DIR / official_zip_name(team_name)
+    build_submission_zip(submission, input_frame, zip_path)
+    package_audit = validate_submission_zip(
+        zip_path,
+        expected_datetimes=reference_times,
+        expected_team_name=team_name,
+        expected_feature_schema=load_feature_schema(MODEL_DIR),
+    )
     hashes_after = {path.name: sha256(path) for path in input_paths}
     input_unchanged = hashes_before == hashes_after
     figures = plot_predictions(submission)

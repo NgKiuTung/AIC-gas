@@ -22,7 +22,7 @@ from gas_power.data.raw_inputs import (
     load_scoring_raw_tables,
     load_training_raw_tables,
 )
-from gas_power.forecasting.final_inference import predict_from_raw_tables
+from gas_power.forecasting.final_inference import load_feature_schema, predict_with_input_from_raw_tables
 from gas_power.submission.package import build_submission_zip, official_zip_name, validate_submission_zip
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -88,7 +88,7 @@ def main() -> None:
         )
     price_lookup = load_price_lookup(PRICE_PATH)
     spec = yaml.safe_load(SPEC_PATH.read_text(encoding="utf-8"))
-    submission, inference_audit = predict_from_raw_tables(
+    submission, input_frame, inference_audit = predict_with_input_from_raw_tables(
         combined,
         reference_times,
         price_lookup,
@@ -97,8 +97,14 @@ def main() -> None:
     )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     zip_path = args.output_dir / official_zip_name(args.team_name)
-    build_submission_zip(submission, zip_path)
-    package_audit = validate_submission_zip(zip_path, expected_datetimes=reference_times)
+    build_submission_zip(submission, input_frame, zip_path)
+    feature_schema = load_feature_schema(MODEL_DIR)
+    package_audit = validate_submission_zip(
+        zip_path,
+        expected_datetimes=reference_times,
+        expected_team_name=args.team_name,
+        expected_feature_schema=feature_schema,
+    )
     hashes_after = {path.name: sha256(path) for path in input_paths}
     if hashes_before != hashes_after:
         raise RuntimeError("Scoring inputs changed during inference")

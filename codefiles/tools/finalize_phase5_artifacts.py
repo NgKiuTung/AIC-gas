@@ -30,6 +30,14 @@ ARTIFACTS = (
         "safe_metadata",
     ),
     (
+        ROOT / "results" / "final_inference_audit" / "submission_contract_hardening.json",
+        "safe_metadata",
+    ),
+    (
+        ROOT / "results" / "final_inference_audit" / "dual_csv_contract_rebuild.json",
+        "safe_metadata",
+    ),
+    (
         ROOT / "results" / "final_inference_audit" / "final_submission_independent_audit.log",
         "safe_log",
     ),
@@ -52,6 +60,22 @@ ARTIFACTS = (
         / "experimental_docs"
         / "forecasting"
         / "09_最终评分只读推理与提交验包实验报告.md",
+        "safe",
+    ),
+    (
+        ROOT
+        / "docs"
+        / "experimental_docs"
+        / "forecasting"
+        / "10_初赛正式提交契约加固与无损重打包报告.md",
+        "safe",
+    ),
+    (
+        ROOT
+        / "docs"
+        / "experimental_docs"
+        / "forecasting"
+        / "11_初赛双CSV正式提交包整改与验收报告.md",
         "safe",
     ),
     (
