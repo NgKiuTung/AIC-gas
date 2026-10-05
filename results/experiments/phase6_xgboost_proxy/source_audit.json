@@ -1,0 +1,149 @@
+{
+  "sources": {
+    "preliminary_train": {
+      "gas": {
+        "path": "F:\\Code2\\AIC_2\\初赛-参赛者使用\\Pre_gas.csv",
+        "rows": 11519,
+        "first": "2025-01-01 00:00:00",
+        "last": "2025-05-01 00:00:00",
+        "invalid_cells": 0,
+        "missing_cells": 23054
+      },
+      "gas_holder": {
+        "path": "F:\\Code2\\AIC_2\\初赛-参赛者使用\\Pre_gas_holder.csv",
+        "rows": 11519,
+        "first": "2025-01-01 00:00:00",
+        "last": "2025-05-01 00:00:00",
+        "invalid_cells": 0,
+        "missing_cells": 11519
+      },
+      "gas_user": {
+        "path": "F:\\Code2\\AIC_2\\初赛-参赛者使用\\Pre_gas_user.csv",
+        "rows": 11518,
+        "first": "2025-01-01 00:00:00",
+        "last": "2025-05-01 00:00:00",
+        "invalid_cells": 0,
+        "missing_cells": 11539
+      },
+      "load": {
+        "path": "F:\\Code2\\AIC_2\\初赛-参赛者使用\\Pre_load.csv",
+        "rows": 11519,
+        "first": "2025-01-01 00:00:00",
+        "last": "2025-05-01 00:00:00",
+        "invalid_cells": 0,
+        "missing_cells": 4
+      }
+    },
+    "preliminary_released_eval": {
+      "gas": {
+        "path": "F:\\Code2\\AIC_2\\初赛-评分所用测试集\\Pre_test_gas.csv",
+        "rows": 192,
+        "first": "2025-05-01 00:00:00",
+        "last": "2025-05-02 23:45:00",
+        "invalid_cells": 0,
+        "missing_cells": 384
+      },
+      "gas_holder": {
+        "path": "F:\\Code2\\AIC_2\\初赛-评分所用测试集\\Pre_test_gas_holder.csv",
+        "rows": 192,
+        "first": "2025-05-01 00:00:00",
+        "last": "2025-05-02 23:45:00",
+        "invalid_cells": 0,
+        "missing_cells": 192
+      },
+      "gas_user": {
+        "path": "F:\\Code2\\AIC_2\\初赛-评分所用测试集\\Pre_test_gas_user.csv",
+        "rows": 192,
+        "first": "2025-05-01 00:00:00",
+        "last": "2025-05-02 23:45:00",
+        "invalid_cells": 0,
+        "missing_cells": 192
+      },
+      "load": {
+        "path": "F:\\Code2\\AIC_2\\初赛-评分所用测试集\\Pre_test_load.csv",
+        "rows": 192,
+        "first": "2025-05-01 00:00:00",
+        "last": "2025-05-02 23:45:00",
+        "invalid_cells": 0,
+        "missing_cells": 3
+      }
+    },
+    "semifinal_train": {
+      "gas": {
+        "path": "F:\\Code2\\AIC_2\\复赛-参赛者使用\\Semi_gas.csv",
+        "rows": 217438,
+        "first": "2025-05-03 00:00:00",
+        "last": "2025-09-30 23:59:00",
+        "invalid_cells": 1,
+        "missing_cells": 193036
+      },
+      "gas_holder": {
+        "path": "F:\\Code2\\AIC_2\\复赛-参赛者使用\\Semi_gas_holder.csv",
+        "rows": 217437,
+        "first": "2025-05-03 00:00:00",
+        "last": "2025-09-30 23:59:00",
+        "invalid_cells": 1,
+        "missing_cells": 208462
+      },
+      "gas_user": {
+        "path": "F:\\Code2\\AIC_2\\复赛-参赛者使用\\Semi_gas_user.csv",
+        "rows": 217438,
+        "first": "2025-05-03 00:00:00",
+        "last": "2025-09-30 23:59:00",
+        "invalid_cells": 1,
+        "missing_cells": 217443
+      },
+      "load": {
+        "path": "F:\\Code2\\AIC_2\\复赛-参赛者使用\\Semi_load.csv",
+        "rows": 217437,
+        "first": "2025-05-03 00:00:00",
+        "last": "2025-09-30 23:59:00",
+        "invalid_cells": 0,
+        "missing_cells": 0
+      }
+    }
+  },
+  "columns": [
+    "blast_furnace_1",
+    "blast_furnace_2",
+    "blast_furnace_3",
+    "blast_furnace_4",
+    "blast_furnace_5",
+    "coke_oven_1",
+    "converter_1",
+    "air_heater_1",
+    "air_heater_2",
+    "air_heater_3",
+    "air_heater_4",
+    "air_heater_5",
+    "into_gas_mixed_coke",
+    "into_gas_mixed_blast_furnace",
+    "into_gas_mixed_converter",
+    "blast_furnace_gas_holder_1",
+    "blast_furnace_gas_holder_2",
+    "blast_furnace_user1",
+    "blast_furnace_user2",
+    "blast_furnace_user3",
+    "blast_furnace_user4",
+    "converter_user1",
+    "converter_user2",
+    "converter_user3",
+    "generator_all",
+    "generator_1",
+    "generator_use_blast_furnace_gas",
+    "generator_use_coke_gas",
+    "generator_use_converter_gas"
+  ],
+  "pre_rows": 11710,
+  "semi_rows": 217438,
+  "overlap": [
+    {
+      "datetime": "2025-05-01 00:00:00",
+      "copies": 2,
+      "action": "keep_first_identical"
+    }
+  ],
+  "cleaning": "Stage1 numeric_frame: invalid parse, nonfinite, abs>1e20, negative<-1e-6 isolated as NaN; zero retained; no interpolation",
+  "pre_label_semantics": "same-record 15min sample; interval-mean meaning unverified; proxy only",
+  "semi_label_semantics": "1min observed load; future official labels require complete 15/15 block means"
+}
