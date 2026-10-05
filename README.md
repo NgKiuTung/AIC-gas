@@ -33,5 +33,6 @@ python codefiles\pipelines\validate_production_bundle.py
 - 当前冻结模型规范：`configs/model_spec.yaml`
 - Phase 1 评估图：`results/figures_safe/phase1/`
 - 版本化存档：本机 `results/releases/<version>/`（禁止提交或作为公开 Release 发布）
+- XGBoost 过程代理研究快照：`docs/experimental_docs/phase6_xgboost_process_proxy.md`（只含代码、特征定义、聚合指标及本地文件哈希；不含赛事数据或模型）
 
 每个里程碑版本保留独立的本地快照；Git 只保存代码、配置、实验报告、聚合指标和合规证据，不保存赛事原始数据、逐行真实值、特征缓存、模型或可恢复真实时序的图。完整归档仅在本机受控保存，并用 SHA-256 校验。仓库必须保持 Private；当前未附开源许可证，默认保留全部权利。
