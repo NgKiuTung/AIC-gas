@@ -1,0 +1,34 @@
+{
+  "training_cutoff_exclusive": "2025-10-01 00:00:00",
+  "base_engine": "xgboost",
+  "base_variant": "B7_full_semifinal_history",
+  "base_lookback_days": 180,
+  "base_template": "50% week4 / 50% day7 + 6h decay",
+  "base_proxy_labels": "preliminary same-record 15min sample and semifinal same-record 1min load; process features available by origin",
+  "base_rows": 26200,
+  "common_feature_count": 356,
+  "residual_variant": "EXP-C: pooled 8-horizon LightGBM; apply only generator_all",
+  "residual_oof_folds": [
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09"
+  ],
+  "residual_oof_origins": 11712,
+  "residual_selection_source": "F:\\Code2\\AIC_2\\results\\exp_bc_xgboost\\oof_residual_b7\\c_target_selection.json",
+  "generator_1_residual_enabled": false,
+  "generator_all_residual_enabled": true,
+  "observed_feature_max_time": "reference_time",
+  "pre_observation_delay_minutes": 15,
+  "feature_manifest_sha256": "12a71666819b8d33015afe3b1b8ae305ef73d25845f5a68bd65b969c5e8df12d",
+  "files_sha256": {
+    "base_model\\target_0.json": "da86a0e37ff6cb83527f06dc520bfd2654301d3fafa65e9a3c2d6943e782cb97",
+    "base_model\\target_1.json": "24e10db8e840eb9c9db73fd63209cb883e0fda4f79f0deb0b77785713d17961d",
+    "c_residual_models\\residual_t0.txt": "bfca2f3dcea3260e8a97d2cb94a82a1d64009c54c641bbf09a2de19ab572ad62",
+    "c_residual_models\\residual_t1.txt": "88f040168c938ad558202ad258866658a3e9139bea81a9436f27461881a60d3f",
+    "september_oof_model\\target_0.json": "9ad0a9d1add1f1deb5ee5f78b73124e1671eaa2daf3a6cf85d91a3b94431ff96",
+    "september_oof_model\\target_1.json": "df920115c320d0286336022d7d34cc82b9281fce0661eae234938439d9f75bf8"
+  },
+  "runtime_seconds": 23.108999999938533,
+  "official_score": null
+}

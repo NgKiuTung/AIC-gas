@@ -1,0 +1,34 @@
+{
+  "origins": 960,
+  "first": "2025-10-01 00:00:00",
+  "last": "2025-10-10 23:45:00",
+  "short_shape": [
+    960,
+    16
+  ],
+  "long_shape": [
+    960,
+    192
+  ],
+  "test_target_nonnull_cells": 0,
+  "max_adjacent_block_change_before_guard_mw": [
+    6.580107745930405,
+    35.05944694663634
+  ],
+  "ramp_violations_before_guard": [
+    0,
+    0
+  ],
+  "ramp_violations_after_guard": 0,
+  "generator_1_min_max": [
+    95.32461255376344,
+    150.5310921315403
+  ],
+  "generator_all_min_max": [
+    172.34590080512913,
+    403.6469521396678
+  ],
+  "ramp_interpretation": "Adjacent 15min means constrained by 15 * 1% * aggregate rated MW (200/440 MW); not proof of minute-level or per-unit compliance",
+  "runtime_seconds": 2.827999999979511,
+  "official_score": null
+}
