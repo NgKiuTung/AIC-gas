@@ -1,0 +1,15 @@
+{
+  "short": {
+    "accuracy_percent": 91.54393733527182,
+    "estimated_score": 33.63764964255383
+  },
+  "long": {
+    "accuracy_percent": 89.25933835953965,
+    "estimated_score": 33.39415330788444
+  },
+  "estimated_total": 67.03180295043828,
+  "variant": "B3_day_period",
+  "origins": 2880,
+  "prediction_seconds": 0.25,
+  "training_seconds": 9.953000000095926
+}
