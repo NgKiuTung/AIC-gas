@@ -1,0 +1,4 @@
+short,long,estimated_total,variant,origins,prediction_seconds,training_seconds
+"{'accuracy_percent': 91.28478878817732, 'estimated_score': 33.1362012155134}","{'accuracy_percent': 88.86432136870542, 'estimated_score': 32.78342821383028}",65.91962942934367,B1_physical_time,2880,0.18700000003445894,9.953000000095926
+"{'accuracy_percent': 91.54393733527182, 'estimated_score': 33.63764964255383}","{'accuracy_percent': 89.25933835953965, 'estimated_score': 33.39415330788444}",67.03180295043828,B3_day_period,2880,0.25,9.953000000095926
+"{'accuracy_percent': 91.62881547846891, 'estimated_score': 33.80188753573705}","{'accuracy_percent': 89.27851714215238, 'estimated_score': 33.42380510536856}",67.22569264110561,B7_full_semifinal_history,2880,0.4369999999180436,10.530999999959022
