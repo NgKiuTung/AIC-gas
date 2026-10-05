@@ -1,0 +1,15 @@
+{
+  "short": {
+    "accuracy_percent": 91.62881547846891,
+    "estimated_score": 33.80188753573705
+  },
+  "long": {
+    "accuracy_percent": 89.27851714215238,
+    "estimated_score": 33.42380510536856
+  },
+  "estimated_total": 67.22569264110561,
+  "variant": "B7_full_semifinal_history",
+  "origins": 2880,
+  "prediction_seconds": 0.4369999999180436,
+  "training_seconds": 10.530999999959022
+}
