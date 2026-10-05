@@ -27,7 +27,7 @@
 | 24 小时 | `generator_all` | 8.9920% | 8.9694% |
 | 24 小时 | 双目标平均 | 10.7869% | **10.7065%** |
 
-6～8 月逐月 OOF 共 8,832 个起点；8 月选择关闭 `generator_1` 残差、保留 `generator_all` 残差。选择依据在 [`c_target_selection.json`](../../results/experiments/phase6_xgboost_proxy/oof_residual_b7/c_target_selection.json)，逐 horizon 指标和其余消融结果在同一聚合结果目录。9 月只作为时间外验证；面向 10 月的最终模型随后纳入 9 月 OOF，不能把 9 月离线成绩解释成最终权重的无偏实测。
+6～8 月逐月 OOF 共 8,832 个起点，月度汇总见 [`monthly_fold_metrics.csv`](../../results/experiments/phase6_xgboost_proxy/oof_residual_b7/monthly_fold_metrics.csv)；8 月选择关闭 `generator_1` 残差、保留 `generator_all` 残差。选择依据在 [`c_target_selection.json`](../../results/experiments/phase6_xgboost_proxy/oof_residual_b7/c_target_selection.json)，逐 horizon 指标和其余消融结果在同一聚合结果目录。9 月只作为时间外验证；面向 10 月的最终模型随后纳入 9 月 OOF，不能把 9 月离线成绩解释成最终权重的无偏实测。
 
 按原项目的本地换算公式、假设 `anomaly=normal`，9 月离线换算为 **67.5904／100**。它不是官方分数，不能与 Stage2.2 的官方 58.1578 或其他版本官方分数直接相减。10 月候选文件未在此仓库发布；[推理聚合审计](../../results/experiments/phase6_xgboost_proxy/final_jan_sep_b7/inference_audit.json) 仅记录 960 个起点、数值范围、运行时间和区间均值爬坡边界。区间均值边界不等于单分钟或单台机组爬坡合规证明。
 
