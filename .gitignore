@@ -25,6 +25,16 @@ dataset/*
 !dataset/.gitkeep
 docs/competition/official/*.pdf
 _audit_bundle/
+初赛-参赛者使用/
+初赛-评分所用测试集/
+复赛-参赛者使用/
+复赛-评分所用测试集/
+features_experiments/exp_bc/data/
+wjt/gas_stage22_rebuild/features/
+wjt/gas_stage22_rebuild/release/
+wjt/gas_stage22_rebuild/outputs/
+wjt/gas_stage22_rebuild/logs/
+results/exp_bc_xgboost/
 
 # Temporary and large reproducible artifacts
 tmp/
