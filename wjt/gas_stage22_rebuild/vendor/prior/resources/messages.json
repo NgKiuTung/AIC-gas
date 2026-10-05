@@ -1,0 +1,22 @@
+{
+  "config.invalid": "配置越界或含不支持候选，请检查配置文件。",
+  "stage1.missing": "Stage1产物不完整：{path}",
+  "stage1.invalid": "Stage1运行状态、数据摘要或输入结构不一致。",
+  "prepare.done": "Stage2特征已准备：{rows}个起点、{features}列；测试负荷不参与输入。",
+  "run.existing": "运行目录已存在。续跑需显式--resume；配置或输入变化请使用新目录。",
+  "run.signature": "输入、代码、环境或配置已变化，拒绝把新结果混入旧运行。",
+  "run.lock": "同一运行目录已有进程持锁；禁止重复启动。",
+  "run.done": "实验完成：{seconds:.1f}秒；结果位于{path}",
+  "run.failed": "本轮执行失败，错误与完成检查点保留在{path}。",
+  "candidate.start": "开始候选：fold={fold}，candidate={candidate}",
+  "candidate.done": "完成候选：fold={fold}，candidate={candidate}，MAPE={metric:.6f}，耗时={seconds:.1f}秒",
+  "candidate.reuse": "复用已完成同签名候选：fold={fold}，candidate={candidate}",
+  "candidate.timeout": "预算已截止；保留所有完成文件，尚未完成的模型不标为成功。",
+  "data.empty": "可用训练标签不足或标签值不是有限正数。",
+  "data.future": "模型输入/预测起点包含未被协议允许的数据。",
+  "feature.invalid": "特征名、行数、时间顺序或目标隔离校验未通过。",
+  "fold.overlap": "融合试图使用当前或尚未完整兑现的验证标签。",
+  "model.invalid": "模型校验失败：{path}",
+  "prepare.help": "从已完成Stage1目录建立Stage2特征，不修改Stage1。",
+  "verify.done": "运行验收通过；未读取官方测试真实标签。"
+}

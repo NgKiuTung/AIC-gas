@@ -1,0 +1,42 @@
+{
+  "candidate": "proxy_joint025_l1",
+  "interpretation": "本次四折开发平均最优；不是新盲测或官方最优",
+  "actual_prediction_inputs": [
+    "feat_blast_furnace_1__last",
+    "feat_blast_furnace_2__last",
+    "feat_blast_furnace_3__last",
+    "feat_blast_furnace_4__last",
+    "feat_blast_furnace_5__last",
+    "feat_coke_oven_1__last",
+    "feat_converter_1__last",
+    "feat_air_heater_1__last",
+    "feat_air_heater_2__last",
+    "feat_air_heater_3__last",
+    "feat_air_heater_4__last",
+    "feat_air_heater_5__last",
+    "feat_into_gas_mixed_coke__last",
+    "feat_into_gas_mixed_blast_furnace__last",
+    "feat_into_gas_mixed_converter__last",
+    "feat_blast_furnace_gas_holder_1__last",
+    "feat_blast_furnace_gas_holder_2__last",
+    "feat_blast_furnace_user1__last",
+    "feat_blast_furnace_user2__last",
+    "feat_blast_furnace_user3__last",
+    "feat_blast_furnace_user4__last",
+    "feat_converter_user1__last",
+    "feat_converter_user2__last",
+    "feat_converter_user3__last",
+    "feat_generator_use_blast_furnace_gas__last",
+    "feat_generator_use_coke_gas__last",
+    "feat_generator_use_converter_gas__last"
+  ],
+  "model_extra_state": "training-cutoff-only frozen load history for weekly reference",
+  "input_dimensions": 27,
+  "use_of_411_features": "extended matrix is optional research artifact; proxy does not use extra135",
+  "diagnostic_drawbacks": [
+    "september_early_seen slightly worse than Stage1 combined baseline",
+    "september_late_seen slightly worse than Stage1 combined baseline"
+  ],
+  "model_path": "runs/review_cpu_final/test/proxy_joint025_l1/model",
+  "submission_path": "runs/review_cpu_final/candidate_results/proxy_joint025_l1/results_only.zip"
+}
