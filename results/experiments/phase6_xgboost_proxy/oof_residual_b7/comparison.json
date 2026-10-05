@@ -1,0 +1,67 @@
+[
+  {
+    "variant": "B1_physical_time",
+    "short": {
+      "accuracy_percent": 91.36987258969933,
+      "estimated_score": 33.30083705437176
+    },
+    "long": {
+      "accuracy_percent": 88.88176883815096,
+      "estimated_score": 32.81040327481596
+    },
+    "estimated_total": 66.11124032918772,
+    "runtime_seconds_total": 63.328000000095926
+  },
+  {
+    "variant": "B2_target_calendar",
+    "short": {
+      "accuracy_percent": 90.80455589160071,
+      "estimated_score": 32.206957994583426
+    },
+    "long": {
+      "accuracy_percent": 88.83392705330834,
+      "estimated_score": 32.736436384212034
+    },
+    "estimated_total": 64.94339437879546,
+    "runtime_seconds_total": 63.35900000005495
+  },
+  {
+    "variant": "B7_full_semifinal_history",
+    "short": {
+      "accuracy_percent": 91.62881547846891,
+      "estimated_score": 33.80188753573705
+    },
+    "long": {
+      "accuracy_percent": 89.27851714215238,
+      "estimated_score": 33.42380510536856
+    },
+    "estimated_total": 67.22569264110561,
+    "runtime_seconds_total": 63.40600000007544
+  },
+  {
+    "variant": "C_highfreq_residual_on_B7",
+    "short": {
+      "accuracy_percent": 90.92148905991333,
+      "estimated_score": 32.43322186515737
+    },
+    "long": {
+      "accuracy_percent": 89.21865731766134,
+      "estimated_score": 33.331257448456
+    },
+    "estimated_total": 65.76447931361338,
+    "runtime_seconds_total": 63.453000000095926
+  },
+  {
+    "variant": "C_august_selected_on_B7",
+    "short": {
+      "accuracy_percent": 91.80535223103469,
+      "estimated_score": 34.143483419184776
+    },
+    "long": {
+      "accuracy_percent": 89.29345714544871,
+      "estimated_score": 33.44690344070611
+    },
+    "estimated_total": 67.59038685989088,
+    "runtime_seconds_total": 63.5
+  }
+]
