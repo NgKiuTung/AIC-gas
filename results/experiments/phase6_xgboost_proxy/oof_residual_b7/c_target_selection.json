@@ -1,0 +1,12 @@
+{
+  "generator_1": {
+    "august_base_mape": 0.1530935344689409,
+    "august_residual_mape": 0.2627695559087335,
+    "retain_residual": false
+  },
+  "generator_all": {
+    "august_base_mape": 0.05023839099999761,
+    "august_residual_mape": 0.047695781852596535,
+    "retain_residual": true
+  }
+}
