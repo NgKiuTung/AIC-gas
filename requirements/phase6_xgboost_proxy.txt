@@ -1,0 +1,4 @@
+-r base.txt
+lightgbm==4.7.0
+xgboost==3.4.1
+pyarrow==22.0.0
