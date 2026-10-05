@@ -1,0 +1,103 @@
+{
+  "version": "stage1-availability-1.0",
+  "timezone": "Asia/Shanghai",
+  "expected_dataset_sha256": "ca8700571d8b3c84f3ac562ad678c6b53f4fc1715055d51f06b844d74f1c0f6f",
+  "targets": [
+    "generator_1",
+    "generator_all"
+  ],
+  "sources": [
+    {
+      "prefix": "Pre_",
+      "stage": "pre_history",
+      "bit": 1,
+      "frequency_minutes": 15,
+      "start": "2025-01-01 00:00:00",
+      "end": "2025-05-01 00:00:00"
+    },
+    {
+      "prefix": "Pre_test_",
+      "stage": "pre_released_evaluation",
+      "bit": 2,
+      "frequency_minutes": 15,
+      "start": "2025-05-01 00:00:00",
+      "end": "2025-05-02 23:45:00"
+    },
+    {
+      "prefix": "Semi_",
+      "stage": "semi_history",
+      "bit": 4,
+      "frequency_minutes": 1,
+      "start": "2025-05-03 00:00:00",
+      "end": "2025-09-30 23:59:00"
+    },
+    {
+      "prefix": "Semi_test_",
+      "stage": "semi_hidden_evaluation",
+      "bit": 8,
+      "frequency_minutes": 1,
+      "start": "2025-10-01 00:00:00",
+      "end": "2025-10-10 23:59:00"
+    }
+  ],
+  "table_kinds": [
+    "gas",
+    "gas_holder",
+    "gas_user",
+    "load"
+  ],
+  "protocol": {
+    "origin_minutes": 15,
+    "block_minutes": 15,
+    "blocks": 96,
+    "block_start_offset_minutes": 0,
+    "pre_observation_delay_minutes": 15,
+    "pre_interval_semantics": "unknown; never expand into minute truth",
+    "semi_observation_delay_minutes": 0,
+    "minimum_label_coverage": 1.0,
+    "evaluation_target_access": "none throughout evaluation and target tail",
+    "test_start": "2025-10-01 00:00:00",
+    "test_end": "2025-10-10 23:45:00"
+  },
+  "quality": {
+    "hard_absolute_limit": 1e+20,
+    "hard_negative_below": -1e-06,
+    "fill_raw_missing": false
+  },
+  "features": {
+    "last_max_age_minutes": 360,
+    "export_origin_minutes": 15
+  },
+  "baselines": {
+    "ridge_alpha": 10.0,
+    "direct_ridge_alpha": 30.0,
+    "proxy_decay_minutes": 360.0,
+    "source_training_stride_minutes": 15
+  },
+  "folds": [
+    {
+      "name": "july_seen",
+      "start": "2025-07-01 00:00:00",
+      "end": "2025-07-10 23:45:00"
+    },
+    {
+      "name": "august_seen",
+      "start": "2025-08-01 00:00:00",
+      "end": "2025-08-10 23:45:00"
+    },
+    {
+      "name": "september_early_seen",
+      "start": "2025-09-01 00:00:00",
+      "end": "2025-09-10 23:45:00"
+    },
+    {
+      "name": "september_late_seen",
+      "start": "2025-09-18 00:00:00",
+      "end": "2025-09-27 23:45:00"
+    }
+  ],
+  "references": {
+    "qa": "Q&A.md",
+    "spec": "煤气发电量预测与发电优化-3(1).pdf"
+  }
+}
