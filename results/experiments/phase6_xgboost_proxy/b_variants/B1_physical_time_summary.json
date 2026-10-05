@@ -1,0 +1,15 @@
+{
+  "short": {
+    "accuracy_percent": 91.28478878817732,
+    "estimated_score": 33.1362012155134
+  },
+  "long": {
+    "accuracy_percent": 88.86432136870542,
+    "estimated_score": 32.78342821383028
+  },
+  "estimated_total": 65.91962942934367,
+  "variant": "B1_physical_time",
+  "origins": 2880,
+  "prediction_seconds": 0.18700000003445894,
+  "training_seconds": 9.953000000095926
+}
