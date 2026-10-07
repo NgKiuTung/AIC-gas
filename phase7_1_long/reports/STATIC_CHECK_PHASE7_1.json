@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "scope": "AST/bytecode compile plus full pytest; no claim of GPU validation in this container",
+  "python_compileall": true,
+  "pytest": {
+    "passed": 205,
+    "failed": 0
+  },
+  "cpu_preflight": {
+    "status": "passed",
+    "families": [
+      "lightgbm",
+      "mlp",
+      "tcn",
+      "xgboost"
+    ],
+    "config": "configs/phase7_smoke_cpu.json"
+  },
+  "source_files": [
+    {
+      "file": "gasauto/__init__.py",
+      "lines": 2
+    },
+    {
+      "file": "gasauto/anchors.py",
+      "lines": 52
+    },
+    {
+      "file": "gasauto/audit.py",
+      "lines": 71
+    },
+    {
+      "file": "gasauto/budget.py",
+      "lines": 38
+    },
+    {
+      "file": "gasauto/cli.py",
+      "lines": 83
+    },
+    {
+      "file": "gasauto/controller.py",
+      "lines": 204
+    },
+    {
+      "file": "gasauto/delivery.py",
+      "lines": 106
+    },
+    {
+      "file": "gasauto/execution.py",
+      "lines": 108
+    },
+    {
+      "file": "gasauto/identity.py",
+      "lines": 23
+    },
+    {
+      "file": "gasauto/networks.py",
+      "lines": 105
+    },
+    {
+      "file": "gasauto/neural.py",
+      "lines": 90
+    },
+    {
+      "file": "gasauto/neural_data.py",
+      "lines": 28
+    },
+    {
+      "file": "gasauto/phase7.py",
+      "lines": 484
+    },
+    {
+      "file": "gasauto/protocol.py",
+      "lines": 141
+    },
+    {
+      "file": "gasauto/samples.py",
+      "lines": 111
+    },
+    {
+      "file": "gasauto/selection.py",
+      "lines": 43
+    },
+    {
+      "file": "gasauto/trainer.py",
+      "lines": 117
+    },
+    {
+      "file": "gasauto/trees.py",
+      "lines": 121
+    },
+    {
+      "file": "gasauto/verify.py",
+      "lines": 153
+    },
+    {
+      "file": "gasauto/worker.py",
+      "lines": 97
+    },
+    {
+      "file": "run.py",
+      "lines": 6
+    }
+  ]
+}

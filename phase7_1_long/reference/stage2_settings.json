@@ -1,0 +1,82 @@
+{
+  "version": "stage2-process-1.0",
+  "threads": 4,
+  "max_hours": 2.0,
+  "train_origin_stride": 2,
+  "horizons_per_origin": 12,
+  "lookback_days": 120,
+  "seed": 20261003,
+  "extended_features": true,
+  "loss": {
+    "epsilon": 0.02,
+    "tail_lambda": 0.1,
+    "tail_threshold": 0.2
+  },
+  "blend": {
+    "ridge": 0.002,
+    "minimum_prior_folds": 1,
+    "sample_origin_stride": 4,
+    "bands": [
+      [
+        0,
+        8
+      ],
+      [
+        8,
+        24
+      ],
+      [
+        24,
+        48
+      ],
+      [
+        48,
+        96
+      ]
+    ]
+  },
+  "candidates": [
+    {
+      "id": "proxy_semi_l1",
+      "kind": "proxy",
+      "pre_weight": 0.0,
+      "loss": "l1",
+      "rounds": 220
+    },
+    {
+      "id": "proxy_joint025_l1",
+      "kind": "proxy",
+      "pre_weight": 0.25,
+      "loss": "l1",
+      "rounds": 220
+    },
+    {
+      "id": "proxy_joint100_l1",
+      "kind": "proxy",
+      "pre_weight": 1.0,
+      "loss": "l1",
+      "rounds": 220
+    },
+    {
+      "id": "direct_process_l1",
+      "kind": "direct",
+      "loss": "l1",
+      "rounds": 200
+    },
+    {
+      "id": "direct_process_tail",
+      "kind": "direct",
+      "loss": "tail",
+      "rounds": 200
+    }
+  ],
+  "tree": {
+    "learning_rate": 0.045,
+    "num_leaves": 15,
+    "min_data_in_leaf": 80,
+    "max_bin": 127,
+    "lambda_l2": 2.0,
+    "feature_fraction": 0.85
+  },
+  "proxy_decay_minutes": 360.0
+}
