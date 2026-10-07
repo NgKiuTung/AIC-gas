@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "threads": 2,
+  "job_minutes": 10,
+  "folds": [
+    {
+      "name": "august_smoke",
+      "start": "2025-08-01 00:00:00",
+      "end": "2025-08-01 01:45:00"
+    },
+    {
+      "name": "september_smoke",
+      "start": "2025-09-01 00:00:00",
+      "end": "2025-09-01 01:45:00"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "reference_58",
+      "family": "lightgbm",
+      "kind": "reference",
+      "device": "cpu"
+    },
+    {
+      "id": "catboost_proxy",
+      "family": "catboost",
+      "kind": "proxy",
+      "device": "cpu",
+      "rounds": 16,
+      "seed": 20261003,
+      "pre_weight": 0.25,
+      "params": {}
+    },
+    {
+      "id": "xgboost_proxy",
+      "family": "xgboost",
+      "kind": "proxy",
+      "device": "cpu",
+      "rounds": 16,
+      "seed": 20261003,
+      "pre_weight": 0.25,
+      "params": {}
+    },
+    {
+      "id": "lightgbm_direct",
+      "family": "lightgbm",
+      "kind": "direct",
+      "device": "cpu",
+      "rounds": 16,
+      "seed": 20261003,
+      "params": {},
+      "origin_stride": 2,
+      "sample_horizons": 8,
+      "lookback_days": 120,
+      "max_train_origins": 320
+    },
+    {
+      "id": "catboost_direct",
+      "family": "catboost",
+      "kind": "direct",
+      "device": "cpu",
+      "rounds": 16,
+      "seed": 20261003,
+      "params": {},
+      "origin_stride": 2,
+      "sample_horizons": 8,
+      "lookback_days": 120,
+      "max_train_origins": 320
+    },
+    {
+      "id": "xgboost_direct",
+      "family": "xgboost",
+      "kind": "direct",
+      "device": "cpu",
+      "rounds": 16,
+      "seed": 20261003,
+      "params": {},
+      "origin_stride": 2,
+      "sample_horizons": 8,
+      "lookback_days": 120,
+      "max_train_origins": 320
+    },
+    {
+      "id": "tcn_24h",
+      "family": "tcn",
+      "kind": "sequence",
+      "device": "cpu",
+      "history_hours": 24,
+      "hidden": 16,
+      "projection": 4,
+      "dropout": 0.1,
+      "levels": 2,
+      "epochs": 2,
+      "batch_size": 32,
+      "predict_batch_size": 64,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0001,
+      "patience": 2,
+      "inner_days": 5,
+      "seed": 20261003,
+      "amp": false,
+      "origin_stride": 2,
+      "lookback_days": 120,
+      "max_train_origins": 320
+    },
+    {
+      "id": "tide_style_24h",
+      "family": "tide_style",
+      "kind": "sequence",
+      "device": "cpu",
+      "history_hours": 24,
+      "hidden": 16,
+      "projection": 4,
+      "dropout": 0.1,
+      "levels": 2,
+      "epochs": 2,
+      "batch_size": 32,
+      "predict_batch_size": 64,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0001,
+      "patience": 2,
+      "inner_days": 5,
+      "seed": 20261003,
+      "amp": false,
+      "origin_stride": 2,
+      "lookback_days": 120,
+      "max_train_origins": 320
+    }
+  ],
+  "fusion": {
+    "ridge": 0.002
+  },
+  "selection": {
+    "objective": "platform_score_proxy",
+    "freeze_short_to_reference": true,
+    "min_folds": 2,
+    "min_mean_improvement_pp": 0.1,
+    "min_win_fraction": 0.5,
+    "max_worst_degradation_pp": 0.75,
+    "recent_fold_count": 2,
+    "min_recent_improvement_pp": 0.0,
+    "blend_weight": 0.5
+  }
+}

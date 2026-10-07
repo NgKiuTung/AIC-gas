@@ -1,0 +1,222 @@
+{
+  "format_version": 1,
+  "protocol": {
+    "version": "dual_10day_v1",
+    "interval_assumption": "[t,t+15min)",
+    "screen": [
+      {
+        "name": "screen_june",
+        "start": "2025-06-01 00:00:00",
+        "end": "2025-06-10 23:45:00"
+      },
+      {
+        "name": "screen_july",
+        "start": "2025-07-01 00:00:00",
+        "end": "2025-07-10 23:45:00"
+      },
+      {
+        "name": "screen_august",
+        "start": "2025-08-01 00:00:00",
+        "end": "2025-08-10 23:45:00"
+      }
+    ],
+    "confirm": [
+      {
+        "name": "confirm_september_early",
+        "start": "2025-09-01 00:00:00",
+        "end": "2025-09-10 23:45:00"
+      },
+      {
+        "name": "confirm_september_late",
+        "start": "2025-09-18 00:00:00",
+        "end": "2025-09-27 23:45:00"
+      }
+    ],
+    "test": {
+      "name": "test",
+      "start": "2025-10-01 00:00:00",
+      "end": "2025-10-10 23:45:00"
+    },
+    "new_blind_test": false
+  },
+  "threads": 2,
+  "train_seconds": 90.0,
+  "job_seconds": 240.0,
+  "reserve_seconds": 30.0,
+  "min_job_seconds": 5.0,
+  "screen_seed": 41,
+  "confirm_seeds": [
+    41,
+    83,
+    137
+  ],
+  "min_coverage": 0.99,
+  "screen_gate": {
+    "min_mean_gain": 0.0005,
+    "max_fold_regression": 0.005,
+    "max_last_regression": 0.001
+  },
+  "confirm_gate": {
+    "min_mean_gain": 0.0005,
+    "max_fold_regression": 0.005,
+    "max_last_regression": 0.001,
+    "max_seed_std": 0.005
+  },
+  "candidates": [
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "catboost_proxy",
+      "family": "catboost",
+      "kind": "proxy",
+      "pre_weight": 0.25,
+      "rounds": 6,
+      "hypothesis": "固定27项输入与六小时后处理，只替换当前负荷回归器。",
+      "sample_horizons": 8,
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "xgboost_proxy",
+      "family": "xgboost",
+      "kind": "proxy",
+      "pre_weight": 0.25,
+      "rounds": 6,
+      "hypothesis": "固定27项输入与六小时后处理，只替换当前负荷回归器。",
+      "sample_horizons": 8,
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "lightgbm_direct",
+      "family": "lightgbm",
+      "kind": "direct",
+      "rounds": 6,
+      "sample_horizons": 8,
+      "hypothesis": "在时间外推参照预测上学习任务独立残差。",
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "catboost_direct",
+      "family": "catboost",
+      "kind": "direct",
+      "rounds": 6,
+      "sample_horizons": 8,
+      "hypothesis": "在时间外推参照预测上学习任务独立残差。",
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "xgboost_direct",
+      "family": "xgboost",
+      "kind": "direct",
+      "rounds": 6,
+      "sample_horizons": 8,
+      "hypothesis": "在时间外推参照预测上学习任务独立残差。",
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "tcn_24h",
+      "family": "tcn",
+      "kind": "sequence",
+      "history_hours": 24,
+      "hidden": 16,
+      "levels": 3,
+      "projection": 4,
+      "epochs": 1,
+      "batch_size": 64,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.001,
+      "dropout": 0.1,
+      "patience": 5,
+      "min_delta": 1e-06,
+      "amp": false,
+      "hypothesis": "历史过程序列编码；独立8/96步；epoch0为参照预测。",
+      "rounds": 6,
+      "sample_horizons": 8,
+      "max_calibration_origins": 64
+    },
+    {
+      "tasks": [
+        "short",
+        "long"
+      ],
+      "device": "cpu",
+      "lookback_days": 120,
+      "origin_stride": 4,
+      "max_train_origins": 128,
+      "seed": 41,
+      "id": "tide_style_24h",
+      "family": "tide_style",
+      "kind": "sequence",
+      "history_hours": 24,
+      "hidden": 16,
+      "levels": 3,
+      "projection": 4,
+      "epochs": 1,
+      "batch_size": 64,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.001,
+      "dropout": 0.1,
+      "patience": 5,
+      "min_delta": 1e-06,
+      "amp": false,
+      "hypothesis": "历史过程序列编码；独立8/96步；epoch0为参照预测。",
+      "rounds": 6,
+      "sample_horizons": 8,
+      "max_calibration_origins": 64
+    }
+  ],
+  "mode": "smoke_not_model_selection",
+  "default_hours": 0.5,
+  "export_reserve_seconds": 10
+}

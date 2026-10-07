@@ -1,0 +1,23 @@
+{
+  "threads": 4,
+  "seed": 20261003,
+  "proxy": {
+    "pre_weight": 0.25,
+    "lookback_days": 120,
+    "source_stride_minutes": 15,
+    "features": "raw",
+    "rounds": 220,
+    "target_mode": "direct",
+    "tree": {}
+  },
+  "tree": {
+    "learning_rate": 0.045,
+    "num_leaves": 15,
+    "min_data_in_leaf": 80,
+    "max_bin": 127,
+    "lambda_l2": 2.0,
+    "feature_fraction": 0.85
+  },
+  "version": "stage2.2-causal-period-update",
+  "max_hours": 1
+}

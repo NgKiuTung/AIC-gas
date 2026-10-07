@@ -1,0 +1,25 @@
+{
+  "reference_58": {
+    "identity": "byte-identical to AIC_Gas_stage2_proxy_joint025_results.zip",
+    "official": {
+      "short": {"accuracy": 89.61, "g1": 86.69, "gall": 92.54, "acc_score": 58.8444, "score_50": 29.4222},
+      "long": {"accuracy": 84.58, "g1": 82.43, "gall": 86.73, "acc_score": 57.4712, "score_50": 28.7356},
+      "total": 58.1578
+    }
+  },
+  "online_day3_mix50": {
+    "official": {
+      "short": {"accuracy": 89.64, "g1": 86.66, "gall": 92.61, "acc_score": 58.9144, "score_50": 29.4572},
+      "long": {"accuracy": 83.98, "g1": 81.74, "gall": 86.21, "acc_score": 53.8667, "score_50": 26.9334},
+      "total": 56.3906
+    },
+    "use": "negative control only; excluded from multimodel training and selection"
+  },
+  "observed_score_mapping": {
+    "short_acc_score": "3 * short_accuracy_percent - 210",
+    "long_acc_score": "6 * long_accuracy_percent - 450",
+    "total": "(short_acc_score + long_acc_score) / 2",
+    "equivalent_local_proxy": "120 - 150*short_mape - 300*long_mape",
+    "status": "inferred from official receipts, not claimed as organizer-published source code"
+  }
+}

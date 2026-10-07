@@ -1,0 +1,21 @@
+{
+  "config.invalid": "配置无效；停止执行，不使用隐式参数。",
+  "signature.invalid": "运行签名或模型文件发生变化；请使用新输出目录。",
+  "timeout": "本次预算已到，已完成的模型保留。",
+  "model.reuse": "复用已完成模型：{name}",
+  "phase.start": "开始阶段：{name}",
+  "phase.end": "阶段完成：{name}，耗时{seconds:.2f}秒",
+  "run.done": "定向实验完成：{seconds:.2f}秒；输出{path}",
+  "run.failed": "实验失败，完整错误与状态见{path}",
+  "output.exists": "输出目录已存在；恢复须显式--resume，否则使用新目录。",
+  "output.lock": "该输出目录已有运行中的进程。",
+  "template.weight": "日模板权重超出[0,1]。",
+  "index.invalid": "起点索引必须唯一且单调递增。",
+  "decay.invalid": "衰减时间必须为正数。",
+  "origin.invalid": "预测起点早于训练截止或超出已提供的过程输入。",
+  "origin.missing": "过程特征中缺少预测起点。",
+  "training.empty": "可用训练样本不足。",
+  "model.hash": "模型哈希不符。",
+  "history.hash": "冻结历史哈希不符。",
+  "history.future": "模型历史含有训练截止之后的负荷。"
+}

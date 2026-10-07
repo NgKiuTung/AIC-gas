@@ -1,0 +1,9 @@
+# 普通依赖范围；setup.sh只补缺失库，不读取此文件重装Torch或全栈依赖。
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+lightgbm>=4.0
+catboost>=1.2
+xgboost>=2.0
+pytest>=8,<10
+# torch由实例提供：实际矩阵、卷积和AMP训练预检验证。

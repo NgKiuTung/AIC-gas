@@ -1,0 +1,11 @@
+{
+  "index": "https://pypi.tuna.tsinghua.edu.cn/simple",
+  "timeout": 600,
+  "retries": 5,
+  "packages": {"lightgbm": "lightgbm==4.6.0", "catboost": "catboost==1.2.8", "xgboost": "xgboost==3.1.3", "pytest": "pytest>=8,<10"},
+  "minimums": {"lightgbm": [4, 0], "catboost": [1, 2], "xgboost": [2, 0]},
+  "required_host": ["numpy", "pandas", "scipy", "torch"],
+  "no_host": "镜像缺少或无法加载{name}。停止；请使用已有可工作的训练镜像，不自动安装Torch/CUDA或降级系统库。",
+  "old_version": "现有{name}版本{version}低于本工程API要求。未修改该库，请在项目环境显式处理后重新预检。",
+  "outside": "安装器必须通过项目.venv运行，拒绝修改系统环境。"
+}

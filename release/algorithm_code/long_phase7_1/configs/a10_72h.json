@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "threads": 6,
+  "job_minutes": 35,
+  "folds": [
+    {
+      "name": "june_early",
+      "start": "2025-06-02 00:00:00",
+      "end": "2025-06-06 23:45:00"
+    },
+    {
+      "name": "june_late",
+      "start": "2025-06-23 00:00:00",
+      "end": "2025-06-27 23:45:00"
+    },
+    {
+      "name": "july_early",
+      "start": "2025-07-07 00:00:00",
+      "end": "2025-07-11 23:45:00"
+    },
+    {
+      "name": "july_late",
+      "start": "2025-07-21 00:00:00",
+      "end": "2025-07-25 23:45:00"
+    },
+    {
+      "name": "august_early",
+      "start": "2025-08-04 00:00:00",
+      "end": "2025-08-08 23:45:00"
+    },
+    {
+      "name": "august_late",
+      "start": "2025-08-18 00:00:00",
+      "end": "2025-08-22 23:45:00"
+    },
+    {
+      "name": "september_early",
+      "start": "2025-09-01 00:00:00",
+      "end": "2025-09-05 23:45:00"
+    },
+    {
+      "name": "september_late",
+      "start": "2025-09-22 00:00:00",
+      "end": "2025-09-26 23:45:00"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "reference_58",
+      "family": "lightgbm",
+      "kind": "reference",
+      "device": "cpu"
+    },
+    {
+      "id": "tcn_72h",
+      "family": "tcn",
+      "kind": "sequence",
+      "device": "cuda",
+      "history_hours": 72,
+      "hidden": 96,
+      "projection": 8,
+      "dropout": 0.1,
+      "levels": 6,
+      "epochs": 30,
+      "batch_size": 256,
+      "predict_batch_size": 256,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0001,
+      "patience": 4,
+      "inner_days": 5,
+      "seed": 20261003,
+      "amp": true,
+      "origin_stride": 2,
+      "lookback_days": 120
+    },
+    {
+      "id": "tide_style_72h",
+      "family": "tide_style",
+      "kind": "sequence",
+      "device": "cuda",
+      "history_hours": 72,
+      "hidden": 192,
+      "projection": 8,
+      "dropout": 0.1,
+      "levels": 6,
+      "epochs": 30,
+      "batch_size": 256,
+      "predict_batch_size": 256,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0001,
+      "patience": 4,
+      "inner_days": 5,
+      "seed": 20261003,
+      "amp": true,
+      "origin_stride": 2,
+      "lookback_days": 120
+    }
+  ],
+  "fusion": {
+    "ridge": 0.002
+  },
+  "selection": {
+    "objective": "platform_score_proxy",
+    "freeze_short_to_reference": true,
+    "min_folds": 3,
+    "min_mean_improvement_pp": 0.25,
+    "min_win_fraction": 0.625,
+    "max_worst_degradation_pp": 0.75,
+    "recent_fold_count": 2,
+    "min_recent_improvement_pp": 0.0,
+    "blend_weight": 0.5
+  }
+}

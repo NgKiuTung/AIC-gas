@@ -1,0 +1,239 @@
+{
+  "format_version": 2,
+  "mode": "phase7_long_component_focus",
+  "protocol": {
+    "version": "dual_10day_v1",
+    "interval_assumption": "[t,t+15min)",
+    "screen": [
+      {
+        "name": "screen_june",
+        "start": "2025-06-01 00:00:00",
+        "end": "2025-06-10 23:45:00"
+      },
+      {
+        "name": "screen_july",
+        "start": "2025-07-01 00:00:00",
+        "end": "2025-07-10 23:45:00"
+      },
+      {
+        "name": "screen_august",
+        "start": "2025-08-01 00:00:00",
+        "end": "2025-08-10 23:45:00"
+      }
+    ],
+    "confirm": [
+      {
+        "name": "confirm_september_early",
+        "start": "2025-09-01 00:00:00",
+        "end": "2025-09-10 23:45:00"
+      },
+      {
+        "name": "confirm_september_late",
+        "start": "2025-09-18 00:00:00",
+        "end": "2025-09-27 23:45:00"
+      }
+    ],
+    "test": {
+      "name": "test",
+      "start": "2025-10-01 00:00:00",
+      "end": "2025-10-10 23:45:00"
+    },
+    "new_blind_test": false
+  },
+  "threads": 6,
+  "train_seconds": 60.0,
+  "job_seconds": 180.0,
+  "reserve_seconds": 60.0,
+  "min_job_seconds": 5.0,
+  "screen_seed": 41,
+  "confirm_seeds": [
+    41,
+    83,
+    137
+  ],
+  "min_coverage": 0.99,
+  "screen_gate": {
+    "min_mean_gain": 0.0002,
+    "max_fold_regression": 0.003,
+    "max_last_regression": 0.0015
+  },
+  "confirm_gate": {
+    "min_mean_gain": 0.00015,
+    "max_fold_regression": 0.0025,
+    "max_last_regression": 0.001,
+    "max_seed_std": 0.003
+  },
+  "component_screen_gate": {
+    "min_mean_gain": 0.0002,
+    "max_fold_regression": 0.003,
+    "max_last_regression": 0.0015,
+    "min_wins": 2
+  },
+  "component_confirm_gate": {
+    "min_mean_gain": 0.00015,
+    "max_fold_regression": 0.0025,
+    "max_last_regression": 0.001,
+    "min_wins": 1,
+    "max_seed_std": 0.003
+  },
+  "candidates": [
+    {
+      "id": "xgb_wide_p6_180d_d50_t6",
+      "tasks": [
+        "long"
+      ],
+      "family": "xgboost",
+      "kind": "proxy_wide",
+      "device": "cuda",
+      "lookback_days": 180,
+      "pre_weight": 0.25,
+      "rounds": 20,
+      "day_weight": 0.5,
+      "decay_hours": 6,
+      "seed": 41,
+      "params": {
+        "grow_policy": "lossguide",
+        "max_depth": 0,
+        "max_leaves": 15,
+        "min_child_weight": 80,
+        "max_bin": 127,
+        "lambda": 2.0,
+        "colsample_bytree": 0.85,
+        "eta": 0.045,
+        "base_score": 0.0
+      },
+      "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=6h."
+    },
+    {
+      "id": "xgb_wide_180d_d0_t6",
+      "tasks": [
+        "long"
+      ],
+      "family": "xgboost",
+      "kind": "proxy_wide",
+      "device": "cuda",
+      "lookback_days": 180,
+      "pre_weight": 0.25,
+      "rounds": 20,
+      "day_weight": 0.0,
+      "decay_hours": 6,
+      "seed": 41,
+      "params": {
+        "grow_policy": "lossguide",
+        "max_depth": 0,
+        "max_leaves": 15,
+        "min_child_weight": 80,
+        "max_bin": 127,
+        "lambda": 2.0,
+        "colsample_bytree": 0.85,
+        "eta": 0.045,
+        "base_score": 0.0
+      },
+      "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.0, decay=6h."
+    },
+    {
+      "id": "xgboost_direct_long",
+      "tasks": [
+        "long"
+      ],
+      "family": "xgboost",
+      "kind": "direct",
+      "device": "cuda",
+      "lookback_days": 180,
+      "origin_stride": 2,
+      "max_train_origins": 256,
+      "rounds": 20,
+      "sample_horizons": 12,
+      "seed": 41,
+      "params": {
+        "grow_policy": "lossguide",
+        "max_depth": 0,
+        "max_leaves": 31,
+        "min_child_weight": 80,
+        "max_bin": 127,
+        "lambda": 4.0,
+        "colsample_bytree": 0.85,
+        "eta": 0.03,
+        "base_score": 0.0
+      },
+      "hypothesis": "Long-only 96-step residual on past-trained reference anchor; more horizons and XGBoost."
+    },
+    {
+      "id": "lightgbm_direct_long",
+      "tasks": [
+        "long"
+      ],
+      "family": "lightgbm",
+      "kind": "direct",
+      "device": "cpu",
+      "lookback_days": 180,
+      "origin_stride": 2,
+      "max_train_origins": 256,
+      "rounds": 20,
+      "sample_horizons": 12,
+      "seed": 41,
+      "params": {
+        "num_leaves": 31,
+        "min_data_in_leaf": 80,
+        "max_bin": 127,
+        "lambda_l2": 4.0,
+        "feature_fraction": 0.85,
+        "learning_rate": 0.03
+      },
+      "hypothesis": "Long-only LightGBM residual on past-trained reference anchor; unavailable 66-point clue is treated only as model-family motivation."
+    },
+    {
+      "id": "mlp_long_residual",
+      "tasks": [
+        "long"
+      ],
+      "family": "mlp",
+      "kind": "sequence",
+      "device": "cuda",
+      "lookback_days": 180,
+      "origin_stride": 2,
+      "max_train_origins": 256,
+      "max_calibration_origins": 128,
+      "seed": 41,
+      "history_hours": 1,
+      "hidden": 96,
+      "epochs": 2,
+      "batch_size": 128,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.001,
+      "dropout": 0.1,
+      "patience": 4,
+      "min_delta": 1e-06,
+      "amp": true,
+      "hypothesis": "Long-only shallow MLP residual over causal static features, known future calendar/price, and reference anchor; epoch0 is exact incumbent."
+    },
+    {
+      "id": "tcn_long_residual",
+      "tasks": [
+        "long"
+      ],
+      "family": "tcn",
+      "kind": "sequence",
+      "device": "cuda",
+      "lookback_days": 180,
+      "origin_stride": 2,
+      "max_train_origins": 256,
+      "seed": 41,
+      "history_hours": 24,
+      "hidden": 64,
+      "levels": 6,
+      "projection": 8,
+      "epochs": 2,
+      "batch_size": 128,
+      "learning_rate": 6e-05,
+      "weight_decay": 0.001,
+      "dropout": 0.1,
+      "patience": 6,
+      "min_delta": 1e-06,
+      "amp": true,
+      "hypothesis": "Long-only TCN residual; epoch0 incumbent is retained if training degrades."
+    }
+  ],
+  "default_hours": 0.5,
+  "export_reserve_seconds": 30
+}
