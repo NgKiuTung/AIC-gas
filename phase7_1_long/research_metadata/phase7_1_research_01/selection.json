@@ -1,0 +1,421 @@
+{
+  "short": {
+    "kind": "unavailable_external_phase6",
+    "candidate": "phase6_xgboost_process_proxy",
+    "source": {
+      "status": "unavailable",
+      "source_path_at_start": null,
+      "source_sha256": null,
+      "frozen_csv_sha256": null,
+      "official_feedback": {
+        "short_accuracy_percent": 90.48,
+        "g1_accuracy_percent": 87.17,
+        "gall_accuracy_percent": 93.78,
+        "short_score_50": 30.9525,
+        "total_of_original_phase6_submission": 59.0888
+      },
+      "role": "long_only_research; external Phase6 Short is not attached"
+    }
+  },
+  "long": {
+    "kind": "component_stitch",
+    "candidate": "phase7_long_components",
+    "accepted_components": {
+      "gall__h01_08": "xgb_wide_180d_d50_t12",
+      "gall__h09_24": "xgb_wide_180d_d50_t12",
+      "gall__h25_48": "xgb_wide_180d_d50_t12",
+      "gall__h49_96": "xgb_wide_180d_d50_t12"
+    },
+    "screen_picks": {
+      "g1__h01_08": "reference_58",
+      "g1__h09_24": "reference_58",
+      "g1__h25_48": "reference_58",
+      "g1__h49_96": "reference_58",
+      "gall__h01_08": "xgb_wide_180d_d50_t12",
+      "gall__h09_24": "xgb_wide_180d_d50_t12",
+      "gall__h25_48": "xgb_wide_180d_d50_t12",
+      "gall__h49_96": "xgb_wide_180d_d50_t12"
+    },
+    "confirmation": {
+      "g1__h01_08": {
+        "accepted": false,
+        "candidate": "reference_58",
+        "reason": [
+          "reference_from_screen"
+        ]
+      },
+      "g1__h09_24": {
+        "accepted": false,
+        "candidate": "reference_58",
+        "reason": [
+          "reference_from_screen"
+        ]
+      },
+      "g1__h25_48": {
+        "accepted": false,
+        "candidate": "reference_58",
+        "reason": [
+          "reference_from_screen"
+        ]
+      },
+      "g1__h49_96": {
+        "accepted": false,
+        "candidate": "reference_58",
+        "reason": [
+          "reference_from_screen"
+        ]
+      },
+      "gall__h01_08": {
+        "accepted": true,
+        "reason": [],
+        "mean_mape": 0.05904618369224758,
+        "reference_mape": 0.061853805709450954,
+        "mean_gain": 0.0028076220172033733,
+        "worst_gain": 0.0018143819245823173,
+        "last_gain": 0.0018143819245823173,
+        "wins": 2,
+        "folds": 2,
+        "candidate": "xgb_wide_180d_d50_t12",
+        "seed_mape_by_fold": [
+          [
+            0.05244355687851877,
+            0.05234193536206016,
+            0.05218297215797971
+          ],
+          [
+            0.06596058831907556,
+            0.06584428352369959,
+            0.06607048112654149
+          ]
+        ],
+        "seed_std_mean": 9.979776502339597e-05
+      },
+      "gall__h09_24": {
+        "accepted": true,
+        "reason": [],
+        "mean_mape": 0.089601438878016,
+        "reference_mape": 0.09164703944835915,
+        "mean_gain": 0.0020456005703431562,
+        "worst_gain": -0.0004691010778899163,
+        "last_gain": 0.004560302218576229,
+        "wins": 1,
+        "folds": 2,
+        "candidate": "xgb_wide_180d_d50_t12",
+        "seed_mape_by_fold": [
+          [
+            0.07863008623368828,
+            0.07893276770945874,
+            0.07848718235104393
+          ],
+          [
+            0.10035513400904823,
+            0.10056758113475316,
+            0.10084944452084416
+          ]
+        ],
+        "seed_std_mean": 0.00019411523216223442
+      },
+      "gall__h25_48": {
+        "accepted": true,
+        "reason": [],
+        "mean_mape": 0.09328021028037715,
+        "reference_mape": 0.09697876263576455,
+        "mean_gain": 0.003698552355387387,
+        "worst_gain": -0.00034193213321002947,
+        "last_gain": 0.007739036843984803,
+        "wins": 1,
+        "folds": 2,
+        "candidate": "xgb_wide_180d_d50_t12",
+        "seed_mape_by_fold": [
+          [
+            0.07652983764181666,
+            0.07680540094727391,
+            0.0767836971598247
+          ],
+          [
+            0.10977264576231384,
+            0.10983574690952086,
+            0.11003905015808822
+          ]
+        ],
+        "seed_std_mean": 0.00011938454382398204
+      },
+      "gall__h49_96": {
+        "accepted": true,
+        "reason": [],
+        "mean_mape": 0.09426195484915287,
+        "reference_mape": 0.09994457015834685,
+        "mean_gain": 0.005682615309193992,
+        "worst_gain": 0.0033461387270848075,
+        "last_gain": 0.008019091891303176,
+        "wins": 2,
+        "folds": 2,
+        "candidate": "xgb_wide_180d_d50_t12",
+        "seed_mape_by_fold": [
+          [
+            0.07146214803418685,
+            0.07143913749985846,
+            0.0714965848673962
+          ],
+          [
+            0.11712763153673854,
+            0.117004749669329,
+            0.11706483938781344
+          ]
+        ],
+        "seed_std_mean": 3.6888638180039254e-05
+      }
+    },
+    "final_records": {
+      "xgb_wide_180d_d50_t12": [
+        {
+          "status": "completed",
+          "signature": "06dd36ec356ea1d7ea6bd01f860be7d8c56b3e76c5a7180344c3ac7ae73d2fe6",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 41,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "test",
+            "start": "2025-10-01 00:00:00",
+            "end": "2025-10-10 23:45:00"
+          },
+          "seconds": 4.951021194458008,
+          "training_seconds": 2.0661535263061523,
+          "evaluation_seconds": 0.3115966320037842,
+          "cpu_seconds": 5.076055714000001,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": null,
+          "training": {
+            "rows": 26203,
+            "pre_rows": 11707,
+            "semi_rows": 14496,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-10-01 00:00:00",
+            "last_target_time": "2025-09-30 23:45:00",
+            "last_feature_time": "2025-09-30 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "3fa6d15b8622461996044462d55880cd7224dbc7b95ac4d40e431cb4b021c1e7",
+              "y": "b5ad9629e2a972caad4b602599c5bb5de9ea107cb0782014ce00f434c8eff44f",
+              "source_weights": "e5731e1d69960cfa742989ba376bc5f91c6f235113602e511de5f57024640472"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/final__long__xgb_wide_180d_d50_t12__test__s41/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "732c394eb71dd3efadc1da74af4bd2ea2fd31706e6dabee382ef889176d1f1b0",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 83,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "test",
+            "start": "2025-10-01 00:00:00",
+            "end": "2025-10-10 23:45:00"
+          },
+          "seconds": 4.901703119277954,
+          "training_seconds": 2.045297622680664,
+          "evaluation_seconds": 0.3071141242980957,
+          "cpu_seconds": 5.028471885,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": null,
+          "training": {
+            "rows": 26203,
+            "pre_rows": 11707,
+            "semi_rows": 14496,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-10-01 00:00:00",
+            "last_target_time": "2025-09-30 23:45:00",
+            "last_feature_time": "2025-09-30 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "3fa6d15b8622461996044462d55880cd7224dbc7b95ac4d40e431cb4b021c1e7",
+              "y": "b5ad9629e2a972caad4b602599c5bb5de9ea107cb0782014ce00f434c8eff44f",
+              "source_weights": "e5731e1d69960cfa742989ba376bc5f91c6f235113602e511de5f57024640472"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/final__long__xgb_wide_180d_d50_t12__test__s83/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "b645ce48083100be36cc11f5345075a47c3518fdaa9850d5e4a4febb48bb26a4",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 137,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "test",
+            "start": "2025-10-01 00:00:00",
+            "end": "2025-10-10 23:45:00"
+          },
+          "seconds": 5.184569358825684,
+          "training_seconds": 2.051050901412964,
+          "evaluation_seconds": 0.4438762664794922,
+          "cpu_seconds": 5.193764814,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": null,
+          "training": {
+            "rows": 26203,
+            "pre_rows": 11707,
+            "semi_rows": 14496,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-10-01 00:00:00",
+            "last_target_time": "2025-09-30 23:45:00",
+            "last_feature_time": "2025-09-30 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "3fa6d15b8622461996044462d55880cd7224dbc7b95ac4d40e431cb4b021c1e7",
+              "y": "b5ad9629e2a972caad4b602599c5bb5de9ea107cb0782014ce00f434c8eff44f",
+              "source_weights": "e5731e1d69960cfa742989ba376bc5f91c6f235113602e511de5f57024640472"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/final__long__xgb_wide_180d_d50_t12__test__s137/attempt_001"
+        }
+      ]
+    },
+    "reference_record": {
+      "status": "completed",
+      "signature": "e15c470cf6b2dd280c5f93abc531547fd518d518d9856e7575b5209cc27203a2",
+      "task": "long",
+      "candidate": {
+        "id": "reference_58",
+        "family": "lightgbm",
+        "kind": "reference",
+        "device": "cpu",
+        "seed": 0
+      },
+      "fold": {
+        "name": "test",
+        "start": "2025-10-01 00:00:00",
+        "end": "2025-10-10 23:45:00"
+      },
+      "seconds": 3.0763421058654785,
+      "training_seconds": 1.7350773811340332,
+      "evaluation_seconds": 0.328402042388916,
+      "cpu_seconds": 5.9540518460000005,
+      "peak_rss_kib": 1381472,
+      "peak_vram_mib": null,
+      "replay_max_error": 0.0,
+      "metrics": null,
+      "training": {
+        "rows": 23227,
+        "pre_rows": 11707,
+        "pre_weight": 0.25,
+        "cutoff": "2025-10-01 00:00:00",
+        "last_target_time": "2025-09-30 23:45:00",
+        "kind": "nominal_same_record_not_interval"
+      },
+      "test_targets_used": false,
+      "anchor_provenance": {
+        "2025-10-01 00:00:00": {
+          "key": "e8417f7006f10b8e22e20bbd",
+          "training": {
+            "rows": 23227,
+            "pre_rows": 11707,
+            "pre_weight": 0.25,
+            "cutoff": "2025-10-01 00:00:00",
+            "last_target_time": "2025-09-30 23:45:00",
+            "kind": "nominal_same_record_not_interval"
+          }
+        }
+      },
+      "oot_training_segments": [],
+      "output": "jobs/baseline__long__reference_58__test__s0/attempt_001"
+    }
+  }
+}

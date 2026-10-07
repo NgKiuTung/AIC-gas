@@ -1,0 +1,9 @@
+{
+  "sha256": "ca8700571d8b3c84f3ac562ad678c6b53f4fc1715055d51f06b844d74f1c0f6f",
+  "raw_rows_after_union": 243548,
+  "columns": 29,
+  "process_columns": 27,
+  "changes": 1004,
+  "duplicates": 4,
+  "test_target_observations": 0
+}

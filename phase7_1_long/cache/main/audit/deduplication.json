@@ -1,0 +1,26 @@
+[
+  {
+    "datetime": "2025-05-01 00:00:00",
+    "copies": 2,
+    "action": "keep_first_identical",
+    "table": "gas"
+  },
+  {
+    "datetime": "2025-05-01 00:00:00",
+    "copies": 2,
+    "action": "keep_first_identical",
+    "table": "gas_holder"
+  },
+  {
+    "datetime": "2025-05-01 00:00:00",
+    "copies": 2,
+    "action": "keep_first_identical",
+    "table": "gas_user"
+  },
+  {
+    "datetime": "2025-05-01 00:00:00",
+    "copies": 2,
+    "action": "keep_first_identical",
+    "table": "load"
+  }
+]

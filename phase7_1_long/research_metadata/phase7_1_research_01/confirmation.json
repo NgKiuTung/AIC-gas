@@ -1,0 +1,638 @@
+{
+  "components": {
+    "g1__h01_08": {
+      "accepted": false,
+      "candidate": "reference_58",
+      "reason": [
+        "reference_from_screen"
+      ]
+    },
+    "g1__h09_24": {
+      "accepted": false,
+      "candidate": "reference_58",
+      "reason": [
+        "reference_from_screen"
+      ]
+    },
+    "g1__h25_48": {
+      "accepted": false,
+      "candidate": "reference_58",
+      "reason": [
+        "reference_from_screen"
+      ]
+    },
+    "g1__h49_96": {
+      "accepted": false,
+      "candidate": "reference_58",
+      "reason": [
+        "reference_from_screen"
+      ]
+    },
+    "gall__h01_08": {
+      "accepted": true,
+      "reason": [],
+      "mean_mape": 0.05904618369224758,
+      "reference_mape": 0.061853805709450954,
+      "mean_gain": 0.0028076220172033733,
+      "worst_gain": 0.0018143819245823173,
+      "last_gain": 0.0018143819245823173,
+      "wins": 2,
+      "folds": 2,
+      "candidate": "xgb_wide_180d_d50_t12",
+      "seed_mape_by_fold": [
+        [
+          0.05244355687851877,
+          0.05234193536206016,
+          0.05218297215797971
+        ],
+        [
+          0.06596058831907556,
+          0.06584428352369959,
+          0.06607048112654149
+        ]
+      ],
+      "seed_std_mean": 9.979776502339597e-05
+    },
+    "gall__h09_24": {
+      "accepted": true,
+      "reason": [],
+      "mean_mape": 0.089601438878016,
+      "reference_mape": 0.09164703944835915,
+      "mean_gain": 0.0020456005703431562,
+      "worst_gain": -0.0004691010778899163,
+      "last_gain": 0.004560302218576229,
+      "wins": 1,
+      "folds": 2,
+      "candidate": "xgb_wide_180d_d50_t12",
+      "seed_mape_by_fold": [
+        [
+          0.07863008623368828,
+          0.07893276770945874,
+          0.07848718235104393
+        ],
+        [
+          0.10035513400904823,
+          0.10056758113475316,
+          0.10084944452084416
+        ]
+      ],
+      "seed_std_mean": 0.00019411523216223442
+    },
+    "gall__h25_48": {
+      "accepted": true,
+      "reason": [],
+      "mean_mape": 0.09328021028037715,
+      "reference_mape": 0.09697876263576455,
+      "mean_gain": 0.003698552355387387,
+      "worst_gain": -0.00034193213321002947,
+      "last_gain": 0.007739036843984803,
+      "wins": 1,
+      "folds": 2,
+      "candidate": "xgb_wide_180d_d50_t12",
+      "seed_mape_by_fold": [
+        [
+          0.07652983764181666,
+          0.07680540094727391,
+          0.0767836971598247
+        ],
+        [
+          0.10977264576231384,
+          0.10983574690952086,
+          0.11003905015808822
+        ]
+      ],
+      "seed_std_mean": 0.00011938454382398204
+    },
+    "gall__h49_96": {
+      "accepted": true,
+      "reason": [],
+      "mean_mape": 0.09426195484915287,
+      "reference_mape": 0.09994457015834685,
+      "mean_gain": 0.005682615309193992,
+      "worst_gain": 0.0033461387270848075,
+      "last_gain": 0.008019091891303176,
+      "wins": 2,
+      "folds": 2,
+      "candidate": "xgb_wide_180d_d50_t12",
+      "seed_mape_by_fold": [
+        [
+          0.07146214803418685,
+          0.07143913749985846,
+          0.0714965848673962
+        ],
+        [
+          0.11712763153673854,
+          0.117004749669329,
+          0.11706483938781344
+        ]
+      ],
+      "seed_std_mean": 3.6888638180039254e-05
+    }
+  },
+  "records": {
+    "xgb_wide_180d_d50_t12": {
+      "confirm_september_early": [
+        {
+          "status": "completed",
+          "signature": "9f2c8a1ee8c9441c6778f7ba6ee2f8512dcbbd9c61df78856d5ca1d80a7b442c",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 41,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_early",
+            "start": "2025-09-01 00:00:00",
+            "end": "2025-09-10 23:45:00"
+          },
+          "seconds": 5.116436243057251,
+          "training_seconds": 1.9671211242675781,
+          "evaluation_seconds": 0.4297313690185547,
+          "cpu_seconds": 4.948798004,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.09255337094976246,
+            "g1_mape": 0.11276789769315237,
+            "gall_mape": 0.07233884420637256,
+            "valid_pairs": 184128,
+            "expected_pairs": 184320,
+            "coverage": 0.9989583333333333,
+            "components": {
+              "g1__h01_08": 0.09660394992869854,
+              "g1__h09_24": 0.1140702538173948,
+              "g1__h25_48": 0.11390730451599773,
+              "g1__h49_96": 0.11445806686772192,
+              "gall__h01_08": 0.05244355687851877,
+              "gall__h09_24": 0.07863008623368828,
+              "gall__h25_48": 0.07652983764181666,
+              "gall__h49_96": 0.07146214803418685
+            }
+          },
+          "training": {
+            "rows": 23323,
+            "pre_rows": 11707,
+            "semi_rows": 11616,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-01 00:00:00",
+            "last_target_time": "2025-08-31 23:45:00",
+            "last_feature_time": "2025-08-31 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "913726fa4411a8936fe64fa721058432805e6e1176529198978e743f92d24af6",
+              "y": "dcec78de1e0f644c488b89d3b6a1d5eaf1595385d025c176255b08b903d76d0e",
+              "source_weights": "90754bc81bd4fcb988e22ed27bc9af88ceb3f937786f71928147e1ccee857860"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_early__s41/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "14c8232937cd546d049d84304700330d70dd95334b241fb95ac58b51b11d0d15",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 83,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_early",
+            "start": "2025-09-01 00:00:00",
+            "end": "2025-09-10 23:45:00"
+          },
+          "seconds": 5.047989845275879,
+          "training_seconds": 2.0172746181488037,
+          "evaluation_seconds": 0.42075324058532715,
+          "cpu_seconds": 5.079004674,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.09285615747852943,
+            "g1_mape": 0.11327410673856246,
+            "gall_mape": 0.0724382082184964,
+            "valid_pairs": 184128,
+            "expected_pairs": 184320,
+            "coverage": 0.9989583333333333,
+            "components": {
+              "g1__h01_08": 0.09839569490917426,
+              "g1__h09_24": 0.11478109296438402,
+              "g1__h25_48": 0.11431924526576931,
+              "g1__h49_96": 0.11472894403791675,
+              "gall__h01_08": 0.05234193536206016,
+              "gall__h09_24": 0.07893276770945874,
+              "gall__h25_48": 0.07680540094727391,
+              "gall__h49_96": 0.07143913749985846
+            }
+          },
+          "training": {
+            "rows": 23323,
+            "pre_rows": 11707,
+            "semi_rows": 11616,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-01 00:00:00",
+            "last_target_time": "2025-08-31 23:45:00",
+            "last_feature_time": "2025-08-31 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "913726fa4411a8936fe64fa721058432805e6e1176529198978e743f92d24af6",
+              "y": "dcec78de1e0f644c488b89d3b6a1d5eaf1595385d025c176255b08b903d76d0e",
+              "source_weights": "90754bc81bd4fcb988e22ed27bc9af88ceb3f937786f71928147e1ccee857860"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_early__s83/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "079b05c4d5b41a2cb92aaeae7cec13d48d06b15c70367112ed5a5fa0ac58d8e4",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 137,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_early",
+            "start": "2025-09-01 00:00:00",
+            "end": "2025-09-10 23:45:00"
+          },
+          "seconds": 4.842312812805176,
+          "training_seconds": 1.9706926345825195,
+          "evaluation_seconds": 0.39821767807006836,
+          "cpu_seconds": 4.924980908,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.09315812576172035,
+            "g1_mape": 0.1139422567281145,
+            "gall_mape": 0.07237399479532619,
+            "valid_pairs": 184128,
+            "expected_pairs": 184320,
+            "coverage": 0.9989583333333333,
+            "components": {
+              "g1__h01_08": 0.09900406032782308,
+              "g1__h09_24": 0.11611176103247836,
+              "g1__h25_48": 0.11517332645199915,
+              "g1__h49_96": 0.1150932531647687,
+              "gall__h01_08": 0.05218297215797971,
+              "gall__h09_24": 0.07848718235104393,
+              "gall__h25_48": 0.0767836971598247,
+              "gall__h49_96": 0.0714965848673962
+            }
+          },
+          "training": {
+            "rows": 23323,
+            "pre_rows": 11707,
+            "semi_rows": 11616,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-01 00:00:00",
+            "last_target_time": "2025-08-31 23:45:00",
+            "last_feature_time": "2025-08-31 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "913726fa4411a8936fe64fa721058432805e6e1176529198978e743f92d24af6",
+              "y": "dcec78de1e0f644c488b89d3b6a1d5eaf1595385d025c176255b08b903d76d0e",
+              "source_weights": "90754bc81bd4fcb988e22ed27bc9af88ceb3f937786f71928147e1ccee857860"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_early__s137/attempt_001"
+        }
+      ],
+      "confirm_september_late": [
+        {
+          "status": "completed",
+          "signature": "a96a63d3e03d7ee9762ccbb5ad93d31f590ff1c9c0bb810ac58c605d164db4cf",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 41,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_late",
+            "start": "2025-09-18 00:00:00",
+            "end": "2025-09-27 23:45:00"
+          },
+          "seconds": 4.940026044845581,
+          "training_seconds": 2.017772674560547,
+          "evaluation_seconds": 0.39345264434814453,
+          "cpu_seconds": 4.980229799,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.12179488527922316,
+            "g1_mape": 0.13536022198806902,
+            "gall_mape": 0.10822954857037731,
+            "valid_pairs": 184320,
+            "expected_pairs": 184320,
+            "coverage": 1.0,
+            "components": {
+              "g1__h01_08": 0.13400664056791683,
+              "g1__h09_24": 0.13748727331979607,
+              "g1__h25_48": 0.13521130781528207,
+              "g1__h49_96": 0.13495125886724593,
+              "gall__h01_08": 0.06596058831907556,
+              "gall__h09_24": 0.10035513400904823,
+              "gall__h25_48": 0.10977264576231384,
+              "gall__h49_96": 0.11712763153673854
+            }
+          },
+          "training": {
+            "rows": 24955,
+            "pre_rows": 11707,
+            "semi_rows": 13248,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-18 00:00:00",
+            "last_target_time": "2025-09-17 23:45:00",
+            "last_feature_time": "2025-09-17 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "70ad81b1828fb0f8d147faba66cc0ac9a73ea23bfa6d04e393ff531ce08c293f",
+              "y": "b0ce15e5cb655a8d2cd63702bd92397ec658905c822cee9b9ebd1fe25b59b62b",
+              "source_weights": "72f264ec546a5daafe0ce32cc91ead381cb1652cebe99488a26cc9e7c198026a"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_late__s41/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "8c9d07306a5f46274fa0a399c29738739d7ac0171af922f7d3c82ab66e5e3df3",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 83,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_late",
+            "start": "2025-09-18 00:00:00",
+            "end": "2025-09-27 23:45:00"
+          },
+          "seconds": 5.0336480140686035,
+          "training_seconds": 2.0346076488494873,
+          "evaluation_seconds": 0.46592164039611816,
+          "cpu_seconds": 5.074675562,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.12172588689498086,
+            "g1_mape": 0.13524217507848513,
+            "gall_mape": 0.10820959871147659,
+            "valid_pairs": 184320,
+            "expected_pairs": 184320,
+            "coverage": 1.0,
+            "components": {
+              "g1__h01_08": 0.13330936669332524,
+              "g1__h09_24": 0.1368367802736459,
+              "g1__h25_48": 0.1351702846818759,
+              "g1__h49_96": 0.13506871994259315,
+              "gall__h01_08": 0.06584428352369959,
+              "gall__h09_24": 0.10056758113475316,
+              "gall__h25_48": 0.10983574690952086,
+              "gall__h49_96": 0.117004749669329
+            }
+          },
+          "training": {
+            "rows": 24955,
+            "pre_rows": 11707,
+            "semi_rows": 13248,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-18 00:00:00",
+            "last_target_time": "2025-09-17 23:45:00",
+            "last_feature_time": "2025-09-17 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "70ad81b1828fb0f8d147faba66cc0ac9a73ea23bfa6d04e393ff531ce08c293f",
+              "y": "b0ce15e5cb655a8d2cd63702bd92397ec658905c822cee9b9ebd1fe25b59b62b",
+              "source_weights": "72f264ec546a5daafe0ce32cc91ead381cb1652cebe99488a26cc9e7c198026a"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_late__s83/attempt_001"
+        },
+        {
+          "status": "completed",
+          "signature": "149a8f564f5d4041144c2a72b5f47c5fe3bb6a1a3efca3e87533384259a1e04a",
+          "task": "long",
+          "candidate": {
+            "id": "xgb_wide_180d_d50_t12",
+            "tasks": [
+              "long"
+            ],
+            "family": "xgboost",
+            "kind": "proxy_wide",
+            "device": "cuda",
+            "lookback_days": 180,
+            "pre_weight": 0.25,
+            "rounds": 220,
+            "day_weight": 0.5,
+            "decay_hours": 12,
+            "seed": 137,
+            "params": {
+              "grow_policy": "lossguide",
+              "max_depth": 0,
+              "max_leaves": 15,
+              "min_child_weight": 80,
+              "max_bin": 127,
+              "lambda": 2.0,
+              "colsample_bytree": 0.85,
+              "eta": 0.045,
+              "base_score": 0.0
+            },
+            "hypothesis": "Phase6-style 276-feature XGBoost proxy; lookback=180d, day_weight=0.5, decay=12h."
+          },
+          "fold": {
+            "name": "confirm_september_late",
+            "start": "2025-09-18 00:00:00",
+            "end": "2025-09-27 23:45:00"
+          },
+          "seconds": 4.969902992248535,
+          "training_seconds": 2.0179669857025146,
+          "evaluation_seconds": 0.3923451900482178,
+          "cpu_seconds": 5.021225578999999,
+          "peak_rss_kib": 1619280,
+          "peak_vram_mib": 0.0,
+          "replay_max_error": 0.0,
+          "metrics": {
+            "mape": 0.12180487831037765,
+            "g1_mape": 0.13525346020664122,
+            "gall_mape": 0.10835629641411407,
+            "valid_pairs": 184320,
+            "expected_pairs": 184320,
+            "coverage": 1.0,
+            "components": {
+              "g1__h01_08": 0.13382896696501306,
+              "g1__h09_24": 0.13739395660065276,
+              "g1__h25_48": 0.1351378498912454,
+              "g1__h49_96": 0.13483518210660575,
+              "gall__h01_08": 0.06607048112654149,
+              "gall__h09_24": 0.10084944452084416,
+              "gall__h25_48": 0.11003905015808822,
+              "gall__h49_96": 0.11706483938781344
+            }
+          },
+          "training": {
+            "rows": 24955,
+            "pre_rows": 11707,
+            "semi_rows": 13248,
+            "pre_weight": 0.25,
+            "lookback_days": 180,
+            "cutoff": "2025-09-18 00:00:00",
+            "last_target_time": "2025-09-17 23:45:00",
+            "last_feature_time": "2025-09-17 23:45:00",
+            "kind": "phase6_style_wide_nominal_proxy",
+            "feature_count": 276,
+            "sample_hashes": {
+              "x": "70ad81b1828fb0f8d147faba66cc0ac9a73ea23bfa6d04e393ff531ce08c293f",
+              "y": "b0ce15e5cb655a8d2cd63702bd92397ec658905c822cee9b9ebd1fe25b59b62b",
+              "source_weights": "72f264ec546a5daafe0ce32cc91ead381cb1652cebe99488a26cc9e7c198026a"
+            }
+          },
+          "test_targets_used": false,
+          "anchor_provenance": {},
+          "oot_training_segments": [],
+          "output": "jobs/confirm__long__xgb_wide_180d_d50_t12__confirm_september_late__s137/attempt_001"
+        }
+      ]
+    }
+  }
+}

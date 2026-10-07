@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "identity": {
+    "pid": 6872,
+    "start_ticks": "76643",
+    "boot_id": "64419d16-6128-434b-88f3-3cc5ecb85c7c"
+  },
+  "started": 1791192368.4942036,
+  "deadline": 1791203166.254662,
+  "seconds": 740.6461713314056,
+  "job_records": 57,
+  "failed_jobs": 0,
+  "timed_out_jobs": 0,
+  "skipped_jobs": 0,
+  "selected_components": {
+    "gall__h01_08": "xgb_wide_180d_d50_t12",
+    "gall__h09_24": "xgb_wide_180d_d50_t12",
+    "gall__h25_48": "xgb_wide_180d_d50_t12",
+    "gall__h49_96": "xgb_wide_180d_d50_t12"
+  },
+  "short_incumbent": "unavailable_external_phase6",
+  "combined_submission_ready": false,
+  "budget_exhausted": false,
+  "remaining_seconds": 10057.114201784134
+}
