@@ -1,0 +1,57 @@
+{
+  "common": {
+    "reference": "reference",
+    "xgb_t12": "XGB t12",
+    "short": "Short",
+    "long": "Long"
+  },
+  "figureA": {
+    "processed": "Processed cache",
+    "features": "276 features",
+    "long": "Phase7.1 Long",
+    "short": "Frozen Phase6 Short",
+    "final": "Final submission",
+    "processed_sub": "{origins} origins",
+    "features_sub": "causal + known future",
+    "long_sub": "component-wise selection",
+    "short_sub": "independent frozen lineage",
+    "final_sub": "{score:.4f}/100",
+    "scale_xlabel": "count (log scale)",
+    "scale_all": "all origins",
+    "scale_test": "test origins",
+    "scale_features": "features",
+    "contrib_xlabel": "online score contribution / 50"
+  },
+  "figureB": {
+    "heatmap_colorbar": "feature count",
+    "donut_center": "276\nfeatures",
+    "causal": "causal ≤ origin",
+    "known": "known before origin",
+    "target": "target-derived",
+    "waffle_note": "270 causal  ·  6 known-before-origin  ·  0 target-derived"
+  },
+  "figureC": {
+    "gain_colorbar": "mean gain vs reference",
+    "confirm_xlabel": "gain vs reference",
+    "generator_1": "generator_1",
+    "generator_all": "generator_all",
+    "screen_group_g1": "generator_1",
+    "screen_group_gall": "generator_all"
+  },
+  "figureD": {
+    "score_ylabel": "online score / 100",
+    "stage_reference": "reference",
+    "stage_probe": "Phase7.1\nLong probe",
+    "stage_final": "final\ncombination",
+    "contribution_xlabel": "contribution / 50",
+    "accuracy_xlabel": "online accuracy (%)"
+  },
+  "figureE": {
+    "availability_xlabel": "feature availability",
+    "availability_train": "train",
+    "availability_test": "test",
+    "missing_xlabel": "raw-field missingness (%)",
+    "audit_xlabel": "isolated-value count (log scale)",
+    "audit_note": "{total} isolated values · {share:.1f}% in {field}"
+  }
+}

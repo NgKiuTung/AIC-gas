@@ -1,0 +1,40 @@
+{
+  "figure": "figureC_model_selection_evidence",
+  "exports": {
+    "pdf": "figureC_model_selection_evidence.pdf",
+    "svg": "figureC_model_selection_evidence.svg",
+    "png": "figureC_model_selection_evidence.png",
+    "tiff": "figureC_model_selection_evidence.tiff"
+  },
+  "axes": [
+    {
+      "index": 0,
+      "x0": 0.12553094135802467,
+      "y0": 0.428609360162551,
+      "x1": 0.5365030702088036,
+      "y1": 0.9438833792609077
+    },
+    {
+      "index": 1,
+      "x0": 0.808178979248655,
+      "y0": 0.428609360162551,
+      "x1": 0.8983510786658814,
+      "y1": 0.9438833792609077
+    },
+    {
+      "index": 2,
+      "x0": 0.12553094135802467,
+      "y0": 0.04027850241545894,
+      "x1": 0.8983510786658814,
+      "y1": 0.29957768621979336
+    },
+    {
+      "index": 3,
+      "x0": 0.6415790248713675,
+      "y0": 0.5254311888570756,
+      "x1": 0.6518533280926371,
+      "y1": 0.8470615505663831
+    }
+  ],
+  "gridlines_visible": false
+}

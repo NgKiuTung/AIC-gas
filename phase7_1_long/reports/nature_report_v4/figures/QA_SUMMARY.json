@@ -1,0 +1,183 @@
+{
+  "figures": [
+    {
+      "figure": "figureA_pipeline_and_score",
+      "exports": {
+        "pdf": "figureA_pipeline_and_score.pdf",
+        "svg": "figureA_pipeline_and_score.svg",
+        "png": "figureA_pipeline_and_score.png",
+        "tiff": "figureA_pipeline_and_score.tiff"
+      },
+      "axes": [
+        {
+          "index": 0,
+          "x0": 0.0940783950617284,
+          "y0": 0.42554765300059416,
+          "x1": 0.9856042824074074,
+          "y1": 0.9471114491609599
+        },
+        {
+          "index": 1,
+          "x0": 0.0940783950617284,
+          "y0": 0.07539281045751635,
+          "x1": 0.5647844187976344,
+          "y1": 0.3734292654062968
+        },
+        {
+          "index": 2,
+          "x0": 0.6369331537141435,
+          "y0": 0.07539281045751635,
+          "x1": 0.9856042824074074,
+          "y1": 0.3734292654062968
+        }
+      ],
+      "gridlines_visible": false
+    },
+    {
+      "figure": "figureB_feature_architecture",
+      "exports": {
+        "pdf": "figureB_feature_architecture.pdf",
+        "svg": "figureB_feature_architecture.svg",
+        "png": "figureB_feature_architecture.png",
+        "tiff": "figureB_feature_architecture.tiff"
+      },
+      "axes": [
+        {
+          "index": 0,
+          "x0": 0.13625625,
+          "y0": 0.06268188405797102,
+          "x1": 0.6053970784121345,
+          "y1": 0.9298088057410825
+        },
+        {
+          "index": 1,
+          "x0": 0.7316951595293257,
+          "y0": 0.5691050660554782,
+          "x1": 0.9271705047010484,
+          "y1": 0.875066475889479
+        },
+        {
+          "index": 2,
+          "x0": 0.7316951595293257,
+          "y0": 0.18238862284693091,
+          "x1": 0.9271705047010484,
+          "y1": 0.358421214806219
+        },
+        {
+          "index": 3,
+          "x0": 0.6124341908383165,
+          "y0": 0.2906392774910779,
+          "x1": 0.6255701340338563,
+          "y1": 0.7018514123079757
+        }
+      ],
+      "gridlines_visible": false
+    },
+    {
+      "figure": "figureC_model_selection_evidence",
+      "exports": {
+        "pdf": "figureC_model_selection_evidence.pdf",
+        "svg": "figureC_model_selection_evidence.svg",
+        "png": "figureC_model_selection_evidence.png",
+        "tiff": "figureC_model_selection_evidence.tiff"
+      },
+      "axes": [
+        {
+          "index": 0,
+          "x0": 0.12553094135802467,
+          "y0": 0.428609360162551,
+          "x1": 0.5365030702088036,
+          "y1": 0.9438833792609077
+        },
+        {
+          "index": 1,
+          "x0": 0.808178979248655,
+          "y0": 0.428609360162551,
+          "x1": 0.8983510786658814,
+          "y1": 0.9438833792609077
+        },
+        {
+          "index": 2,
+          "x0": 0.12553094135802467,
+          "y0": 0.04027850241545894,
+          "x1": 0.8983510786658814,
+          "y1": 0.29957768621979336
+        },
+        {
+          "index": 3,
+          "x0": 0.6415790248713675,
+          "y0": 0.5254311888570756,
+          "x1": 0.6518533280926371,
+          "y1": 0.8470615505663831
+        }
+      ],
+      "gridlines_visible": false
+    },
+    {
+      "figure": "figureD_online_performance",
+      "exports": {
+        "pdf": "figureD_online_performance.pdf",
+        "svg": "figureD_online_performance.svg",
+        "png": "figureD_online_performance.png",
+        "tiff": "figureD_online_performance.tiff"
+      },
+      "axes": [
+        {
+          "index": 0,
+          "x0": 0.0700525462962963,
+          "y0": 0.12541092896174863,
+          "x1": 0.41057311916757194,
+          "y1": 0.9148720423215438
+        },
+        {
+          "index": 1,
+          "x0": 0.46881945108417816,
+          "y0": 0.12541092896174863,
+          "x1": 0.7210569124703079,
+          "y1": 0.9148720423215438
+        },
+        {
+          "index": 2,
+          "x0": 0.7518021909746685,
+          "y0": 0.12541092896174863,
+          "x1": 0.9914277792914923,
+          "y1": 0.9148720423215438
+        }
+      ],
+      "gridlines_visible": false
+    },
+    {
+      "figure": "figureE_data_quality",
+      "exports": {
+        "pdf": "figureE_data_quality.pdf",
+        "svg": "figureE_data_quality.svg",
+        "png": "figureE_data_quality.png",
+        "tiff": "figureE_data_quality.tiff"
+      },
+      "axes": [
+        {
+          "index": 0,
+          "x0": 0.04977862654320988,
+          "y0": 0.10831079812206573,
+          "x1": 0.19252107432769908,
+          "y1": 0.9214645723329293
+        },
+        {
+          "index": 1,
+          "x0": 0.4115746953025559,
+          "y0": 0.10831079812206573,
+          "x1": 0.5757285102547185,
+          "y1": 0.9214645723329293
+        },
+        {
+          "index": 2,
+          "x0": 0.8193224853722464,
+          "y0": 0.10831079812206573,
+          "x1": 0.96920205554596,
+          "y1": 0.9214645723329293
+        }
+      ],
+      "gridlines_visible": false
+    }
+  ]
+}

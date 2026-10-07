@@ -1,0 +1,4 @@
+This patch was designed against the public `Yuan1z0825/nature-skills` nature-figure guidance
+(commit 7d5f160ebfe8033375b4afef7c5911aa4203c983), distributed under Apache License 2.0.
+The plotting implementation in this patch is newly written for AIC-Gas; example figures from the
+upstream repository are not copied into this package.

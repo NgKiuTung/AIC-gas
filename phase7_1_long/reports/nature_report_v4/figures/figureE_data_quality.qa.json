@@ -1,0 +1,33 @@
+{
+  "figure": "figureE_data_quality",
+  "exports": {
+    "pdf": "figureE_data_quality.pdf",
+    "svg": "figureE_data_quality.svg",
+    "png": "figureE_data_quality.png",
+    "tiff": "figureE_data_quality.tiff"
+  },
+  "axes": [
+    {
+      "index": 0,
+      "x0": 0.04977862654320988,
+      "y0": 0.10831079812206573,
+      "x1": 0.19252107432769908,
+      "y1": 0.9214645723329293
+    },
+    {
+      "index": 1,
+      "x0": 0.4115746953025559,
+      "y0": 0.10831079812206573,
+      "x1": 0.5757285102547185,
+      "y1": 0.9214645723329293
+    },
+    {
+      "index": 2,
+      "x0": 0.8193224853722464,
+      "y0": 0.10831079812206573,
+      "x1": 0.96920205554596,
+      "y1": 0.9214645723329293
+    }
+  ],
+  "gridlines_visible": false
+}

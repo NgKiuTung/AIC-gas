@@ -1,0 +1,40 @@
+{
+  "figure": "figureB_feature_architecture",
+  "exports": {
+    "pdf": "figureB_feature_architecture.pdf",
+    "svg": "figureB_feature_architecture.svg",
+    "png": "figureB_feature_architecture.png",
+    "tiff": "figureB_feature_architecture.tiff"
+  },
+  "axes": [
+    {
+      "index": 0,
+      "x0": 0.13625625,
+      "y0": 0.06268188405797102,
+      "x1": 0.6053970784121345,
+      "y1": 0.9298088057410825
+    },
+    {
+      "index": 1,
+      "x0": 0.7316951595293257,
+      "y0": 0.5691050660554782,
+      "x1": 0.9271705047010484,
+      "y1": 0.875066475889479
+    },
+    {
+      "index": 2,
+      "x0": 0.7316951595293257,
+      "y0": 0.18238862284693091,
+      "x1": 0.9271705047010484,
+      "y1": 0.358421214806219
+    },
+    {
+      "index": 3,
+      "x0": 0.6124341908383165,
+      "y0": 0.2906392774910779,
+      "x1": 0.6255701340338563,
+      "y1": 0.7018514123079757
+    }
+  ],
+  "gridlines_visible": false
+}

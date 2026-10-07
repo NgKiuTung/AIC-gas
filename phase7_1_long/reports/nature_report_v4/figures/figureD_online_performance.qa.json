@@ -1,0 +1,33 @@
+{
+  "figure": "figureD_online_performance",
+  "exports": {
+    "pdf": "figureD_online_performance.pdf",
+    "svg": "figureD_online_performance.svg",
+    "png": "figureD_online_performance.png",
+    "tiff": "figureD_online_performance.tiff"
+  },
+  "axes": [
+    {
+      "index": 0,
+      "x0": 0.0700525462962963,
+      "y0": 0.12541092896174863,
+      "x1": 0.41057311916757194,
+      "y1": 0.9148720423215438
+    },
+    {
+      "index": 1,
+      "x0": 0.46881945108417816,
+      "y0": 0.12541092896174863,
+      "x1": 0.7210569124703079,
+      "y1": 0.9148720423215438
+    },
+    {
+      "index": 2,
+      "x0": 0.7518021909746685,
+      "y0": 0.12541092896174863,
+      "x1": 0.9914277792914923,
+      "y1": 0.9148720423215438
+    }
+  ],
+  "gridlines_visible": false
+}

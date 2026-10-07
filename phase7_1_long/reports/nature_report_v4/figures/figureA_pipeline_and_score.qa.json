@@ -1,0 +1,33 @@
+{
+  "figure": "figureA_pipeline_and_score",
+  "exports": {
+    "pdf": "figureA_pipeline_and_score.pdf",
+    "svg": "figureA_pipeline_and_score.svg",
+    "png": "figureA_pipeline_and_score.png",
+    "tiff": "figureA_pipeline_and_score.tiff"
+  },
+  "axes": [
+    {
+      "index": 0,
+      "x0": 0.0940783950617284,
+      "y0": 0.42554765300059416,
+      "x1": 0.9856042824074074,
+      "y1": 0.9471114491609599
+    },
+    {
+      "index": 1,
+      "x0": 0.0940783950617284,
+      "y0": 0.07539281045751635,
+      "x1": 0.5647844187976344,
+      "y1": 0.3734292654062968
+    },
+    {
+      "index": 2,
+      "x0": 0.6369331537141435,
+      "y0": 0.07539281045751635,
+      "x1": 0.9856042824074074,
+      "y1": 0.3734292654062968
+    }
+  ],
+  "gridlines_visible": false
+}

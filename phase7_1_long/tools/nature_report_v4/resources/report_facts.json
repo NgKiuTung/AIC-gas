@@ -1,0 +1,23 @@
+{
+  "final_online": {
+    "total": 60.0903,
+    "short_score": 30.9525,
+    "long_score": 29.1378,
+    "short_accuracy": 90.48,
+    "long_accuracy": 84.71,
+    "short_g1_accuracy": 87.17,
+    "short_gall_accuracy": 93.78,
+    "long_g1_accuracy": 82.43,
+    "long_gall_accuracy": 87.00
+  },
+  "score_progression": [
+    {"label": "reference", "score": 58.1578},
+    {"label": "Phase7.1 Long probe", "score": 58.56},
+    {"label": "final combination", "score": 60.0903}
+  ],
+  "provenance": {
+    "phase6_commit": "2f1b9b808dd40047df3d211363a80db8b2b6e903",
+    "phase7_1_code_commit": "8409e826aec46a72122b404c60e6daed51643061",
+    "phase7_1_data_commit": "5b15c348653fd119fda07707e8cc7521475594a3"
+  }
+}
